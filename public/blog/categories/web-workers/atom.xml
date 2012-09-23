@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: web-workers | HTML5 Hacks]]></title>
+  <link href="http://html5hacks.com/blog/categories/web-workers/atom.xml" rel="self"/>
+  <link href="http://html5hacks.com/"/>
+  <updated>2012-09-23T11:00:57-05:00</updated>
+  <id>http://html5hacks.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Web Workers: Basics of the Web Browser's UI Thread]]></title>
+    <link href="http://html5hacks.com/blog/2012/09/22/web-workers-basics-of-the-web-browsers-ui-thread/"/>
+    <updated>2012-09-22T23:44:00-05:00</updated>
+    <id>http://html5hacks.com/blog/2012/09/22/web-workers-basics-of-the-web-browsers-ui-thread</id>
+    <content type="html"><![CDATA[<h2>Single Threadin'</h2>
+
+<p>As we set out to build a highly responsive UI for our demo web application, we must fully understand how browsers manage processes. Perhaps the biggest challenge we will face has to do with browsers using a single thread for both JavaScript execution and user interface updates. While the browser's JavaScript interpreter is executing code, the UI is unable to respond to the user's input. If a script is taking a long time to complete, after a specified amount of time the browser will provide the user an option to terminate the script. To accommodate for the 'freeze' associated with scripts that exceed the browser execution time limit, web developers have traditionally created smaller units of work and used JavaScript timers to return execution to the next event in the queue. As you will see, web workers solve the locking of the UI thread by opening an additional thread, or even multiple threads, for execution of these long running, processor intensive tasks.</p>
+
+<p>When designing your application, especially if you come from more of a 'server-side' or Java background, it is important to understand that non-blocking execution is not the same as concurrent threading. While not extremely complex, JavaScript's event driven style does take some getting used to for developers coming from other languages such as Java and C. Later, we will touch on a few examples where we pass a callback continuation function to take full advantage of JavaScript's non blocking design.</p>
+
+<h2>Thread Safety</h2>
+
+<p>Mozilla, in particular, provides a Worker interface which web workers implement. While the Worker interface spawns OS-level threads, web workers use the postMessage mechanism to send messages (with serializable objects) between the two execution contexts. To ensure thread safety the worker is only given access to thread safe components to include the following:</p>
+
+<ul>
+<li>timers: setTimeout() and setInterval() methods</li>
+<li>XMLHttpRequest</li>
+<li>importScripts() method</li>
+</ul>
+
+
+<p>The worker script can also make use of:</p>
+
+<ul>
+<li>navigator and location objects</li>
+<li>native JavaScript objects such as Object, String, Date</li>
+</ul>
+
+
+<p>At the same time, the worker restricts access to DOM APIs, global variables, and the parent page. In Hack #84 Building the DOM with web workers and Handlebars.js, we will explore the restricted access to DOM APIs, and introduce JavaScript templating, importScripts, and the use of timers to poll for postMessage.</p>
+
+<h2>HTML5 Web Workers</h2>
+
+<p>As mentioned earlier, the Web worker spec defines an API for executing scripts in the background by spawning an independent execution context.</p>
+
+<p>It is important to note that web workers are costly, having an impact on startup and overall memory consumption. So, they are intended to be used lightly and in conjunction with the some of the asynchronous techniques mentioned earlier. A well built client-side application would typically make use of one or two cases where tasks are expensive. Here are a few common uses cases:</p>
+
+<ul>
+<li>Single Page Application bootstrapping large amounts of data during initial load</li>
+<li>Performing long running mathematical calculations in the browser</li>
+<li>Processing large JSON datasets</li>
+<li>Text formatting, spell checking, and syntax highlighting</li>
+<li>Processing multimedia data (Audio/Video)</li>
+<li>Long polling webservices</li>
+<li>Filtering images in canvas</li>
+<li>Calculating points for a 3D image</li>
+<li>Reading/Writing of local storage database</li>
+</ul>
+
+
+<h2>Long Running Scripts</h2>
+
+<p>Our first web worker hack will be a long running script with heavy computation. It will execute 2 loops that output a two-dimensional array. First, we will use this computation to lock up the browser's UI thread, and later we will move the task to a worker.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Initialize awesome.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">r</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">c</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;[&quot;</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nx">j</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="nx">init</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Spawning a Worker</h2>
+
+<p>Now let's move our heavy computational task to a dedicated web worker, so that the user doesn't have to wait for the script to complete execution in order to interact with user interface. First, lets spawn a new worker:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Initialize awesome.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">worker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Worker</span><span class="p">(</span><span class="s1">&#39;highComp.js&#39;</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">worker</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">message</span><span class="p">));</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">worker</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){},</span> <span class="kc">false</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Here, we define an external file that will contain the logic of our heavy computational task. The file, highComp.js will listen for a message that will receive the serialized JSON payload, and then we will set up an additional listener to receive a message back from highComp.js.</p>
+
+<p>Now, we can move this cpu-intensive task to a separate file: highComp.js</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Initialize highComp.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">r</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">c</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;[&quot;</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nx">j</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">};</span>
+</span><span class='line'><span class="nx">postMessage</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>In highComp.js, our two dimensional array is built and set to variable a. It is then passed back to our main script via the postMessage call.</p>
+
+<p>In the next hack, we will mix our use of timers with the power of a dedicated worker. As we send messages (passing serializable objects as a parameter to postMessage) back and forth to code running in the shared UI thread, our timer will periodically send and check for new messages and use their contents to modify the DOM.</p>
+]]></content>
+  </entry>
+  
+</feed>
