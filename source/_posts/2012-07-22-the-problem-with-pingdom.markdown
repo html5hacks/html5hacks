@@ -5,6 +5,7 @@ date: 2012-07-22 19:13
 comments: true
 external-url: http://jessecravens.com
 categories: uptime
+author: Jesse Cravens
 ---
 {% codeblock Time to be Awesome - awesome.js %}
 (function( $ ){
