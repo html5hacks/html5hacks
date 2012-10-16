@@ -49,7 +49,7 @@ It is important to note that web workers are costly, having an impact on startup
 
 Our first web worker hack will be a long running script with heavy computation. It will execute 2 loops that output a two-dimensional array. First, we will use this computation to lock up the browser's UI thread, and later we will move the task to a worker.
 
-{% codeblock Initialize awesome.js %}
+{% codeblock init.js %}
 	
 	function init() {
 		var r = 1000;
@@ -74,7 +74,7 @@ Our first web worker hack will be a long running script with heavy computation. 
 
 Now let's move our heavy computational task to a dedicated web worker, so that the user doesn't have to wait for the script to complete execution in order to interact with user interface. First, lets spawn a new worker:
 
-{% codeblock Initialize awesome.js %}
+{% codeblock spawn.js %}
   
   var worker = new Worker('highComp.js');
 
@@ -88,7 +88,7 @@ Here, we define an external file that will contain the logic of our heavy comput
 
 Now, we can move this cpu-intensive task to a separate file: highComp.js
 
-{% codeblock Initialize highComp.js %}
+{% codeblock highComp.js %}
 var r = 1000;
 var c = 1000;
 

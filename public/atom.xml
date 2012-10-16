@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2012-10-15T16:45:48-05:00</updated>
+  <updated>2012-10-15T22:01:49-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -68,7 +68,7 @@
 
 <p>Our first web worker hack will be a long running script with heavy computation. It will execute 2 loops that output a two-dimensional array. First, we will use this computation to lock up the browser&#8217;s UI thread, and later we will move the task to a worker.</p>
 
-<figure class='code'><figcaption><span>Initialize awesome.js </span></figcaption>
+<figure class='code'><figcaption><span>init.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -108,7 +108,7 @@
 
 <p>Now let&#8217;s move our heavy computational task to a dedicated web worker, so that the user doesn&#8217;t have to wait for the script to complete execution in order to interact with user interface. First, lets spawn a new worker:</p>
 
-<figure class='code'><figcaption><span>Initialize awesome.js </span></figcaption>
+<figure class='code'><figcaption><span>spawn.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -128,7 +128,7 @@
 
 <p>Now, we can move this cpu-intensive task to a separate file: highComp.js</p>
 
-<figure class='code'><figcaption><span>Initialize highComp.js </span></figcaption>
+<figure class='code'><figcaption><span>highComp.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
