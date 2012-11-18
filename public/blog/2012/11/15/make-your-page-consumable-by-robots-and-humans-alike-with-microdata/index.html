@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: web-workers - HTML5 Hacks</title>
+  <title>Make Your Page Consumable by Robots and Humans Alike with Microdata - HTML5 Hacks</title>
   <meta name="author" content="Jesse Cravens and Jeff Burtoft">
 
   
-  <meta name="description" content="Category: web-workers">
+  <meta name="description" content="HTML5 microdata provides the mechanism for easily allowing machines to consume the data on your pages, while not affecting the experience for the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://html5hacks.comblog/categories/web-workers/">
+  <link rel="canonical" href="http://html5hacks.com/blog/2012/11/15/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,36 +79,142 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Web-workers</h1>
+    
+      <h1 class="entry-title">Make Your Page Consumable by Robots and Humans Alike With Microdata</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-15T22:34:00-08:00" pubdate data-updated="true">Nov 15<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>HTML5 microdata provides the mechanism for easily allowing machines to consume the data on your pages, while not affecting the experience for the user.</p>
 
-  
-  <h2>2012</h2>
+<p>If you’re like me, you believe that in the future, machines will rule over us humans with an iron fist (provided, of course, that the Zombie Apocalypse doesn’t get us first). While there isn’t anything we can do to help the zombie masses understand the Internet, HTML5 does offer a feature that prepares us for that machine dictatorship. It’s called microdata, and it’s supposed to be for machines only—no humans allowed.</p>
 
-<article>
-  
-<h1><a href="/blog/2012/09/22/web-workers-basics-of-the-web-browsers-ui-thread/">Web Workers: Basics of the Web Browser's UI Thread</a></h1>
-<time datetime="2012-09-22T23:44:00-07:00" pubdate><span class='month'>Sep</span> <span class='day'>22</span> <span class='year'>2012</span></time>
+<p>You can tell by now that HTML5 adds a lot of depth to your data, but up to this point the focus has been on your users. Microdata takes you down a slightly different path when you think about consumers who aren’t your users. Microdata is additional context you add to your markup to make it more consumable. When you build your page, you can add these additional attributes to give further context to your markup.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/web-workers/'>web-workers</a></span>
-</footer>
+<p>Microdata can be added to any page element to identify that element as an “item” or a high-level chunk of data. The content nested inside that item can then be labeled as properties. These properties essentially become name–value pairs when the itemprop becomes the value name and the human-readable content becomes the value. The relevant code would look something like this:</p>
 
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module
+Now imagine how consumable the Web would be for those machines of the future once microdata is utilized on every page!</p>
 
-</article>
+<p>In this hack we’ll use microdata to make sure our contact list is machine-readable. Each contact entry will be identified as an item, and its contents will be labeled as a property. Our first contact will look like this:</p>
 
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>As you can see, we have constructed one data item on our page, and when the markup is machine-read it will see the item as something like this:
+Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>Now let’s build ourselves a whole list:
+Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>To our human friends the page looks something like Figure 1-14.</p>
+
+<p><img class="figure" alt="Figure 1-14" src="/images/chapter1-images/microdata1.jpg"></p>
+
+<p>Figure 1-14. Adding microdata to the page, which does not change the view for users</p>
+
+<p>To our machine friends, the code looks something like this:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>It’s that easy to add microdata to your page without sacrificing the interface for your human friends.</p>
+
+<h2>Details, Details!</h2>
+
+<p>Microdata is pretty darn easy to implement, and the W3C spec thinks it should be just as easy to read, which is why the W3C added a JavaScript API to be able to access the data. Remember each of your identified elements was marked with an attribute called itemscope, which means the API considers them items. To get all these items, you simply call the following:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>Now your items can also be segmented by type, so you can identify some of your items as people, and others as cats. Microdata allows you to define your items by adding the itemtype attribute, which will point to a URL, or have an inline definition. In this case, if we defined our cat type by referring to the URL http://example.com/feline, our cat markup would look something like this:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>And if we wanted to get items with only a specific type of cat, we would call:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>Thanks to this simple API, your microdata-enriched markup is both easy to produce and easy to consume.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Jesse Cravens and Jeff Burtoft</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-15T22:34:00-08:00" pubdate data-updated="true">Nov 15<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/json/'>JSON</a>, <a class='category' href='/blog/categories/markup/'>Markup</a>, <a class='category' href='/blog/categories/microdata/'>Microdata</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://html5hacks.com/blog/2012/11/15/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/" data-via="html5hacks" data-counturl="http://html5hacks.com/blog/2012/11/15/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks/" title="Previous Post: Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks">&laquo; Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -210,7 +316,10 @@
       var disqus_shortname = 'html5hacks';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://html5hacks.com/blog/2012/11/15/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/';
+        var disqus_url = 'http://html5hacks.com/blog/2012/11/15/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

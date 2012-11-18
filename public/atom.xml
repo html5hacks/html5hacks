@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2012-10-17T00:09:20-05:00</updated>
+  <updated>2012-11-18T10:13:31-08:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -14,9 +14,65 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Make Your Page Consumable by Robots and Humans Alike with Microdata]]></title>
+    <link href="http://html5hacks.com/blog/2012/11/15/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/"/>
+    <updated>2012-11-15T22:34:00-08:00</updated>
+    <id>http://html5hacks.com/blog/2012/11/15/make-your-page-consumable-by-robots-and-humans-alike-with-microdata</id>
+    <content type="html"><![CDATA[<p>HTML5 microdata provides the mechanism for easily allowing machines to consume the data on your pages, while not affecting the experience for the user.</p>
+
+<p>If you’re like me, you believe that in the future, machines will rule over us humans with an iron fist (provided, of course, that the Zombie Apocalypse doesn’t get us first). While there isn’t anything we can do to help the zombie masses understand the Internet, HTML5 does offer a feature that prepares us for that machine dictatorship. It’s called microdata, and it’s supposed to be for machines only—no humans allowed.</p>
+
+<p>You can tell by now that HTML5 adds a lot of depth to your data, but up to this point the focus has been on your users. Microdata takes you down a slightly different path when you think about consumers who aren’t your users. Microdata is additional context you add to your markup to make it more consumable. When you build your page, you can add these additional attributes to give further context to your markup.</p>
+
+<p>Microdata can be added to any page element to identify that element as an “item” or a high-level chunk of data. The content nested inside that item can then be labeled as properties. These properties essentially become name–value pairs when the itemprop becomes the value name and the human-readable content becomes the value. The relevant code would look something like this:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module
+Now imagine how consumable the Web would be for those machines of the future once microdata is utilized on every page!</p>
+
+<p>In this hack we’ll use microdata to make sure our contact list is machine-readable. Each contact entry will be identified as an item, and its contents will be labeled as a property. Our first contact will look like this:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>As you can see, we have constructed one data item on our page, and when the markup is machine-read it will see the item as something like this:
+Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>Now let’s build ourselves a whole list:
+Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>To our human friends the page looks something like Figure 1-14.</p>
+
+<p><img class="figure" alt="Figure 1-14" src="http://html5hacks.com/images/chapter1-images/microdata1.jpg"></p>
+
+<p>Figure 1-14. Adding microdata to the page, which does not change the view for users</p>
+
+<p>To our machine friends, the code looks something like this:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>It’s that easy to add microdata to your page without sacrificing the interface for your human friends.</p>
+
+<h2>Details, Details!</h2>
+
+<p>Microdata is pretty darn easy to implement, and the W3C spec thinks it should be just as easy to read, which is why the W3C added a JavaScript API to be able to access the data. Remember each of your identified elements was marked with an attribute called itemscope, which means the API considers them items. To get all these items, you simply call the following:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>Now your items can also be segmented by type, so you can identify some of your items as people, and others as cats. Microdata allows you to define your items by adding the itemtype attribute, which will point to a URL, or have an inline definition. In this case, if we defined our cat type by referring to the URL http://example.com/feline, our cat markup would look something like this:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>And if we wanted to get items with only a specific type of cat, we would call:</p>
+
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
+
+<p>Thanks to this simple API, your microdata-enriched markup is both easy to produce and easy to consume.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks]]></title>
     <link href="http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks/"/>
-    <updated>2012-10-15T23:19:00-05:00</updated>
+    <updated>2012-10-15T23:19:00-07:00</updated>
     <id>http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks</id>
     <content type="html"><![CDATA[<p>An exploration of the future of web technologies and browser capabilities would not be complete without covering the tools and techniques available to enable location awareness.</p>
 
@@ -59,7 +115,7 @@ In “Use the Geoloqi Real-Time Streaming Service to Broadcast a Remote User’s
   <entry>
     <title type="html"><![CDATA[Use the GeoLocation API to Display Long/Lat in a jQuery Mobile App]]></title>
     <link href="http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app/"/>
-    <updated>2012-10-15T23:15:00-05:00</updated>
+    <updated>2012-10-15T23:15:00-07:00</updated>
     <id>http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app</id>
     <content type="html"><![CDATA[<p>The Geolocation specification exposes an easy-to-use API. With only a couple of lines of code, you can obtain the user’s current position. What’s more, jQuery Mobile provides a simple framework for building a cross-browser mobile web application.</p>
 
@@ -69,80 +125,12 @@ In “Use the Geoloqi Real-Time Streaming Service to Broadcast a Remote User’s
 
 <p>As always, we’ll start by building a basic page utilizing the HTML5 doctype and including our dependencies:</p>
 
-<figure class='code'><figcaption><span>geo.html </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span><span class='line'><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;head&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;title&gt;</span>jQuery Mobile GeoLocation demo<span class="nt">&lt;/title&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-1.7.1.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;/head&gt;</span>
-</span><span class='line'><span class="nt">&lt;body&gt;</span>
-</span><span class='line'>
-</span><span class='line'>    // jQuery mobile declarative markup here
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;/body&gt;</span>
-</span><span class='line'><span class="nt">&lt;/html&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
 
 <p>As you can see, we have declared a dependency on one stylesheet, and three JavaScripts. We will build the remainder of the application using declarative HTML markup and data- attributes that the jQuery Mobile framework will interpret.<br/>
 Within the <body> tag, we can now place the following:</p>
 
-<figure class='code'><figcaption><span>More geo.html </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;page&quot;</span> <span class="na">data-theme=</span><span class="s">&quot;a&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;h1&gt;</span>Geo Location<span class="nt">&lt;/h1&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /header --&gt;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>  
-</span><span class='line'>        <span class="nt">&lt;ul</span> <span class="na">data-role=</span><span class="s">&quot;listview&quot;</span> <span class="na">data-inset=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;./longlat-embed.html&quot;</span> <span class="na">data-ajax=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>LongLat<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;/ul&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /content --&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /page --&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
 
 <p>At this point you should see what’s shown in Figure 7-1, if you access this page from a smaller screen or shrink your desktop browser window to the size of a mobile browser.</p>
 
@@ -153,71 +141,17 @@ Within the <body> tag, we can now place the following:</p>
 <p>As you might expect, the UI wasn’t created through magic. jQuery Mobile uses JavaScript to consume the data- attributes present in your HTML markup to dynamically generate more HTML and CSS. The end result is what you see in your browser.
 Now we will create a separate page to link to. You many have noticed a link to longlat-embed.html within the main page.</p>
 
-<figure class='code'><figcaption><span>More geo.html </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'> <span class="nt">&lt;ul</span> <span class="na">data-role=</span><span class="s">&quot;listview&quot;</span> <span class="na">data-inset=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;./longlat-embed.html&quot;</span> <span class="na">data-ajax=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>LongLat<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
 
 <p>This will take us to a page that will run our JavaScript that contains our geolocation code. Notice that we designated for this to not be a jQuery Mobile Ajax page. This ensures that upon the click of the link we navigate to the new page. It is important that the linked page is loaded so that its JavaScript will execute.</p>
 
 <p>This page is structured similarly to the other page, with the same dependencies. I intentionally kept the jQuery Mobile code as simple as possible. You can find more information on working with jQuery Mobile in the excellent set of <a href="http://jquerymobile.com/demos/1.1.1/">documentation</a> .</p>
 
-<figure class='code'><figcaption><span>More geo.html </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;page&quot;</span> <span class="na">data-theme=</span><span class="s">&quot;a&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;h1&gt;</span>LongLat<span class="nt">&lt;/h1&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /header --&gt;</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /content --&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /page --&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
 
 <p>In the content, we will create a div element that will contain our longitude and latitude data once it is returned from the remote service. We will also include a back capability to return to the previous page.</p>
 
-<figure class='code'><figcaption><span>More geo.html </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;geo-coords&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>        GeoLocation: <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;Lat&quot;</span><span class="nt">&gt;</span>lat: ...<span class="nt">&lt;/span&gt;</span>°,
-</span><span class='line'>               <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">&quot;Long&quot;</span><span class="nt">&gt;</span>long: ...<span class="nt">&lt;/span&gt;</span>°
-</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;./jqueryMobile-embed.html&quot;</span>
-</span><span class='line'>       <span class="na">data-role=</span><span class="s">&quot;button&quot;</span>
-</span><span class='line'>       <span class="na">data-inline=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>        Back
-</span><span class='line'>    <span class="nt">&lt;/a&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
 
 <p>Now we will address our geolocation JavaScript. If you are familiar with jQuery the initial $ variable will look familiar in the code that follows. If not, you can learn more about jQuery at http://docs.jquery.com/Main_Page.</p>
 
@@ -228,59 +162,7 @@ Then we will construct both a success and error object. Within our success objec
 
 <p>We will then call populateHeader(), which uses jQuery to append the returned values to the span tags that contain the IDs Lat and Long.</p>
 
-<figure class='code'><figcaption><span>geo.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'>    <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="kd">var</span> <span class="nx">Geo</span><span class="o">=</span><span class="p">{};</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>           <span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">.</span><span class="nx">getCurrentPosition</span><span class="p">(</span><span class="nx">success</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="c1">//Get the latitude and the longitude;</span>
-</span><span class='line'>        <span class="kd">function</span> <span class="nx">success</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>            <span class="nx">Geo</span><span class="p">.</span><span class="nx">lat</span> <span class="o">=</span> <span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">latitude</span><span class="p">;</span>
-</span><span class='line'>            <span class="nx">Geo</span><span class="p">.</span><span class="nx">lng</span> <span class="o">=</span> <span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">longitude</span><span class="p">;</span>
-</span><span class='line'>            <span class="nx">populateHeader</span><span class="p">(</span><span class="nx">Geo</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span> <span class="nx">Geo</span><span class="p">.</span><span class="nx">lng</span><span class="p">);</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="kd">function</span> <span class="nx">error</span><span class="p">(){</span>
-</span><span class='line'>            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Geocoder failed&quot;</span><span class="p">);</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="kd">function</span> <span class="nx">populateHeader</span><span class="p">(</span><span class="nx">lat</span><span class="p">,</span> <span class="nx">lng</span><span class="p">){</span>
-</span><span class='line'>            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#Lat&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">lat</span><span class="p">);</span>
-</span><span class='line'>            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#Long&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">lng</span><span class="p">);</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
 
 <p>Now let’s return to our browser and navigate to the new page. When a user accesses a web page that includes a call to navigator.geolocation.getCurrentPosition(), a security notification bar will be presented at the top of the page. Browsers that support the Geolocation API have their own security notification, which asks the user to allow or deny the browser access to the device’s current location (see Figure 7-2).</p>
 
@@ -305,7 +187,7 @@ Then we will construct both a success and error object. Within our success objec
   <entry>
     <title type="html"><![CDATA[Web Workers: Basics of the Web Browser's UI Thread]]></title>
     <link href="http://html5hacks.com/blog/2012/09/22/web-workers-basics-of-the-web-browsers-ui-thread/"/>
-    <updated>2012-09-22T23:44:00-05:00</updated>
+    <updated>2012-09-22T23:44:00-07:00</updated>
     <id>http://html5hacks.com/blog/2012/09/22/web-workers-basics-of-the-web-browsers-ui-thread</id>
     <content type="html"><![CDATA[<h2>Single Threadin&#8217;</h2>
 
@@ -357,95 +239,19 @@ Then we will construct both a success and error object. Within our success objec
 
 <p>Our first web worker hack will be a long running script with heavy computation. It will execute 2 loops that output a two-dimensional array. First, we will use this computation to lock up the browser&#8217;s UI thread, and later we will move the task to a worker.</p>
 
-<figure class='code'><figcaption><span>init.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'>   
-</span><span class='line'>  <span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>      <span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
-</span><span class='line'>      <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
-</span><span class='line'>      <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">r</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>          <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>          <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">c</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>              <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;[&quot;</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nx">j</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span><span class="p">;</span>
-</span><span class='line'>          <span class="p">}</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  
-</span><span class='line'>  <span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="nx">init</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<p>Liquid error: No such file or directory - python -c &#8220;import sys; print sys.executable&#8221;</p>
 
 <h2>Spawning a Worker</h2>
 
 <p>Now let&#8217;s move our heavy computational task to a dedicated web worker, so that the user doesn&#8217;t have to wait for the script to complete execution in order to interact with user interface. First, lets spawn a new worker:</p>
 
-<figure class='code'><figcaption><span>spawn.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">worker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Worker</span><span class="p">(</span><span class="s1">&#39;highComp.js&#39;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nx">worker</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">message</span><span class="p">));</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nx">worker</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){},</span> <span class="kc">false</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
 
 <p>Here, we define an external file that will contain the logic of our heavy computational task. The file, highComp.js will listen for a message that will receive the serialized JSON payload, and then we will set up an additional listener to receive a message back from highComp.js.</p>
 
 <p>Now, we can move this cpu-intensive task to a separate file: highComp.js</p>
 
-<figure class='code'><figcaption><span>highComp.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
-</span><span class='line'><span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">r</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">c</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>     <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;[&quot;</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nx">j</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">};</span>
-</span><span class='line'><span class="nx">postMessage</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<p>Liquid error: undefined method `Py_IsInitialized&#8217; for RubyPython::Python:Module</p>
 
 <p>In highComp.js, our two dimensional array is built and set to variable a. It is then passed back to our main script via the postMessage call.</p>
 

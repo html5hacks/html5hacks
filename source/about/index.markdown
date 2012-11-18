@@ -20,11 +20,11 @@ Jesse holds a B.A. in Art from Rice University and currently resides in Austin, 
 
 ![Alt Jeffrey Burtoft](/images/jeff_burtoft.jpeg "Jeffrey Burtoft")
 
-Jeff Burtoft is a Front-end Developer and has been in the Web Development community for over 15 years. He has a B.A. in Rhetorical Studies from Duquesne University and a certification in Latin American Business from Inter-American University in San Juan Puerto Rico. Jeff's work experience varies with positions like “web master” of a start-up company, to multimedia consultant for the Department of Defense.  Throughout the years, Jeff’s first love has been the web: html, JavaScript, CSS, and now HTML5.
+Jeff Burtoft is an HTML5 Evangelist for Microsoft where he has the pleasure of working with the HTML5 community every day. Jeff is also a blogger at HTML5Hacks.com and has personally released several Hybrid Mobile Applications into some of the popular mobile app markets.
 
-Jeff currently works as a Lead Front-end Developer for USAA, an insurance/banking/investment company in San Antonio, TX.  Jeff is also a blogger at HTML5Hacks.com and has personally released several Hybrid Mobile Applications into some of the popular mobile app markets.
+Jeff has been in the Web Development community for over 10 years. his work experience varies with positions like "web master" of a start-up company, to multimedia consultant for the department of defense. Jeff has also spent over five years working as the Principal Front-end Engineer for a fortune 500 company in San Antonio, TX. Jeff has a B.A. in Rhetorical Studies from Duquesne University and a certification in Latin American Business from Inter-American University in San Juan Puerto Rico. Throughout the years, Jeff's first love has been the web: HTML, JavaScript, CSS, and now HTML5.
 
-He lives in San Antonio with his wife and three children. In his free time, Jeff enjoys writing Mobile Apps and getting beat by a 5 year old on video games.
+Jeff lives in Bellevue, WA with his wife and three children. In his free time, Jeff enjoys writing Mobile Apps and getting beat by a 5 year old on video games. 
 
 ##Guest Hackers
 
