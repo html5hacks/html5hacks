@@ -95,15 +95,15 @@ to the one outlined in Hack #13.
 
 Each of these techniques has limitations.
 
-*When calling the @font-face service you are limited to the fonts within the particular
+* When calling the @font-face service you are limited to the fonts within the particular
 service’s database.
-*Bundling the font within your application does not make use of HTTP caching, so
+* Bundling the font within your application does not make use of HTTP caching, so
 your application will continue to download the font file on every page request.
 Furthermore, you cannot reuse the font within other applications.
-*Hosting the font in an Amazon S3 bucket works great, except with Firefox, which
+* Hosting the font in an Amazon S3 bucket works great, except with Firefox, which
 enforces the same origin policy on all resources. So the response from the remote
 server will be denied.
-*Converting the font to Base64 adds additional weight to the stylesheet, and does
+* Converting the font to Base64 adds additional weight to the stylesheet, and does
 not take advantage of caching.
 
 An exploration into the different types of web fonts is beyond the scope of this hack,
