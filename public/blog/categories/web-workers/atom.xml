@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: web-workers | HTML5 Hacks]]></title>
+  <title><![CDATA[Category: Web Workers | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/web-workers/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2012-10-17T00:09:20-05:00</updated>
+  <updated>2012-11-18T20:01:04-06:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>

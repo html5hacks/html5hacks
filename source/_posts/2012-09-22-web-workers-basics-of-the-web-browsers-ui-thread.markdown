@@ -2,7 +2,7 @@
 layout: post
 title: "Web Workers: Basics of the Web Browser's UI Thread"
 date: 2012-09-22 23:44
-categories: web-workers
+categories: ["Web Workers"]
 comments: true
 external-url: http://jessecravens.com/12112011/hack-82-web-wokers-basics-web-browser039s-ui-thread
 author: Jesse Cravens
