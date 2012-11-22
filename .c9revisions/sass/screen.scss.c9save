@@ -1,0 +1,1 @@
+{"ts":1353541890301,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"@import \"compass\";\n@include global-reset;\n@include reset-html5;\n\n@import \"custom/colors\";\n@import \"custom/fonts\";\n@import \"custom/layout\";\n@import \"base\";\n@import \"partials\";\n@import \"custom/styles\";\n"]],"start1":0,"start2":0,"length1":0,"length2":200}]],"length":200}
