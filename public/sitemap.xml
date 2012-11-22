@@ -4,36 +4,42 @@
         <loc>
             http://html5hacks.com/blog/2012/09/22/web-workers-basics-of-the-web-browsers-ui-thread/
         </loc>
-        <lastmod>2012-10-22T09:52:40-05:00</lastmod>
+        <lastmod>2012-11-21T18:44:44-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app/
         </loc>
-        <lastmod>2012-10-17T00:08:45-05:00</lastmod>
+        <lastmod>2012-11-21T18:44:44-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks/
         </loc>
-        <lastmod>2012-10-22T09:47:54-05:00</lastmod>
+        <lastmod>2012-11-21T18:44:44-05:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://html5hacks.com/blog/2012/11/15/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/
+        </loc>
+        <lastmod>2012-11-21T18:57:37-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/
         </loc>
-        <lastmod>2012-11-18T20:00:31-06:00</lastmod>
-    </url>
-    <url>
-        <loc>http://html5hacks.com/about/</loc>
-        <lastmod>2012-10-15T16:40:55-05:00</lastmod>
-    </url>
-    <url>
-        <loc>http://html5hacks.com/blog/archives/</loc>
-        <lastmod>2012-11-18T20:00:31-06:00</lastmod>
+        <lastmod>2012-11-21T18:44:44-05:00</lastmod>
     </url>
     <url>
         <loc>http://html5hacks.com/</loc>
-        <lastmod>2012-11-18T20:00:31-06:00</lastmod>
+        <lastmod>2012-11-21T18:57:37-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://html5hacks.com/blog/archives/</loc>
+        <lastmod>2012-11-21T18:57:37-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://html5hacks.com/about/</loc>
+        <lastmod>2012-11-21T18:44:44-05:00</lastmod>
     </url>
 </urlset>

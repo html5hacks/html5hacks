@@ -100,7 +100,7 @@ make requests to other domains from within the browser. With CORS &hellip;">
   
 
 
-<time datetime="2012-11-18T19:42:00-06:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time>
+<time datetime="2012-11-18T19:42:00-05:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -197,16 +197,19 @@ to the one outlined in Hack #13.</p>
 
 <p>Each of these techniques has limitations.</p>
 
-<p><em>When calling the @font-face service you are limited to the fonts within the particular
-service’s database.
-</em>Bundling the font within your application does not make use of HTTP caching, so
+<ul>
+<li>When calling the @font-face service you are limited to the fonts within the particular
+service’s database.</li>
+<li>Bundling the font within your application does not make use of HTTP caching, so
 your application will continue to download the font file on every page request.
-Furthermore, you cannot reuse the font within other applications.
-<em>Hosting the font in an Amazon S3 bucket works great, except with Firefox, which
+Furthermore, you cannot reuse the font within other applications.</li>
+<li>Hosting the font in an Amazon S3 bucket works great, except with Firefox, which
 enforces the same origin policy on all resources. So the response from the remote
-server will be denied.
-</em>Converting the font to Base64 adds additional weight to the stylesheet, and does
-not take advantage of caching.</p>
+server will be denied.</li>
+<li>Converting the font to Base64 adds additional weight to the stylesheet, and does
+not take advantage of caching.</li>
+</ul>
+
 
 <p>An exploration into the different types of web fonts is beyond the scope of this hack,
 so I will assume that you have already selected the web font BebasNeue.otf.
@@ -397,7 +400,7 @@ own CORS hacks.</p>
   
 
 
-<time datetime="2012-11-18T19:42:00-06:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time>
+<time datetime="2012-11-18T19:42:00-05:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time>
       
 
 <span class="categories">
@@ -422,7 +425,7 @@ own CORS hacks.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks/" title="Previous Post: Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks">&laquo; Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks</a>
+        <a class="basic-alignment left" href="/blog/2012/11/15/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/" title="Previous Post: Make Your Page Consumable by Robots and Humans Alike with Microdata">&laquo; Make Your Page Consumable by Robots and Humans Alike with Microdata</a>
       
       
     </p>
@@ -450,6 +453,10 @@ own CORS hacks.</p>
     
       <li class="post">
         <a href="/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/">Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/15/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/">Make Your Page Consumable by Robots and Humans Alike with Microdata</a>
       </li>
     
       <li class="post">
