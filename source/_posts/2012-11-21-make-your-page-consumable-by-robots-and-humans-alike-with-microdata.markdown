@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Make Your Page Consumable by Robots and Humans Alike with Microdata"
-date: 2012-11-15 22:34
+date: 2012-11-21 22:34
 comments: true
 categories: ["Markup","Microdata","JSON"]
 ---
