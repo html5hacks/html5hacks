@@ -4,7 +4,7 @@
   <title><![CDATA[Category: HTML5 Connectivity | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/html5-connectivity/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2012-11-18T20:01:04-06:00</updated>
+  <updated>2012-11-22T02:02:59-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font]]></title>
     <link href="http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/"/>
-    <updated>2012-11-18T19:42:00-06:00</updated>
+    <updated>2012-11-18T19:42:00-05:00</updated>
     <id>http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font</id>
     <content type="html"><![CDATA[<p>Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
 make requests to other domains from within the browser. With CORS you have a secure
@@ -106,16 +106,19 @@ to the one outlined in Hack #13.</p>
 
 <p>Each of these techniques has limitations.</p>
 
-<p><em>When calling the @font-face service you are limited to the fonts within the particular
-service’s database.
-</em>Bundling the font within your application does not make use of HTTP caching, so
+<ul>
+<li>When calling the @font-face service you are limited to the fonts within the particular
+service’s database.</li>
+<li>Bundling the font within your application does not make use of HTTP caching, so
 your application will continue to download the font file on every page request.
-Furthermore, you cannot reuse the font within other applications.
-<em>Hosting the font in an Amazon S3 bucket works great, except with Firefox, which
+Furthermore, you cannot reuse the font within other applications.</li>
+<li>Hosting the font in an Amazon S3 bucket works great, except with Firefox, which
 enforces the same origin policy on all resources. So the response from the remote
-server will be denied.
-</em>Converting the font to Base64 adds additional weight to the stylesheet, and does
-not take advantage of caching.</p>
+server will be denied.</li>
+<li>Converting the font to Base64 adds additional weight to the stylesheet, and does
+not take advantage of caching.</li>
+</ul>
+
 
 <p>An exploration into the different types of web fonts is beyond the scope of this hack,
 so I will assume that you have already selected the web font BebasNeue.otf.

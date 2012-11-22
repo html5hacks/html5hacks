@@ -17,3 +17,40 @@ article img {
 ul li {
 	margin-left: 30px;
 }
+
+
+body hgroup h1 {
+position: absolute;
+top: 5px;
+background: url('/images/logo_med.png') 0 0 no-repeat;
+width: 500px;
+height: 200px;
+}
+
+body hgroup h2 {
+color: #f2d16d;
+margin-bottom: 15px;
+}
+
+body > header {
+background: none;
+text-align: right;
+height:  100px
+}
+
+xbody nav {
+padding-right: 0;
+color: #545252;
+border: 3px solid white;
+text-align: right;
+float: right;
+margin-right: 23px;
+background: white url(images/entrycontent_bg.jpg) left bottom repeat-x;
+box-shadow: 0 2px 9px rgba(0, 0, 0, 0.5);
+padding: 7px;
+
+}
+
+body hgroup h1 a {
+visibility: hidden;
+}
