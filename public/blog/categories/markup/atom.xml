@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Markup | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/markup/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2012-11-21T19:06:15-05:00</updated>
+  <updated>2012-11-21T23:05:35-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Make Your Page Consumable by Robots and Humans Alike with Microdata]]></title>
-    <link href="http://html5hacks.com/blog/2012/11/15/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/"/>
-    <updated>2012-11-15T22:34:00-05:00</updated>
-    <id>http://html5hacks.com/blog/2012/11/15/make-your-page-consumable-by-robots-and-humans-alike-with-microdata</id>
+    <link href="http://html5hacks.com/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/"/>
+    <updated>2012-11-21T22:34:00-05:00</updated>
+    <id>http://html5hacks.com/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata</id>
     <content type="html"><![CDATA[<p>HTML5 microdata provides the mechanism for easily allowing machines to consume the data on your pages, while not affecting the experience for the user.</p>
 
 <p>If you’re like me, you believe that in the future, machines will rule over us humans with an iron fist (provided, of course, that the Zombie Apocalypse doesn’t get us first). While there isn’t anything we can do to help the zombie masses understand the Internet, HTML5 does offer a feature that prepares us for that machine dictatorship. It’s called microdata, and it’s supposed to be for machines only—no humans allowed.</p>

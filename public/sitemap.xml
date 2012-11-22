@@ -20,23 +20,23 @@
     </url>
     <url>
         <loc>
-            http://html5hacks.com/blog/2012/11/15/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/
-        </loc>
-        <lastmod>2012-11-21T18:57:37-05:00</lastmod>
-    </url>
-    <url>
-        <loc>
             http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/
         </loc>
         <lastmod>2012-11-21T18:44:44-05:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://html5hacks.com/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/
+        </loc>
+        <lastmod>2012-11-21T22:58:30-05:00</lastmod>
+    </url>
+    <url>
         <loc>http://html5hacks.com/</loc>
-        <lastmod>2012-11-21T18:57:37-05:00</lastmod>
+        <lastmod>2012-11-21T22:58:30-05:00</lastmod>
     </url>
     <url>
         <loc>http://html5hacks.com/blog/archives/</loc>
-        <lastmod>2012-11-21T18:57:37-05:00</lastmod>
+        <lastmod>2012-11-21T22:58:30-05:00</lastmod>
     </url>
     <url>
         <loc>http://html5hacks.com/about/</loc>
