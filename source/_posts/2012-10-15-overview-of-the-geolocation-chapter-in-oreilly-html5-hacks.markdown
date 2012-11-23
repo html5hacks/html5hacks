@@ -4,6 +4,7 @@ title: "Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks"
 date: 2012-10-15 23:19
 comments: true
 categories: ["Geo Location", "Mobile"]
+author: Jesse Cravens
 ---
 
 An exploration of the future of web technologies and browser capabilities would not be complete without covering the tools and techniques available to enable location awareness.

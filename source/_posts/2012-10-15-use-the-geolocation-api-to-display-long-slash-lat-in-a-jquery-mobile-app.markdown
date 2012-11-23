@@ -4,6 +4,7 @@ title: "Use the GeoLocation API to Display Long/Lat in a jQuery Mobile App"
 date: 2012-10-15 23:15
 comments: true
 categories: ["Geo Location","jQuery Mobile","Mobile"]
+author: Jesse Cravens
 ---
 
 The Geolocation specification exposes an easy-to-use API. With only a couple of lines of code, you can obtain the user’s current position. What’s more, jQuery Mobile provides a simple framework for building a cross-browser mobile web application.

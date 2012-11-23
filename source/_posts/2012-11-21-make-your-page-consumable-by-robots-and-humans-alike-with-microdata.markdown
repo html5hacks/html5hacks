@@ -4,6 +4,7 @@ title: "Make Your Page Consumable by Robots and Humans Alike with Microdata"
 date: 2012-11-21 22:34
 comments: true
 categories: ["Markup","Microdata","JSON"]
+author: Jeffrey Burtoft
 ---
 HTML5 microdata provides the mechanism for easily allowing machines to consume the data on your pages, while not affecting the experience for the user.
 

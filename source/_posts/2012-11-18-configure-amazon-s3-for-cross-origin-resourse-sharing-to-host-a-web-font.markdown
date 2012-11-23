@@ -4,6 +4,7 @@ title: "Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font
 date: 2012-11-18 19:42
 comments: true
 categories: ["Web Fonts","HTML5 Connectivity","CORS"]
+author: Jesse Cravens
 ---
 
 Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
