@@ -10,7 +10,7 @@ categories:
 
 There is a minsconception that the meta “viewport” tag is a standard.  We have seen it implemeted in quite a few browsers, mostly mobile, and looks something like this:
 
-{% codeblock %}
+{% codeblock meta.html %}
 <meta name="viewport" content="width=320" />
 {% endcodeblock %}
 
@@ -25,6 +25,7 @@ To follow what's happening to your page with the viewport values, it’s importa
 Both viewports are measured in CSS pixels, obviously. But while the visual viewport dimensions change with zooming (if you zoom in, less CSS pixels fit on the screen), the layout viewport dimensions remain the same. (If they didn’t your page would constantly reflow as percentual widths are recalculated.)
 
 Let’s look at an example:
+
 <img class="figure" alt="Figure 7-1" src="/images/news-images/viewport.png">
 
 Two screenshots, the left used rendered in ie10 on windows phone 8 with no view port setting.  The screenshot on the right has a viewport declaration set to  set the viewport width to 320px
@@ -41,7 +42,7 @@ The specification can be found here:
 
 Although still in draft form, the specification has been implemented in Internet Explorer 10, and has developers quite excited about it.  Lets look at an example.  To set the screen to a CSS pixel width of 640 pixels, we would use the following css:
 
-{% codeblock %}
+{% codeblock viewport.css %}
 @-viewport {
 width: 640px;
 } 
@@ -76,7 +77,7 @@ In addition to the existing values, we have a few new values added as well, spec
 
 Zoom can be used by itself or in conjunction with a width or height value:
 
-{% codeblock %}
+{% codeblock viewport.css %}
 @-viewport {
     width: device-width;
     zoom: .5;
@@ -91,7 +92,7 @@ The second new descriptor is that of “orientation”.  Any keen developer can 
 
 The implementation can be used along with width and zoom as in the following example:
 
-{% codeblock %}
+{% codeblock viewport.css %}
 @viewport {
     width: 980px;
     min-zoom: 0.25;
@@ -105,7 +106,7 @@ The implementation can be used along with width and zoom as in the following exa
 
 The implementation in Internet Explorer 10 is practically identical to the W3C standard (great job IE team), with the addition of a prefix to signify that it’s an experimental implementation (as all prefixed implementations are).  The ie viewport value appears as follows:
 
-{% codeblock %}
+{% codeblock viewport.css %}
 @-ms-viewport {
   width: device-width
 }
@@ -117,7 +118,7 @@ IEs implementation currently only supports the width and height properties. Min 
 ##Legacy Implementations
 When most developers think about viewport, this is what they think of:
 
-{% codeblock %}
+{% codeblock  meta.html %}
 <meta name="viewport" content="width=320" />
 {% endcodeblock %}
 
@@ -134,7 +135,7 @@ If you set the width in the meta tag to a specific size in internet explorer for
 
 The above code will get you exactly what you ask for, which is a viewport zoomed to 480 pixels.  Now, when you set the width to be “device-width” such as the following:
 
-{% codeblock %}
+{% codeblock meta.html %}
 <meta name="viewport" content="width=device-width" />
 {% endcodeblock %}
 
@@ -144,7 +145,7 @@ In this case, you get a page with a width of 320px in portrait mode, and 480px i
 ###Safari
 Safari on iOS works just like ie does for specific pixel settings, but differs when you set width to “device width”.  Let’s again look at our meta tag:
 
-{% codeblock %}
+{% codeblock meta.html %}
 <meta name="viewport" content="width=device-width" />
 {% endcodeblock %}
 
@@ -155,11 +156,4 @@ One of the worst parts about this meta tag is it really only helps on smaller sc
 The viewport standard is supported in ie10 on windows phone 8, but has legacy support for this meta tag as well.  Implementation of this meta tag in ie10 will give you the normalized values for page width (320px) when asking for screen size.
 
 
-
-http://dev.w3.org/csswg/css-device-adapt/
-http://msdn.microsoft.com/en-us/library/ie/hh869615(v=vs.85).aspx
-
-http://www.quirksmode.org/mobile/viewports2.html
-
-http://blogs.windows.com/windows_phone/b/wpdev/archive/2011/03/14/managing-the-windows-phone-browser-viewport.aspx
 
