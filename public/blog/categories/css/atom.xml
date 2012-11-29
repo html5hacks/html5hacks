@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: mobile | HTML5 Hacks]]></title>
-  <link href="http://html5hacks.com/blog/categories/mobile/atom.xml" rel="self"/>
+  <title><![CDATA[Category: css | HTML5 Hacks]]></title>
+  <link href="http://html5hacks.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
   <updated>2012-11-29T11:01:23-05:00</updated>
   <id>http://html5hacks.com/</id>

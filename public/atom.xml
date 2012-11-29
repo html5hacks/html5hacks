@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2012-11-28T21:29:01-05:00</updated>
+  <updated>2012-11-29T11:01:23-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -78,16 +78,18 @@
 
 <p>To maximize responsive design, you can use this @-viewport tag along with media queries, and may appear as something like the following:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>viewport.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@media (max-width: 699px) and (min-width: 520px) {
-</span><span class='line'>  @-viewport {
-</span><span class='line'>    width: 640px;
-</span><span class='line'>  }
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">699px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">520px</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">@-viewport</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nt">width</span><span class="o">:</span> <span class="nt">640px</span><span class="o">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>The above css will normalize any screen smaller than 699px and larger than 520px to be rendered at a viewport of 640px.  This will save a boatload of other css properties to do this same feature.</p>
@@ -172,8 +174,10 @@
 
 <p>If you set the width in the meta tag to a specific size in internet explorer for windows phone 7, you get exactly what you ask for.  A meta tag like this:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;meta name="viewport" content="width=480" /></span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span>meta.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=480&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>The above code will get you exactly what you ask for, which is a viewport zoomed to 480 pixels.  Now, when you set the width to be “device-width” such as the following:</p>
