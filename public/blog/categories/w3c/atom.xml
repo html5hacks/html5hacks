@@ -4,7 +4,7 @@
   <title><![CDATA[Category: w3c | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/w3c/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2012-11-29T11:11:12-05:00</updated>
+  <updated>2012-11-29T11:17:42-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -35,7 +35,7 @@
 
 <p>To follow what's happening to your page with the viewport values, it’s important to understand the basic concept of viewport zooming.  I don’t think the explanation can be done any better than it was by PPK in <a href="http://www.quirksmode.org/mobile/viewports2.html">this post about viewports</a>.  Here’s the summary:</p>
 
-<p>Both viewports are measured in CSS pixels, obviously. But while the visual viewport dimensions change with zooming (if you zoom in, less CSS pixels fit on the screen), the layout viewport dimensions remain the same. (If they didn’t your page would constantly reflow as percentual widths are recalculated.)</p>
+<blockquote><p>Both viewports are measured in CSS pixels, obviously. But while the visual viewport dimensions change with zooming (if you zoom in, less CSS pixels fit on the screen), the layout viewport dimensions remain the same. (If they didn’t your page would constantly reflow as percentual widths are recalculated.)</p></blockquote>
 
 <p>Let’s look at an example:</p>
 
@@ -69,9 +69,12 @@
 
 <p>Inside the viewport tag, you can set any value that is related to the viewport, specifically that means width, height, max-width, max-height, min-width, and min-height.  Widths and heights can be set to any of the these values:</p>
 
-<p>-auto:  let the user agent determine the best
--device width/height: scales to the actual width or height of the device.
--percent/pixel value: specific settings to assume as the screen width or height.</p>
+<ul>
+<li><p>auto:  let the user agent determine the best</p></li>
+<li><p>device width/height: scales to the actual width or height of the device.</p></li>
+<li><p>percent/pixel value: specific settings to assume as the screen width or height.</p></li>
+</ul>
+
 
 <p>To maximize responsive design, you can use this @-viewport tag along with media queries, and may appear as something like the following:</p>
 
@@ -98,9 +101,12 @@
 
 <p>In addition to the existing values, we have a few new values added as well, specifically the zoom value. Zoom allows us to set an initial zoom factor for the window or viewing area.  Zoom, along with min-zoom and max-zoom, can be set using any of the following values:</p>
 
-<p>-auto: let the user agent determine the zoom factor
--numeric: a positive integer that is used to determine the zoom value  A value of 1.0 has no zoom.
--percentage: a positive percentage.  In the case of 100% there is no zoom.</p>
+<ul>
+<li>auto: let the user agent determine the zoom factor</li>
+<li>numeric: a positive integer that is used to determine the zoom value  A value of 1.0 has no zoom.</li>
+<li>percentage: a positive percentage.  In the case of 100% there is no zoom.</li>
+</ul>
+
 
 <p>Zoom can be used by itself or in conjunction with a width or height value:</p>
 
@@ -123,9 +129,12 @@
 
 <p>The second new descriptor is that of “orientation”.  Any keen developer can tell that this is used to request that your device lock in a specific orientation.  Any of the following keywords can be used:</p>
 
-<p>-auto: let the user agent determin
--landscape: lock the device in landscape orientation
--portrait: lock the device in portrait mode</p>
+<ul>
+<li>auto: let the user agent determin</li>
+<li>landscape: lock the device in landscape orientation</li>
+<li>portrait: lock the device in portrait mode</li>
+</ul>
+
 
 <p>The implementation can be used along with width and zoom as in the following example:</p>
 
