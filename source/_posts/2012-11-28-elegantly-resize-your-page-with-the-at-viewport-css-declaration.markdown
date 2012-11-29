@@ -52,9 +52,9 @@ Doesn’t that make sense?  The great thing is that this property works both way
 
 Inside the viewport tag, you can set any value that is related to the viewport, specifically that means width, height, max-width, max-height, min-width, and min-height.  Widths and heights can be set to any of the these values:
 
-    *auto:  let the user agent determine the best
-    *device width/height: scales to the actual width or height of the device.
-    *percent/pixel value: specific settings to assume as the screen width or height.
+-auto:  let the user agent determine the best
+-device width/height: scales to the actual width or height of the device.
+-percent/pixel value: specific settings to assume as the screen width or height.
 
 To maximize responsive design, you can use this @-viewport tag along with media queries, and may appear as something like the following:
 
@@ -71,9 +71,9 @@ The above css will normalize any screen smaller than 699px and larger than 520px
 
 In addition to the existing values, we have a few new values added as well, specifically the zoom value. Zoom allows us to set an initial zoom factor for the window or viewing area.  Zoom, along with min-zoom and max-zoom, can be set using any of the following values:
 
-    *auto: let the user agent determine the zoom factor
-    *numeric: a positive integer that is used to determine the zoom value  A value of 1.0 has no zoom.
-    *percentage: a positive percentage.  In the case of 100% there is no zoom.
+-auto: let the user agent determine the zoom factor
+-numeric: a positive integer that is used to determine the zoom value  A value of 1.0 has no zoom.
+-percentage: a positive percentage.  In the case of 100% there is no zoom.
 
 Zoom can be used by itself or in conjunction with a width or height value:
 
@@ -86,9 +86,9 @@ Zoom can be used by itself or in conjunction with a width or height value:
 
 The second new descriptor is that of “orientation”.  Any keen developer can tell that this is used to request that your device lock in a specific orientation.  Any of the following keywords can be used:
 
-    *auto: let the user agent determin 
-    *landscape: lock the device in landscape orientation
-    *portrait: lock the device in portrait mode
+-auto: let the user agent determin 
+-landscape: lock the device in landscape orientation
+-portrait: lock the device in portrait mode
 
 The implementation can be used along with width and zoom as in the following example:
 
