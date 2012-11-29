@@ -3,7 +3,7 @@ layout: post
 title: "Elegantly Resize Your Page with the @-viewport CSS Declaration"
 date: 2012-11-28 18:37
 comments: true
-categories: 
+categories: ["css","mobile","w3c"]
 ---
 ####Gone are the days of viewport meta tags that with implementations different across browsers.  The new @-viewport is easy to use and puts the control in the right place.
 
@@ -58,7 +58,7 @@ Inside the viewport tag, you can set any value that is related to the viewport, 
 
 To maximize responsive design, you can use this @-viewport tag along with media queries, and may appear as something like the following:
 
-{% codeblock %}
+{% codeblock viewport.css %}
 @media (max-width: 699px) and (min-width: 520px) {
   @-viewport {
     width: 640px;
@@ -129,7 +129,7 @@ Different browses implemented the meta tag differently when using the meta tag t
 ###Internet explorer
 If you set the width in the meta tag to a specific size in internet explorer for windows phone 7, you get exactly what you ask for.  A meta tag like this:
 
-{% codeblock %}
+{% codeblock meta.html %}
 <meta name="viewport" content="width=480" />
 {% endcodeblock %}
 
