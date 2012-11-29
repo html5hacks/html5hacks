@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2012-11-29T11:17:42-05:00</updated>
+  <updated>2012-11-29T11:21:31-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -72,9 +72,9 @@
 <p>Inside the viewport tag, you can set any value that is related to the viewport, specifically that means width, height, max-width, max-height, min-width, and min-height.  Widths and heights can be set to any of the these values:</p>
 
 <ul>
-<li><p>auto:  let the user agent determine the best</p></li>
-<li><p>device width/height: scales to the actual width or height of the device.</p></li>
-<li><p>percent/pixel value: specific settings to assume as the screen width or height.</p></li>
+<li>auto:  let the user agent determine the best</li>
+<li>device width/height: scales to the actual width or height of the device.</li>
+<li>percent/pixel value: specific settings to assume as the screen width or height.</li>
 </ul>
 
 

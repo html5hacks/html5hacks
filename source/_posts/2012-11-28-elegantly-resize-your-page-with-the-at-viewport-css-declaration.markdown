@@ -53,9 +53,7 @@ Doesn’t that make sense?  The great thing is that this property works both way
 Inside the viewport tag, you can set any value that is related to the viewport, specifically that means width, height, max-width, max-height, min-width, and min-height.  Widths and heights can be set to any of the these values:
 
 - auto:  let the user agent determine the best
-
 - device width/height: scales to the actual width or height of the device.
-
 - percent/pixel value: specific settings to assume as the screen width or height.
 
 To maximize responsive design, you can use this @-viewport tag along with media queries, and may appear as something like the following:
