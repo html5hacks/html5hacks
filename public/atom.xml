@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2012-11-28T21:21:37-05:00</updated>
+  <updated>2012-11-28T21:29:01-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -22,8 +22,10 @@
 
 <p>There is a minsconception that the meta “viewport” tag is a standard.  We have seen it implemeted in quite a few browsers, mostly mobile, and looks something like this:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;meta name="viewport" content="width=320" /></span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span>meta.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=320&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Developers use this meta tag to control the zoom factor of the browser when loading the page.  If the above example, the page will assume that the viewport is 320px, no matter how many pixels are really available for rendering.  Usually, it was used to squeeze a 900-1200px screen, into a 320px screen.</p>
@@ -36,8 +38,9 @@
 
 <p>Both viewports are measured in CSS pixels, obviously. But while the visual viewport dimensions change with zooming (if you zoom in, less CSS pixels fit on the screen), the layout viewport dimensions remain the same. (If they didn’t your page would constantly reflow as percentual widths are recalculated.)</p>
 
-<p>Let’s look at an example:
-<img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/news-images/viewport.png"></p>
+<p>Let’s look at an example:</p>
+
+<p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/news-images/viewport.png"></p>
 
 <p>Two screenshots, the left used rendered in ie10 on windows phone 8 with no view port setting.  The screenshot on the right has a viewport declaration set to  set the viewport width to 320px</p>
 
@@ -54,12 +57,14 @@
 
 <p>Although still in draft form, the specification has been implemented in Internet Explorer 10, and has developers quite excited about it.  Lets look at an example.  To set the screen to a CSS pixel width of 640 pixels, we would use the following css:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>viewport.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@-viewport {
-</span><span class='line'>width: 640px;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@-viewport</span> <span class="p">{</span>
+</span><span class='line'><span class="nt">width</span><span class="o">:</span> <span class="nt">640px</span><span class="o">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Doesn’t that make sense?  The great thing is that this property works both ways (scaling up and down).  If you screen width is smaller than 640px, your screen will be zoomed out to fix the entire 640px viewport on the screen.  If you screen is larger than 640px, you screen will be zoomed in to only show 640px viewport.  In either case the css width of the screen is 640px.</p>
@@ -96,14 +101,16 @@
 
 <p>Zoom can be used by itself or in conjunction with a width or height value:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>viewport.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@-viewport {
-</span><span class='line'>    width: device-width;
-</span><span class='line'>    zoom: .5;
-</span><span class='line'>  }</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@-viewport</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nt">width</span><span class="o">:</span> <span class="nt">device-width</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">zoom</span><span class="o">:</span> <span class="nc">.5</span><span class="o">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>The second new descriptor is that of “orientation”.  Any keen developer can tell that this is used to request that your device lock in a specific orientation.  Any of the following keywords can be used:</p>
@@ -115,30 +122,34 @@
 
 <p>The implementation can be used along with width and zoom as in the following example:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>viewport.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@viewport {
-</span><span class='line'>    width: 980px;
-</span><span class='line'>    min-zoom: 0.25;
-</span><span class='line'>    max-zoom: 5;
-</span><span class='line'>    orientation: landscape;
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@viewport</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nt">width</span><span class="o">:</span> <span class="nt">980px</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">min-zoom</span><span class="o">:</span> <span class="nt">0</span><span class="nc">.25</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">max-zoom</span><span class="o">:</span> <span class="nt">5</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">orientation</span><span class="o">:</span> <span class="nt">landscape</span><span class="o">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>Internet Explorer Implementation</h2>
 
 <p>The implementation in Internet Explorer 10 is practically identical to the W3C standard (great job IE team), with the addition of a prefix to signify that it’s an experimental implementation (as all prefixed implementations are).  The ie viewport value appears as follows:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>viewport.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@-ms-viewport {
-</span><span class='line'>  width: device-width
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@-ms-viewport</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">width</span><span class="o">:</span> <span class="nt">device-width</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>IEs implementation currently only supports the width and height properties. Min and max height/width are not implemented and neither are zoom or orientation.  As with all early implementation of standards, if the specification changes, I have no doubt that the internet explorer team with update the implementation to match the standard.</p>
@@ -147,8 +158,10 @@
 
 <p>When most developers think about viewport, this is what they think of:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;meta name="viewport" content="width=320" /></span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span>meta.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=320&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>This tag zooms in the page to a viewport of 320 pixels.  Although originally introduced by apple most mobile browsers went on to support this tag in one form or another.  The tag was often supported differently from browser to browser, and the syntax was never really clear in its documentation.  hence, the need for a standard.</p>
@@ -165,8 +178,10 @@
 
 <p>The above code will get you exactly what you ask for, which is a viewport zoomed to 480 pixels.  Now, when you set the width to be “device-width” such as the following:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;meta name="viewport" content="width=device-width" /></span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span>meta.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>In this case, you get a page with a width of 320px in portrait mode, and 480px in landscape.  This is independent of how many pixels are actually available on the screen.</p>
@@ -175,8 +190,10 @@
 
 <p>Safari on iOS works just like ie does for specific pixel settings, but differs when you set width to “device width”.  Let’s again look at our meta tag:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;meta name="viewport" content="width=device-width" /></span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span>meta.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>In the case of iOS, the width of the screen will be set to the actual width of the screen.  If the screen has 640 pixels, than the viewport will be resized to 640 pixels.</p>
@@ -184,13 +201,6 @@
 <p>One of the worst parts about this meta tag is it really only helps on smaller screen, where content needs to scale down in size.  it’s outdated and was due to be replace with something better.</p>
 
 <p>The viewport standard is supported in ie10 on windows phone 8, but has legacy support for this meta tag as well.  Implementation of this meta tag in ie10 will give you the normalized values for page width (320px) when asking for screen size.</p>
-
-<p>http://dev.w3.org/csswg/css-device-adapt/
-http://msdn.microsoft.com/en-us/library/ie/hh869615(v=vs.85).aspx</p>
-
-<p>http://www.quirksmode.org/mobile/viewports2.html</p>
-
-<p>http://blogs.windows.com/windows_phone/b/wpdev/archive/2011/03/14/managing-the-windows-phone-browser-viewport.aspx</p>
 ]]></content>
   </entry>
   
