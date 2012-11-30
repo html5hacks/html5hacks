@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Microdata | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/microdata/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2012-11-29T11:21:31-05:00</updated>
+  <updated>2012-11-30T12:41:08-06:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Make Your Page Consumable by Robots and Humans Alike with Microdata]]></title>
     <link href="http://html5hacks.com/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/"/>
-    <updated>2012-11-21T22:34:00-05:00</updated>
+    <updated>2012-11-21T22:34:00-06:00</updated>
     <id>http://html5hacks.com/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata</id>
     <content type="html"><![CDATA[<p>HTML5 microdata provides the mechanism for easily allowing machines to consume the data on your pages, while not affecting the experience for the user.</p>
 
