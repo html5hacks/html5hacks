@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: mobile | HTML5 Hacks]]></title>
+  <title><![CDATA[Category: Mobile | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/mobile/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2012-11-30T12:41:08-06:00</updated>
+  <updated>2013-01-04T01:06:18-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -14,131 +14,62 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Elegantly Resize Your Page with the @-viewport CSS Declaration]]></title>
-    <link href="http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration/"/>
-    <updated>2012-11-28T18:37:00-06:00</updated>
-    <id>http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration</id>
-    <content type="html"><![CDATA[<h4>Gone are the days of viewport meta tags that with implementations different across browsers.  The new @-viewport is easy to use and puts the control in the right place.</h4>
+    <title type="html"><![CDATA[Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks]]></title>
+    <link href="http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks/"/>
+    <updated>2012-10-15T23:19:00-04:00</updated>
+    <id>http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks</id>
+    <content type="html"><![CDATA[<p>An exploration of the future of web technologies and browser capabilities would not be complete without covering the tools and techniques available to enable location awareness.</p>
 
-<p>There is a minsconception that the meta “viewport” tag is a standard.  We have seen it implemeted in quite a few browsers, mostly mobile, and looks something like this:</p>
+<p>Location-aware web applications provide content, functionality, and services based on the cooperative detection of the user’s physical location. These applications can then provide the user with real-time filtering of online information relevant to his current location, such as place markers indicating the user’s location within a map, local consumer reviews, local coupons and offers, and even relevant traffic and public transportation notices.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>meta.html </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=320&quot;</span> <span class="nt">/&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>These applications also enable users to provide their location to friends in a social network and vice versa, creating possibilities for meetups and blended online and physical interaction.</p>
 
-<p>Developers use this meta tag to control the zoom factor of the browser when loading the page.  If the above example, the page will assume that the viewport is 320px, no matter how many pixels are really available for rendering.  Usually, it was used to squeeze a 900-1200px screen, into a 320px screen.</p>
+<p>As you might imagine, the opportunities are not just limited to enhancing the life of the consumer. Given real-time location data of potential consumers and their friends, retailers can also create highly targeted, location-specific marketing campaigns for both digital and physical products.</p>
 
-<p>The meta tag worked okay but it has limitations, and since it’s non-standard, it’s been implemented different ways across browsers.</p>
+<h2>How Does It Work?</h2>
 
-<h2>CSS Pixels</h2>
+<p>The web browser employs various technologies to pass parameters via a background HTTP request to a Location Information Server that returns a data set that includes an estimated longitude and latitude.</p>
 
-<p>To follow what's happening to your page with the viewport values, it’s important to understand the basic concept of viewport zooming.  I don’t think the explanation can be done any better than it was by PPK in <a href="http://www.quirksmode.org/mobile/viewports2.html">this post about viewports</a>.  Here’s the summary:</p>
-
-<blockquote><p>Both viewports are measured in CSS pixels, obviously. But while the visual viewport dimensions change with zooming (if you zoom in, less CSS pixels fit on the screen), the layout viewport dimensions remain the same. (If they didn’t your page would constantly reflow as percentual widths are recalculated.)</p></blockquote>
-
-<p>Let’s look at an example:</p>
-
-<p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/news-images/viewport.png"></p>
-
-<p>Two screenshots, the left used rendered in ie10 on windows phone 8 with no view port setting.  The screenshot on the right has a viewport declaration set to  set the viewport width to 320px</p>
-
-<p>In the above figure, we see a smiley face on a page.   Both pages have a smiley face that has a width set to 300 pixels.  The difference is in css pixels.  Mobile browsers zoom out to see more content on a page by default.  In this case the page on the left is zoomed out so that the whole page can be seen.  This makes our smiley face much smaller that it actually is.  Although it may only take up 70 pixels of actual screen pixels, it’s  css pixel width will always be 300.</p>
-
-<p>The figure on the right also is 300 css pixels, but since the viewport is set to 320px, the device pixels of the smiley face is actually 450 or so pixels.</p>
-
-<h2>@-viewport CSS</h2>
-
-<p>Sound difficult?  It’s going to get a lot simpler with a new specification.  The W3C has a specification to address the non-standard viewport meta tag and more, and the control has now rightfully been moved to CSS.</p>
-
-<p>The specification can be found here:
-  <a href="http://dev.w3.org/csswg/css-device-adapt/">http://dev.w3.org/csswg/css-device-adapt/</a></p>
-
-<p>Although still in draft form, the specification has been implemented in Internet Explorer 10, and has developers quite excited about it.  Lets look at an example.  To set the screen to a CSS pixel width of 640 pixels, we would use the following css:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>viewport.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@-viewport</span> <span class="p">{</span>
-</span><span class='line'><span class="nt">width</span><span class="o">:</span> <span class="nt">640px</span><span class="o">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Doesn’t that make sense?  The great thing is that this property works both ways (scaling up and down).  If you screen width is smaller than 640px, your screen will be zoomed out to fix the entire 640px viewport on the screen.  If you screen is larger than 640px, you screen will be zoomed in to only show 640px viewport.  In either case the css width of the screen is 640px.</p>
-
-<p>Inside the viewport tag, you can set any value that is related to the viewport, specifically that means width, height, max-width, max-height, min-width, and min-height.  Widths and heights can be set to any of the these values:</p>
+<p>The technologies used to gather location data depend on the device and on the operating system running on the device. The most common sources are:</p>
 
 <ul>
-<li>auto:  let the user agent determine the best</li>
-<li>device width/height: scales to the actual width or height of the device.</li>
-<li>percent/pixel value: specific settings to assume as the screen width or height.</li>
+<li>Public IP address</li>
+<li>WiFi access points</li>
+<li>Bluetooth MAC IDs</li>
+<li>GPS</li>
+<li>GSM/CDMA cell tower IDs</li>
 </ul>
 
 
-<p>To maximize responsive design, you can use this @-viewport tag along with media queries, and may appear as something like the following:</p>
+<p>Geolocation libraries for the Web are not new. In fact, today’s W3C Geolocation specification is largely reflective of the original Google Gears API introduced by Google in 2008. The API has been standardized and is one of the most widely adopted of the HTML5 specifications covered in this book (O'Reilly HTML5 Hacks).</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>viewport.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">699px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">520px</span><span class="o">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">@-viewport</span> <span class="p">{</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;&lt;</span><span class="nt">code</span><span class="o">&gt;</span><span class="nt">width</span><span class="o">:</span> <span class="nt">640px</span><span class="o">;</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="nt">code</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>Fortunately, the API is also easy to use—a benefit we will explore in “Use the Geolocation APIs to Display Longitude and Latitude in a Mobile Web Application” and “Update a User’s Current Location in a Google Map”.</p>
 
-<p>The above css will normalize any screen smaller than 699px and larger than 520px to be rendered at a viewport of 640px.  This will save a boatload of other css properties to do this same feature.</p>
+<p>In addition, a number of third-party services are available for creating really interesting hacks, and they explore concepts such as reverse geocoding and geofencing. In “Use Google’s Geocoding API to Reverse-Geocode a User’s Location” and “Use the Geoloqi Service to Build a Geofence” we will pass our location data to a service that will provide an enhanced API for working with location data.
+In “Use the Geoloqi Real-Time Streaming Service to Broadcast a Remote User’s Movement” we will blend the power of the WebSocket API with location awareness to make our application update in real time.</p>
 
-<p>In addition to the existing values, we have a few new values added as well, specifically the zoom value. Zoom allows us to set an initial zoom factor for the window or viewing area.  Zoom, along with min-zoom and max-zoom, can be set using any of the following values:</p>
+<p>For browsers that don’t provide this functionality natively, Google’s IP geocoding service can serve as a polyfill, as we will explore in “Polyfill Geolocation APIs with Webshims”.</p>
 
-<ul>
-<li>auto: let the user agent determine the zoom factor</li>
-<li>numeric: a positive integer that is used to determine the zoom value  A value of 1.0 has no zoom.</li>
-<li>percentage: a positive percentage.  In the case of 100% there is no zoom.</li>
-</ul>
+<p>The main drawback to this functionality is related to privacy and security, and for good reason. After all, as responsible application developers we should be doing what we can to protect the sensitive data of our users. In “Use the Geolocation APIs to Display Longitude and Latitude in a Mobile Web Application” we will take an in-depth look at how the browser employs cooperative detection, allowing the user to opt-in to only sharing location data with trusted web applications.</p>
 
+<p>Want to read more detail? ... <a href="http://shop.oreilly.com/product/0636920026273.do?sortby=bestSellers">buy the book</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Use the GeoLocation API to Display Long/Lat in a jQuery Mobile App]]></title>
+    <link href="http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app/"/>
+    <updated>2012-10-15T23:15:00-04:00</updated>
+    <id>http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app</id>
+    <content type="html"><![CDATA[<p>The Geolocation specification exposes an easy-to-use API. With only a couple of lines of code, you can obtain the user’s current position. What’s more, jQuery Mobile provides a simple framework for building a cross-browser mobile web application.</p>
 
-<p>Zoom can be used by itself or in conjunction with a width or height value:</p>
+<p>In this hack we will utilize the jQuery Mobile framework to provide a relatively simple means of authoring a cross-browser mobile application. Since this hack is focused on displaying our current longitude and latitude and exercising the API across the mobile Web, we will only need a simple UI.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>viewport.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@-viewport</span> <span class="p">{</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;&lt;</span><span class="nt">code</span><span class="o">&gt;</span><span class="nt">width</span><span class="o">:</span> <span class="nt">device-width</span><span class="o">;</span>
-</span><span class='line'><span class="nt">zoom</span><span class="o">:</span> <span class="nc">.5</span><span class="o">;</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="nt">code</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span>  <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<h3>A Simple jQuery Mobile App</h3>
 
-<p>The second new descriptor is that of “orientation”.  Any keen developer can tell that this is used to request that your device lock in a specific orientation.  Any of the following keywords can be used:</p>
+<p>As always, we’ll start by building a basic page utilizing the HTML5 doctype and including our dependencies:</p>
 
-<ul>
-<li>auto: let the user agent determin</li>
-<li>landscape: lock the device in landscape orientation</li>
-<li>portrait: lock the device in portrait mode</li>
-</ul>
-
-
-<p>The implementation can be used along with width and zoom as in the following example:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>viewport.css </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>geo.html </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -148,77 +79,290 @@
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@viewport</span> <span class="p">{</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="ni">&amp;lt;</span>!DOCTYPE html&gt;
+</span><span class='line'><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">pre</span><span class="o">&gt;&lt;</span><span class="nt">code</span><span class="o">&gt;</span><span class="nt">width</span><span class="o">:</span> <span class="nt">980px</span><span class="o">;</span>
-</span><span class='line'><span class="nt">min-zoom</span><span class="o">:</span> <span class="nt">0</span><span class="nc">.25</span><span class="o">;</span>
-</span><span class='line'><span class="nt">max-zoom</span><span class="o">:</span> <span class="nt">5</span><span class="o">;</span>
-</span><span class='line'><span class="nt">orientation</span><span class="o">:</span> <span class="nt">landscape</span><span class="o">;</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="nt">code</span><span class="o">&gt;&lt;/</span><span class="nt">pre</span><span class="o">&gt;</span>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>head<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>jQuery Mobile GeoLocation demo<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;<span class="ni">&amp;gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>link rel=&quot;stylesheet&quot; href=&quot;http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>script src=&quot;http://code.jquery.com/jquery-1.7.1.min.js&quot;<span class="ni">&amp;gt;&amp;lt;</span>/script<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>script src=&quot;http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js&quot;<span class="ni">&amp;gt;&amp;lt;</span>/script<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>/head<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;body&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>// jQuery mobile declarative markup here
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h2>Internet Explorer Implementation</h2>
+<p>As you can see, we have declared a dependency on one stylesheet, and three JavaScripts. We will build the remainder of the application using declarative HTML markup and data- attributes that the jQuery Mobile framework will interpret.<br/>
+Within the <body> tag, we can now place the following:</p>
 
-<p>The implementation in Internet Explorer 10 is practically identical to the W3C standard (great job IE team), with the addition of a prefix to signify that it’s an experimental implementation (as all prefixed implementations are).  The ie viewport value appears as follows:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>viewport.css </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More geo.html </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@-ms-viewport</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nt">width</span><span class="o">:</span> <span class="nt">device-width</span>
-</span><span class='line'><span class="p">}</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;page&quot;</span> <span class="na">data-theme=</span><span class="s">&quot;a&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;h1&gt;</span>Geo Location<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /header --&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;ul</span> <span class="na">data-role=</span><span class="s">&quot;listview&quot;</span> <span class="na">data-inset=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;./longlat-embed.html&quot;</span> <span class="na">data-ajax=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>LongLat<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /content --&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c">&lt;!-- /page --&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>IEs implementation currently only supports the width and height properties. Min and max height/width are not implemented and neither are zoom or orientation.  As with all early implementation of standards, if the specification changes, I have no doubt that the internet explorer team with update the implementation to match the standard.</p>
+<p>At this point you should see what’s shown in Figure 7-1, if you access this page from a smaller screen or shrink your desktop browser window to the size of a mobile browser.</p>
 
-<h2>Legacy Implementations</h2>
+<p>Figure 7-1. jQuery Mobile simple button</p>
 
-<p>When most developers think about viewport, this is what they think of:</p>
+<p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/chapter7-images/7-1.png"></p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>meta.html </span></figcaption>
+<p>As you might expect, the UI wasn’t created through magic. jQuery Mobile uses JavaScript to consume the data- attributes present in your HTML markup to dynamically generate more HTML and CSS. The end result is what you see in your browser.
+Now we will create a separate page to link to. You many have noticed a link to longlat-embed.html within the main page.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More geo.html </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=320&quot;</span> <span class="nt">/&gt;</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>ul data-role=&quot;listview&quot; data-inset=&quot;true&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>li<span class="ni">&amp;gt;&amp;lt;</span>a href=&quot;./longlat-embed.html&quot; data-ajax=&quot;false&quot;<span class="ni">&amp;gt;</span>LongLat<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;&amp;lt;</span>/li<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>/ul<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>This tag zooms in the page to a viewport of 320 pixels.  Although originally introduced by apple most mobile browsers went on to support this tag in one form or another.  The tag was often supported differently from browser to browser, and the syntax was never really clear in its documentation.  hence, the need for a standard.</p>
+<p>This will take us to a page that will run our JavaScript that contains our geolocation code. Notice that we designated for this to not be a jQuery Mobile Ajax page. This ensures that upon the click of the link we navigate to the new page. It is important that the linked page is loaded so that its JavaScript will execute.</p>
 
-<p>Different browses implemented the meta tag differently when using the meta tag to determine the width of the page (specifically by setting width to device-width)  Let’s look at the Windows Phone 7 Internet Explorer and iOS safari implementations.</p>
+<p>This page is structured similarly to the other page, with the same dependencies. I intentionally kept the jQuery Mobile code as simple as possible. You can find more information on working with jQuery Mobile in the excellent set of <a href="http://jquerymobile.com/demos/1.1.1/">documentation</a> .</p>
 
-<h3>Internet explorer</h3>
-
-<p>If you set the width in the meta tag to a specific size in internet explorer for windows phone 7, you get exactly what you ask for.  A meta tag like this:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>meta.html </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More geo.html </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=480&quot;</span> <span class="nt">/&gt;</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;page&quot;</span> <span class="na">data-theme=</span><span class="s">&quot;a&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;h1&gt;</span>LongLat<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /header --&gt;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /content --&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c">&lt;!-- /page --&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>The above code will get you exactly what you ask for, which is a viewport zoomed to 480 pixels.  Now, when you set the width to be “device-width” such as the following:</p>
+<p>In the content, we will create a div element that will contain our longitude and latitude data once it is returned from the remote service. We will also include a back capability to return to the previous page.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>meta.html </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More geo.html </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width&quot;</span> <span class="nt">/&gt;</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>div class=&quot;geo-coords&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>    GeoLocation: <span class="ni">&amp;lt;</span>span id=&quot;Lat&quot;<span class="ni">&amp;gt;</span>lat: ...<span class="ni">&amp;lt;</span>/span<span class="ni">&amp;gt;</span>°,
+</span><span class='line'>           <span class="ni">&amp;lt;</span>span id=&quot;Long&quot;<span class="ni">&amp;gt;</span>long: ...<span class="ni">&amp;lt;</span>/span<span class="ni">&amp;gt;</span>°
+</span><span class='line'><span class="ni">&amp;lt;</span>/div<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>a href=&quot;./jqueryMobile-embed.html&quot;
+</span><span class='line'>   data-role=&quot;button&quot;
+</span><span class='line'>   data-inline=&quot;true&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>    Back
+</span><span class='line'><span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>In this case, you get a page with a width of 320px in portrait mode, and 480px in landscape.  This is independent of how many pixels are actually available on the screen.</p>
+<p>Now we will address our geolocation JavaScript. If you are familiar with jQuery the initial $ variable will look familiar in the code that follows. If not, you can learn more about jQuery at http://docs.jquery.com/Main_Page.</p>
 
-<h3>Safari</h3>
+<p>Simply put, the jQuery function wrapper ensures that our page is ready before we execute the following script. Then we will set up a global namespace object that we will use to store our data. This type of organization will be important as our script gets more complex moving forward.</p>
 
-<p>Safari on iOS works just like ie does for specific pixel settings, but differs when you set width to “device width”.  Let’s again look at our meta tag:</p>
+<p>Next, we will check to make sure the current browser supports geolocation by checking the navigator object for the presence of the geolocation property. If it is available, we will call the getCurrentPosition method and pass a success and error object.
+Then we will construct both a success and error object. Within our success object we can accept a position as a parameter and query the object for its nested coords object which contains both latitude and longitude properties.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>meta.html </span></figcaption>
+<p>We will then call populateHeader(), which uses jQuery to append the returned values to the span tags that contain the IDs Lat and Long.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>geo.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width&quot;</span> <span class="nt">/&gt;</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">Geo</span><span class="o">=</span><span class="p">{};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>       <span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">.</span><span class="nx">getCurrentPosition</span><span class="p">(</span><span class="nx">success</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//Get the latitude and the longitude;</span>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">success</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">Geo</span><span class="p">.</span><span class="nx">lat</span> <span class="o">=</span> <span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">latitude</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">Geo</span><span class="p">.</span><span class="nx">lng</span> <span class="o">=</span> <span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">longitude</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">populateHeader</span><span class="p">(</span><span class="nx">Geo</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span> <span class="nx">Geo</span><span class="p">.</span><span class="nx">lng</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">error</span><span class="p">(){</span>
+</span><span class='line'>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Geocoder failed&quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">populateHeader</span><span class="p">(</span><span class="nx">lat</span><span class="p">,</span> <span class="nx">lng</span><span class="p">){</span>
+</span><span class='line'>        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#Lat&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">lat</span><span class="p">);</span>
+</span><span class='line'>        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#Long&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">lng</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>In the case of iOS, the width of the screen will be set to the actual width of the screen.  If the screen has 640 pixels, than the viewport will be resized to 640 pixels.</p>
+<p>Now let’s return to our browser and navigate to the new page. When a user accesses a web page that includes a call to navigator.geolocation.getCurrentPosition(), a security notification bar will be presented at the top of the page. Browsers that support the Geolocation API have their own security notification, which asks the user to allow or deny the browser access to the device’s current location (see Figure 7-2).</p>
 
-<p>One of the worst parts about this meta tag is it really only helps on smaller screen, where content needs to scale down in size.  it’s outdated and was due to be replace with something better.</p>
+<p>Figure 7-2. Google Chrome geolocation security notification</p>
 
-<p>The viewport standard is supported in ie10 on windows phone 8, but has legacy support for this meta tag as well.  Implementation of this meta tag in ie10 will give you the normalized values for page width (320px) when asking for screen size.</p>
+<p><img class="figure" alt="Figure 7-2" src="http://html5hacks.com/images/chapter7-images/7-2.png"></p>
+
+<p>If the user allows the web application to track her physical location, the script will continue to execute and make a request to the Location Information Server. The remote server returns a data set that includes longitude and latitude. Once we have the information and the success() callback has been called, we update the page (see Figure 7-3).</p>
+
+<p>Figure 7-3. Latitude and longitude</p>
+
+<p><img class="figure" alt="Figure 7-3" src="http://html5hacks.com/images/chapter7-images/7-3.png"></p>
+
+<h3>Security and Privacy Concerns</h3>
+
+<p>The ability for web application developers to collect location data about end users raises quite a bit of concern in regard to security and privacy. The W3C specification clearly indicates that client applications should notify users and provide an interface to authorize the use of location data, allowing them to determine which web applications they trust:</p>
+
+<p>User agents must not send location information to Web sites without the express permission of the user. User agents must acquire permission through a user interface, unless they have prearranged trust relationships with users, as described below. The user interface must include the host component of the document's URI [URI]. Those permissions that are acquired through the user interface and that are preserved beyond the current browsing session (i.e. beyond the time when the browsing context [BROWSINGCONTEXT] is navigated to another URL) must be revocable and user agents must respect revoked permissions.</p>
 ]]></content>
   </entry>
   
