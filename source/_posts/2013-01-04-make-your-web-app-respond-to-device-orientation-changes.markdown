@@ -12,19 +12,18 @@ Mobile devices have brought a new paradigm to web development. Unlike desktops a
 
 Using media queries, you can natively identify which orientation the device is being held in, and utilize different CSS for each orientation. Let’s go back to our example page and see what it would look like in landscape mode (see Figure 2-16) and portrait mode (see Figure 2-17).
 
-Figure 2-16.
 
 <img class="figure" alt="Figure 2-16" src="/images/chapter2-images/2-15.png">
 
-Our sample page in landscape mode on an iPad, with three columns of content
+Figure 2-16:Our sample page in landscape mode on an iPad, with three columns of content
 
 Here is the markup that makes each view work:
 
 {% codeblock orientation.html %}
 <div class="row">
-<div class="span4">...</div>
-<div class="span4">...</div>
-<div class="span4">...</div>
+  <div class="span4">...</div>
+  <div class="span4">...</div>
+  <div class="span4">...</div>
 </div>
 {% endcodeblock %}
 
@@ -33,33 +32,31 @@ Here is the CSS for the three-column view:
 
 {% codeblock orientation.css %}
 .row {
-width: 100%;
+   width: 100%;
 }
 {% endcodeblock %}
 
 
-Figure 2-17.
-
 <img class="figure" alt="Figure 2-17" src="/images/chapter2-images/2-15b.png">
 
-Our sample page in portrait mode on an iPad, with one column of linear content:
+Figure 2-17: Our sample page in portrait mode on an iPad, with one column of linear content:
 
 {% codeblock orientation.css %}
 .span4 {
-width: 300px;
-float: left;
-margin-left: 30px;
+   width: 300px;
+   float: left;
+   margin-left: 30px;
 }
 {% endcodeblock %}
 and the CSS for the single-column view:
 {% codeblock orientation.css %}
 .row {
-width: 100%;
+   width: 100%;
 }
 .span4 {
-width: auto;
-float: none;
-margin: 0;
+   width: auto;
+   float: none;
+   margin: 0;
 }
 {% endcodeblock %}
 
@@ -69,22 +66,22 @@ Now we’ll wrap each CSS option in media queries so that they only apply in the
 {% codeblock orientation.css %}
 @media screen and (orientation:landscape) {
 .row {
-width: 100%;
+   width: 100%;
 }
 .span4 {
-width: 300px;
-float: left;
-margin-left: 30px;
+   width: 300px;
+   float: left;
+   margin-left: 30px;
 }
 }
 @media screen and (orientation:portrait) {
 .row {
-width: 100%;
+   width: 100%;
 }
 .span4 {
-width: auto;
-float: none;
-margin: 0;
+   width: auto;
+   float: none;
+   margin: 0;
 }
 }
 {% endcodeblock %}

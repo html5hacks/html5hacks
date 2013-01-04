@@ -115,11 +115,9 @@
 
 <p>Using media queries, you can natively identify which orientation the device is being held in, and utilize different CSS for each orientation. Let’s go back to our example page and see what it would look like in landscape mode (see Figure 2-16) and portrait mode (see Figure 2-17).</p>
 
-<p>Figure 2-16.</p>
-
 <p><img class="figure" alt="Figure 2-16" src="/images/chapter2-images/2-15.png"></p>
 
-<p>Our sample page in landscape mode on an iPad, with three columns of content</p>
+<p>Figure 2-16:Our sample page in landscape mode on an iPad, with three columns of content</p>
 
 <p>Here is the markup that makes each view work:</p>
 
@@ -130,9 +128,9 @@
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;span4&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-</span><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;span4&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
-</span><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;span4&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;span4&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;span4&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;span4&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/div&gt;</span>
 </span><span class='line'><span class="nt">&lt;/div&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -144,16 +142,14 @@
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.row</span> <span class="p">{</span>
-</span><span class='line'><span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Figure 2-17.</p>
-
 <p><img class="figure" alt="Figure 2-17" src="/images/chapter2-images/2-15b.png"></p>
 
-<p>Our sample page in portrait mode on an iPad, with one column of linear content:</p>
+<p>Figure 2-17: Our sample page in portrait mode on an iPad, with one column of linear content:</p>
 
 <figure class='code'><figcaption><span>orientation.css </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -162,9 +158,9 @@
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.span4</span> <span class="p">{</span>
-</span><span class='line'><span class="k">width</span><span class="o">:</span> <span class="m">300px</span><span class="p">;</span>
-</span><span class='line'><span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
-</span><span class='line'><span class="k">margin-left</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">width</span><span class="o">:</span> <span class="m">300px</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">margin-left</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -181,12 +177,12 @@
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 </pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.row</span> <span class="p">{</span>
-</span><span class='line'><span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'><span class="nc">.span4</span> <span class="p">{</span>
-</span><span class='line'><span class="k">width</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
-</span><span class='line'><span class="k">float</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-</span><span class='line'><span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">width</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">float</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -216,22 +212,22 @@
 <span class='line-number'>20</span>
 </pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">orientation</span><span class="nd">:landscape</span><span class="o">)</span> <span class="p">{</span>
 </span><span class='line'><span class="nc">.row</span> <span class="p">{</span>
-</span><span class='line'><span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'><span class="nc">.span4</span> <span class="p">{</span>
-</span><span class='line'><span class="k">width</span><span class="o">:</span> <span class="m">300px</span><span class="p">;</span>
-</span><span class='line'><span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
-</span><span class='line'><span class="k">margin-left</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">width</span><span class="o">:</span> <span class="m">300px</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">margin-left</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'><span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">orientation</span><span class="nd">:portrait</span><span class="o">)</span> <span class="p">{</span>
 </span><span class='line'><span class="nc">.row</span> <span class="p">{</span>
-</span><span class='line'><span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'><span class="nc">.span4</span> <span class="p">{</span>
-</span><span class='line'><span class="k">width</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
-</span><span class='line'><span class="k">float</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-</span><span class='line'><span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">width</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">float</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+</span><span class='line'>   <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
