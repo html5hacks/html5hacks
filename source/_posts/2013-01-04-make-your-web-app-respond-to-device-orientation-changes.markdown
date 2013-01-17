@@ -3,7 +3,7 @@ layout: post
 title: "Make Your Web App Respond to Device Orientation Changes"
 date: 2013-01-04 00:31
 comments: true
-categories: ["css","mobile","media queries"]
+categories: ["CSS","Mobile","Media Queries"]
 ---
 
 ####Your native apps are smart enough to know how you’re holding your device. Now your web apps can be, too. Use orientation-based media queries to make your site responsive. 

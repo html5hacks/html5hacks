@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Build a Milestone Calendar with IndexedDB and FullCalendar.js - HTML5 Hacks</title>
+  <meta name="author" content="Jesse Cravens and Jeff Burtoft">
+
+  
+  <meta name="description" content="IndexedDB is a persistent object data store in the browser. Although it is not a full SQL implementation and it is more complex than the unstructured &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://html5hacks.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="HTML5 Hacks" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic
+" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-28132474-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">HTML5 Hacks</a></h1>
+  
+    <h2>Hacking Next Generation Web Technologies</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:html5hacks.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About the Hackers</a></li>
+  <li><a href="/join">Join Us</a></li>  
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Build a Milestone Calendar With IndexedDB and FullCalendar.js</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-17T08:47:00-06:00" pubdate data-updated="true">Jan 17<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h4>IndexedDB is a persistent object data store in the browser. Although it is not a full SQL implementation and it is more complex than the unstructured key–value pairs in localStorage, you can use it to define an API that provides the ability to read and write key–value objects as structured JavaScript objects, and an indexing system that facilitates filtering and lookup.</h4>
+
+<p>For this hack we will use IndexedDB to store milestone objects for a calendar application. The UI will provide a simple means to create a new milestone and provide a title, start date, and end date. The calendar will then update to show the contents of the local data store. Figure 6-8 shows the result.</p>
+
+<p>Figure 6-8. FullCalendar.js and IndexedDB</p>
+
+<p><img class="figure" alt="Figure 6-8" src="/images/chapter6-images/6-8.png"></p>
+
+<p>We need to start by including the markup for the two pieces of the UI: the calendar and the form.
+We’ll begin with the form. You may notice that the input fields for the dates include data-date-format attributes. We will use these later for the JavaScript date pickers.</p>
+
+<figure class='code'><figcaption><span>milestone form </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;form>
+</span><span class='line'>     &lt;fieldset>
+</span><span class='line'>
+</span><span class='line'>       &lt;div class="control-group">
+</span><span class='line'>         &lt;label class="control-label">Add a Milestone&lt;/label>
+</span><span class='line'>         &lt;div class="controls">
+</span><span class='line'>           &lt;h2>New Milestone&lt;/h2>
+</span><span class='line'>           &lt;input type="text" name="title" value="">
+</span><span class='line'>           &lt;input type="text" class="span2" name="start"
+</span><span class='line'>             value="07/16/12" data-date-format="mm/dd/yy" id="dp1" >
+</span><span class='line'>           &lt;input type="text" class="span2" name="end"
+</span><span class='line'>             value="07/17/12"  data-date-format="mm/dd/yy" id="dp2" >
+</span><span class='line'>         &lt;/div>
+</span><span class='line'>       &lt;/div>
+</span><span class='line'>
+</span><span class='line'>       &lt;div class="form-actions">
+</span><span class='line'>          &lt;button type="submit" class="btn btn-primary">Save&lt;/button>
+</span><span class='line'>          &lt;button class="btn">Cancel&lt;/button>
+</span><span class='line'>       &lt;/div>
+</span><span class='line'>
+</span><span class='line'>      &lt;/fieldset>
+</span><span class='line'> &lt;/form></span></code></pre></td></tr></table></div></figure>
+
+
+<p>The calendar is provided by <a href="http://arshaw.com/fullcalendar/">FullCalendar.js</a>, a fantastic jQuery plug-in for generating robust calendars from event sources. The library will generate a calendar from a configuration object and a simple div.</p>
+
+<figure class='code'><figcaption><span>simple div </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id='calendar'>&lt;/div></span></code></pre></td></tr></table></div></figure>
+
+
+<p>And we can’t forget to include a few dependencies:</p>
+
+<figure class='code'><figcaption><span>CSS and JavaScript dependencies </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;link href="../assets/css/datepicker.css" rel="stylesheet">
+</span><span class='line'>&lt;link href="../assets/css/fullcalendar.css" rel="stylesheet">
+</span><span class='line'>
+</span><span class='line'>&lt;script src="http://code.jquery.com/jquery-1.7.1.min.js">&lt;/script>
+</span><span class='line'>&lt;script src="../assets/js/bootstrap-datepicker.js">&lt;/script>
+</span><span class='line'>&lt;script src="../assets/js/fullcalendar.min.js">&lt;/script></span></code></pre></td></tr></table></div></figure>
+
+
+<p>To improve the user experience, we will also include date pickers for choosing the dates within the form fields for start and end dates (see Figure 6-9).</p>
+
+<p>Figure 6-9. Date pickers</p>
+
+<p><img class="figure" alt="Figure 6-9" src="/images/chapter6-images/6-9.png"></p>
+
+<p>To instantiate the date pickers we will include the following toward the beginning of our script:</p>
+
+<figure class='code'><figcaption><span>instantiate the date pickers </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$(function(){
+</span><span class='line'>    $('#dp1').datepicker();
+</span><span class='line'>    $('#dp2').datepicker();
+</span><span class='line'>  });</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>The Milestone IndexedDB</h3>
+
+<p>Now we will set up a global namespace to hold our code, and set up a public milestones array (within the namespace) to hold our milestones temporarily while we pass them between our database and the FullCalendar API. This should make more sense as you continue to read. While we are at it we will need to normalize our indexedDB variable across all of the vendor-specific properties.</p>
+
+<figure class='code'><figcaption><span>namespace and normalize </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var html5hacks = {};
+</span><span class='line'>
+</span><span class='line'>html5hacks.msArray = [];
+</span><span class='line'>
+</span><span class='line'>var indexedDB = window.indexedDB || window.webkitIndexedDB ||
+</span><span class='line'>                window.mozIndexedDB;
+</span><span class='line'>
+</span><span class='line'>if ('webkitIndexedDB' in window) {
+</span><span class='line'>  window.IDBTransaction = window.webkitIDBTransaction;
+</span><span class='line'>  window.IDBKeyRange = window.webkitIDBKeyRange;
+</span><span class='line'>}
+</span><span class='line'>Now we can begin to set up our database:
+</span><span class='line'>html5hacks.indexedDB = {};
+</span><span class='line'>html5hacks.indexedDB.db = null;
+</span><span class='line'>
+</span><span class='line'>function init() {
+</span><span class='line'>  html5hacks.indexedDB.open();
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>init();</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will obviously fail for now, but as you can see the initialization begins by calling the open() method on an html5hacks.indexedDB. So let’s take a closer look at open():</p>
+
+<figure class='code'><figcaption><span>open() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.open = function() {
+</span><span class='line'>
+</span><span class='line'>  var request = indexedDB.open("milestones");
+</span><span class='line'>
+</span><span class='line'>  request.onsuccess = function(e) {
+</span><span class='line'>    var v = "1";
+</span><span class='line'>    html5hacks.indexedDB.db = e.target.result;
+</span><span class='line'>
+</span><span class='line'>    var db = html5hacks.indexedDB.db;
+</span><span class='line'>
+</span><span class='line'>    if (v!= db.version) {
+</span><span class='line'>      var setVrequest = db.setVersion(v);
+</span><span class='line'>      setVrequest.onerror = html5hacks.indexedDB.onerror;
+</span><span class='line'>
+</span><span class='line'>      setVrequest.onsuccess = function(e) {
+</span><span class='line'>        if(db.objectStoreNames.contains("milestone")) {
+</span><span class='line'>          db.deleteObjectStore("milestone");
+</span><span class='line'>        }
+</span><span class='line'>
+</span><span class='line'>        var store = db.createObjectStore("milestone",
+</span><span class='line'>          {keyPath: "timeStamp"});
+</span><span class='line'>
+</span><span class='line'>        html5hacks.indexedDB.init();
+</span><span class='line'>      };
+</span><span class='line'>    }
+</span><span class='line'>    else {
+</span><span class='line'>      html5hacks.indexedDB.init();
+</span><span class='line'>    }
+</span><span class='line'>  };
+</span><span class='line'>  request.onerror = html5hacks.indexedDB.onerror;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>First, we need to open the database and pass a name. If the database successfully opens and a connection is made, the onsuccess() callback will be fired.</p>
+
+<p>Within the onsuccess, we then check for a version and call setVersion() if one does not exist. Then we will call createObjectStore() and pass a unique timestamp within the keypath property.</p>
+
+<p>Finally, we call init() to build the calendar and attach the events present in the database.</p>
+
+<figure class='code'><figcaption><span>onsuccess() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.init = function() {
+</span><span class='line'>
+</span><span class='line'>  var db = html5hacks.indexedDB.db;
+</span><span class='line'>  var trans = db.transaction(["milestone"], IDBTransaction.READ_WRITE);
+</span><span class='line'>  var store = trans.objectStore("milestone");
+</span><span class='line'>
+</span><span class='line'>  var keyRange = IDBKeyRange.lowerBound(0);
+</span><span class='line'>  var cursorRequest = store.openCursor(keyRange);
+</span><span class='line'>
+</span><span class='line'>  cursorRequest.onsuccess = function(e) {
+</span><span class='line'>    var result = e.target.result;
+</span><span class='line'>
+</span><span class='line'>    if(!result == false){
+</span><span class='line'>
+</span><span class='line'>        $('#calendar').fullCalendar({
+</span><span class='line'>          header: {
+</span><span class='line'>            left: 'prev,next today',
+</span><span class='line'>            center: 'title',
+</span><span class='line'>            right: 'month,agendaWeek,agendaDay'
+</span><span class='line'>          },
+</span><span class='line'>          weekmode: 'variable',
+</span><span class='line'>          height: 400,
+</span><span class='line'>          editable: true,
+</span><span class='line'>          events: html5hacks.msArray
+</span><span class='line'>        });
+</span><span class='line'>
+</span><span class='line'>      return;
+</span><span class='line'>
+</span><span class='line'>    }else{
+</span><span class='line'>
+</span><span class='line'>      console.log("result.value" , result.value);
+</span><span class='line'>      buildMilestoneArray(result.value);
+</span><span class='line'>      result.continue();
+</span><span class='line'>    }
+</span><span class='line'>  };
+</span><span class='line'>  cursorRequest.onerror = html5hacks.indexedDB.onerror;
+</span><span class='line'>};</span></code></pre></td></tr></table></div></figure>
+
+
+<p>At this point we are poised to retrieve all the data from the database and populate our calendar with milestones.
+First, we declare the type of transaction to be a READ_WRITE, set a reference to the datastore, set a keyrange, and define a cursorRequest by calling openCursor and passing in the keyrange. By passing in a 0, we ensure that we retrieve all the values greater than zero. Since our key was a timestamp, this will ensure we retrieve all the records.</p>
+
+<p>Once the onsuccess event is fired, we begin to iterate through the records and push the milestone objects to buildMilestoneArray:</p>
+
+<figure class='code'><figcaption><span>buildMilestoneArray() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function buildMilestoneArray(ms) {
+</span><span class='line'>  html5hacks.msArray.push(ms);
+</span><span class='line'>}
+</span><span class='line'>When we reach the last record, we build the calendar by passing a configuration object to fullCalendar() and returning:
+</span><span class='line'>        $('#calendar').fullCalendar({
+</span><span class='line'>          header: {
+</span><span class='line'>            left: 'prev,next today',
+</span><span class='line'>            center: 'title',
+</span><span class='line'>            right: 'month,agendaWeek,agendaDay'
+</span><span class='line'>          },
+</span><span class='line'>          weekmode: 'variable',
+</span><span class='line'>          height: 400,
+</span><span class='line'>          editable: true,
+</span><span class='line'>          events: html5hacks.msArray
+</span><span class='line'>        });
+</span><span class='line'>
+</span><span class='line'>      return;</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Adding Milestones</h3>
+
+<p>Now that we are initializing and building our calendar, we need to begin adding milestones to the database via the form. First let’s use jQuery to set up our form to pass a serialized data object to addMilestone() on each submission:</p>
+
+<figure class='code'><figcaption><span>form submit </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$('form').submit(function() {
+</span><span class='line'>
+</span><span class='line'>    var data = $(this).serializeArray();
+</span><span class='line'>
+</span><span class='line'>    html5hacks.indexedDB.addMilestone(data);
+</span><span class='line'>    return false;
+</span><span class='line'>  });</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now let’s submit a few events and then view them in the Chrome Inspector to ensure they are there (see Figure 6-10).</p>
+
+<p>Figure 6-10. Viewing milestone objects in the Chrome Inspector</p>
+
+<p><img class="figure" alt="Figure 6-10" src="/images/chapter6-images/6-10.png"></p>
+
+<p>Let’s take a closer look at our addMilestone method:</p>
+
+<figure class='code'><figcaption><span>addMilestone() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.addMilestone = function(d) {
+</span><span class='line'>  var db = html5hacks.indexedDB.db;
+</span><span class='line'>  var trans = db.transaction(["milestone"], IDBTransaction.READ_WRITE);
+</span><span class='line'>  var store = trans.objectStore("milestone");
+</span><span class='line'>
+</span><span class='line'>  var data = {
+</span><span class='line'>    "title": d[0].value,
+</span><span class='line'>    "start": d[1].value,
+</span><span class='line'>    "end": d[2].value,
+</span><span class='line'>    "timeStamp": new Date().getTime()
+</span><span class='line'>  };
+</span><span class='line'>
+</span><span class='line'>  var request = store.put(data);
+</span><span class='line'>
+</span><span class='line'>  var dataArr = [data]
+</span><span class='line'>  request.onsuccess = function(e) {
+</span><span class='line'>    $('#calendar').fullCalendar('addEventSource', dataArr);
+</span><span class='line'>  };
+</span><span class='line'>
+</span><span class='line'>  request.onerror = function(e) {
+</span><span class='line'>    console.log("Error Adding: ", e);
+</span><span class='line'>  };
+</span><span class='line'>};</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We established our read/write connection in much the same way as our html5hacks.indexedDB.init(), but now, instead of only reading data, we write a data object to the data store each time by calling store.put() and passing it data. On the onsuccess we then can call fullcalendar’s addEventSource() and pass it the data wrapped in an array object. Note that it is necessary to transform the data object into an array since that is what the FullCalendar API expects.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jesse Cravens</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-17T08:47:00-06:00" pubdate data-updated="true">Jan 17<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/indexeddb/'>IndexedDB</a>, <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/web-storage/'>Web Storage</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://html5hacks.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/" data-via="html5hacks" data-counturl="http://html5hacks.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/04/make-your-web-app-respond-to-device-orientation-changes/" title="Previous Post: Make Your Web App Respond to Device Orientation Changes">&laquo; Make Your Web App Respond to Device Orientation Changes</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+<a href="http://www.amazon.com/gp/product/1449334997/ref=as_li_qf_sp_asin_il?ie=UTF8&camp=1789&creative=9325&creativeASIN=1449334997&linkCode=as2&tag=wwwjessecrave-20"><img src="/images/book.jpeg" /></a><img src="http://www.assoc-amazon.com/e/ir?t=wwwjessecrave-20&l=as2&o=1&a=1449334997" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
+  <h1>O'Reilly Media's HTML5 Hacks</h1>
+  <p>HTML5 Hacks shows you how to use the latest tools to make your sites and applications more interactive, more functional, and more capable of competing with desktop applications. Each hack shows you how to make a concrete improvement, applying the latest in JavaScript, HTML, and CSS power to common web development issues.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/">Build a Milestone Calendar with IndexedDB and FullCalendar.js</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/04/make-your-web-app-respond-to-device-orientation-changes/">Make Your Web App Respond to Device Orientation Changes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration/">Elegantly Resize Your Page with the @-viewport CSS Declaration</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/">Make Your Page Consumable by Robots and Humans Alike with Microdata</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/">Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/html5hacks">@html5hacks</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'html5hacks',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("html5hacks", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/html5hacks" class="twitter-follow-button" data-show-count="false">Follow @html5hacks</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jesse Cravens and Jeff Burtoft -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'html5hacks';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://html5hacks.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/';
+        var disqus_url = 'http://html5hacks.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
