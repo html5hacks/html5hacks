@@ -8,7 +8,7 @@ categories: Windows 8, YUI, Native Development, JavaScript
 
 
 I’ve always been a big fan of YUI.  YUI has taught me how to write good, scalable code.  If I ever wanted to know the “right” way to do something, I looked back at how the YUI devs did it, and I would do it the same way.  In the last few years, with the release of YUI3, that standard is even higher.  The encapsulation practices and the decentralization of the code base has made it pleasure to develop, and a rock solid foundation for my applications.
-You can imagine how excited I was to introduce this honored, experienced titan to the new kid on the block, WinJS.  For those of you who don’t know, WinJS is the library that runs exclusively inside of Windows 8 Apps written in JavaScript and HTML5.  For those of you who aren’t familiar with the concept, Microsoft has written this kick-ass ecosystem for Windows 8 in which we as developers can build Windows Store Apps with web technologies (js/css/html) just as we would with any managed code base like c++ or c#.  WinJS provides you with core functionality like templating, file system access, reusable UI components, and service calls via XHR.  Widows 8 Apps use the same rendering engine and the same JavaScript engine as IE10, and being a sandboxed app, you also have access to a whole slew of APIs from the WinRT service layer.  You can read all about how this works directly from the Windows team.
+You can imagine how excited I was to introduce this honored, experienced titan to the new kid on the block, WinJS.  For those of you who don’t know, WinJS is the library that runs exclusively inside of Windows 8 Apps written in JavaScript and HTML5.  For those of you who aren’t familiar with the concept, Microsoft has written this kick-ass ecosystem for Windows 8 in which we as developers can build Windows Store Apps with web technologies (js/css/html) just as we would with any managed code base like c++ or c#.  WinJS provides you with core functionality like templating, file system access, reusable UI components, and service calls via XHR.  Widows 8 Apps use the same rendering engine and the same JavaScript engine as IE10, and being a sandboxed app, you also have access to a whole slew of APIs from the WinRT service layer.  You can read all about how this works [directly from MSDN](http://msdn.microsoft.com/en-us/library/windows/apps/br211377.aspx).
 Since your Windows 8 Apps are running IE10 components you can pull in your favorite JavaScript library to provide you with app functionality.  In my case, my favorite library has always been YUI, so my goal was to shoehorn YUI into the Windows 8 App.  Much to my surprise, I never once had to pull out the shoehorn, YUI not only worked well inside the app, but it also worked seamlessly with WinJS.  This is my story. A love story really, of how Windows 8 Loves YUI.
 
 ##What you need
@@ -35,8 +35,8 @@ YUI().use('node', 'event', function (Y) {
 </script>
 {% endcodeblock %}
 
-Pretty Simple.  Now for our example. We’ll be running code in the local context of our app, so for security reasons, we can’t load our JS libraries from a CDN- they have to be packaged with the app which we’ll discuss more in a bit.  So in our case, you’ll also need another tool provided by the YUI team, the YUI configurator.   The configurator will be used to determine what JS files we want to add to each of our pages.  Also, you’re going to need a local copy of the library as well, so download that from github.
-To build our pages into a Windows 8 App, you’ll need a copy of visual Studio 2012. My suggestion is to go download yourself a copy of Visual Studio Express for Windows 8.  This version of VS is free, but it has everything you need to build a Windows 8 App.  It’s more than your average free editor as well.  It has incredible code completion and intelisence.  Visual Studio express 2012 has Windows 8 as a system requirement, so by default you need to be running on a Windows 8 machine (or VM) as well.  
+Pretty Simple.  Now for our example. We’ll be running code in the local context of our app, so for security reasons, we can’t load our JS libraries from a CDN- they have to be packaged with the app which we’ll discuss more in a bit.  So in our case, you’ll also need another tool provided by the YUI team, the [YUI configurator](http://yuilibrary.com/yui/configurator/).   The configurator will be used to determine what JS files we want to add to each of our pages.  Also, you’re going to need a local copy of the library as well, so download that [from github](https://github.com/yui).
+To build our pages into a Windows 8 App, you’ll need a copy of visual Studio 2012. My suggestion is to go download yourself a copy of [Visual Studio Express for Windows 8](http://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-windows-8).  This version of VS is free, but it has everything you need to build a Windows 8 App.  It’s more than your average free editor as well.  It has incredible code completion and intelisence.  Visual Studio express 2012 has Windows 8 as a system requirement, so by default you need to be running on a Windows 8 machine (or VM) as well.  
 
 ##Let’s take it up a Notch
 
@@ -108,7 +108,7 @@ Now it’s time to go get a few cool examples.  Let’s start with a little game
 
   <img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/library-page.png"> 
 
-This duck shooter game demonstrates the use of the Node list.  I basically want to pull this sample right off the library and dump into a Windows 8 App. On this page scroll down to the full code example.  Copy the CSS into the duck.css file, merge the HTML into your duck.html file (be sure not to delete the references to the already existing .js and .css files) and then take the YUI use() statement and copy it into the “ready” method inside of the duck.js file
+This [duck shooter game](http://yuilibrary.com/yui/docs/node/ducks.html) demonstrates the use of the Node list.  I basically want to pull this sample right off the library and dump into a Windows 8 App. On this page scroll down to the full code example.  Copy the CSS into the duck.css file, merge the HTML into your duck.html file (be sure not to delete the references to the already existing .js and .css files) and then take the YUI use() statement and copy it into the “ready” method inside of the duck.js file
 
 {% codeblock win8.js %} 
         ready: function (element, options) {
@@ -221,7 +221,7 @@ Our app now navigates from the start page to the duck sample, and back again.
 ##Growing the App
 
 Let’s keep going with this navigation app and add a new page.  Go to your solution explorer, create a new directory inside the “pages” directory and call it "dial".  Inside of it, right click and add a new page control called “dial.html”.  Again, watch the magic happen as it generates your .html file, your .js file and your .css file.
-Next, navigate to the super cool YUI sample dial app:
+Next, navigate to the super cool [YUI sample dial app](http://yuilibrary.com/yui/docs/dial/dial-interactive.html):
 
   <img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/cap-3.png"> 
   
@@ -310,7 +310,7 @@ Here, we’re going to again copy out sample code directly from the web and move
 
 If you were to run the app at this point, it would have a visually incomplete dial as illustrated:
 
-   <img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-3.png"> 
+   <img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-4.png"> 
    
 But how can that be you ask?  Have I lead you astray and YUI doesn’t really work in a Windows 8 App?  Not at all.  Remember how I mentioned that WinJS is constructing the pages for you.  In the process, they take the HTML content out of one HTML file and inject it into our main file (default.html).  What they don’t inject is the body tag.  This YUI example, for skinning purposes, has a class on the body tag, so we need to manually move that class to the body tag of our default.html file so it looks like this:
 
@@ -325,7 +325,7 @@ But how can that be you ask?  Have I lead you astray and YUI doesn’t really wo
 
 When we reload our application with the new app, we have a skinned version of out dial: 
  
-<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-4.png"> 
+<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-5.png"> 
  
 Now we’re all set to go.  Let’s go back to home.html and add a link to our new page: 
 
@@ -338,7 +338,7 @@ At this point we’ll have a fully functional navigation app with two different 
 ##Accessing Windows APIs with YUI
 One of the great things about being inside of a Windows 8 Store App is the access to the WinRT APIs.  There are a lot of cool platform features you can include, one of which is the share contract.  The share contract allows you to share data between apps.  In our case, we want to define what data will be passed to other apps when the user engages the share charm (part of the Windows 8 charms bar):
 
-<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-5.png"> 
+<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-6.png"> 
   
 In this case, I’m going to go into my sample code of the dial example code and add a few lines of JavaScript in:
 
@@ -364,11 +364,11 @@ function shareTextHandler(e) {
 
 We set up a listener here for an event called “datarequested” in which we set properties of our data object.  At this point every app has declared (through the app manifest) what type of data can be shared to it.  In this method, we are simply declaring what type of data we are sharing.  In this case, we are setting text.  We also have a title and description that will be used by some apps.  Now, when we reload our app and navigate to our dial sample, we can select the “share charm” from our charm bar.  You’ll see a list of apps appear that are able to handle this type of shared content.  
 
-<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-6.png"> 
+<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-7.png"> 
 
 I’ll select the mail app and you can see how this data will be shared:
  
-<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-7.png"> 
+<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-8.png"> 
    
 We are sharing info about our dial settings, so it doesn’t make sense to share that same data when we are viewing another sample, so we want to add a few additional lines of JavaScript to remove this listener when we don’t need it.  If you noticed above we used the YUI namespace to expose a pointer to both the function we are calling when we share, and a pointer to the dataTransfermanager itself.  We’re going to move down in our JavaScript object a bit to the “unload” method.  This method is called every time you navigate away from this page, so it will be a perfect place to remove this listener:
 
