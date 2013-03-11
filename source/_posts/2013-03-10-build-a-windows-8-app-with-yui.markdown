@@ -23,7 +23,7 @@ Step 1:  add the YUI seed to your page:
 <script src="http://yui.yahooapis.com/3.8.1/build/yui/yui-min.js"></script>
 {% endcodeblock %}
 
-	Step 2: start a new instance:
+Step 2: start a new instance:
     
 {% codeblock win8.js %} 
 <script>
@@ -214,9 +214,9 @@ Now I can go back to my “home.html” file and add a link in to my duck app:
 
 Our app now navigates from the start page to the duck sample, and back again.
 
-  <img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-1.png"> 
-  
-    <img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-2.png"> 
+<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-1.png"> 
+
+<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-2.png"> 
   
 ##Growing the App
 
