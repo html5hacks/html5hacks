@@ -325,7 +325,7 @@ But how can that be you ask?  Have I lead you astray and YUI doesn’t really wo
 
 When we reload our application with the new app, we have a skinned version of out dial: 
  
-  <img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-4.png"> 
+<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-4.png"> 
  
 Now we’re all set to go.  Let’s go back to home.html and add a link to our new page: 
 
@@ -338,7 +338,7 @@ At this point we’ll have a fully functional navigation app with two different 
 ##Accessing Windows APIs with YUI
 One of the great things about being inside of a Windows 8 Store App is the access to the WinRT APIs.  There are a lot of cool platform features you can include, one of which is the share contract.  The share contract allows you to share data between apps.  In our case, we want to define what data will be passed to other apps when the user engages the share charm (part of the Windows 8 charms bar):
 
-  <img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-5.png"> 
+<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-5.png"> 
   
 In this case, I’m going to go into my sample code of the dial example code and add a few lines of JavaScript in:
 
@@ -364,11 +364,11 @@ function shareTextHandler(e) {
 
 We set up a listener here for an event called “datarequested” in which we set properties of our data object.  At this point every app has declared (through the app manifest) what type of data can be shared to it.  In this method, we are simply declaring what type of data we are sharing.  In this case, we are setting text.  We also have a title and description that will be used by some apps.  Now, when we reload our app and navigate to our dial sample, we can select the “share charm” from our charm bar.  You’ll see a list of apps appear that are able to handle this type of shared content.  
 
-    <img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-6.png"> 
+<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-6.png"> 
 
 I’ll select the mail app and you can see how this data will be shared:
  
-   <img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-7.png"> 
+<img class="figure" alt="Figure 7-1" src="/images/chapter-jeff/screen-7.png"> 
    
 We are sharing info about our dial settings, so it doesn’t make sense to share that same data when we are viewing another sample, so we want to add a few additional lines of JavaScript to remove this listener when we don’t need it.  If you noticed above we used the YUI namespace to expose a pointer to both the function we are calling when we share, and a pointer to the dataTransfermanager itself.  We’re going to move down in our JavaScript object a bit to the “unload” method.  This method is called every time you navigate away from this page, so it will be a perfect place to remove this listener:
 
@@ -389,3 +389,5 @@ Well, we’ve done it.  We’ve built a Windows 8 Store App using YUI, we’ve m
 ##Conclusion
 To wrap up this whole experiment in a few works, it just works.  YUI works inside a Windows 8 Store App just as it would inside your browser.  The big difference is you now have access to all those Windows APIs that aren’t exposed to the web browser.  We’ve demonstrated how you can use YUI alongside of WinJS, but you don’t need to.  Your existing YUI app can be ported to Windows 8 Apps without needing WinJS.  It doesn’t stop at YUI, Windows 8 Apps are built on the engines that run IE10, so bring your favorite JavaScript library, your favorite YUI component or your favorite Web App and go “Native” with Windows 8.
 The Key is to use the skills you already have, and the investments you’ve already made in your apps, and increase your reach in the Windows 8 Store.
+
+###Posted by: [Jeff Burtoft](http://twitter.com/boyofgreen)
