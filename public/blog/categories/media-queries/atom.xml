@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Media Queries | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/media-queries/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-02-25T09:11:47-06:00</updated>
+  <updated>2013-03-11T03:56:27-04:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Make Your Web App Respond to Device Orientation Changes]]></title>
     <link href="http://html5hacks.com/blog/2013/01/04/make-your-web-app-respond-to-device-orientation-changes/"/>
-    <updated>2013-01-04T00:31:00-06:00</updated>
+    <updated>2013-01-04T00:31:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/01/04/make-your-web-app-respond-to-device-orientation-changes</id>
     <content type="html"><![CDATA[<h4>Your native apps are smart enough to know how you’re holding your device. Now your web apps can be, too. Use orientation-based media queries to make your site responsive.</h4>
 
