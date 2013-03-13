@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Forms | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/forms/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-03-13T11:10:56-05:00</updated>
+  <updated>2013-03-13T17:37:43-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -20,17 +20,17 @@
     <id>http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers</id>
     <content type="html"><![CDATA[<p>We had a great turnout for the 'Battle of the HTML5 Hackers' presentation at SXSWi on Tuesday.</p>
 
-<p><img class="imgL300" alt="SXSWi 2013: Battle of the HTML5 Hackers" src="http://html5hacks.com/images/sxsw13/sxsw13-crowd.jpg"></p>
+<p><img class="imgL300" alt="SXSWi 2013: Battle of the HTML5 Hackers - Jesse Cravens and Jeff Burtoft" src="http://html5hacks.com/images/sxsw13/sxsw13-crowd.jpg"></p>
 
 <p>Using our best CDD (Conference Driven Devlopment) techniques, we walked the audience through the creation of <a href="http://nerdclustr.jit.su">Nerdclustr</a>: an HTML5 mobile Application that helps nerds find other like-minded nerds at conferences events.</p>
 
 <p>Using realtime and mapping technolgies, the app visualizes nerd behavior in map pin clusters.</p>
 
-<p><img class="imgR200" alt="SXSWi 2013 Nerdclustr Ballroom G Austin Convention Center"  src="http://html5hacks.com/images/sxsw13/sxsw13-app.png"></p>
+<p><img class="imgR200" alt="Nerdclustr: SXSWi 2013 Ballroom G Austin Convention Center"  src="http://html5hacks.com/images/sxsw13/sxsw13-app.png"></p>
 
 <p>Here is a shot of the app in action (Ballroom G in the Austin Convention Center); it performed well during the presentation. Thanks to <a href="https://www.nodejitsu.com/">Nodjitsu</a> for the quality node.js WebSocket service. After a 2-day hackathon to get the app launched, I ran through a number of deployment options, many of which I have used before for Rails applications. <a href="https://www.nodejitsu.com/">Nodjitsu</a> won out in that it actually supported the WebSokcet protocol and made deployment super simple using the jitsu CLI.</p>
 
-<p><img class="imgL200" alt="SXSWi 2013: HTML5 Hacks Book Signing"  src="http://html5hacks.com/images/sxsw13/sxsw13-booksigning.png"></p>
+<p><img class="imgL200" alt="Jesse Cravens and Jeff Burtoft: SXSWi 2013 - HTML5 Hacks Book Signing"  src="http://html5hacks.com/images/sxsw13/sxsw13-booksigning.png"></p>
 
 <p>Nerdclustr source code is available <a href="https://github.com/html5hacks/nerd-clustr">here</a>.</p>
 
