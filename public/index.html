@@ -9,7 +9,7 @@
   <meta name="author" content="Jesse Cravens and Jeff Burtoft">
 
   
-  <meta name="description" content="I’ve always been a big fan of YUI. YUI has taught me how to write good, scalable code. If I ever wanted to know the “right” way to do something, I &hellip;">
+  <meta name="description" content="We had a great turnout for the &#8216;Battle of the HTML5 Hackers&#8217; presentation at SXSWi on Tuesday. Using our best CDD (Conference Driven &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +88,72 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/">SXSWi 2013: &#8216;Battle of the HTML5 Hackers&#8217; and &#8216;HTML5 Hacks&#8217; Book Signing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-12T23:55:00-05:00" pubdate data-updated="true">Mar 12<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>We had a great turnout for the &#8216;Battle of the HTML5 Hackers&#8217; presentation at SXSWi on Tuesday.</p>
+
+<p><img class="imgL300" alt="SXSWi 2013: Battle of the HTML5 Hackers" src="/images/sxsw13/sxsw13-crowd.jpg"></p>
+
+<p>Using our best CDD (Conference Driven Devlopment) techniques, we walked the audience through the creation of <a href="http://nerdclustr.jit.su">Nerdclustr</a>: an HTML5 mobile Application that helps nerds find other like-minded nerds at conferences events.</p>
+
+<p>Using realtime and mapping technolgies, the app visualizes nerd behavior in map pin clusters.</p>
+
+<p><img class="imgR200" alt="SXSWi 2013 Nerdclustr Ballroom G Austin Convention Center"  src="/images/sxsw13/sxsw13-app.png"></p>
+
+<p>Here is a shot of the app in action (Ballroom G in the Austin Convention Center); it performed well during the presentation. Thanks to <a href="https://www.nodejitsu.com/">Nodjitsu</a> for the quality node.js WebSocket service. After a 2-day hackathon to get the app launched, I ran through a number of deployment options, many of which I have used before for Rails applications. <a href="https://www.nodejitsu.com/">Nodjitsu</a> won out in that it actually supported the WebSokcet protocol and made deployment super simple using the jitsu CLI.</p>
+
+<p><img class="imgL200" alt="SXSWi 2013: HTML5 Hacks Book Signing"  src="/images/sxsw13/sxsw13-booksigning.png"></p>
+
+<p>Nerdclustr source code is available <a href="https://github.com/html5hacks/nerd-clustr">here</a>.</p>
+
+<p>During the book signing, the bookstore informed us there were only 3 copies left. I&#8217;m not keen to the selection process of books, but I was little surprised at the limited number of technical books. This is certainly a reflection of the SXSWi demographic, and we also tailored our content and presentation style to this audience.</p>
+
+<p>The slide deck is available here:</p>
+
+<script async class="speakerdeck-embed" data-id="c69c92f06d880130bfaa22000a1f8363" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+
+
+
+<hr>
+
+
+<p>Stay tuned for our next presentation happening online, through O&#8217;Reilly Webcasts. Join us for <a href="http://www.oreillynet.com/pub/e/2566">&#8216;Rethinking the Possibilities of Browser-based Apps with HTML5&#8217;</a> on Wednesday, March 27, 2013 10AM PT.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/03/10/build-a-windows-8-app-with-yui/">Build a Windows 8 App With YUI</a></h1>
     
     
@@ -104,7 +170,7 @@
   
 
 
-<time datetime="2013-03-10T19:10:00-04:00" pubdate data-updated="true">Mar 10<span>th</span>, 2013</time>
+<time datetime="2013-03-10T19:10:00-05:00" pubdate data-updated="true">Mar 10<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/03/10/build-a-windows-8-app-with-yui/#disqus_thread">Comments</a>
         
@@ -113,9 +179,11 @@
   </header>
 
 
-  <div class="entry-content"><p>I’ve always been a big fan of YUI.  YUI has taught me how to write good, scalable code.  If I ever wanted to know the “right” way to do something, I looked back at how the YUI devs did it, and I would do it the same way.  In the last few years, with the release of YUI3, that standard is even higher.  The encapsulation practices and the decentralization of the code base has made it pleasure to develop, and a rock solid foundation for my applications.
-You can imagine how excited I was to introduce this honored, experienced titan to the new kid on the block, WinJS.  For those of you who don’t know, WinJS is the library that runs exclusively inside of Windows 8 Apps written in JavaScript and HTML5.  For those of you who aren’t familiar with the concept, Microsoft has written this kick-ass ecosystem for Windows 8 in which we as developers can build Windows Store Apps with web technologies (js/css/html) just as we would with any managed code base like c++ or c#.  WinJS provides you with core functionality like templating, file system access, reusable UI components, and service calls via XHR.  Widows 8 Apps use the same rendering engine and the same JavaScript engine as IE10, and being a sandboxed app, you also have access to a whole slew of APIs from the WinRT service layer.  You can read all about how this works <a href="http://msdn.microsoft.com/en-us/library/windows/apps/br211377.aspx">directly from MSDN</a>.
-Since your Windows 8 Apps are running IE10 components you can pull in your favorite JavaScript library to provide you with app functionality.  In my case, my favorite library has always been YUI, so my goal was to shoehorn YUI into the Windows 8 App.  Much to my surprise, I never once had to pull out the shoehorn, YUI not only worked well inside the app, but it also worked seamlessly with WinJS.  This is my story. A love story really, of how Windows 8 Loves YUI.</p>
+  <div class="entry-content"><p>I’ve always been a big fan of YUI.  YUI has taught me how to write good, scalable code.  If I ever wanted to know the “right” way to do something, I looked back at how the YUI devs did it, and I would do it the same way.  In the last few years, with the release of YUI3, that standard is even higher.  The encapsulation practices and the decentralization of the code base has made it pleasure to develop, and a rock solid foundation for my applications.</p>
+
+<p>You can imagine how excited I was to introduce this honored, experienced titan to the new kid on the block, WinJS.  For those of you who don’t know, WinJS is the library that runs exclusively inside of Windows 8 Apps written in JavaScript and HTML5.  For those of you who aren’t familiar with the concept, Microsoft has written this kick-ass ecosystem for Windows 8 in which we as developers can build Windows Store Apps with web technologies (js/css/html) just as we would with any managed code base like c++ or c#.  WinJS provides you with core functionality like templating, file system access, reusable UI components, and service calls via XHR.  Widows 8 Apps use the same rendering engine and the same JavaScript engine as IE10, and being a sandboxed app, you also have access to a whole slew of APIs from the WinRT service layer.  You can read all about how this works <a href="http://msdn.microsoft.com/en-us/library/windows/apps/br211377.aspx">directly from MSDN</a>.</p>
+
+<p>Since your Windows 8 Apps are running IE10 components you can pull in your favorite JavaScript library to provide you with app functionality.  In my case, my favorite library has always been YUI, so my goal was to shoehorn YUI into the Windows 8 App.  Much to my surprise, I never once had to pull out the shoehorn, YUI not only worked well inside the app, but it also worked seamlessly with WinJS.  This is my story. A love story really, of how Windows 8 Loves YUI.</p>
 
 <h2>What you need</h2>
 
@@ -789,7 +857,7 @@ The Key is to use the skills you already have, and the investments you’ve alre
   
 
 
-<time datetime="2013-01-17T08:47:00-05:00" pubdate data-updated="true">Jan 17<span>th</span>, 2013</time>
+<time datetime="2013-01-17T08:47:00-06:00" pubdate data-updated="true">Jan 17<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/#disqus_thread">Comments</a>
         
@@ -1245,7 +1313,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
   
 
 
-<time datetime="2013-01-04T00:31:00-05:00" pubdate data-updated="true">Jan 4<span>th</span>, 2013</time>
+<time datetime="2013-01-04T00:31:00-06:00" pubdate data-updated="true">Jan 4<span>th</span>, 2013</time>
         
          | <a href="/blog/2013/01/04/make-your-web-app-respond-to-device-orientation-changes/#disqus_thread">Comments</a>
         
@@ -1417,7 +1485,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
   
 
 
-<time datetime="2012-11-28T18:37:00-05:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
+<time datetime="2012-11-28T18:37:00-06:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration/#disqus_thread">Comments</a>
         
@@ -1647,7 +1715,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
   
 
 
-<time datetime="2012-11-21T22:34:00-05:00" pubdate data-updated="true">Nov 21<span>st</span>, 2012</time>
+<time datetime="2012-11-21T22:34:00-06:00" pubdate data-updated="true">Nov 21<span>st</span>, 2012</time>
         
          | <a href="/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/#disqus_thread">Comments</a>
         
@@ -1901,7 +1969,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
   
 
 
-<time datetime="2012-11-18T19:42:00-05:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time>
+<time datetime="2012-11-18T19:42:00-06:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/#disqus_thread">Comments</a>
         
@@ -2207,7 +2275,7 @@ own CORS hacks.</p>
   
 
 
-<time datetime="2012-10-15T23:19:00-04:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
+<time datetime="2012-10-15T23:19:00-05:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks/#disqus_thread">Comments</a>
         
@@ -2279,7 +2347,7 @@ In “Use the Geoloqi Real-Time Streaming Service to Broadcast a Remote User’s
   
 
 
-<time datetime="2012-10-15T23:15:00-04:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
+<time datetime="2012-10-15T23:15:00-05:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app/#disqus_thread">Comments</a>
         
@@ -2554,7 +2622,7 @@ Then we will construct both a success and error object. Within our success objec
   
 
 
-<time datetime="2012-09-22T23:44:00-04:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2012</time>
+<time datetime="2012-09-22T23:44:00-05:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2012</time>
         
          | <a href="/blog/2012/09/22/web-workers-basics-of-the-web-browsers-ui-thread/#disqus_thread">Comments</a>
         
@@ -2749,6 +2817,10 @@ Then we will construct both a success and error object. Within our success objec
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/">SXSWi 2013: &#8216;Battle of the HTML5 Hackers&#8217; and &#8216;HTML5 Hacks&#8217; Book Signing</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/10/build-a-windows-8-app-with-yui/">Build a Windows 8 App with YUI</a>
       </li>
     
@@ -2762,10 +2834,6 @@ Then we will construct both a success and error object. Within our success objec
     
       <li class="post">
         <a href="/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration/">Elegantly Resize Your Page with the @-viewport CSS Declaration</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/">Make Your Page Consumable by Robots and Humans Alike with Microdata</a>
       </li>
     
   </ul>

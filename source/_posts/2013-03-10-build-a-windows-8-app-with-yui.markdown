@@ -3,12 +3,15 @@ layout: post
 title: "Build a Windows 8 App with YUI"
 date: 2013-03-10 19:10
 comments: true
-categories: Windows 8, YUI, Native Development, JavaScript
+categories: ["Windows 8", "YUI", "Native Development", "JavaScript"]
+author: Jeff Burtoft
 ---
 
 
 I’ve always been a big fan of YUI.  YUI has taught me how to write good, scalable code.  If I ever wanted to know the “right” way to do something, I looked back at how the YUI devs did it, and I would do it the same way.  In the last few years, with the release of YUI3, that standard is even higher.  The encapsulation practices and the decentralization of the code base has made it pleasure to develop, and a rock solid foundation for my applications.
+
 You can imagine how excited I was to introduce this honored, experienced titan to the new kid on the block, WinJS.  For those of you who don’t know, WinJS is the library that runs exclusively inside of Windows 8 Apps written in JavaScript and HTML5.  For those of you who aren’t familiar with the concept, Microsoft has written this kick-ass ecosystem for Windows 8 in which we as developers can build Windows Store Apps with web technologies (js/css/html) just as we would with any managed code base like c++ or c#.  WinJS provides you with core functionality like templating, file system access, reusable UI components, and service calls via XHR.  Widows 8 Apps use the same rendering engine and the same JavaScript engine as IE10, and being a sandboxed app, you also have access to a whole slew of APIs from the WinRT service layer.  You can read all about how this works [directly from MSDN](http://msdn.microsoft.com/en-us/library/windows/apps/br211377.aspx).
+
 Since your Windows 8 Apps are running IE10 components you can pull in your favorite JavaScript library to provide you with app functionality.  In my case, my favorite library has always been YUI, so my goal was to shoehorn YUI into the Windows 8 App.  Much to my surprise, I never once had to pull out the shoehorn, YUI not only worked well inside the app, but it also worked seamlessly with WinJS.  This is my story. A love story really, of how Windows 8 Loves YUI.
 
 ##What you need

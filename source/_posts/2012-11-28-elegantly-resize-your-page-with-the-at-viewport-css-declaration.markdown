@@ -3,7 +3,7 @@ layout: post
 title: "Elegantly Resize Your Page with the @-viewport CSS Declaration"
 date: 2012-11-28 18:37
 comments: true
-categories: ["css","mobile","w3c"]
+categories: ["CSS","Mobile","W3C"]
 ---
 ####Gone are the days of viewport meta tags that with implementations different across browsers.  The new @-viewport is easy to use and puts the control in the right place.
 
