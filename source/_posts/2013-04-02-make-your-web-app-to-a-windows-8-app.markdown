@@ -42,7 +42,7 @@ Now that you have your app up and running, let’s use one of the favorite Windo
 
 {% codeblock win8.js %} 
 
-    <script>
+
 
         var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
 
@@ -66,7 +66,7 @@ Now that you have your app up and running, let’s use one of the favorite Windo
         });
 
 
-    </script>
+
 
 {% endcodeblock %}
 
@@ -79,7 +79,7 @@ You can find out more about the [share charm here](http://msdn.microsoft.com/en-
 <img class="figure" alt="Figure 7-1" src="/images/win8app/VS8.PNG"> 
 
 ##A Few Closing Notes
-It is very easy to move your web apps to Windows 8 where you have access to a whole series of new APIs and functionality that isn’t safe to expose on the web.  That being the case, it’s important that you look into the security model that is implemented in Windows 8 Apps.  Using a JavaScript library?  Many libraries like [YUI](http://www.yuiblog.com/blog/2013/03/12/windows-8-loves-yui/) and [jQuery](http://blogs.msdn.com/b/interoperability/archive/2013/03/29/jquery-adds-support-for-windows-store-apps-creates-new-opportunities-for-javascript-open-source-developers.aspx) already work within the Windows 8 App environment. 
+It is very easy to move your web apps to Windows 8 where you have access to a whole series of new APIs and functionality that isn’t safe to expose on the web.  That being the case, it’s important that you look into the [security model](http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx) that is implemented in Windows 8 Apps.  Using a JavaScript library?  Many libraries like [YUI](http://www.yuiblog.com/blog/2013/03/12/windows-8-loves-yui/) and [jQuery](http://blogs.msdn.com/b/interoperability/archive/2013/03/29/jquery-adds-support-for-windows-store-apps-creates-new-opportunities-for-javascript-open-source-developers.aspx) already work within the Windows 8 App environment. 
 It’s that easy, reuse your code, and your skills to build Windows 8 Store Apps.
 
 Author: Jeff Burtoft - [@boyofgreen](http://www.twitter.com/boyofgreen)

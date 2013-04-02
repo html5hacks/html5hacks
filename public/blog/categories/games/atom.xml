@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Games | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/games/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-04-02T02:00:34-04:00</updated>
+  <updated>2013-04-02T02:11:26-04:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -79,16 +79,9 @@ We’re going to be taking the new fantastic game “YetiBowl” for our convers
 <span class='line-number'>23</span>
 <span class='line-number'>24</span>
 <span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">script</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">dataTransferManager</span> <span class="o">=</span> <span class="nx">Windows</span><span class="p">.</span><span class="nx">ApplicationModel</span><span class="p">.</span><span class="nx">DataTransfer</span><span class="p">.</span><span class="nx">DataTransferManager</span><span class="p">.</span><span class="nx">getForCurrentView</span><span class="p">();</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>    <span class="kd">var</span> <span class="nx">dataTransferManager</span> <span class="o">=</span> <span class="nx">Windows</span><span class="p">.</span><span class="nx">ApplicationModel</span><span class="p">.</span><span class="nx">DataTransfer</span><span class="p">.</span><span class="nx">DataTransferManager</span><span class="p">.</span><span class="nx">getForCurrentView</span><span class="p">();</span>
 </span><span class='line'>
 </span><span class='line'>
 </span><span class='line'>
@@ -108,9 +101,6 @@ We’re going to be taking the new fantastic game “YetiBowl” for our convers
 </span><span class='line'>        <span class="nx">request</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">resourceMap</span><span class="p">[</span><span class="nx">localImage</span><span class="p">]</span> <span class="o">=</span> <span class="nx">streamRef</span><span class="p">;</span>
 </span><span class='line'>
 </span><span class='line'>    <span class="p">});</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/script&amp;gt;</span>
 </span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
@@ -126,7 +116,7 @@ We’re going to be taking the new fantastic game “YetiBowl” for our convers
 
 <h2>A Few Closing Notes</h2>
 
-<p>It is very easy to move your web apps to Windows 8 where you have access to a whole series of new APIs and functionality that isn’t safe to expose on the web.  That being the case, it’s important that you look into the security model that is implemented in Windows 8 Apps.  Using a JavaScript library?  Many libraries like <a href="http://www.yuiblog.com/blog/2013/03/12/windows-8-loves-yui/">YUI</a> and <a href="http://blogs.msdn.com/b/interoperability/archive/2013/03/29/jquery-adds-support-for-windows-store-apps-creates-new-opportunities-for-javascript-open-source-developers.aspx">jQuery</a> already work within the Windows 8 App environment.
+<p>It is very easy to move your web apps to Windows 8 where you have access to a whole series of new APIs and functionality that isn’t safe to expose on the web.  That being the case, it’s important that you look into the <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx">security model</a> that is implemented in Windows 8 Apps.  Using a JavaScript library?  Many libraries like <a href="http://www.yuiblog.com/blog/2013/03/12/windows-8-loves-yui/">YUI</a> and <a href="http://blogs.msdn.com/b/interoperability/archive/2013/03/29/jquery-adds-support-for-windows-store-apps-creates-new-opportunities-for-javascript-open-source-developers.aspx">jQuery</a> already work within the Windows 8 App environment.
 It’s that easy, reuse your code, and your skills to build Windows 8 Store Apps.</p>
 
 <p>Author: Jeff Burtoft - <a href="http://www.twitter.com/boyofgreen">@boyofgreen</a>
