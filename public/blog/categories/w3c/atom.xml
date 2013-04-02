@@ -4,7 +4,7 @@
   <title><![CDATA[Category: W3C | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/w3c/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-03-13T17:37:43-05:00</updated>
+  <updated>2013-04-02T02:11:26-04:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Elegantly Resize Your Page with the @-viewport CSS Declaration]]></title>
     <link href="http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration/"/>
-    <updated>2012-11-28T18:37:00-06:00</updated>
+    <updated>2012-11-28T18:37:00-05:00</updated>
     <id>http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration</id>
     <content type="html"><![CDATA[<h4>Gone are the days of viewport meta tags that with implementations different across browsers.  The new @-viewport is easy to use and puts the control in the right place.</h4>
 
