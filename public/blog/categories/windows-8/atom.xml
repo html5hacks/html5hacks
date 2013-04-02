@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Windows 8 | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/windows-8/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-03-13T17:37:43-05:00</updated>
+  <updated>2013-04-02T02:11:26-04:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Build a Windows 8 App with YUI]]></title>
     <link href="http://html5hacks.com/blog/2013/03/10/build-a-windows-8-app-with-yui/"/>
-    <updated>2013-03-10T19:10:00-05:00</updated>
+    <updated>2013-03-10T19:10:00-04:00</updated>
     <id>http://html5hacks.com/blog/2013/03/10/build-a-windows-8-app-with-yui</id>
     <content type="html"><![CDATA[<p>I’ve always been a big fan of YUI.  YUI has taught me how to write good, scalable code.  If I ever wanted to know the “right” way to do something, I looked back at how the YUI devs did it, and I would do it the same way.  In the last few years, with the release of YUI3, that standard is even higher.  The encapsulation practices and the decentralization of the code base has made it pleasure to develop, and a rock solid foundation for my applications.</p>
 

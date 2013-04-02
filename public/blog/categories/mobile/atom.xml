@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mobile | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/mobile/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-03-13T17:37:43-05:00</updated>
+  <updated>2013-04-02T02:11:26-04:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[SXSWi 2013: 'Battle of the HTML5 Hackers' and 'HTML5 Hacks' Book Signing]]></title>
     <link href="http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/"/>
-    <updated>2013-03-12T23:55:00-05:00</updated>
+    <updated>2013-03-12T23:55:00-04:00</updated>
     <id>http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers</id>
     <content type="html"><![CDATA[<p>We had a great turnout for the 'Battle of the HTML5 Hackers' presentation at SXSWi on Tuesday.</p>
 
@@ -53,7 +53,7 @@
   <entry>
     <title type="html"><![CDATA[Make Your Web App Respond to Device Orientation Changes]]></title>
     <link href="http://html5hacks.com/blog/2013/01/04/make-your-web-app-respond-to-device-orientation-changes/"/>
-    <updated>2013-01-04T00:31:00-06:00</updated>
+    <updated>2013-01-04T00:31:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/01/04/make-your-web-app-respond-to-device-orientation-changes</id>
     <content type="html"><![CDATA[<h4>Your native apps are smart enough to know how you’re holding your device. Now your web apps can be, too. Use orientation-based media queries to make your site responsive.</h4>
 
@@ -199,7 +199,7 @@ and the CSS for the single-column view:
   <entry>
     <title type="html"><![CDATA[Elegantly Resize Your Page with the @-viewport CSS Declaration]]></title>
     <link href="http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration/"/>
-    <updated>2012-11-28T18:37:00-06:00</updated>
+    <updated>2012-11-28T18:37:00-05:00</updated>
     <id>http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration</id>
     <content type="html"><![CDATA[<h4>Gone are the days of viewport meta tags that with implementations different across browsers.  The new @-viewport is easy to use and puts the control in the right place.</h4>
 
@@ -408,7 +408,7 @@ and the CSS for the single-column view:
   <entry>
     <title type="html"><![CDATA[Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks]]></title>
     <link href="http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks/"/>
-    <updated>2012-10-15T23:19:00-05:00</updated>
+    <updated>2012-10-15T23:19:00-04:00</updated>
     <id>http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks</id>
     <content type="html"><![CDATA[<p>An exploration of the future of web technologies and browser capabilities would not be complete without covering the tools and techniques available to enable location awareness.</p>
 
@@ -451,7 +451,7 @@ In “Use the Geoloqi Real-Time Streaming Service to Broadcast a Remote User’s
   <entry>
     <title type="html"><![CDATA[Use the GeoLocation API to Display Long/Lat in a jQuery Mobile App]]></title>
     <link href="http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app/"/>
-    <updated>2012-10-15T23:15:00-05:00</updated>
+    <updated>2012-10-15T23:15:00-04:00</updated>
     <id>http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app</id>
     <content type="html"><![CDATA[<p>The Geolocation specification exposes an easy-to-use API. With only a couple of lines of code, you can obtain the user’s current position. What’s more, jQuery Mobile provides a simple framework for building a cross-browser mobile web application.</p>
 
