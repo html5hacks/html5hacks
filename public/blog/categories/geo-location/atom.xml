@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Geo Location | HTML5 Hacks]]></title>
+  <link href="http://html5hacks.com/blog/categories/geo-location/atom.xml" rel="self"/>
+  <link href="http://html5hacks.com/"/>
+  <updated>2013-04-02T02:11:26-04:00</updated>
+  <id>http://html5hacks.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SXSWi 2013: 'Battle of the HTML5 Hackers' and 'HTML5 Hacks' Book Signing]]></title>
+    <link href="http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/"/>
+    <updated>2013-03-12T23:55:00-04:00</updated>
+    <id>http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers</id>
+    <content type="html"><![CDATA[<p>We had a great turnout for the 'Battle of the HTML5 Hackers' presentation at SXSWi on Tuesday.</p>
+
+<p><img class="imgL300" alt="SXSWi 2013: Battle of the HTML5 Hackers - Jesse Cravens and Jeff Burtoft" src="http://html5hacks.com/images/sxsw13/sxsw13-crowd.jpg"></p>
+
+<p>Using our best CDD (Conference Driven Devlopment) techniques, we walked the audience through the creation of <a href="http://nerdclustr.jit.su">Nerdclustr</a>: an HTML5 mobile Application that helps nerds find other like-minded nerds at conferences events.</p>
+
+<p>Using realtime and mapping technolgies, the app visualizes nerd behavior in map pin clusters.</p>
+
+<p><img class="imgR200" alt="Nerdclustr: SXSWi 2013 Ballroom G Austin Convention Center"  src="http://html5hacks.com/images/sxsw13/sxsw13-app.png"></p>
+
+<p>Here is a shot of the app in action (Ballroom G in the Austin Convention Center); it performed well during the presentation. Thanks to <a href="https://www.nodejitsu.com/">Nodjitsu</a> for the quality node.js WebSocket service. After a 2-day hackathon to get the app launched, I ran through a number of deployment options, many of which I have used before for Rails applications. <a href="https://www.nodejitsu.com/">Nodjitsu</a> won out in that it actually supported the WebSokcet protocol and made deployment super simple using the jitsu CLI.</p>
+
+<p><img class="imgL200" alt="Jesse Cravens and Jeff Burtoft: SXSWi 2013 - HTML5 Hacks Book Signing"  src="http://html5hacks.com/images/sxsw13/sxsw13-booksigning.png"></p>
+
+<p>Nerdclustr source code is available <a href="https://github.com/html5hacks/nerd-clustr">here</a>.</p>
+
+<p>During the book signing, the bookstore informed us there were only 3 copies left. I'm not keen to the selection process of books, but I was little surprised at the limited number of technical books. This is certainly a reflection of the SXSWi demographic, and we also tailored our content and presentation style to this audience.</p>
+
+<p>The slide deck is available here:</p>
+
+<script async class="speakerdeck-embed" data-id="c69c92f06d880130bfaa22000a1f8363" data-ratio="1.77777777777778" src="http://html5hacks.com//speakerdeck.com/assets/embed.js"></script>
+
+
+
+
+<hr>
+
+
+<p>Stay tuned for our next presentation happening online, through O'Reilly Webcasts. Join us for <a href="http://www.oreillynet.com/pub/e/2566">'Rethinking the Possibilities of Browser-based Apps with HTML5'</a> on Wednesday, March 27, 2013 10AM PT.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks]]></title>
+    <link href="http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks/"/>
+    <updated>2012-10-15T23:19:00-04:00</updated>
+    <id>http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks</id>
+    <content type="html"><![CDATA[<p>An exploration of the future of web technologies and browser capabilities would not be complete without covering the tools and techniques available to enable location awareness.</p>
+
+<p>Location-aware web applications provide content, functionality, and services based on the cooperative detection of the user’s physical location. These applications can then provide the user with real-time filtering of online information relevant to his current location, such as place markers indicating the user’s location within a map, local consumer reviews, local coupons and offers, and even relevant traffic and public transportation notices.</p>
+
+<p>These applications also enable users to provide their location to friends in a social network and vice versa, creating possibilities for meetups and blended online and physical interaction.</p>
+
+<p>As you might imagine, the opportunities are not just limited to enhancing the life of the consumer. Given real-time location data of potential consumers and their friends, retailers can also create highly targeted, location-specific marketing campaigns for both digital and physical products.</p>
+
+<h2>How Does It Work?</h2>
+
+<p>The web browser employs various technologies to pass parameters via a background HTTP request to a Location Information Server that returns a data set that includes an estimated longitude and latitude.</p>
+
+<p>The technologies used to gather location data depend on the device and on the operating system running on the device. The most common sources are:</p>
+
+<ul>
+<li>Public IP address</li>
+<li>WiFi access points</li>
+<li>Bluetooth MAC IDs</li>
+<li>GPS</li>
+<li>GSM/CDMA cell tower IDs</li>
+</ul>
+
+
+<p>Geolocation libraries for the Web are not new. In fact, today’s W3C Geolocation specification is largely reflective of the original Google Gears API introduced by Google in 2008. The API has been standardized and is one of the most widely adopted of the HTML5 specifications covered in this book (O'Reilly HTML5 Hacks).</p>
+
+<p>Fortunately, the API is also easy to use—a benefit we will explore in “Use the Geolocation APIs to Display Longitude and Latitude in a Mobile Web Application” and “Update a User’s Current Location in a Google Map”.</p>
+
+<p>In addition, a number of third-party services are available for creating really interesting hacks, and they explore concepts such as reverse geocoding and geofencing. In “Use Google’s Geocoding API to Reverse-Geocode a User’s Location” and “Use the Geoloqi Service to Build a Geofence” we will pass our location data to a service that will provide an enhanced API for working with location data.
+In “Use the Geoloqi Real-Time Streaming Service to Broadcast a Remote User’s Movement” we will blend the power of the WebSocket API with location awareness to make our application update in real time.</p>
+
+<p>For browsers that don’t provide this functionality natively, Google’s IP geocoding service can serve as a polyfill, as we will explore in “Polyfill Geolocation APIs with Webshims”.</p>
+
+<p>The main drawback to this functionality is related to privacy and security, and for good reason. After all, as responsible application developers we should be doing what we can to protect the sensitive data of our users. In “Use the Geolocation APIs to Display Longitude and Latitude in a Mobile Web Application” we will take an in-depth look at how the browser employs cooperative detection, allowing the user to opt-in to only sharing location data with trusted web applications.</p>
+
+<p>Want to read more detail? ... <a href="http://shop.oreilly.com/product/0636920026273.do?sortby=bestSellers">buy the book</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Use the GeoLocation API to Display Long/Lat in a jQuery Mobile App]]></title>
+    <link href="http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app/"/>
+    <updated>2012-10-15T23:15:00-04:00</updated>
+    <id>http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app</id>
+    <content type="html"><![CDATA[<p>The Geolocation specification exposes an easy-to-use API. With only a couple of lines of code, you can obtain the user’s current position. What’s more, jQuery Mobile provides a simple framework for building a cross-browser mobile web application.</p>
+
+<p>In this hack we will utilize the jQuery Mobile framework to provide a relatively simple means of authoring a cross-browser mobile application. Since this hack is focused on displaying our current longitude and latitude and exercising the API across the mobile Web, we will only need a simple UI.</p>
+
+<h3>A Simple jQuery Mobile App</h3>
+
+<p>As always, we’ll start by building a basic page utilizing the HTML5 doctype and including our dependencies:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>geo.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="ni">&amp;lt;</span>!DOCTYPE html&gt;
+</span><span class='line'><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>head<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>jQuery Mobile GeoLocation demo<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>link rel=&quot;stylesheet&quot; href=&quot;http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>script src=&quot;http://code.jquery.com/jquery-1.7.1.min.js&quot;<span class="ni">&amp;gt;&amp;lt;</span>/script<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>script src=&quot;http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js&quot;<span class="ni">&amp;gt;&amp;lt;</span>/script<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>/head<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;body&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>// jQuery mobile declarative markup here
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>As you can see, we have declared a dependency on one stylesheet, and three JavaScripts. We will build the remainder of the application using declarative HTML markup and data- attributes that the jQuery Mobile framework will interpret.<br/>
+Within the <body> tag, we can now place the following:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More geo.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;page&quot;</span> <span class="na">data-theme=</span><span class="s">&quot;a&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;h1&gt;</span>Geo Location<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /header --&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;ul</span> <span class="na">data-role=</span><span class="s">&quot;listview&quot;</span> <span class="na">data-inset=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;./longlat-embed.html&quot;</span> <span class="na">data-ajax=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>LongLat<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /content --&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c">&lt;!-- /page --&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>At this point you should see what’s shown in Figure 7-1, if you access this page from a smaller screen or shrink your desktop browser window to the size of a mobile browser.</p>
+
+<p>Figure 7-1. jQuery Mobile simple button</p>
+
+<p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/chapter7-images/7-1.png"></p>
+
+<p>As you might expect, the UI wasn’t created through magic. jQuery Mobile uses JavaScript to consume the data- attributes present in your HTML markup to dynamically generate more HTML and CSS. The end result is what you see in your browser.
+Now we will create a separate page to link to. You many have noticed a link to longlat-embed.html within the main page.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More geo.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>ul data-role=&quot;listview&quot; data-inset=&quot;true&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>    <span class="ni">&amp;lt;</span>li<span class="ni">&amp;gt;&amp;lt;</span>a href=&quot;./longlat-embed.html&quot; data-ajax=&quot;false&quot;<span class="ni">&amp;gt;</span>LongLat<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;&amp;lt;</span>/li<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>/ul<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>This will take us to a page that will run our JavaScript that contains our geolocation code. Notice that we designated for this to not be a jQuery Mobile Ajax page. This ensures that upon the click of the link we navigate to the new page. It is important that the linked page is loaded so that its JavaScript will execute.</p>
+
+<p>This page is structured similarly to the other page, with the same dependencies. I intentionally kept the jQuery Mobile code as simple as possible. You can find more information on working with jQuery Mobile in the excellent set of <a href="http://jquerymobile.com/demos/1.1.1/">documentation</a> .</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More geo.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;page&quot;</span> <span class="na">data-theme=</span><span class="s">&quot;a&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;h1&gt;</span>LongLat<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /header --&gt;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /content --&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c">&lt;!-- /page --&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>In the content, we will create a div element that will contain our longitude and latitude data once it is returned from the remote service. We will also include a back capability to return to the previous page.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More geo.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>div class=&quot;geo-coords&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>    GeoLocation: <span class="ni">&amp;lt;</span>span id=&quot;Lat&quot;<span class="ni">&amp;gt;</span>lat: ...<span class="ni">&amp;lt;</span>/span<span class="ni">&amp;gt;</span>°,
+</span><span class='line'>           <span class="ni">&amp;lt;</span>span id=&quot;Long&quot;<span class="ni">&amp;gt;</span>long: ...<span class="ni">&amp;lt;</span>/span<span class="ni">&amp;gt;</span>°
+</span><span class='line'><span class="ni">&amp;lt;</span>/div<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>a href=&quot;./jqueryMobile-embed.html&quot;
+</span><span class='line'>   data-role=&quot;button&quot;
+</span><span class='line'>   data-inline=&quot;true&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>    Back
+</span><span class='line'><span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Now we will address our geolocation JavaScript. If you are familiar with jQuery the initial $ variable will look familiar in the code that follows. If not, you can learn more about jQuery at http://docs.jquery.com/Main_Page.</p>
+
+<p>Simply put, the jQuery function wrapper ensures that our page is ready before we execute the following script. Then we will set up a global namespace object that we will use to store our data. This type of organization will be important as our script gets more complex moving forward.</p>
+
+<p>Next, we will check to make sure the current browser supports geolocation by checking the navigator object for the presence of the geolocation property. If it is available, we will call the getCurrentPosition method and pass a success and error object.
+Then we will construct both a success and error object. Within our success object we can accept a position as a parameter and query the object for its nested coords object which contains both latitude and longitude properties.</p>
+
+<p>We will then call populateHeader(), which uses jQuery to append the returned values to the span tags that contain the IDs Lat and Long.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>geo.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">Geo</span><span class="o">=</span><span class="p">{};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>       <span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">.</span><span class="nx">getCurrentPosition</span><span class="p">(</span><span class="nx">success</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//Get the latitude and the longitude;</span>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">success</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">Geo</span><span class="p">.</span><span class="nx">lat</span> <span class="o">=</span> <span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">latitude</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">Geo</span><span class="p">.</span><span class="nx">lng</span> <span class="o">=</span> <span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">longitude</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">populateHeader</span><span class="p">(</span><span class="nx">Geo</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span> <span class="nx">Geo</span><span class="p">.</span><span class="nx">lng</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">error</span><span class="p">(){</span>
+</span><span class='line'>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Geocoder failed&quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">function</span> <span class="nx">populateHeader</span><span class="p">(</span><span class="nx">lat</span><span class="p">,</span> <span class="nx">lng</span><span class="p">){</span>
+</span><span class='line'>        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#Lat&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">lat</span><span class="p">);</span>
+</span><span class='line'>        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#Long&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">lng</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Now let’s return to our browser and navigate to the new page. When a user accesses a web page that includes a call to navigator.geolocation.getCurrentPosition(), a security notification bar will be presented at the top of the page. Browsers that support the Geolocation API have their own security notification, which asks the user to allow or deny the browser access to the device’s current location (see Figure 7-2).</p>
+
+<p>Figure 7-2. Google Chrome geolocation security notification</p>
+
+<p><img class="figure" alt="Figure 7-2" src="http://html5hacks.com/images/chapter7-images/7-2.png"></p>
+
+<p>If the user allows the web application to track her physical location, the script will continue to execute and make a request to the Location Information Server. The remote server returns a data set that includes longitude and latitude. Once we have the information and the success() callback has been called, we update the page (see Figure 7-3).</p>
+
+<p>Figure 7-3. Latitude and longitude</p>
+
+<p><img class="figure" alt="Figure 7-3" src="http://html5hacks.com/images/chapter7-images/7-3.png"></p>
+
+<h3>Security and Privacy Concerns</h3>
+
+<p>The ability for web application developers to collect location data about end users raises quite a bit of concern in regard to security and privacy. The W3C specification clearly indicates that client applications should notify users and provide an interface to authorize the use of location data, allowing them to determine which web applications they trust:</p>
+
+<p>User agents must not send location information to Web sites without the express permission of the user. User agents must acquire permission through a user interface, unless they have prearranged trust relationships with users, as described below. The user interface must include the host component of the document's URI [URI]. Those permissions that are acquired through the user interface and that are preserved beyond the current browsing session (i.e. beyond the time when the browsing context [BROWSINGCONTEXT] is navigated to another URL) must be revocable and user agents must respect revoked permissions.</p>
+]]></content>
+  </entry>
+  
+</feed>

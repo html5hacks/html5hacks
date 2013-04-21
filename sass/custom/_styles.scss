@@ -1,0 +1,95 @@
+// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+
+article img {
+	float: right;
+	margin: 10px;
+	width: 200px;
+}
+
+.figure {
+	float: none;
+	margin: 0 auto;
+	text-align: center;
+	width: 70%;
+}
+
+ul li {
+	margin-left: 30px;
+}
+
+body hgroup h1 {
+	position: absolute;
+	top: 5px;
+	left: 0px;
+	background: url('/images/logo_300.png') 0 0 no-repeat;
+	width: 500px;
+	height: 200px;
+}
+
+body hgroup h2 {
+	color: #f2d16d;
+	margin-bottom: 15px;
+	position: absolute;
+	top: 135px;
+	left: 10px;
+	display: none;
+}
+
+body > header {
+	background: none;
+	text-align: right;
+	height:  30px
+}
+
+xbody nav {
+	padding-right: 0;
+	color: #545252;
+	border: 3px solid white;
+	text-align: right;
+	float: right;
+	margin-right: 23px;
+	background: white url(images/entrycontent_bg.jpg) left bottom repeat-x;
+	box-shadow: 0 2px 9px rgba(0, 0, 0, 0.5);
+	padding: 7px;
+}
+
+body hgroup h1 a {
+	visibility: hidden;
+}
+
+.imgL400 {
+  float: left;
+  margin: 10px;
+  width: 400px;
+}
+
+.imgL300 {
+  float: left;
+  margin: 10px;
+  width: 300px;
+}
+
+.imgL200 {
+  float: left;
+  margin: 10px;
+  width: 200px;
+}
+
+.imgR400 {
+  float: right;
+  margin: 10px;
+  width: 400px;
+}
+
+.imgR300 {
+  float: right;
+  margin: 10px;
+  width: 300px;
+}
+
+.imgR200 {
+  float: right;
+  margin: 10px;
+  width: 200px;
+}
