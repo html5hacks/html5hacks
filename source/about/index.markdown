@@ -10,9 +10,9 @@ footer: false
 
 ![Alt Jesse Cravens](/images/jesse_frog2.jpeg "Jesse Cravens")
 
-Jesse is a Sr. Engineer at Frog where he works with the world’s leading companies, helping them to design, engineer, and bring to market meaningful products and services. He possesses a deep background in web application development, and has recently been focusing on single page web application architecture, the mobile web, and HTML5. 
+Jesse is a Principal Engineer at frog where he works with the world’s leading companies, helping them to design, engineer, and bring to market meaningful products and services. He possesses a deep background in web application development, and has recently been focusing on single page web application architecture, the mobile web, and HTML5. 
 
-He previously held Sr. Development and Technical Management positions at USAA, leading a team of mobile application developers in the planning, designing, development, testing, implementation and maintenance of USAA's industry leading iOS, Android, Blackberry, and mobile web applications for USAA's 8 million members deployed worldwide.
+He previously held senior development and technical management positions at USAA, leading a team of mobile application developers in the planning, designing, development, testing, implementation and maintenance of USAA's industry leading iOS, Android, Blackberry, and mobile web applications for USAA's 8 million members deployed worldwide.
 
 Jesse holds a B.A. in Art from Rice University and currently resides in Austin, TX. He can be reached at [jessecravens.com](http://www.jessecravens.com)
 
@@ -53,12 +53,3 @@ Alex Sirota cofounded and was the CTO and Head of Product at FoxyTunes, an Inter
 ![Alt Alexander Schulze](/images/schulze.png "Alexander Schulze")
 
 Alexander Schulze is a software developer and IT Consultant for more than 20 years. His experience is based on the realization of plenty international and intersectoral software projects. He is a training supervisor for IT specialists and Certified Scrum Master. Alexander already published several books, professional and scientific articles on various IT topics and speaks on international conferences. He is the founder of the jWebSocket project and supervising a world leader in computer components in its intranet and extranet process automation, where he is responsible for decisions concerning the web, communication and database technologies.
-
-
-
-
-
-
-
-
-

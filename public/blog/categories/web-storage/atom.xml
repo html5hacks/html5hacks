@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Storage | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/web-storage/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-04-02T02:11:26-04:00</updated>
+  <updated>2013-04-21T16:44:40-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Build a Milestone Calendar with IndexedDB and FullCalendar.js]]></title>
     <link href="http://html5hacks.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/"/>
-    <updated>2013-01-17T08:47:00-05:00</updated>
+    <updated>2013-01-17T08:47:00-06:00</updated>
     <id>http://html5hacks.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js</id>
     <content type="html"><![CDATA[<h4>IndexedDB is a persistent object data store in the browser. Although it is not a full SQL implementation and it is more complex than the unstructured key–value pairs in localStorage, you can use it to define an API that provides the ability to read and write key–value objects as structured JavaScript objects, and an indexing system that facilitates filtering and lookup.</h4>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: jQuery Mobile | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/jquery-mobile/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-04-02T02:11:26-04:00</updated>
+  <updated>2013-04-21T16:44:40-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Use the GeoLocation API to Display Long/Lat in a jQuery Mobile App]]></title>
     <link href="http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app/"/>
-    <updated>2012-10-15T23:15:00-04:00</updated>
+    <updated>2012-10-15T23:15:00-05:00</updated>
     <id>http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app</id>
     <content type="html"><![CDATA[<p>The Geolocation specification exposes an easy-to-use API. With only a couple of lines of code, you can obtain the user’s current position. What’s more, jQuery Mobile provides a simple framework for building a cross-browser mobile web application.</p>
 
