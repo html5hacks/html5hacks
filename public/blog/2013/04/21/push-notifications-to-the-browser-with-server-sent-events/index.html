@@ -1,0 +1,778 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Push Notifications to the Browser with Server Sent Events - HTML5 Hacks</title>
+  <meta name="author" content="Jesse Cravens and Jeff Burtoft">
+
+  
+  <meta name="description" content="Created by Opera, Server Sent Events standardizes Comet technologies. The standard intends to enable native real time updates through a simple &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="HTML5 Hacks" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic
+" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-28132474-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">HTML5 Hacks</a></h1>
+  
+    <h2>Hacking Next Generation Web Technologies</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:html5hacks.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About the Hackers</a></li>
+  <li><a href="/training">Training</a></li>
+  <li><a href="/join">Join Us</a></li>  
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Push Notifications to the Browser With Server Sent Events</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-21T15:44:00-05:00" pubdate data-updated="true">Apr 21<span>st</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Created by Opera, Server Sent Events standardizes Comet technologies. The standard intends to enable native real time updates through a simple JavaScript API called EventSource, which connects to servers that asynchronously push data updates to clients via HTTP Streaming. Server Sent Events use a single, unidirectional, persistent connection between the browser and the server.</p>
+
+<p>Unlike the Web Socket API, Server Sent Events and EventSource object use HTTP to enable real-time server push capabilities within your application. HTTP Streaming predates the WebSocket API, and it is often referred to as Comet or server push. The exciting part here is that the Server Sent Events API intends to standardize the Comet technique, making it trivial to implement in the browser.</p>
+
+<h2>What is HTTP Streaming?</h2>
+
+<p>In a standard HTTP request and response between a web browser and a web server, the server will close the connection once it has completed the processing of the request. HTTP streaming, or Comet, differs in that the server maintains a persistent, open connection with the browser.</p>
+
+<p>It is important to note that not all web servers are capable of streaming. Only evented servers such as Node.js, Tornado, or Thin are equipped incorporate an event loop that is optimal for supporting HTTP streaming. These, non-blocking servers handle persistent connections from a large number of concurrent requests very well.</p>
+
+<p>A complete discussion on evented vs. threaded servers is out of scope for this post, but that being said, in the upcoming hack we will provide a very simple evented server implementation example to get you started. We provide a simple browser based JavaScript to connect to the server, and a server side implementation using Ruby, Thin, and Sinatra.
+For the record, this is also very easy to do with Node.js.</p>
+
+<p>Here is a link to the companion github repository:
+<a href="https://github.com/html5hacks/chapter9">https://github.com/html5hacks/chapter9</a></p>
+
+<h2>Ruby’s Sinatra</h2>
+
+<p>The Sinatra documentation describes itself as a “DSL for quickly creating web applications in Ruby with minimal effort.”
+This text has focused primarily on Node.js (HTTP Server) and Express.js (web application framework) to quickly generate server side implementations for hacking out functionality.</p>
+
+<p>It would a disservice to not mention Ruby, Rails and Sinatra in the same or similar light as we have Node.js in this text. Although learning Ruby is another learning curve, in the larger scheme of programming languages it is a less daunting curve than most. And as most die-hard Rubyists will preach, it is arguably the most elegant and fun to write of all modern programming languages. Ruby on Rails, and its little brother Sinatra are also great web application frameworks to start with if you are new to web application development.</p>
+
+<p>Much like Node.js and Express, Sinatra makes building small server implementations nearly trivial. So for the context of HTML5 Hacks, that allows us to focus our efforts on programming in the browser.</p>
+
+<p>For now let’s build a simple HTTP Streaming server using Sinatra.</p>
+
+<p>To get started with Ruby On Rails or Sinatra, check out the great documentation available at <a href="http://guides.rubyonrails.org/getting_started.html">http://guides.rubyonrails.org/getting_started.html</a> and <a href="http://sinatrarb.com/intro">http://sinatrarb.com/intro</a>, respectively.</p>
+
+<h2>Building Push Notifications</h2>
+
+<p>Our goal in the next hack is to build a simple streaming server and use the EventSource object to open a persistent connection from the browser. We will then push notifcations from one ‘admin’ browser to all the connected receivers. Sounds simple, right? Let’s get started.</p>
+
+<h2>A Simple HTTP Streaming Server</h2>
+
+<p>Open up a file and name it stream.rb. Then add the following:
+Simple requiring of Sinatra and the JSON library:</p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="nb">require</span> <span class="s1">&#39;json&#39;</span>
+</span><span class='line'>  <span class="nb">require</span> <span class="s1">&#39;sinatra&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then, we set up a public folder, and set the server to use the evented ruby server, Thin.</p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="n">set</span> <span class="ss">:public_folder</span><span class="p">,</span> <span class="no">Proc</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">&quot;public&quot;</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>  <span class="n">set</span> <span class="ss">server</span><span class="p">:</span> <span class="s1">&#39;thin&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Set up two routs for serving our 2 pages: index and admin. We will use Erb as our templating language. The details are out of scope, but our use is very minimal. More on Erb here: <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html">http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html</a></p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="n">get</span> <span class="s1">&#39;/&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">erb</span> <span class="ss">:index</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">get</span> <span class="s1">&#39;/admin&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">erb</span> <span class="ss">:admin</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We’d like to timestamp each notification, so here is a very simple function definition.</p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="k">def</span> <span class="nf">timestamp</span>
+</span><span class='line'>    <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We also set up two empty arrays: one to hold the connections and the other to hold out notifications.</p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="n">connections</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>  <span class="n">notifications</span> <span class="o">=</span> <span class="o">[]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, for the routes. When our browser loads it s page, we have JavaScript running which will use the EventSource object to connect to a url here: http://localhost:4567/connect.</p>
+
+<p>More on EventSource later.</p>
+
+<p>But for now you can see the magic of the evented HTTP stream, the connection is held open until a callback is fired to close the stream.</p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="n">get</span> <span class="s1">&#39;/connect&#39;</span><span class="p">,</span> <span class="ss">provides</span><span class="p">:</span> <span class="s1">&#39;text/event-stream&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">stream</span> <span class="ss">:keep_open</span> <span class="k">do</span> <span class="o">|</span><span class="n">out</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">connections</span> <span class="o">&lt;&lt;</span> <span class="n">out</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1">#out.callback on stream close evt. </span>
+</span><span class='line'>      <span class="n">out</span><span class="o">.</span><span class="n">callback</span> <span class="p">{</span>
+</span><span class='line'>        <span class="c1">#delete the connection </span>
+</span><span class='line'>        <span class="n">connections</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Finally, any data this posted to the /push route is pushed out to each connected device.</p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="n">post</span> <span class="s1">&#39;/push&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="n">params</span>
+</span><span class='line'>    <span class="c1">#Add the timestamp to the notification</span>
+</span><span class='line'>    <span class="n">notification</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="p">{</span><span class="s1">&#39;timestamp&#39;</span> <span class="o">=&gt;</span> <span class="n">timestamp</span><span class="p">})</span><span class="o">.</span><span class="n">to_json</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">notifications</span> <span class="o">&lt;&lt;</span> <span class="n">notification</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">notifications</span><span class="o">.</span><span class="n">shift</span> <span class="k">if</span> <span class="n">notifications</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">10</span>
+</span><span class='line'>    <span class="n">connections</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">out</span><span class="o">|</span> <span class="n">out</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;data: </span><span class="si">#{</span><span class="n">notification</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">}</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As we said before, you can just follow the instructions at our git repository to pull down and build this code. Or if you have been following along, launch a terminal, navigate to the directory where you code is, and run:</p>
+
+<figure class='code'><figcaption><span>cli </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ruby stream.rb</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Figure 9.15 Starting the Sinatra Server</p>
+
+<p><img class="figure" alt="Figure 7-2" src="/images/chapter9-images/9-15.png"></p>
+
+<p>Alright, so now that we have out Sinatra app up and running with custom routes to handle incoming requests from our browser.</p>
+
+<p>If this doesn’t make complete sense yet, just hang loose. In the upcoming subsections, the rest of the items will start to fall into place.</p>
+
+<h2>Set Up the HTML pages</h2>
+
+<p>We will be building 2 pages: one for the admin to push out notifications, and the other will be for the connected receivers to receive the notification. Both of these ‘views’ will share the same layout, as such:</p>
+
+<figure class='code'><figcaption><span>index.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;head&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;title&gt;</span>HTML5 Hacks - Server Sent Events<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">”http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js”</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.js&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;jquery.notify.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;style.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;ui.notify.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;body&gt;</span>
+</span><span class='line'>    <span class="cp">&lt;!—- implementation specific here --&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The admin page will contain an input tag and a simple button.</p>
+
+<figure class='code'><figcaption><span>admin.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;message&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Enter Notification Here&quot;</span> <span class="nt">/&gt;&lt;br&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">”button”</span> <span class="na">id=</span><span class="s">&quot;send&quot;</span> <span class="na">data-role=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>push<span class="nt">&lt;/input&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And our receiver pages will display a simple piece of text:</p>
+
+<figure class='code'><figcaption><span>receiver.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;p&gt;</span>Don&#39;t Mind me ... Just Waiting for a Push Notification from HTML5 Hacks.<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>By launching one browser window to http://localhost:4567/admin you should now see our admin form.</p>
+
+<p>Figure 9.16 The initial admin page</p>
+
+<p><img class="figure" alt="Figure 9-16" src="/images/chapter9-images/9-16.png"></p>
+
+<p>And, navigate to http://localhost:4567 in your browser and you should see.</p>
+
+<p>Figure 9.17 The initial index page</p>
+
+<p><img class="figure" alt="Figure 9-17" src="/images/chapter9-images/9-17.png"></p>
+
+<h2>Adding a bit of jQuery</h2>
+
+<p>We need to add a bit of JavaScript to attach an event listener to the “send” button. This snippet will prevent the default submission of the form and post the notifcation object to the server as JSON.
+Notice the url /push maps to the route we defined in our Sinatra app.</p>
+
+<figure class='code'><figcaption><span>push.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#send&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="kd">var</span> <span class="nx">notifcation</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">notifcation</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#notification&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span> <span class="s1">&#39;/push&#39;</span><span class="p">,</span> <span class="nx">notifcation</span><span class="p">,</span><span class="s1">&#39;json&#39;</span><span class="p">);</span>
+</span><span class='line'> <span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, lets open up five browser windows: one admin at http://localhost:4567/admin and four more receivers at http://localhost:4567</p>
+
+<p>Figure 9.18 Opening 5 browser windows</p>
+
+<p><img class="figure" alt="Figure 9-18" src="/images/chapter9-images/9-18.png"></p>
+
+<p>Looking good.</p>
+
+<p>But before we get started, lets set up our EventSource.</p>
+
+<h2>EventSource</h2>
+
+<p>Event Source is a super simple JavaScript API for opening a connection with an HTTP stream.
+Because our receiver pages are just ‘dumb’ terminals that receive data, we have an ideal scenario for Server Side Events.
+Earlier, when we discussed the Sinatra app, we showed exposing a route for the browser to connect to an HTTP stream. Well, this is where we connect!</p>
+
+<figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/connect&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">// … do something</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now we can add a simple notification with the available data,</p>
+
+<figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/connect&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// … Notify</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And here is the final script for the admin:</p>
+
+<figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#send&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">notification</span> <span class="o">=</span> <span class="p">{</span><span class="nx">message</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#notification&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()};</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span> <span class="s1">&#39;/push&#39;</span><span class="p">,</span> <span class="nx">notification</span><span class="p">,</span><span class="s1">&#39;json&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">})</span>
+</span><span class='line'>  <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Installing jQuery.notify</h2>
+
+<p>For our Push Notifcations we will make use of Eric Hynds great jQuery plugin jquery-notify, located here at github: [github.com/ehynds/jquery-notify] (https://github.com/ehynds/jquery-notify)</p>
+
+<p>In order to display the notification, we will need to include some markup to the receiver page.</p>
+
+<figure class='code'><figcaption><span>receiver.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;container&quot;</span> <span class="na">style=</span><span class="s">&quot;display:none&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;basic-template&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;ui-notify-cross ui-notify-close&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>x<span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;h1&gt;</span>#{title}<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;p&gt;</span>#{text}<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This creates a hidden div tag in the bottom of the document. We are not showing the CSS that uses “display: none” to hide it, but you can see more by examining the source code in the companion git repo.</p>
+
+<p>Figure 9.19 Inspecting the DOM in Chrome Dev Tools</p>
+
+<p><img class="figure" alt="Figure 9-19" src="/images/chapter9-images/9-19.png"></p>
+
+<p>In order for jQuery.notify to initialize, you must first call the following:</p>
+
+<figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">notify</span><span class="p">({</span>
+</span><span class='line'>  <span class="nx">speed</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">expires</span><span class="o">:</span> <span class="kc">false</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And here is the final script for the receiver:</p>
+
+<figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">notify</span><span class="p">({</span>
+</span><span class='line'>      <span class="nx">speed</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">expires</span><span class="o">:</span> <span class="kc">false</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/connect&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">notify</span><span class="p">(</span><span class="s2">&quot;create&quot;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">title</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">timestamp</span><span class="p">,</span>
+</span><span class='line'>        <span class="nx">text</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">notification</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It’s that simple. The EventSource API is minimal and plugging it into a web framework like Sinatra or Node.js is straightforward.</p>
+
+<p>Now, as we submit notifications from the admin page, our receiver pages are updated with time stamped notifications:</p>
+
+<p>Figure 9.20 Pushing Notifications to the Connected Browsers</p>
+
+<p><img class="figure" alt="Figure 9-20" src="/images/chapter9-images/9-20.png"></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jesse Cravens</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-21T15:44:00-05:00" pubdate data-updated="true">Apr 21<span>st</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/eventsource/'>EventSource</a>, <a class='category' href='/blog/categories/html5-connectivity/'>HTML5 Connectivity"</a>, <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/push-notifications/'>Push Notifications</a>, <a class='category' href='/blog/categories/server-sent-events/'>Server Sent Events</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/" data-via="html5hacks" data-counturl="http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/04/02/make-your-web-app-to-a-windows-8-app/" title="Previous Post: Turn Your Web App into a Windows 8 App">&laquo; Turn Your Web App into a Windows 8 App</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+
+<!-- Begin MailChimp Signup Form -->
+<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+
+<div id="mc_embed_signup">
+<form action="http://jessecravens.us2.list-manage1.com/subscribe/post?u=e00a501b9d5ba6aa43acd55a7&amp;id=95bec8136d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	<label for="mce-EMAIL">Subscribe to our mailing list</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+
+
+<a href="http://www.amazon.com/gp/product/1449334997/ref=as_li_qf_sp_asin_il?ie=UTF8&camp=1789&creative=9325&creativeASIN=1449334997&linkCode=as2&tag=wwwjessecrave-20"><img src="/images/book.jpeg" /></a><img src="http://www.assoc-amazon.com/e/ir?t=wwwjessecrave-20&l=as2&o=1&a=1449334997" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+
+  <h1>O'Reilly Media's HTML5 Hacks</h1>
+  <p>HTML5 Hacks shows you how to use the latest tools to make your sites and applications more interactive, more functional, and more capable of competing with desktop applications. Each hack shows you how to make a concrete improvement, applying the latest in JavaScript, HTML, and CSS power to common web development issues.</p>
+
+<!-- <div style="width:195px; text-align:center;" ><iframe  src="http://www.eventbrite.com/countdown-widget?eid=2736459825" frameborder="0" height="446" width="195" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:195px; text-align:center;" ><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/r/ecount">Event Registration Online</a><span style="color:#ddd;"> for </span><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://html5hacks2013sxsw.eventbrite.com?ref=ecount">HTML5 Hacks SXSW 2013 Workshop</a> <span style="color:#ddd;">powered by</span> <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=ecount">Eventbrite</a></div></div> -->
+
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/">Push Notifications to the Browser with Server Sent Events</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/02/make-your-web-app-to-a-windows-8-app/">Turn Your Web App into a Windows 8 App</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/26/oreilly-webcast-rethinking-the-possibilities-of-browser-based-apps-with-html5/">Win a free copy of HTML5 Hacks</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/">SXSWi 2013: 'Battle of the HTML5 Hackers' and 'HTML5 Hacks' Book Signing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/10/build-a-windows-8-app-with-yui/">Build a Windows 8 App with YUI</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/html5hacks">@html5hacks</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'html5hacks',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("html5hacks", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/html5hacks" class="twitter-follow-button" data-show-count="false">Follow @html5hacks</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jesse Cravens and Jeff Burtoft -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'html5hacks';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/';
+        var disqus_url = 'http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

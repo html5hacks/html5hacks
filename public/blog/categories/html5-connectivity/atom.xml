@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: HTML5 Connectivity | HTML5 Hacks]]></title>
+  <title><![CDATA[Category: HTML5 Connectivity" | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/html5-connectivity/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-04-21T16:44:40-05:00</updated>
+  <updated>2013-04-21T17:00:25-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -14,171 +14,272 @@
 
   
   <entry>
-    <title type="html"><![CDATA[SXSWi 2013: 'Battle of the HTML5 Hackers' and 'HTML5 Hacks' Book Signing]]></title>
-    <link href="http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/"/>
-    <updated>2013-03-12T23:55:00-05:00</updated>
-    <id>http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers</id>
-    <content type="html"><![CDATA[<p>We had a great turnout for the 'Battle of the HTML5 Hackers' presentation at SXSWi on Tuesday.</p>
+    <title type="html"><![CDATA[Push Notifications to the Browser with Server Sent Events]]></title>
+    <link href="http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/"/>
+    <updated>2013-04-21T15:44:00-05:00</updated>
+    <id>http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events</id>
+    <content type="html"><![CDATA[<p>Created by Opera, Server Sent Events standardizes Comet technologies. The standard intends to enable native real time updates through a simple JavaScript API called EventSource, which connects to servers that asynchronously push data updates to clients via HTTP Streaming. Server Sent Events use a single, unidirectional, persistent connection between the browser and the server.</p>
 
-<p><img class="imgL300" alt="SXSWi 2013: Battle of the HTML5 Hackers - Jesse Cravens and Jeff Burtoft" src="http://html5hacks.com/images/sxsw13/sxsw13-crowd.jpg"></p>
+<p>Unlike the Web Socket API, Server Sent Events and EventSource object use HTTP to enable real-time server push capabilities within your application. HTTP Streaming predates the WebSocket API, and it is often referred to as Comet or server push. The exciting part here is that the Server Sent Events API intends to standardize the Comet technique, making it trivial to implement in the browser.</p>
 
-<p>Using our best CDD (Conference Driven Devlopment) techniques, we walked the audience through the creation of <a href="http://nerdclustr.jit.su">Nerdclustr</a>: an HTML5 mobile Application that helps nerds find other like-minded nerds at conferences events.</p>
+<h2>What is HTTP Streaming?</h2>
 
-<p>Using realtime and mapping technolgies, the app visualizes nerd behavior in map pin clusters.</p>
+<p>In a standard HTTP request and response between a web browser and a web server, the server will close the connection once it has completed the processing of the request. HTTP streaming, or Comet, differs in that the server maintains a persistent, open connection with the browser.</p>
 
-<p><img class="imgR200" alt="Nerdclustr: SXSWi 2013 Ballroom G Austin Convention Center"  src="http://html5hacks.com/images/sxsw13/sxsw13-app.png"></p>
+<p>It is important to note that not all web servers are capable of streaming. Only evented servers such as Node.js, Tornado, or Thin are equipped incorporate an event loop that is optimal for supporting HTTP streaming. These, non-blocking servers handle persistent connections from a large number of concurrent requests very well.</p>
 
-<p>Here is a shot of the app in action (Ballroom G in the Austin Convention Center); it performed well during the presentation. Thanks to <a href="https://www.nodejitsu.com/">Nodjitsu</a> for the quality node.js WebSocket service. After a 2-day hackathon to get the app launched, I ran through a number of deployment options, many of which I have used before for Rails applications. <a href="https://www.nodejitsu.com/">Nodjitsu</a> won out in that it actually supported the WebSokcet protocol and made deployment super simple using the jitsu CLI.</p>
+<p>A complete discussion on evented vs. threaded servers is out of scope for this post, but that being said, in the upcoming hack we will provide a very simple evented server implementation example to get you started. We provide a simple browser based JavaScript to connect to the server, and a server side implementation using Ruby, Thin, and Sinatra.
+For the record, this is also very easy to do with Node.js.</p>
 
-<p><img class="imgL200" alt="Jesse Cravens and Jeff Burtoft: SXSWi 2013 - HTML5 Hacks Book Signing"  src="http://html5hacks.com/images/sxsw13/sxsw13-booksigning.png"></p>
+<p>Here is a link to the companion github repository:
+<a href="https://github.com/html5hacks/chapter9">https://github.com/html5hacks/chapter9</a></p>
 
-<p>Nerdclustr source code is available <a href="https://github.com/html5hacks/nerd-clustr">here</a>.</p>
+<h2>Ruby’s Sinatra</h2>
 
-<p>During the book signing, the bookstore informed us there were only 3 copies left. I'm not keen to the selection process of books, but I was little surprised at the limited number of technical books. This is certainly a reflection of the SXSWi demographic, and we also tailored our content and presentation style to this audience.</p>
+<p>The Sinatra documentation describes itself as a “DSL for quickly creating web applications in Ruby with minimal effort.”
+This text has focused primarily on Node.js (HTTP Server) and Express.js (web application framework) to quickly generate server side implementations for hacking out functionality.</p>
 
-<p>The slide deck is available here:</p>
+<p>It would a disservice to not mention Ruby, Rails and Sinatra in the same or similar light as we have Node.js in this text. Although learning Ruby is another learning curve, in the larger scheme of programming languages it is a less daunting curve than most. And as most die-hard Rubyists will preach, it is arguably the most elegant and fun to write of all modern programming languages. Ruby on Rails, and its little brother Sinatra are also great web application frameworks to start with if you are new to web application development.</p>
 
-<script async class="speakerdeck-embed" data-id="c69c92f06d880130bfaa22000a1f8363" data-ratio="1.77777777777778" src="http://html5hacks.com//speakerdeck.com/assets/embed.js"></script>
+<p>Much like Node.js and Express, Sinatra makes building small server implementations nearly trivial. So for the context of HTML5 Hacks, that allows us to focus our efforts on programming in the browser.</p>
 
+<p>For now let’s build a simple HTTP Streaming server using Sinatra.</p>
 
+<p>To get started with Ruby On Rails or Sinatra, check out the great documentation available at <a href="http://guides.rubyonrails.org/getting_started.html">http://guides.rubyonrails.org/getting_started.html</a> and <a href="http://sinatrarb.com/intro">http://sinatrarb.com/intro</a>, respectively.</p>
 
+<h2>Building Push Notifications</h2>
 
-<hr>
+<p>Our goal in the next hack is to build a simple streaming server and use the EventSource object to open a persistent connection from the browser. We will then push notifcations from one ‘admin’ browser to all the connected receivers. Sounds simple, right? Let’s get started.</p>
 
+<h2>A Simple HTTP Streaming Server</h2>
 
-<p>Stay tuned for our next presentation happening online, through O'Reilly Webcasts. Join us for <a href="http://www.oreillynet.com/pub/e/2566">'Rethinking the Possibilities of Browser-based Apps with HTML5'</a> on Wednesday, March 27, 2013 10AM PT.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font]]></title>
-    <link href="http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/"/>
-    <updated>2012-11-18T19:42:00-06:00</updated>
-    <id>http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font</id>
-    <content type="html"><![CDATA[<p>Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
-make requests to other domains from within the browser. With CORS you have a secure
-and easy-to-implement approach for circumventing the browser’s same origin
-policy.</p>
+<p>Open up a file and name it stream.rb. Then add the following:
+Simple requiring of Sinatra and the JSON library:</p>
 
-<p>In this hack we will explore hosting a web font on a cloud drive. In order to do so, we
-will learn how to configure an Amazon S3 bucket to accept requests from other domains.</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  require &#39;json&#39;</span>
+</span><span class='line'><span class="sr">  require &#39;sinatra&#39;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>If you are not already familiar with web fonts and @font-face, refer to Hack #12.</p>
+<p>Then, we set up a public folder, and set the server to use the evented ruby server, Thin.</p>
 
-<p>In the next section I provide a bit more background on Amazon S3 and the same origin
-policy, before we get into the details of CORS.</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  set :public_folder, Proc.new { File.join(root, &quot;public&quot;) }</span>
+</span><span class='line'><span class="sr">  set server: &#39;thin&#39;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h3>What Is an Amazon S3 Bucket?</h3>
+<p>Set up two routs for serving our 2 pages: index and admin. We will use Erb as our templating language. The details are out of scope, but our use is very minimal. More on Erb here: <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html">http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html</a></p>
 
-<p>Amazon S3 (Simple Storage Service) is simply a cloud drive. Files of all kinds can be
-stored using this service, but web application developers often use it to store static
-assets such as images, JavaScript files, and stylesheets.</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  get &#39;/</span><span class="s1">&#39; do&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="s1">&lt;pre&gt;&lt;code&gt;erb :index</span>
+</span><span class='line'><span class="s1">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="s1">&lt;p&gt;  end&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="s1">&lt;p&gt;  get &#39;</span><span class="o">/</span><span class="n">admin</span><span class="err">&#39;</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;erb :admin</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>For performance improvements, web developers like to employ Content Delivery Networks
-(CDNs) to serve their static files. While Amazon S3 is not a CDN in and of itself,
-it’s easy to activate it as one by using CloudFront.</p>
+<p>We’d like to timestamp each notification, so here is a very simple function definition.</p>
 
-<p>A bucket refers to the directory name that you choose to store your static files.
-To get started let’s set up an account at Amazon and navigate to the Amazon Management
-Console; see Figure 9-21.</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  def timestamp&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Figure 9-21. S3 Management Console</p>
+<p>We also set up two empty arrays: one to hold the connections and the other to hold out notifications.</p>
 
-<p><img class="figure" alt="Figure 9-21" src="http://html5hacks.com/images/chapter9-images/9-21.png"></p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  connections = []</span>
+</span><span class='line'><span class="sr">  notifications = []&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>If we click on Create a Bucket we should see the prompt shown in Figure 9-22.</p>
+<p>Now, for the routes. When our browser loads it s page, we have JavaScript running which will use the EventSource object to connect to a url here: http://localhost:4567/connect.</p>
 
-<p>Figure 9-22. Creating an S3 bucket in the S3 Management Console</p>
+<p>More on EventSource later.</p>
 
-<p><img class="figure" alt="Figure 9-22" src="http://html5hacks.com/images/chapter9-images/9-22.png"></p>
+<p>But for now you can see the magic of the evented HTTP stream, the connection is held open until a callback is fired to close the stream.</p>
 
-<p>Let’s name the bucket and choose a region (see Figure 9-23). As I stated earlier, you
-can choose a region to optimize for latency, minimize costs, or address regulatory
-requirements.</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  get &#39;/</span><span class="n">connect</span><span class="s1">&#39;, provides: &#39;</span><span class="n">text</span><span class="o">/</span><span class="n">event</span><span class="o">-</span><span class="n">stream</span><span class="err">&#39;</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;stream :keep_open do |out|</span>
+</span><span class='line'><span class="sr">  connections &amp;lt;&amp;lt; out</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">  #out.callback on stream close evt. </span>
+</span><span class='line'><span class="sr">  out.callback { </span>
+</span><span class='line'><span class="sr">    #delete the connection </span>
+</span><span class='line'><span class="sr">    connections.delete(out) </span>
+</span><span class='line'><span class="sr">  } </span>
+</span><span class='line'><span class="sr">end</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Figure 9-23. Naming an S3 bucket in the S3 Management Console</p>
+<p>Finally, any data this posted to the /push route is pushed out to each connected device.</p>
 
-<p><img class="figure" alt="Figure 9-23" src="http://html5hacks.com/images/chapter9-images/9-23.png"></p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  post &#39;/</span><span class="n">push</span><span class="s1">&#39; do&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="s1">&lt;pre&gt;&lt;code&gt;puts params</span>
+</span><span class='line'><span class="s1">#Add the timestamp to the notification</span>
+</span><span class='line'><span class="s1">notification = params.merge( {&#39;</span><span class="n">timestamp</span><span class="err">&#39;</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">timestamp</span><span class="p">})</span><span class="o">.</span><span class="n">to_json</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">notifications</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">notification</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">notifications</span><span class="o">.</span><span class="n">shift</span> <span class="k">if</span> <span class="n">notifications</span><span class="o">.</span><span class="n">length</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">10</span>
+</span><span class='line'><span class="n">connections</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">out</span><span class="o">|</span> <span class="n">out</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s2">&quot;data: </span><span class="si">#{</span><span class="n">notification</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>We will go ahead and name our bucket none other than “html5hacks.” You should now
-see an admin screen that shows an empty filesystem (see Figure 9-24).</p>
+<p>As we said before, you can just follow the instructions at our git repository to pull down and build this code. Or if you have been following along, launch a terminal, navigate to the directory where you code is, and run:</p>
 
-<p>Figure 9-24. The html5hacks S3 bucket</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>cli </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>  $ ruby stream.rb&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p><img class="figure" alt="Figure 9-24" src="http://html5hacks.com/images/chapter9-images/9-24.png"></p>
+<p>Figure 9.15 Starting the Sinatra Server</p>
 
-<p>Well, that was simple. So why are we doing this? Let’s start with some simple browser
-security—something called the same origin policy.</p>
+<p><img class="figure" alt="Figure 7-2" src="http://html5hacks.com/images/chapter9-images/9-15.png"></p>
 
-<h3>Same Origin Policy</h3>
+<p>Alright, so now that we have out Sinatra app up and running with custom routes to handle incoming requests from our browser.</p>
 
-<p>As the browser becomes more and more of an application platform, application developers
-have compelling reasons to write code that makes requests to other domains
-in order to interact directly with the content. Wikipedia defines same origin policy as
-follows:</p>
+<p>If this doesn’t make complete sense yet, just hang loose. In the upcoming subsections, the rest of the items will start to fall into place.</p>
 
-<p>In computing, the same origin policy is an important security concept for a
-number of browser-side programming languages, such as JavaScript. The
-policy permits scripts running on pages originating from the same site to
-access each other’s methods and properties with no specific restrictions,
-but prevents access to most methods and properties across pages on different
-sites.1</p>
+<h2>Set Up the HTML pages</h2>
 
-<p>1 http://en.wikipedia.org/wiki/Same_origin_policy</p>
+<p>We will be building 2 pages: one for the admin to push out notifications, and the other will be for the connected receivers to receive the notification. Both of these ‘views’ will share the same layout, as such:</p>
 
-<p>As stated in Wikipedia’s definition, the same origin policy is a good thing; it protects
-the end user from security attacks. But it does cause some challenges for web developers.</p>
-
-<p>This is where CORS comes into the picture. CORS allows developers of remote data
-and content to designate which domains (through a whitelist) can interact with their
-content.</p>
-
-<h3>Using Web Fonts in Your Application</h3>
-
-<p>There are a number of ways to use a web font within your web pages, such as calling
-the @font-face service, bundling the font within your application, hosting the web font
-in your own Amazon S3 bucket (more on this later), or converting the file to Base64
-and embedding the data inline in a data-uri. By the way, the last technique is similar
-to the one outlined in Hack #13.</p>
-
-<p>Each of these techniques has limitations.</p>
-
-<ul>
-<li>When calling the @font-face service you are limited to the fonts within the particular
-service’s database.</li>
-<li>Bundling the font within your application does not make use of HTTP caching, so
-your application will continue to download the font file on every page request.
-Furthermore, you cannot reuse the font within other applications.</li>
-<li>Hosting the font in an Amazon S3 bucket works great, except with Firefox, which
-enforces the same origin policy on all resources. So the response from the remote
-server will be denied.</li>
-<li>Converting the font to Base64 adds additional weight to the stylesheet, and does
-not take advantage of caching.</li>
-</ul>
-
-
-<p>An exploration into the different types of web fonts is beyond the scope of this hack,
-so I will assume that you have already selected the web font BebasNeue.otf.
-You can download free and open fonts from sites such as http://www.dafont.com.</p>
-
-<h3>Uploading Your Font to Your Amazon S3 Bucket</h3>
-
-<p>Now, all we have to do is to upload the font onto our filesystem in the cloud (see
-Figure 9-25).</p>
-
-<p>Figure 9-25. An uploaded BebasNeue font</p>
-
-<p><img class="figure" alt="Figure 9-25" src="http://html5hacks.com/images/chapter9-images/9-25.png"></p>
-
-<h3>Adding the Web Font to Your Web Page</h3>
-
-<p>In order to add a web font to our page, we need to add a single stylesheet to an HTML
-page.</p>
-
-<p>Here is our page. Let’s call it index.html, and add a <link> tag pointing to our base
-stylesheet, styles.css.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>geo.html </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>index.html </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -199,20 +300,38 @@ stylesheet, styles.css.</p>
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
 </pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;p&gt;&lt;html&gt;</span>
 </span><span class='line'>  <span class="nt">&lt;head&gt;&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>S3 - font<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>HTML5 Hacks - Server Sent Events<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
 </span><span class='line'><span class="ni">&amp;lt;</span>meta charset=&quot;utf-8&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>script src=”http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js”<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/script&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>script src=&quot;http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.js&quot;<span class="ni">&amp;gt;</span> <span class="ni">&amp;lt;</span>/script<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>script src=&quot;jquery.notify.js&quot; type=&quot;text/javascript&quot;<span class="ni">&amp;gt;&amp;lt;</span>/script<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;ui.notify.css&quot;<span class="ni">&amp;gt;</span>
 </span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/head&gt;</span>
 </span><span class='line'>  <span class="nt">&lt;body&gt;&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>h1 class=&quot;test&quot;<span class="ni">&amp;gt;</span>HTML5 Hacks<span class="ni">&amp;lt;</span>/<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>!—- implementation specific here --<span class="ni">&amp;gt;</span>
 </span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/body&gt;</span>
@@ -221,10 +340,68 @@ stylesheet, styles.css.</p>
 </span><span class='line'><span class="nt">&lt;p&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>In our styles.css let’s add the following and point to our uploaded file. Also, let’s assign
-the font to our H1 header via the test class name.</p>
+<p>The admin page will contain an input tag and a simple button.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>style.css </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>admin.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;message&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Enter Notification Here&quot;</span> <span class="nt">/&gt;&lt;br&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">”button”</span> <span class="na">id=</span><span class="s">&quot;send&quot;</span> <span class="na">data-role=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>push<span class="nt">&lt;/input&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>And our receiver pages will display a simple piece of text:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>receiver.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;p&gt;</span>Don&#39;t Mind me ... Just Waiting for a Push Notification from HTML5 Hacks.<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>By launching one browser window to http://localhost:4567/admin you should now see our admin form.</p>
+
+<p>Figure 9.16 The initial admin page</p>
+
+<p><img class="figure" alt="Figure 9-16" src="http://html5hacks.com/images/chapter9-images/9-16.png"></p>
+
+<p>And, navigate to http://localhost:4567 in your browser and you should see.</p>
+
+<p>Figure 9.17 The initial index page</p>
+
+<p><img class="figure" alt="Figure 9-17" src="http://html5hacks.com/images/chapter9-images/9-17.png"></p>
+
+<h2>Adding a bit of jQuery</h2>
+
+<p>We need to add a bit of JavaScript to attach an event listener to the “send” button. This snippet will prevent the default submission of the form and post the notifcation object to the server as JSON.
+Notice the url /push maps to the route we defined in our Sinatra app.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>push.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -237,87 +414,43 @@ the font to our H1 header via the test class name.</p>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="k">@font-face</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nt">font-family</span><span class="o">:</span> <span class="nt">BebasNeue</span><span class="o">;</span>
-</span><span class='line'>  <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://s3.amazonaws.com/html5hacks/BebasNeue.otf&#39;</span><span class="o">);</span>
-</span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#send&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.test</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;BebasNeue&#39;</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>   <span class="kd">var</span> <span class="nx">notifcation</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">notifcation</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#notification&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()};</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span> <span class="s1">&#39;/push&#39;</span><span class="p">,</span> <span class="nx">notifcation</span><span class="p">,</span><span class="s1">&#39;json&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span> <span class="p">})</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Now we’ll open a browser and point to our newly created HTML page. In Opera (see
-Figure 9-26), Safari, and Chrome our header tag is being styled correctly.</p>
+<p>Now, lets open up five browser windows: one admin at http://localhost:4567/admin and four more receivers at http://localhost:4567</p>
 
-<p>Figure 9-26. Opera browser showing the BebasNeue font</p>
+<p>Figure 9.18 Opening 5 browser windows</p>
 
-<p><img class="figure" alt="Figure 9-26" src="http://html5hacks.com/images/chapter9-images/9-26.png"></p>
+<p><img class="figure" alt="Figure 9-18" src="http://html5hacks.com/images/chapter9-images/9-18.png"></p>
 
-<p>But if we view it in Firefox, we are having issues (see Figure 9-27).</p>
+<p>Looking good.</p>
 
-<p>Figure 9-27. Firefox browser failing to show the BebasNeue font</p>
+<p>But before we get started, lets set up our EventSource.</p>
 
-<p><img class="figure" alt="Figure 9-27" src="http://html5hacks.com/images/chapter9-images/9-27.png"></p>
+<h2>EventSource</h2>
 
-<p>If we examine the request for our font in the Chrome Dev Tools Network tab, we will
-see that the response from the server is empty (see Figure 9-28).</p>
+<p>Event Source is a super simple JavaScript API for opening a connection with an HTTP stream.
+Because our receiver pages are just ‘dumb’ terminals that receive data, we have an ideal scenario for Server Side Events.
+Earlier, when we discussed the Sinatra app, we showed exposing a route for the browser to connect to an HTTP stream. Well, this is where we connect!</p>
 
-<p>Figure 9-28. Firefox browser showing an empty response</p>
-
-<p><img class="figure" alt="Figure 9-28" src="http://html5hacks.com/images/chapter9-images/9-28.png"></p>
-
-<p>What gives? Well, by default, Firefox will only accept links from the same domain as
-the host page. If we want to include fonts from different domains, we need to add an
-Access-Control-Allow-Origin header to the font.</p>
-
-<p>So, if you try to serve fonts from any CDN, Firefox will not load them.</p>
-
-<h3>What Is CORS?</h3>
-
-<p>The CORS specification uses the XMLHttpRequest object to send and receive headers
-from the originating web page to a server that is properly configured in order to
-enable cross-site requests.</p>
-
-<p>The server accepting the request must respond with the
-Access-Control-Allow-Origin header with either a wildcard (*) or the correct
-origin domain sent by the originating web page as the value. If the value is not included,
-the request will fail.</p>
-
-<p>Furthermore, for HTTP methods other than GET or POST, such as PUT, a preflight request
-is necessary, in which the browser sends an HTTP OPTIONS request to establish
-a handshake with the server before accepting the PUT request.</p>
-
-<p>Fortunately, after enough backlash from the development community, Amazon made
-CORS configuration available on Amazon S3 via a very simple XML configuration.</p>
-
-<p>Let’s get started.</p>
-
-<h3>Configuring CORS at Amazon S3</h3>
-
-<p>You should already be at your Amazon Management Console at http://
-console.aws.amazon.com. Click on Properties→Permissions→Edit CORS configuration,
-and you should receive a modal prompt.</p>
-
-<p>The configuration can accept up to 100 rule definitions, but for our web font we will
-only need a few. For this example we will use the wildcard, but if you are doing this in
-production, you should whitelist the domains to prevent others from serving your font
-from your S3 account on their own web pages. It wouldn’t be the end of the world, but
-it might get costly.</p>
-
-<p>The first rule allows cross-origin GET requests from any origin. The rule also allows all
-headers in a preflight OPTIONS request through the
-Access-Control-Request-Headers header. In response to any preflight OPTIONS
-request, Amazon S3 will return any requested headers.</p>
-
-<p>The second rule allows cross-origin GET requests from all origins. The * wildcard
-character refers to all origins.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>config.xml </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>es.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -328,35 +461,218 @@ character refers to all origins.</p>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;/p&gt;</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;CORSConfiguration&gt;</span>
-</span><span class='line'><span class="nt">&lt;CORSRule&gt;</span>
-</span><span class='line'><span class="nt">&lt;AllowedOrigin&gt;</span>*/AllowedOrigin&gt;
-</span><span class='line'><span class="nt">&lt;AllowedMethod&gt;</span>GET<span class="nt">&lt;/AllowedMethod&gt;</span>
-</span><span class='line'><span class="nt">&lt;/CORSRule&gt;</span>
-</span><span class='line'><span class="nt">&lt;/CORSConfiguration&gt;&lt;/p&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/connect&#39;</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// … do something</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Now we can add a simple notification with the available data,</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/connect&#39;</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// … Notify</span>
+</span><span class='line'>  <span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>And here is the final script for the admin:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#send&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">notification</span> <span class="o">=</span> <span class="p">{</span><span class="nx">message</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#notification&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()};</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span> <span class="s1">&#39;/push&#39;</span><span class="p">,</span> <span class="nx">notification</span><span class="p">,</span><span class="s1">&#39;json&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">})</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">});</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Installing jQuery.notify</h2>
+
+<p>For our Push Notifcations we will make use of Eric Hynds great jQuery plugin jquery-notify, located here at github: [github.com/ehynds/jquery-notify] (https://github.com/ehynds/jquery-notify)</p>
+
+<p>In order to display the notification, we will need to include some markup to the receiver page.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>receiver.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;container&quot;</span> <span class="na">style=</span><span class="s">&quot;display:none&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;basic-template&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;ui-notify-cross ui-notify-close&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>x<span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;h1&gt;</span>#{title}<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;p&gt;</span>#{text}<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;p&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>So, let’s add our new configuration to our Editor and save (see Figure 9-29).</p>
+<p>This creates a hidden div tag in the bottom of the document. We are not showing the CSS that uses “display: none” to hide it, but you can see more by examining the source code in the companion git repo.</p>
 
-<p>Figure 9-29. Configuring CORS in the S3 Management Console</p>
+<p>Figure 9.19 Inspecting the DOM in Chrome Dev Tools</p>
 
-<p><img class="figure" alt="Figure 9-29" src="http://html5hacks.com/images/chapter9-images/9-29.png"></p>
+<p><img class="figure" alt="Figure 9-19" src="http://html5hacks.com/images/chapter9-images/9-19.png"></p>
 
-<p>Now, let’s return to Firefox and reload the page. We should now see the header font
-styled with our BebasNeue web font, as shown in Figure 9-30.</p>
+<p>In order for jQuery.notify to initialize, you must first call the following:</p>
 
-<p>Figure 9-30. Firefox browser successfully showing the BebasNeue font</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">notify</span><span class="p">({</span>
+</span><span class='line'>  <span class="nx">speed</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">expires</span><span class="o">:</span> <span class="kc">false</span>
+</span><span class='line'><span class="p">});</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p><img class="figure" alt="Figure 9-30" src="http://html5hacks.com/images/chapter9-images/9-30.png"></p>
+<p>And here is the final script for the receiver:</p>
 
-<p>There is much more to learn about CORS, most notably, HTTP POST usage with certain
-MIME types, and sending cookies and HTTP authentication data with requests if so
-requested by the CORS-enabled server. So get out there and starting creating your
-own CORS hacks.</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">notify</span><span class="p">({</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>  <span class="nx">speed</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">expires</span><span class="o">:</span> <span class="kc">false</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">});</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/connect&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">notify</span><span class="p">(</span><span class="s2">&quot;create&quot;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">title</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">timestamp</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">text</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">notification</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">}</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
+</span><span class='line'><span class="p">})</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>It’s that simple. The EventSource API is minimal and plugging it into a web framework like Sinatra or Node.js is straightforward.</p>
+
+<p>Now, as we submit notifications from the admin page, our receiver pages are updated with time stamped notifications:</p>
+
+<p>Figure 9.20 Pushing Notifications to the Connected Browsers</p>
+
+<p><img class="figure" alt="Figure 9-20" src="http://html5hacks.com/images/chapter9-images/9-20.png"></p>
 ]]></content>
   </entry>
   
