@@ -4,7 +4,7 @@ title: "Utilize Rich Input Data from W3C Pointer Events"
 date: 2013-05-13 01:42
 comments: true
 categories: ["HTML5", "W3C Spec", "touch", "Pointer Events"]
-author: "Jeff Burtoft [@boyofgreen](http://twitter.com/boyofgreen)"
+author: "Jeff Burtoft (@boyofgreen)"
 ---
 
 The W3C Pointer Events specification allows you to develop for a single event model that supports various input types.  Instead of writing code for multiple event types, or having to use feature detection on page load that forces one event model over the other, Pointers allows you to write one event model that works everywhere.  To make the transition easy, Pointer Events builds upon the Event Model of Mouse Events.  This means that code that’s written for mouse events is going to be very easy to upgrade to Pointers.
