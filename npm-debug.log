@@ -1,0 +1,27 @@
+info it worked if it ends with ok
+verbose cli [ '/var/lib/stickshift/2b7aebedcc294d5ba7cf7fdaccad2ff2/app-root/data//bin/node-openshift',
+verbose cli   '/usr/bin/npm',
+verbose cli   'install' ]
+info using npm@1.1.24
+info using node@v0.6.19
+verbose /var/lib/stickshift/2b7aebedcc294d5ba7cf7fdaccad2ff2/app-root/data//bin/node-openshift node symlink
+verbose config file /var/lib/stickshift/2b7aebedcc294d5ba7cf7fdaccad2ff2/app-root/data/.npmrc
+verbose config file /var/lib/stickshift/2b7aebedcc294d5ba7cf7fdaccad2ff2/app-root/data/etc/npmrc
+verbose config file /usr/lib/node_modules/npm/npmrc
+ERR! Couldn't read dependencies.
+ERR! Error: ENOENT, open '/var/lib/stickshift/2b7aebedcc294d5ba7cf7fdaccad2ff2/app-root/data/287963/package.json'
+ERR! You may report this log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Linux 2.6.32-279.9.1.el6.x86_64
+ERR! command "/var/lib/stickshift/2b7aebedcc294d5ba7cf7fdaccad2ff2/app-root/data//bin/node-openshift" "/usr/bin/npm" "install"
+ERR! cwd /var/lib/stickshift/2b7aebedcc294d5ba7cf7fdaccad2ff2/app-root/data/287963
+ERR! node -v v0.6.19
+ERR! npm -v 1.1.24
+ERR! path /var/lib/stickshift/2b7aebedcc294d5ba7cf7fdaccad2ff2/app-root/data/287963/package.json
+ERR! code ENOENT
+ERR! message ENOENT, open '/var/lib/stickshift/2b7aebedcc294d5ba7cf7fdaccad2ff2/app-root/data/287963/package.json'
+ERR! errno {}
+verbose exit [ 1, true ]
