@@ -1,13 +1,12 @@
 ---
 layout: post
-title: "Rich Input Data from W3C Pointer Events"
+title: "Utilize Rich Input Data from W3C Pointer Events"
 date: 2013-05-13 01:42
 comments: true
 categories: ["HTML5", "W3C Spec", "touch", "Pointer Events"]
 author: "Jeff Burtoft"
 ---
 
-# Utilize Rich Input Data from W3C Pointer Events
 The W3C Pointer Events specification allows you to develop for a single event model that supports various input types.  Instead of writing code for multiple event types, or having to use feature detection on page load that forces one event model over the other, Pointers allows you to write one event model that works everywhere.  To make the transition easy, Pointer Events builds upon the Event Model of Mouse Events.  This means that code that’s written for mouse events is going to be very easy to upgrade to Pointers.
 
 There’s a lot of great content out there on how to implement pointers.  Microsoft’s original post on pointer event implementation in IE10 and Windows 8 Apps is a great place to start learning about Pointers.  To see an example of how to convert a current mouse based app into a pointers based app, I suggest you check out my channel 9 video on pointers. In this post I want to focus on a different aspect of pointers.  Along with the multiple input support, and ease of implementation, Pointer Events also provide a wealth of new data values that can be quite useful in your applications.  This post will look in depth at that data.
@@ -82,7 +81,7 @@ For implementing pointers today, I actually check for both the string value or t
 ##New Values for All Pointer Types
 
 There is a range of new values packed into the Pointer Event Object that is common across all pointer types.  Each of these expose new values that provide valuable data for interaction development
-1.    PointerID: each pointer interaction is given a unique ID within your page and session.  This number will be consistent across events for each interaction.  For Example, a “pointerdown” event may be given a PointerID of 127, the subsequent “pointermove” and “pointerend” events will all have the same PointerID.  This could be helpful for tracking which finger is doing what when there are multiple touch screen pointers on the screen at once.  You can access the value as below:
+1.PointerID: each pointer interaction is given a unique ID within your page and session.  This number will be consistent across events for each interaction.  For Example, a “pointerdown” event may be given a PointerID of 127, the subsequent “pointermove” and “pointerend” events will all have the same PointerID.  This could be helpful for tracking which finger is doing what when there are multiple touch screen pointers on the screen at once.  You can access the value as below:
 
 {% codeblock More poiner.js %}
         document.getElementById('myElement').addEventListener('pointerdown', function(e){
@@ -92,7 +91,7 @@ There is a range of new values packed into the Pointer Event Object that is comm
         });
 {% endcodeblock %}
 
-2.	isPrimary: When multiple Pointer Events are on the screen at once, one of them will be assigned as the primary pointer.  If one of them is of the Pointer type of mouse, it will be the primary, otherwise the first pointer to fire an event will be designated as the primary.  This could be helpful for a developer who is building an application that is intended for a single pointer input.  There is one catch, when you are using multiple pointer types on the screen at the same time, the first pointer of each type will be a primary pointer, and thus will allow you to have multiple primary pointers on the screen at the same time.  The value can be accessed as such:
+2.isPrimary: When multiple Pointer Events are on the screen at once, one of them will be assigned as the primary pointer.  If one of them is of the Pointer type of mouse, it will be the primary, otherwise the first pointer to fire an event will be designated as the primary.  This could be helpful for a developer who is building an application that is intended for a single pointer input.  There is one catch, when you are using multiple pointer types on the screen at the same time, the first pointer of each type will be a primary pointer, and thus will allow you to have multiple primary pointers on the screen at the same time.  The value can be accessed as such:
         document.getElementById('myElement').addEventListener('pointerup', function(e){
         
 {% codeblock More poiner.js %}
@@ -101,7 +100,7 @@ There is a range of new values packed into the Pointer Event Object that is comm
         });
 {% endcodeblock %}
 
-3.	button/buttons: This isn’t a new value for pointers, but in pointers you get new information.  With both a mouse and a pen, the user has buttons that can be pressed. Weather those buttons are being pressed, and which button is pressed can be determined in these two values.
+3.button/buttons: This isn’t a new value for pointers, but in pointers you get new information.  With both a mouse and a pen, the user has buttons that can be pressed. Weather those buttons are being pressed, and which button is pressed can be determined in these two values.
 
 <img class="figure" alt="Figure 12-1" src="/images/chapter-jeff/buttonChart.png">
  
@@ -113,7 +112,7 @@ The entire list of values can be found in the most recent version of the spec, a
 There are some values that are only applicable to the pointer type of Pen.  Keep in mind the pen type refers to a mechanical stylus that works with supported screen types.  Capacitive styus like the types used with iPads or Surface RT register as pointer types of touch, which will be discussed next.
 
 The following values provide data in the Pointer Event Object for pens:
-1.	tiltX/tiltY: When you hold a pen there is generally an angle associated with it.  If you were to hold the pen by the end and lower it perfectly straight on the screen, the tilt would be 0, but if you were to hold it in writing position, it would have a tilt value like 90.  The tilt values are returned in degrees and be accessed as such:
+1.tiltX/tiltY: When you hold a pen there is generally an angle associated with it.  If you were to hold the pen by the end and lower it perfectly straight on the screen, the tilt would be 0, but if you were to hold it in writing position, it would have a tilt value like 90.  The tilt values are returned in degrees and be accessed as such:
 
 {% codeblock More poiner.js %}
 document.getElementById('myElement').addEventListener('pointerup', function(e){
@@ -125,7 +124,7 @@ document.getElementById('myElement').addEventListener('pointerup', function(e){
         });
 {% endcodeblock %}
 
-2.	Pressure:  Much of the data provided from a pen type pointer event is actually data provided from the pen to the screen.  Another one of those is pressure.  This is a value that reports how hard a pen is being pressed against the screen.  The value is reported as a number between x and x.  The value is accessed as below:
+2.Pressure:  Much of the data provided from a pen type pointer event is actually data provided from the pen to the screen.  Another one of those is pressure.  This is a value that reports how hard a pen is being pressed against the screen.  The value is reported as a number between x and x.  The value is accessed as below:
 
 {% codeblock More poiner.js %}
 document.getElementById('myElement').addEventListener('pointerup', function(e){
