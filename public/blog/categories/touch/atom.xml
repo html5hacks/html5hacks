@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: touch | HTML5 Hacks]]></title>
+  <link href="http://html5hacks.com/blog/categories/touch/atom.xml" rel="self"/>
+  <link href="http://html5hacks.com/"/>
+  <updated>2013-05-13T02:32:42-04:00</updated>
+  <id>http://html5hacks.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Utilize Rich Input Data from W3C Pointer Events]]></title>
+    <link href="http://html5hacks.com/blog/2013/05/13/rich-input-data-from-w3c-pointer-events/"/>
+    <updated>2013-05-13T01:42:00-04:00</updated>
+    <id>http://html5hacks.com/blog/2013/05/13/rich-input-data-from-w3c-pointer-events</id>
+    <content type="html"><![CDATA[<p>The W3C Pointer Events specification allows you to develop for a single event model that supports various input types.  Instead of writing code for multiple event types, or having to use feature detection on page load that forces one event model over the other, Pointers allows you to write one event model that works everywhere.  To make the transition easy, Pointer Events builds upon the Event Model of Mouse Events.  This means that code that’s written for mouse events is going to be very easy to upgrade to Pointers.</p>
+
+<p>There’s a lot of great content out there on how to implement pointers.  Microsoft’s original post on pointer event implementation in IE10 and Windows 8 Apps is a great place to start learning about Pointers.  To see an example of how to convert a current mouse based app into a pointers based app, I suggest you check out my channel 9 video on pointers. In this post I want to focus on a different aspect of pointers.  Along with the multiple input support, and ease of implementation, Pointer Events also provide a wealth of new data values that can be quite useful in your applications.  This post will look in depth at that data.</p>
+
+<p>The code samples will all use the W3C spec pointer names such as “pointermove” and “pointerup”, however in practice this spec is not finalized, so the working code samples will be using the prefixed version such as “MSPointerMove” and “MSPointerUp”.</p>
+
+<h2>The Pointer Event Object</h2>
+
+<p>The Pointer Event object is modeled directly off the Mouse Event object, meaning all the values, and all the methods available in a mouse event model, will be present inside a Pointer Event Model.  Let’s look at an example you might implement for the Mouse Event Model:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>    <span class="kd">var</span> <span class="nx">myY</span><span class="p">,</span> <span class="nx">myX</span><span class="p">;</span>
+</span><span class='line'>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mouseup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nx">myY</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">offsetY</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">myX</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">offsetX</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>This same code will also run with Pointer Events:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nx">myY</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">offsetY</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">myX</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">offsetX</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Every value and method will run the same.  The main difference is that Pointers aren’t single threaded as Mouse Events are (you can only have one mouse pointer on the screen at a time).  So if you have two Pointers on the screen, say two fingers on your touch screen, or one finger and one mouse, this event will be fired twice.</p>
+
+<p>The “upgrade” comes in all the additional data that is available when you use Pointer Events.</p>
+
+<h2>The Event Type</h2>
+
+<p>Since a Pointer Event will be fired no matter what type of input you are using, it’s sometimes important to know what type of input is firing the Event. While accessing the event object, you can retrieve the pointer type like so:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">pointerType</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pointerType</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>The type will return one of three value types:</p>
+
+<p>-mouse: movement with a mouse
+-pen: movement with a pressure sensitive pen (not a capacitive stylus)
+-touch: any input from the touch screen</p>
+
+<p>Note that the original spec, and what is implemented In IE10, provides number values that correspond with the input types.  The value will return either a 2(touch), 3(pen) or 4(mouse).</p>
+
+<p>For implementing pointers today, I actually check for both the string value or the number to be sure I support both the current implementation and the final spec:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">pointerType</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pointerType</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nx">pointerType</span> <span class="o">==</span> <span class="s1">&#39;touch&#39;</span><span class="o">||</span><span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="c1">//this is a touch type pointer</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>New Values for All Pointer Types</h2>
+
+<p>There is a range of new values packed into the Pointer Event Object that is common across all pointer types.  Each of these expose new values that provide valuable data for interaction development</p>
+
+<p><em>PointerID:</em> each pointer interaction is given a unique ID within your page and session.  This number will be consistent across events for each interaction.  For Example, a “pointerdown” event may be given a PointerID of 127, the subsequent “pointermove” and “pointerend” events will all have the same PointerID.  This could be helpful for tracking which finger is doing what when there are multiple touch screen pointers on the screen at once.  You can access the value as below:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerdown&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">pointerId</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pointerId</span>
+</span><span class='line'>        <span class="p">;</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><em>isPrimary:</em> When multiple Pointer Events are on the screen at once, one of them will be assigned as the primary pointer.  If one of them is of the Pointer type of mouse, it will be the primary, otherwise the first pointer to fire an event will be designated as the primary.  This could be helpful for a developer who is building an application that is intended for a single pointer input.  There is one catch, when you are using multiple pointer types on the screen at the same time, the first pointer of each type will be a primary pointer, and thus will allow you to have multiple primary pointers on the screen at the same time.  The value can be accessed as such:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">isPrimary</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">isPrimary</span><span class="p">;</span> <span class="c1">// will return true or false</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><em>button/buttons:</em> This isn’t a new value for pointers, but in pointers you get new information.  With both a mouse and a pen, the user has buttons that can be pressed. Weather those buttons are being pressed, and which button is pressed can be determined in these two values.</p>
+
+<p><img class="figure" alt="Figure 12-1" src="http://html5hacks.com/images/chapter-jeff/buttonChart.png"></p>
+
+<p>The entire list of values can be found in the most recent version of the spec, and keep in mind, not all values are implemented in IE10 (or any other browser) at this point.</p>
+
+<h2>Pen Specific Values</h2>
+
+<p>There are some values that are only applicable to the pointer type of Pen.  Keep in mind the pen type refers to a mechanical stylus that works with supported screen types.  Capacitive styus like the types used with iPads or Surface RT register as pointer types of touch, which will be discussed next.</p>
+
+<p>The following values provide data in the Pointer Event Object for pens:</p>
+
+<p><em>tiltX/tiltY:</em> When you hold a pen there is generally an angle associated with it.  If you were to hold the pen by the end and lower it perfectly straight on the screen, the tilt would be 0, but if you were to hold it in writing position, it would have a tilt value like 90.  The tilt values are returned in degrees and be accessed as such:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>        <span class="kd">var</span> <span class="nx">tiltX</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">tiltX</span><span class="p">;</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">tiltY</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span> <span class="nx">tiltY</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><em>Pressure:</em>  Much of the data provided from a pen type pointer event is actually data provided from the pen to the screen.  Another one of those is pressure.  This is a value that reports how hard a pen is being pressed against the screen.  The value is reported as a number between x and x.  The value is accessed as below:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>        <span class="kd">var</span> <span class="nx">pressure</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pressure</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>New Data for Touch</h2>
+
+<p>The Pointer Spec provides for detail touch data that just doesn’t exist in any other touch model on the web.  Most significantly the actual width and height of a the touch area.  Being so new, my testing showed that this value is often returned as 0 depending on the touch screen and driver installed on the device.  Accessing this data follows the same patteren as the other new data:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>        <span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">height</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Keep in mind this is related to touch pointers only, so a mouse or pen will always return 0 for these values.</p>
+
+<h2>Mobile Implementations</h2>
+
+<p>The only mobile browser that has implemented Pointers is IE10 for Windows Phone 8.  Since the phone OS doesn’t support a mouse or mechanical stylus, the only pointer type that returns is touch.  The user agent does accurately report the pointer type, but many of the other new pointer values (such as width and height) are currently reported as 0s.</p>
+
+<h2>The Sample App</h2>
+
+<p>I’ve been working on a sample app that helps illustrate the rich data reported through pointers.  It’s a simple canvas resized to your page that shows a report from each touch point of the key data values, additionally, the new data is used to effect the drawing on the screen to make a more accurate drawing surface.</p>
+
+<p>Test the app here in IE 10 or any future browser that supports pointer events, or view this video of the app in action.</p>
+
+<h2>Next Steps</h2>
+
+<p>The Pointer Event Specification is not yet finalized so changes could occur at any time (and it has changed since the version implemented in ie10). If you interested in the work that is going on around Pointers, join the working group mailing list, and encourage others in the browser maker community to implement the Pointer Even Specification in every browser.</p>
+]]></content>
+  </entry>
+  
+</feed>
