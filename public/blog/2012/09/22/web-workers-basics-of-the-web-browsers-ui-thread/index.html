@@ -101,7 +101,7 @@
   
 
 
-<time datetime="2012-09-22T23:44:00-04:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2012</time>
+<time datetime="2012-09-22T23:44:00-05:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -112,9 +112,9 @@
 
 <div class="entry-content"><h2>Single Threadin&#8217;</h2>
 
-<p>As we set out to build a highly responsive UI for our demo web application, we must fully understand how browsers manage processes. Perhaps the biggest challenge we will face has to do with browsers using a single thread for both JavaScript execution and user interface updates. While the browser&#8217;s JavaScript interpreter is executing code, the UI is unable to respond to the user&#8217;s input. If a script is taking a long time to complete, after a specified amount of time the browser will provide the user an option to terminate the script. To accommodate for the &#8216;freeze&#8217; associated with scripts that exceed the browser execution time limit, web developers have traditionally created smaller units of work and used JavaScript timers to return execution to the next event in the queue. As you will see, web workers solve the locking of the UI thread by opening an additional thread, or even multiple threads, for execution of these long running, processor intensive tasks.</p>
+<p>As we set out to build a highly responsive UI for our demo web application, we must fully understand how browsers manage processes. Perhaps the biggest challenge we will face has to do with browsers using a single thread for both JavaScript execution and user interface updates. While the browser&rsquo;s JavaScript interpreter is executing code, the UI is unable to respond to the user&rsquo;s input. If a script is taking a long time to complete, after a specified amount of time the browser will provide the user an option to terminate the script. To accommodate for the &lsquo;freeze&rsquo; associated with scripts that exceed the browser execution time limit, web developers have traditionally created smaller units of work and used JavaScript timers to return execution to the next event in the queue. As you will see, web workers solve the locking of the UI thread by opening an additional thread, or even multiple threads, for execution of these long running, processor intensive tasks.</p>
 
-<p>When designing your application, especially if you come from more of a &#8216;server-side&#8217; or Java background, it is important to understand that non-blocking execution is not the same as concurrent threading. While not extremely complex, JavaScript&#8217;s event driven style does take some getting used to for developers coming from other languages such as Java and C. Later, we will touch on a few examples where we pass a callback continuation function to take full advantage of JavaScript&#8217;s non blocking design.</p>
+<p>When designing your application, especially if you come from more of a &lsquo;server-side&rsquo; or Java background, it is important to understand that non-blocking execution is not the same as concurrent threading. While not extremely complex, JavaScript&rsquo;s event driven style does take some getting used to for developers coming from other languages such as Java and C. Later, we will touch on a few examples where we pass a callback continuation function to take full advantage of JavaScript&rsquo;s non blocking design.</p>
 
 <h2>Thread Safety</h2>
 
@@ -158,7 +158,7 @@
 
 <h2>Long Running Scripts</h2>
 
-<p>Our first web worker hack will be a long running script with heavy computation. It will execute 2 loops that output a two-dimensional array. First, we will use this computation to lock up the browser&#8217;s UI thread, and later we will move the task to a worker.</p>
+<p>Our first web worker hack will be a long running script with heavy computation. It will execute 2 loops that output a two-dimensional array. First, we will use this computation to lock up the browser&rsquo;s UI thread, and later we will move the task to a worker.</p>
 
 <figure class='code'><figcaption><span>init.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -198,7 +198,7 @@
 
 <h2>Spawning a Worker</h2>
 
-<p>Now let&#8217;s move our heavy computational task to a dedicated web worker, so that the user doesn&#8217;t have to wait for the script to complete execution in order to interact with user interface. First, lets spawn a new worker:</p>
+<p>Now let&rsquo;s move our heavy computational task to a dedicated web worker, so that the user doesn&rsquo;t have to wait for the script to complete execution in order to interact with user interface. First, lets spawn a new worker:</p>
 
 <figure class='code'><figcaption><span>spawn.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -275,7 +275,7 @@
   
 
 
-<time datetime="2012-09-22T23:44:00-04:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2012</time>
+<time datetime="2012-09-22T23:44:00-05:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2012</time>
       
 
 <span class="categories">

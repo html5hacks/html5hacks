@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Games | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/games/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-05-13T02:32:42-04:00</updated>
+  <updated>2013-06-04T10:50:09-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Turn Your Web App into a Windows 8 App]]></title>
     <link href="http://html5hacks.com/blog/2013/04/02/make-your-web-app-to-a-windows-8-app/"/>
-    <updated>2013-04-02T01:17:00-04:00</updated>
+    <updated>2013-04-02T01:17:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/04/02/make-your-web-app-to-a-windows-8-app</id>
     <content type="html"><![CDATA[<p>I talk a lot about just how similar the Windows 8 App environment is to developing for the Web.  Since windows 8 uses the same rendering engine as IE10, and the same JavaScript engine as IE10, building a Windows 8 App with JavaScript is in fact, building a web app.  We’ll talk about some of the keys to success but first, let’s take a step by step walk through converting one of my favorite web apps into a Windows 8 App.
 First thing first, you need to make sure your using <a href="http://www.microsoft.com/visualstudio/eng/products/visual-studio-express-products">Visual Studio 2012</a> (I’m using the Express version which is free).  Since Visual Studio 2012 has a requirement of Windows 8, you’ll need to be running Windows 8 as well.
@@ -28,11 +28,11 @@ We’re going to be taking the new fantastic game “YetiBowl” for our convers
 
 <p><a href="http://yetibowl.codeplex.com">http://yetibowl.codeplex.com</a></p>
 
-<p>If you open up the content in the directory marked “web”  you’ll see all the code for the YetiBowl game.  Now let’s go to Visual Studio and open up a new "Blank" JavaScript App:</p>
+<p>If you open up the content in the directory marked “web”  you’ll see all the code for the YetiBowl game.  Now let’s go to Visual Studio and open up a new &ldquo;Blank&rdquo; JavaScript App:</p>
 
 <p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS1.PNG"></p>
 
-<p>Next, go back to your recently downloaded code, and copy all the content from the "web" folder</p>
+<p>Next, go back to your recently downloaded code, and copy all the content from the &ldquo;web&rdquo; folder</p>
 
 <p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS2.png"></p>
 
@@ -40,7 +40,7 @@ We’re going to be taking the new fantastic game “YetiBowl” for our convers
 
 <p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS3.png"></p>
 
-<p>Before our code is going to work, we need to open up our package.appxmanifest and make one small change.  Find the field for "start page" and change it to the name of your html file(game.html):</p>
+<p>Before our code is going to work, we need to open up our package.appxmanifest and make one small change.  Find the field for &ldquo;start page&rdquo; and change it to the name of your html file(game.html):</p>
 
 <p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS4.PNG"></p>
 
@@ -119,7 +119,7 @@ We’re going to be taking the new fantastic game “YetiBowl” for our convers
 <p>It is very easy to move your web apps to Windows 8 where you have access to a whole series of new APIs and functionality that isn’t safe to expose on the web.  That being the case, it’s important that you look into the <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx">security model</a> that is implemented in Windows 8 Apps.  Using a JavaScript library?  Many libraries like <a href="http://www.yuiblog.com/blog/2013/03/12/windows-8-loves-yui/">YUI</a> and <a href="http://blogs.msdn.com/b/interoperability/archive/2013/03/29/jquery-adds-support-for-windows-store-apps-creates-new-opportunities-for-javascript-open-source-developers.aspx">jQuery</a> already work within the Windows 8 App environment.
 It’s that easy, reuse your code, and your skills to build Windows 8 Store Apps.</p>
 
-<p>Author: Jeff Burtoft - <a href="http://www.twitter.com/boyofgreen">@boyofgreen</a>
+<p>Author: Jeff Burtoft &ndash; <a href="http://www.twitter.com/boyofgreen">@boyofgreen</a>
 code sample: <a href="http://touch.azurewebsites.net/yeti/game.html">http://touch.azurewebsites.net/yeti/game.html</a></p>
 ]]></content>
   </entry>

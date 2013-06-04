@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mobile | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/mobile/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-05-13T02:32:42-04:00</updated>
+  <updated>2013-06-04T10:50:09-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Win a free copy of HTML5 Hacks]]></title>
     <link href="http://html5hacks.com/blog/2013/03/26/oreilly-webcast-rethinking-the-possibilities-of-browser-based-apps-with-html5/"/>
-    <updated>2013-03-26T19:52:00-04:00</updated>
+    <updated>2013-03-26T19:52:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/03/26/oreilly-webcast-rethinking-the-possibilities-of-browser-based-apps-with-html5</id>
     <content type="html"><![CDATA[<p>Sign up on our mailing list and be put into a draw to win a free ebook:</p>
 
@@ -39,7 +39,7 @@
 <h2>O'Reilly Webcast: Rethinking the Possibilities of Browser-based Apps with HTML5</h2>
 
 <p>Wednesday, March 27, 2013
-10AM PT, San Francisco | 5pm - London | 1pm - New York | Thu, Mar 28th at 4am - Sydney | Thu, Mar 28th at 2am - Tokyo | Thu, Mar 28th at 1am - Beijing | 10:30pm - Mumbai</p>
+10AM PT, San Francisco | 5pm &ndash; London | 1pm &ndash; New York | Thu, Mar 28th at 4am &ndash; Sydney | Thu, Mar 28th at 2am &ndash; Tokyo | Thu, Mar 28th at 1am &ndash; Beijing | 10:30pm &ndash; Mumbai</p>
 
 <p>Here is a link to the archived presentation:
 <a href="http://event.on24.com/eventRegistration/EventLobbyServlet?target=lobby.jsp&amp;eventid=561480&amp;sessionid=1&amp;key=76D1FED238FE290C4AC3A7CDDB4E23E5&amp;eventuserid=78868897">Watch the webcast in its original format</a></p>
@@ -55,9 +55,9 @@
   <entry>
     <title type="html"><![CDATA[SXSWi 2013: 'Battle of the HTML5 Hackers' and 'HTML5 Hacks' Book Signing]]></title>
     <link href="http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/"/>
-    <updated>2013-03-12T23:55:00-04:00</updated>
+    <updated>2013-03-12T23:55:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers</id>
-    <content type="html"><![CDATA[<p>We had a great turnout for the 'Battle of the HTML5 Hackers' presentation at SXSWi on Tuesday.</p>
+    <content type="html"><![CDATA[<p>We had a great turnout for the &lsquo;Battle of the HTML5 Hackers&rsquo; presentation at SXSWi on Tuesday.</p>
 
 <p><img class="imgL300" alt="SXSWi 2013: Battle of the HTML5 Hackers - Jesse Cravens and Jeff Burtoft" src="http://html5hacks.com/images/sxsw13/sxsw13-crowd.jpg"></p>
 
@@ -73,7 +73,7 @@
 
 <p>Nerdclustr source code is available <a href="https://github.com/html5hacks/nerd-clustr">here</a>.</p>
 
-<p>During the book signing, the bookstore informed us there were only 3 copies left. I'm not keen to the selection process of books, but I was little surprised at the limited number of technical books. This is certainly a reflection of the SXSWi demographic, and we also tailored our content and presentation style to this audience.</p>
+<p>During the book signing, the bookstore informed us there were only 3 copies left. I&rsquo;m not keen to the selection process of books, but I was little surprised at the limited number of technical books. This is certainly a reflection of the SXSWi demographic, and we also tailored our content and presentation style to this audience.</p>
 
 <p>The slide deck is available here:</p>
 
@@ -85,14 +85,14 @@
 <hr>
 
 
-<p>Stay tuned for our next presentation happening online, through O'Reilly Webcasts. Join us for <a href="http://www.oreillynet.com/pub/e/2566">'Rethinking the Possibilities of Browser-based Apps with HTML5'</a> on Wednesday, March 27, 2013 10AM PT.</p>
+<p>Stay tuned for our next presentation happening online, through O'Reilly Webcasts. Join us for <a href="http://www.oreillynet.com/pub/e/2566">&lsquo;Rethinking the Possibilities of Browser-based Apps with HTML5&rsquo;</a> on Wednesday, March 27, 2013 10AM PT.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Make Your Web App Respond to Device Orientation Changes]]></title>
     <link href="http://html5hacks.com/blog/2013/01/04/make-your-web-app-respond-to-device-orientation-changes/"/>
-    <updated>2013-01-04T00:31:00-05:00</updated>
+    <updated>2013-01-04T00:31:00-06:00</updated>
     <id>http://html5hacks.com/blog/2013/01/04/make-your-web-app-respond-to-device-orientation-changes</id>
     <content type="html"><![CDATA[<h4>Your native apps are smart enough to know how you’re holding your device. Now your web apps can be, too. Use orientation-based media queries to make your site responsive.</h4>
 
@@ -238,7 +238,7 @@ and the CSS for the single-column view:
   <entry>
     <title type="html"><![CDATA[Elegantly Resize Your Page with the @-viewport CSS Declaration]]></title>
     <link href="http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration/"/>
-    <updated>2012-11-28T18:37:00-05:00</updated>
+    <updated>2012-11-28T18:37:00-06:00</updated>
     <id>http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration</id>
     <content type="html"><![CDATA[<h4>Gone are the days of viewport meta tags that with implementations different across browsers.  The new @-viewport is easy to use and puts the control in the right place.</h4>
 
@@ -255,7 +255,7 @@ and the CSS for the single-column view:
 
 <h2>CSS Pixels</h2>
 
-<p>To follow what's happening to your page with the viewport values, it’s important to understand the basic concept of viewport zooming.  I don’t think the explanation can be done any better than it was by PPK in <a href="http://www.quirksmode.org/mobile/viewports2.html">this post about viewports</a>.  Here’s the summary:</p>
+<p>To follow what&rsquo;s happening to your page with the viewport values, it’s important to understand the basic concept of viewport zooming.  I don’t think the explanation can be done any better than it was by PPK in <a href="http://www.quirksmode.org/mobile/viewports2.html">this post about viewports</a>.  Here’s the summary:</p>
 
 <blockquote><p>Both viewports are measured in CSS pixels, obviously. But while the visual viewport dimensions change with zooming (if you zoom in, less CSS pixels fit on the screen), the layout viewport dimensions remain the same. (If they didn’t your page would constantly reflow as percentual widths are recalculated.)</p></blockquote>
 
@@ -447,7 +447,7 @@ and the CSS for the single-column view:
   <entry>
     <title type="html"><![CDATA[Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks]]></title>
     <link href="http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks/"/>
-    <updated>2012-10-15T23:19:00-04:00</updated>
+    <updated>2012-10-15T23:19:00-05:00</updated>
     <id>http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks</id>
     <content type="html"><![CDATA[<p>An exploration of the future of web technologies and browser capabilities would not be complete without covering the tools and techniques available to enable location awareness.</p>
 
@@ -483,7 +483,7 @@ In “Use the Geoloqi Real-Time Streaming Service to Broadcast a Remote User’s
 
 <p>The main drawback to this functionality is related to privacy and security, and for good reason. After all, as responsible application developers we should be doing what we can to protect the sensitive data of our users. In “Use the Geolocation APIs to Display Longitude and Latitude in a Mobile Web Application” we will take an in-depth look at how the browser employs cooperative detection, allowing the user to opt-in to only sharing location data with trusted web applications.</p>
 
-<p>Want to read more detail? ... <a href="http://shop.oreilly.com/product/0636920026273.do?sortby=bestSellers">buy the book</a>.</p>
+<p>Want to read more detail? &hellip; <a href="http://shop.oreilly.com/product/0636920026273.do?sortby=bestSellers">buy the book</a>.</p>
 ]]></content>
   </entry>
   

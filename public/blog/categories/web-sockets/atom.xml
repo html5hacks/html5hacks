@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Sockets | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/web-sockets/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-05-13T02:32:42-04:00</updated>
+  <updated>2013-06-04T10:50:09-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Win a free copy of HTML5 Hacks]]></title>
     <link href="http://html5hacks.com/blog/2013/03/26/oreilly-webcast-rethinking-the-possibilities-of-browser-based-apps-with-html5/"/>
-    <updated>2013-03-26T19:52:00-04:00</updated>
+    <updated>2013-03-26T19:52:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/03/26/oreilly-webcast-rethinking-the-possibilities-of-browser-based-apps-with-html5</id>
     <content type="html"><![CDATA[<p>Sign up on our mailing list and be put into a draw to win a free ebook:</p>
 
@@ -39,7 +39,7 @@
 <h2>O'Reilly Webcast: Rethinking the Possibilities of Browser-based Apps with HTML5</h2>
 
 <p>Wednesday, March 27, 2013
-10AM PT, San Francisco | 5pm - London | 1pm - New York | Thu, Mar 28th at 4am - Sydney | Thu, Mar 28th at 2am - Tokyo | Thu, Mar 28th at 1am - Beijing | 10:30pm - Mumbai</p>
+10AM PT, San Francisco | 5pm &ndash; London | 1pm &ndash; New York | Thu, Mar 28th at 4am &ndash; Sydney | Thu, Mar 28th at 2am &ndash; Tokyo | Thu, Mar 28th at 1am &ndash; Beijing | 10:30pm &ndash; Mumbai</p>
 
 <p>Here is a link to the archived presentation:
 <a href="http://event.on24.com/eventRegistration/EventLobbyServlet?target=lobby.jsp&amp;eventid=561480&amp;sessionid=1&amp;key=76D1FED238FE290C4AC3A7CDDB4E23E5&amp;eventuserid=78868897">Watch the webcast in its original format</a></p>
@@ -55,9 +55,9 @@
   <entry>
     <title type="html"><![CDATA[SXSWi 2013: 'Battle of the HTML5 Hackers' and 'HTML5 Hacks' Book Signing]]></title>
     <link href="http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/"/>
-    <updated>2013-03-12T23:55:00-04:00</updated>
+    <updated>2013-03-12T23:55:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers</id>
-    <content type="html"><![CDATA[<p>We had a great turnout for the 'Battle of the HTML5 Hackers' presentation at SXSWi on Tuesday.</p>
+    <content type="html"><![CDATA[<p>We had a great turnout for the &lsquo;Battle of the HTML5 Hackers&rsquo; presentation at SXSWi on Tuesday.</p>
 
 <p><img class="imgL300" alt="SXSWi 2013: Battle of the HTML5 Hackers - Jesse Cravens and Jeff Burtoft" src="http://html5hacks.com/images/sxsw13/sxsw13-crowd.jpg"></p>
 
@@ -73,7 +73,7 @@
 
 <p>Nerdclustr source code is available <a href="https://github.com/html5hacks/nerd-clustr">here</a>.</p>
 
-<p>During the book signing, the bookstore informed us there were only 3 copies left. I'm not keen to the selection process of books, but I was little surprised at the limited number of technical books. This is certainly a reflection of the SXSWi demographic, and we also tailored our content and presentation style to this audience.</p>
+<p>During the book signing, the bookstore informed us there were only 3 copies left. I&rsquo;m not keen to the selection process of books, but I was little surprised at the limited number of technical books. This is certainly a reflection of the SXSWi demographic, and we also tailored our content and presentation style to this audience.</p>
 
 <p>The slide deck is available here:</p>
 
@@ -85,7 +85,7 @@
 <hr>
 
 
-<p>Stay tuned for our next presentation happening online, through O'Reilly Webcasts. Join us for <a href="http://www.oreillynet.com/pub/e/2566">'Rethinking the Possibilities of Browser-based Apps with HTML5'</a> on Wednesday, March 27, 2013 10AM PT.</p>
+<p>Stay tuned for our next presentation happening online, through O'Reilly Webcasts. Join us for <a href="http://www.oreillynet.com/pub/e/2566">&lsquo;Rethinking the Possibilities of Browser-based Apps with HTML5&rsquo;</a> on Wednesday, March 27, 2013 10AM PT.</p>
 ]]></content>
   </entry>
   

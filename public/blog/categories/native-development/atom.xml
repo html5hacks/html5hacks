@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Native Development | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/native-development/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-05-13T02:32:42-04:00</updated>
+  <updated>2013-06-04T10:50:09-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Build a Windows 8 App with YUI]]></title>
     <link href="http://html5hacks.com/blog/2013/03/10/build-a-windows-8-app-with-yui/"/>
-    <updated>2013-03-10T19:10:00-04:00</updated>
+    <updated>2013-03-10T19:10:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/03/10/build-a-windows-8-app-with-yui</id>
     <content type="html"><![CDATA[<p>I’ve always been a big fan of YUI.  YUI has taught me how to write good, scalable code.  If I ever wanted to know the “right” way to do something, I looked back at how the YUI devs did it, and I would do it the same way.  In the last few years, with the release of YUI3, that standard is even higher.  The encapsulation practices and the decentralization of the code base has made it pleasure to develop, and a rock solid foundation for my applications.</p>
 
@@ -134,7 +134,7 @@ To build our pages into a Windows 8 App, you’ll need a copy of visual Studio 2
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>The "process all" method parses the page and processes any page construction that is necessary before rendering the page.  Once that is complete the “.then()” promise fires off the navigation.  Without getting into too much detail, there is a library component added to this style of app called navigator.js, which adds this functionally for us.
+<p>The &ldquo;process all&rdquo; method parses the page and processes any page construction that is necessary before rendering the page.  Once that is complete the “.then()” promise fires off the navigation.  Without getting into too much detail, there is a library component added to this style of app called navigator.js, which adds this functionally for us.
 The file “home.html” will be our navigation point in this app, but we want to create some new pages to navigate to.  Let’s go ahead and add our first one.  To keep our code clean, the first thing I want to do is add a directory inside our “\pages\” directory called “duck”.  I’ll use this directory to keep my new page separate from my other pages.  Now let’s go into Visual Studio, and right click on that new folder.  In our contextual menu, we’ll have the option to add a “new item.”</p>
 
 <p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/chapter-jeff/vs-menu2.png"></p>
@@ -179,7 +179,7 @@ The file “home.html” will be our navigation point in this app, but we want t
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// For an introduction to the Page Control template, see the following documentation:</span>
-</span><span class='line'><span class="c1">// http://go.microsoft.com/fwlink/?LinkId=232511</span>
+</span><span class='line'><span class="c1">// &lt;a href=&quot;http://go.microsoft.com/fwlink/?LinkId=232511&quot;&gt;http://go.microsoft.com/fwlink/?LinkId=232511&lt;/a&gt;</span>
 </span><span class='line'><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
@@ -239,7 +239,7 @@ Now it’s time to go get a few cool examples.  Let’s start with a little game
 <p>Next is the step where YUI and WinJS actually meet.  For me, this is like the “as you wish” moment from the Princess Bride where Princess Buttercup realized she truly loved Westley too.  It’s going to work so seamlessly.    At this point there is one BIG thing missing.  YUI.  We need to load YUI into our local context so we can reference it from our local pages.  First things first, you need to go to github and download a copy of the library.  Now in “file explorer window” select the “build” directory from the library, copy it and then head back to your solutions explorer and paste it into your app.  Okay, that wasn’t hard at all, but there is one more thing to plan for.  When you use the YUI CDN along with the loader, you get a magical file concoction that loads all the proper files for you based on your YUI requires statement.  Since we aren’t using the CDN, we don’t get that magic.  The good news is, YUI’s got an app for that.  It’s called the YUI configurator and it’s pretty snazzy too.  Let’s quickly review our use statement in our sample, and you will see that are using two library components:
 <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>win8.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">YUI</span><span class="p">().</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;transition&#39;</span><span class="p">,</span> <span class="s1">&#39;button&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="p">{</span><span class="err">…</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">YUI</span><span class="p">().</span><span class="nx">use</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">transition</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">button</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="p">{</span><span class="err">…</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>So let’s go over to the configurator and select those two components from the list of required components.  There are a few other settings we can update to make our life easier.  First, make sure you have the box unchecked to load separate files, not combined files.  Next, you can update your root path; in this case we will update it to “/js/build” since that is where the files will be in our app.  Once you have these settings in place, you should have a nice list of files that we need to load into our DOM in order to have our demo function:</p>
@@ -489,7 +489,7 @@ Now it’s time to go get a few cool examples.  Let’s start with a little game
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">WinJS</span><span class="p">.</span><span class="nx">Navigation</span><span class="p">.</span><span class="nx">navigate</span><span class="p">(</span><span class="s2">&quot;PathToFile&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">WinJS</span><span class="p">.</span><span class="nx">Navigation</span><span class="p">.</span><span class="nx">navigate</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">PathToFile</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;);</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>When this method is fired, your app will then navigate to the page referenced by the string passed into it.  Remember, our WinJS apps are all single page applications, so there is no page load- instead your new page content is loaded inside of your app container.  In this case, the container was defined inside the default.html file.  In addition to the HTML being injected into your DOM from your new page, it’s references are added to ( .js files or .css files).  It’s quite a smooth process.
@@ -578,7 +578,7 @@ Now I can go back to my “home.html” file and add a link in to my duck app:</
 
 <h2>Growing the App</h2>
 
-<p>Let’s keep going with this navigation app and add a new page.  Go to your solution explorer, create a new directory inside the “pages” directory and call it "dial".  Inside of it, right click and add a new page control called “dial.html”.  Again, watch the magic happen as it generates your .html file, your .js file and your .css file.
+<p>Let’s keep going with this navigation app and add a new page.  Go to your solution explorer, create a new directory inside the “pages” directory and call it &ldquo;dial&rdquo;.  Inside of it, right click and add a new page control called “dial.html”.  Again, watch the magic happen as it generates your .html file, your .js file and your .css file.
 Next, navigate to the super cool <a href="http://yuilibrary.com/yui/docs/dial/dial-interactive.html">YUI sample dial app</a>:</p>
 
 <p>  <img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/chapter-jeff/cap-3.png"></p>
@@ -847,7 +847,7 @@ Next, navigate to the super cool <a href="http://yuilibrary.com/yui/docs/dial/di
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">dataTransferManager</span> <span class="o">=</span> <span class="nx">Windows</span><span class="p">.</span><span class="nx">ApplicationModel</span><span class="p">.</span><span class="nx">DataTransfer</span><span class="p">.</span><span class="nx">DataTransferManager</span><span class="p">.</span><span class="nx">getForCurrentView</span><span class="p">();</span>
-</span><span class='line'><span class="nx">dataTransferManager</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;datarequested&quot;</span><span class="p">,</span> <span class="nx">shareTextHandler</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'><span class="nx">dataTransferManager</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">datarequested</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span> <span class="nx">shareTextHandler</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">function</span> <span class="nx">shareTextHandler</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>

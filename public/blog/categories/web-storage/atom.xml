@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Storage | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/web-storage/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-05-13T02:32:42-04:00</updated>
+  <updated>2013-06-04T10:50:09-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Build a Milestone Calendar with IndexedDB and FullCalendar.js]]></title>
     <link href="http://html5hacks.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/"/>
-    <updated>2013-01-17T08:47:00-05:00</updated>
+    <updated>2013-01-17T08:47:00-06:00</updated>
     <id>http://html5hacks.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js</id>
     <content type="html"><![CDATA[<h4>IndexedDB is a persistent object data store in the browser. Although it is not a full SQL implementation and it is more complex than the unstructured key–value pairs in localStorage, you can use it to define an API that provides the ability to read and write key–value objects as structured JavaScript objects, and an indexing system that facilitates filtering and lookup.</h4>
 
@@ -187,7 +187,7 @@ We’ll begin with the form. You may notice that the input fields for the dates 
 </span><span class='line'>&lt;pre>&lt;code>            window.mozIndexedDB;
 </span><span class='line'>&lt;/code>&lt;/pre>
 </span><span class='line'>
-</span><span class='line'>&lt;p>if ('webkitIndexedDB' in window) {
+</span><span class='line'>&lt;p>if (&lsquo;webkitIndexedDB&rsquo; in window) {
 </span><span class='line'>  window.IDBTransaction = window.webkitIDBTransaction;
 </span><span class='line'>  window.IDBKeyRange = window.webkitIDBKeyRange;
 </span><span class='line'>}
@@ -240,7 +240,7 @@ We’ll begin with the form. You may notice that the input fields for the dates 
 <span class='line-number'>34</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.open = function() {&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>  var request = indexedDB.open("milestones");&lt;/p>
+</span><span class='line'>&lt;p>  var request = indexedDB.open(&ldquo;milestones&rdquo;);&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>  request.onsuccess = function(e) {&lt;/p>
 </span><span class='line'>
@@ -325,8 +325,8 @@ We’ll begin with the form. You may notice that the input fields for the dates 
 </pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.init = function() {&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>  var db = html5hacks.indexedDB.db;
-</span><span class='line'>  var trans = db.transaction(["milestone"], IDBTransaction.READ_WRITE);
-</span><span class='line'>  var store = trans.objectStore("milestone");&lt;/p>
+</span><span class='line'>  var trans = db.transaction([&ldquo;milestone&rdquo;], IDBTransaction.READ_WRITE);
+</span><span class='line'>  var store = trans.objectStore(&ldquo;milestone&rdquo;);&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>  var keyRange = IDBKeyRange.lowerBound(0);
 </span><span class='line'>  var cursorRequest = store.openCursor(keyRange);&lt;/p>
@@ -428,7 +428,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$('form').submit(function() {&lt;/p>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$(&lsquo;form&rsquo;).submit(function() {&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;pre>&lt;code>var data = $(this).serializeArray();
 </span><span class='line'>
@@ -481,8 +481,8 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
 <span class='line-number'>32</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.addMilestone = function(d) {
 </span><span class='line'>  var db = html5hacks.indexedDB.db;
-</span><span class='line'>  var trans = db.transaction(["milestone"], IDBTransaction.READ_WRITE);
-</span><span class='line'>  var store = trans.objectStore("milestone");&lt;/p>
+</span><span class='line'>  var trans = db.transaction([&ldquo;milestone&rdquo;], IDBTransaction.READ_WRITE);
+</span><span class='line'>  var store = trans.objectStore(&ldquo;milestone&rdquo;);&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>  var data = {&lt;/p>
 </span><span class='line'>

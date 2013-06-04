@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Fonts | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/web-fonts/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-05-13T02:32:42-04:00</updated>
+  <updated>2013-06-04T10:50:09-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font]]></title>
     <link href="http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/"/>
-    <updated>2012-11-18T19:42:00-05:00</updated>
+    <updated>2012-11-18T19:42:00-06:00</updated>
     <id>http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font</id>
     <content type="html"><![CDATA[<p>Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
 make requests to other domains from within the browser. With CORS you have a secure
@@ -87,7 +87,7 @@ access each other’s methods and properties with no specific restrictions,
 but prevents access to most methods and properties across pages on different
 sites.1</p>
 
-<p>1 http://en.wikipedia.org/wiki/Same_origin_policy</p>
+<p>1 <a href="http://en.wikipedia.org/wiki/Same_origin_policy">http://en.wikipedia.org/wiki/Same_origin_policy</a></p>
 
 <p>As stated in Wikipedia’s definition, the same origin policy is a good thing; it protects
 the end user from security attacks. But it does cause some challenges for web developers.</p>
@@ -122,7 +122,7 @@ not take advantage of caching.</li>
 
 <p>An exploration into the different types of web fonts is beyond the scope of this hack,
 so I will assume that you have already selected the web font BebasNeue.otf.
-You can download free and open fonts from sites such as http://www.dafont.com.</p>
+You can download free and open fonts from sites such as <a href="http://www.dafont.com.">http://www.dafont.com.</a></p>
 
 <h3>Uploading Your Font to Your Amazon S3 Bucket</h3>
 
@@ -204,11 +204,11 @@ the font to our H1 header via the test class name.</p>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="k">@font-face</span> <span class="p">{</span>
 </span><span class='line'>  <span class="nt">font-family</span><span class="o">:</span> <span class="nt">BebasNeue</span><span class="o">;</span>
-</span><span class='line'>  <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://s3.amazonaws.com/html5hacks/BebasNeue.otf&#39;</span><span class="o">);</span>
+</span><span class='line'>  <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(&amp;</span><span class="nt">lsquo</span><span class="o">;&lt;</span><span class="nt">a</span> <span class="nt">href</span><span class="o">=</span><span class="s2">&quot;https://s3.amazonaws.com/html5hacks/BebasNeue.otf&quot;</span><span class="o">&gt;</span><span class="nt">https</span><span class="o">://</span><span class="nt">s3</span><span class="nc">.amazonaws.com</span><span class="o">/</span><span class="nt">html5hacks</span><span class="o">/</span><span class="nt">BebasNeue</span><span class="nc">.otf</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;&amp;</span><span class="nt">rsquo</span><span class="o">;);</span>
 </span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.test</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;BebasNeue&#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">BebasNeue</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;;</span>
 </span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span>
@@ -262,7 +262,7 @@ CORS configuration available on Amazon S3 via a very simple XML configuration.</
 
 <h3>Configuring CORS at Amazon S3</h3>
 
-<p>You should already be at your Amazon Management Console at http://
+<p>You should already be at your Amazon Management Console at <a href="http://">http://</a>
 console.aws.amazon.com. Click on Properties→Permissions→Edit CORS configuration,
 and you should receive a modal prompt.</p>
 

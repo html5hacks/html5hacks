@@ -4,7 +4,7 @@
   <title><![CDATA[Category: jQuery Mobile | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/jquery-mobile/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-05-13T02:32:42-04:00</updated>
+  <updated>2013-06-04T10:50:09-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Use the GeoLocation API to Display Long/Lat in a jQuery Mobile App]]></title>
     <link href="http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app/"/>
-    <updated>2012-10-15T23:15:00-04:00</updated>
+    <updated>2012-10-15T23:15:00-05:00</updated>
     <id>http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app</id>
     <content type="html"><![CDATA[<p>The Geolocation specification exposes an easy-to-use API. With only a couple of lines of code, you can obtain the user’s current position. What’s more, jQuery Mobile provides a simple framework for building a cross-browser mobile web application.</p>
 
@@ -231,7 +231,7 @@ Now we will create a separate page to link to. You many have noticed a link to l
 </span><span class='line'><span class="nt">&lt;p&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Now we will address our geolocation JavaScript. If you are familiar with jQuery the initial $ variable will look familiar in the code that follows. If not, you can learn more about jQuery at http://docs.jquery.com/Main_Page.</p>
+<p>Now we will address our geolocation JavaScript. If you are familiar with jQuery the initial $ variable will look familiar in the code that follows. If not, you can learn more about jQuery at <a href="http://docs.jquery.com/Main_Page.">http://docs.jquery.com/Main_Page.</a></p>
 
 <p>Simply put, the jQuery function wrapper ensures that our page is ready before we execute the following script. Then we will set up a global namespace object that we will use to store our data. This type of organization will be important as our script gets more complex moving forward.</p>
 
@@ -319,7 +319,7 @@ Then we will construct both a success and error object. Within our success objec
 
 <p>The ability for web application developers to collect location data about end users raises quite a bit of concern in regard to security and privacy. The W3C specification clearly indicates that client applications should notify users and provide an interface to authorize the use of location data, allowing them to determine which web applications they trust:</p>
 
-<p>User agents must not send location information to Web sites without the express permission of the user. User agents must acquire permission through a user interface, unless they have prearranged trust relationships with users, as described below. The user interface must include the host component of the document's URI [URI]. Those permissions that are acquired through the user interface and that are preserved beyond the current browsing session (i.e. beyond the time when the browsing context [BROWSINGCONTEXT] is navigated to another URL) must be revocable and user agents must respect revoked permissions.</p>
+<p>User agents must not send location information to Web sites without the express permission of the user. User agents must acquire permission through a user interface, unless they have prearranged trust relationships with users, as described below. The user interface must include the host component of the document&rsquo;s URI [URI]. Those permissions that are acquired through the user interface and that are preserved beyond the current browsing session (i.e. beyond the time when the browsing context [BROWSINGCONTEXT] is navigated to another URL) must be revocable and user agents must respect revoked permissions.</p>
 ]]></content>
   </entry>
   

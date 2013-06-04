@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Markup | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/markup/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-05-13T02:32:42-04:00</updated>
+  <updated>2013-06-04T10:50:09-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Make Your Page Consumable by Robots and Humans Alike with Microdata]]></title>
     <link href="http://html5hacks.com/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/"/>
-    <updated>2012-11-21T22:34:00-05:00</updated>
+    <updated>2012-11-21T22:34:00-06:00</updated>
     <id>http://html5hacks.com/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata</id>
     <content type="html"><![CDATA[<p>HTML5 microdata provides the mechanism for easily allowing machines to consume the data on your pages, while not affecting the experience for the user.</p>
 
@@ -249,7 +249,7 @@ Now imagine how consumable the Web would be for those machines of the future onc
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">getItems</span><span class="p">();</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Now your items can also be segmented by type, so you can identify some of your items as people, and others as cats. Microdata allows you to define your items by adding the itemtype attribute, which will point to a URL, or have an inline definition. In this case, if we defined our cat type by referring to the URL http://example.com/feline, our cat markup would look something like this:</p>
+<p>Now your items can also be segmented by type, so you can identify some of your items as people, and others as cats. Microdata allows you to define your items by adding the itemtype attribute, which will point to a URL, or have an inline definition. In this case, if we defined our cat type by referring to the URL <a href="http://example.com/feline,">http://example.com/feline,</a> our cat markup would look something like this:</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>More lastscope.html </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -278,7 +278,7 @@ Now imagine how consumable the Web would be for those machines of the future onc
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>getsample.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">getItems</span><span class="p">(</span><span class="s2">&quot;http://example.com/feline&quot;</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">getItems</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://example.com/feline&quot;</span><span class="o">&gt;</span><span class="nx">http</span><span class="o">:</span><span class="c1">//example.com/feline&lt;/a&gt;&amp;rdquo;)</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Thanks to this simple API, your microdata-enriched markup is both easy to produce and easy to consume.</p>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JavaScript | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-05-13T02:32:42-04:00</updated>
+  <updated>2013-06-04T10:50:09-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Push Notifications to the Browser with Server Sent Events]]></title>
     <link href="http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/"/>
-    <updated>2013-04-21T15:44:00-04:00</updated>
+    <updated>2013-04-21T15:44:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events</id>
     <content type="html"><![CDATA[<p>Created by Opera, Server Sent Events standardizes Comet technologies. The standard intends to enable native real time updates through a simple JavaScript API called EventSource, which connects to servers that asynchronously push data updates to clients via HTTP Streaming. Server Sent Events use a single, unidirectional, persistent connection between the browser and the server.</p>
 
@@ -65,8 +65,8 @@ Simple requiring of Sinatra and the JSON library:</p>
 <span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  require &#39;json&#39;</span>
-</span><span class='line'><span class="sr">  require &#39;sinatra&#39;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  require &amp;lsquo;json&amp;rsquo;</span>
+</span><span class='line'><span class="sr">  require &amp;lsquo;sinatra&amp;rsquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
@@ -82,8 +82,8 @@ Simple requiring of Sinatra and the JSON library:</p>
 <span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  set :public_folder, Proc.new { File.join(root, &quot;public&quot;) }</span>
-</span><span class='line'><span class="sr">  set server: &#39;thin&#39;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  set :public_folder, Proc.new { File.join(root, &amp;ldquo;public&amp;rdquo;) }</span>
+</span><span class='line'><span class="sr">  set server: &amp;lsquo;thin&amp;rsquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
@@ -110,14 +110,14 @@ Simple requiring of Sinatra and the JSON library:</p>
 <span class='line-number'>17</span>
 </pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  get &#39;/</span><span class="s1">&#39; do&lt;/p&gt;</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  get &amp;lsquo;/</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="s1">&lt;pre&gt;&lt;code&gt;erb :index</span>
-</span><span class='line'><span class="s1">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;erb :index</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;  end&lt;/p&gt;</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;  get &#39;</span><span class="o">/</span><span class="n">admin</span><span class="err">&#39;</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="n">get</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">/</span><span class="n">admin</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;erb :admin</span>
 </span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
@@ -169,7 +169,7 @@ Simple requiring of Sinatra and the JSON library:</p>
 </span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Now, for the routes. When our browser loads it s page, we have JavaScript running which will use the EventSource object to connect to a url here: http://localhost:4567/connect.</p>
+<p>Now, for the routes. When our browser loads it s page, we have JavaScript running which will use the EventSource object to connect to a url here: <a href="http://localhost:4567/connect.">http://localhost:4567/connect.</a></p>
 
 <p>More on EventSource later.</p>
 
@@ -196,7 +196,7 @@ Simple requiring of Sinatra and the JSON library:</p>
 <span class='line-number'>18</span>
 </pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  get &#39;/</span><span class="n">connect</span><span class="s1">&#39;, provides: &#39;</span><span class="n">text</span><span class="o">/</span><span class="n">event</span><span class="o">-</span><span class="n">stream</span><span class="err">&#39;</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  get &amp;lsquo;/</span><span class="n">connect</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="ss">provides</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">text</span><span class="o">/</span><span class="n">event</span><span class="o">-</span><span class="n">stream</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;stream :keep_open do |out|</span>
 </span><span class='line'><span class="sr">  connections &amp;lt;&amp;lt; out</span>
@@ -236,21 +236,21 @@ Simple requiring of Sinatra and the JSON library:</p>
 <span class='line-number'>17</span>
 </pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  post &#39;/</span><span class="n">push</span><span class="s1">&#39; do&lt;/p&gt;</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  post &amp;lsquo;/</span><span class="n">push</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="s1">&lt;pre&gt;&lt;code&gt;puts params</span>
-</span><span class='line'><span class="s1">#Add the timestamp to the notification</span>
-</span><span class='line'><span class="s1">notification = params.merge( {&#39;</span><span class="n">timestamp</span><span class="err">&#39;</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">timestamp</span><span class="p">})</span><span class="o">.</span><span class="n">to_json</span>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;puts params</span>
+</span><span class='line'><span class="sr">#Add the timestamp to the notification</span>
+</span><span class='line'><span class="sr">notification = params.merge( {&#39;timestamp&#39; =&amp;gt; timestamp}).to_json</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">notifications</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">notification</span>
+</span><span class='line'><span class="sr">notifications &amp;lt;&amp;lt; notification</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">notifications</span><span class="o">.</span><span class="n">shift</span> <span class="k">if</span> <span class="n">notifications</span><span class="o">.</span><span class="n">length</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">10</span>
-</span><span class='line'><span class="n">connections</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">out</span><span class="o">|</span> <span class="n">out</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="s2">&quot;data: </span><span class="si">#{</span><span class="n">notification</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">}</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'><span class="sr">notifications.shift if notifications.length &amp;gt; 10</span>
+</span><span class='line'><span class="sr">connections.each { |out| out &amp;lt;&amp;lt; &quot;data: </span><span class="si">#{</span><span class="n">notification</span><span class="si">}</span><span class="sr">\n\n&quot;}</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>As we said before, you can just follow the instructions at our git repository to pull down and build this code. Or if you have been following along, launch a terminal, navigate to the directory where you code is, and run:</p>
@@ -384,13 +384,13 @@ Simple requiring of Sinatra and the JSON library:</p>
 </span><span class='line'><span class="nt">&lt;p&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>By launching one browser window to http://localhost:4567/admin you should now see our admin form.</p>
+<p>By launching one browser window to <a href="http://localhost:4567/admin">http://localhost:4567/admin</a> you should now see our admin form.</p>
 
 <p>Figure 9.16 The initial admin page</p>
 
 <p><img class="figure" alt="Figure 9-16" src="http://html5hacks.com/images/chapter9-images/9-16.png"></p>
 
-<p>And, navigate to http://localhost:4567 in your browser and you should see.</p>
+<p>And, navigate to <a href="http://localhost:4567">http://localhost:4567</a> in your browser and you should see.</p>
 
 <p>Figure 9.17 The initial index page</p>
 
@@ -419,12 +419,12 @@ Notice the url /push maps to the route we defined in our Sinatra app.</p>
 <span class='line-number'>15</span>
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#send&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span> <span class="nx">$</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">#</span><span class="nx">send</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
 </span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>   <span class="kd">var</span> <span class="nx">notifcation</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">notifcation</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#notification&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()};</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>   <span class="kd">var</span> <span class="nx">notifcation</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">notifcation</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">#</span><span class="nx">notification</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;).</span><span class="nx">val</span><span class="p">()};</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span> <span class="s1">&#39;/push&#39;</span><span class="p">,</span> <span class="nx">notifcation</span><span class="p">,</span><span class="s1">&#39;json&#39;</span><span class="p">);</span>
 </span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
@@ -434,7 +434,7 @@ Notice the url /push maps to the route we defined in our Sinatra app.</p>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Now, lets open up five browser windows: one admin at http://localhost:4567/admin and four more receivers at http://localhost:4567</p>
+<p>Now, lets open up five browser windows: one admin at <a href="http://localhost:4567/admin">http://localhost:4567/admin</a> and four more receivers at <a href="http://localhost:4567">http://localhost:4567</a></p>
 
 <p>Figure 9.18 Opening 5 browser windows</p>
 
@@ -467,7 +467,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 <span class='line-number'>14</span>
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/connect&#39;</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">/connect&amp;rsquo;);&lt;/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
@@ -499,7 +499,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 <span class='line-number'>13</span>
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/connect&#39;</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">/connect&amp;rsquo;);&lt;/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
@@ -551,7 +551,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 
 <h2>Installing jQuery.notify</h2>
 
-<p>For our Push Notifcations we will make use of Eric Hynds great jQuery plugin jquery-notify, located here at github: [github.com/ehynds/jquery-notify] (https://github.com/ehynds/jquery-notify)</p>
+<p>For our Push Notifcations we will make use of Eric Hynds great jQuery plugin jquery-notify, located here at github: [github.com/ehynds/jquery-notify] (<a href="https://github.com/ehynds/jquery-notify">https://github.com/ehynds/jquery-notify</a>)</p>
 
 <p>In order to display the notification, we will need to include some markup to the receiver page.</p>
 
@@ -601,7 +601,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 <span class='line-number'>8</span>
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">notify</span><span class="p">({</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="err">#</span><span class="nx">container</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;).</span><span class="nx">notify</span><span class="p">({</span>
 </span><span class='line'>  <span class="nx">speed</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
 </span><span class='line'>  <span class="nx">expires</span><span class="o">:</span> <span class="kc">false</span>
 </span><span class='line'><span class="p">});</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
@@ -642,7 +642,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">notify</span><span class="p">({</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">$</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="err">#</span><span class="nx">container</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;).</span><span class="nx">notify</span><span class="p">({</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>  <span class="nx">speed</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
 </span><span class='line'>  <span class="nx">expires</span><span class="o">:</span> <span class="kc">false</span>
@@ -650,7 +650,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">});</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/connect&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">/connect&amp;rsquo;);</span>
 </span><span class='line'>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
@@ -679,7 +679,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
   <entry>
     <title type="html"><![CDATA[Turn Your Web App into a Windows 8 App]]></title>
     <link href="http://html5hacks.com/blog/2013/04/02/make-your-web-app-to-a-windows-8-app/"/>
-    <updated>2013-04-02T01:17:00-04:00</updated>
+    <updated>2013-04-02T01:17:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/04/02/make-your-web-app-to-a-windows-8-app</id>
     <content type="html"><![CDATA[<p>I talk a lot about just how similar the Windows 8 App environment is to developing for the Web.  Since windows 8 uses the same rendering engine as IE10, and the same JavaScript engine as IE10, building a Windows 8 App with JavaScript is in fact, building a web app.  We’ll talk about some of the keys to success but first, let’s take a step by step walk through converting one of my favorite web apps into a Windows 8 App.
 First thing first, you need to make sure your using <a href="http://www.microsoft.com/visualstudio/eng/products/visual-studio-express-products">Visual Studio 2012</a> (I’m using the Express version which is free).  Since Visual Studio 2012 has a requirement of Windows 8, you’ll need to be running Windows 8 as well.
@@ -691,11 +691,11 @@ We’re going to be taking the new fantastic game “YetiBowl” for our convers
 
 <p><a href="http://yetibowl.codeplex.com">http://yetibowl.codeplex.com</a></p>
 
-<p>If you open up the content in the directory marked “web”  you’ll see all the code for the YetiBowl game.  Now let’s go to Visual Studio and open up a new "Blank" JavaScript App:</p>
+<p>If you open up the content in the directory marked “web”  you’ll see all the code for the YetiBowl game.  Now let’s go to Visual Studio and open up a new &ldquo;Blank&rdquo; JavaScript App:</p>
 
 <p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS1.PNG"></p>
 
-<p>Next, go back to your recently downloaded code, and copy all the content from the "web" folder</p>
+<p>Next, go back to your recently downloaded code, and copy all the content from the &ldquo;web&rdquo; folder</p>
 
 <p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS2.png"></p>
 
@@ -703,7 +703,7 @@ We’re going to be taking the new fantastic game “YetiBowl” for our convers
 
 <p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS3.png"></p>
 
-<p>Before our code is going to work, we need to open up our package.appxmanifest and make one small change.  Find the field for "start page" and change it to the name of your html file(game.html):</p>
+<p>Before our code is going to work, we need to open up our package.appxmanifest and make one small change.  Find the field for &ldquo;start page&rdquo; and change it to the name of your html file(game.html):</p>
 
 <p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS4.PNG"></p>
 
@@ -782,7 +782,7 @@ We’re going to be taking the new fantastic game “YetiBowl” for our convers
 <p>It is very easy to move your web apps to Windows 8 where you have access to a whole series of new APIs and functionality that isn’t safe to expose on the web.  That being the case, it’s important that you look into the <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx">security model</a> that is implemented in Windows 8 Apps.  Using a JavaScript library?  Many libraries like <a href="http://www.yuiblog.com/blog/2013/03/12/windows-8-loves-yui/">YUI</a> and <a href="http://blogs.msdn.com/b/interoperability/archive/2013/03/29/jquery-adds-support-for-windows-store-apps-creates-new-opportunities-for-javascript-open-source-developers.aspx">jQuery</a> already work within the Windows 8 App environment.
 It’s that easy, reuse your code, and your skills to build Windows 8 Store Apps.</p>
 
-<p>Author: Jeff Burtoft - <a href="http://www.twitter.com/boyofgreen">@boyofgreen</a>
+<p>Author: Jeff Burtoft &ndash; <a href="http://www.twitter.com/boyofgreen">@boyofgreen</a>
 code sample: <a href="http://touch.azurewebsites.net/yeti/game.html">http://touch.azurewebsites.net/yeti/game.html</a></p>
 ]]></content>
   </entry>
@@ -790,7 +790,7 @@ code sample: <a href="http://touch.azurewebsites.net/yeti/game.html">http://touc
   <entry>
     <title type="html"><![CDATA[Build a Windows 8 App with YUI]]></title>
     <link href="http://html5hacks.com/blog/2013/03/10/build-a-windows-8-app-with-yui/"/>
-    <updated>2013-03-10T19:10:00-04:00</updated>
+    <updated>2013-03-10T19:10:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/03/10/build-a-windows-8-app-with-yui</id>
     <content type="html"><![CDATA[<p>I’ve always been a big fan of YUI.  YUI has taught me how to write good, scalable code.  If I ever wanted to know the “right” way to do something, I looked back at how the YUI devs did it, and I would do it the same way.  In the last few years, with the release of YUI3, that standard is even higher.  The encapsulation practices and the decentralization of the code base has made it pleasure to develop, and a rock solid foundation for my applications.</p>
 
@@ -908,7 +908,7 @@ To build our pages into a Windows 8 App, you’ll need a copy of visual Studio 2
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>The "process all" method parses the page and processes any page construction that is necessary before rendering the page.  Once that is complete the “.then()” promise fires off the navigation.  Without getting into too much detail, there is a library component added to this style of app called navigator.js, which adds this functionally for us.
+<p>The &ldquo;process all&rdquo; method parses the page and processes any page construction that is necessary before rendering the page.  Once that is complete the “.then()” promise fires off the navigation.  Without getting into too much detail, there is a library component added to this style of app called navigator.js, which adds this functionally for us.
 The file “home.html” will be our navigation point in this app, but we want to create some new pages to navigate to.  Let’s go ahead and add our first one.  To keep our code clean, the first thing I want to do is add a directory inside our “\pages\” directory called “duck”.  I’ll use this directory to keep my new page separate from my other pages.  Now let’s go into Visual Studio, and right click on that new folder.  In our contextual menu, we’ll have the option to add a “new item.”</p>
 
 <p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/chapter-jeff/vs-menu2.png"></p>
@@ -953,7 +953,7 @@ The file “home.html” will be our navigation point in this app, but we want t
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// For an introduction to the Page Control template, see the following documentation:</span>
-</span><span class='line'><span class="c1">// http://go.microsoft.com/fwlink/?LinkId=232511</span>
+</span><span class='line'><span class="c1">// &lt;a href=&quot;http://go.microsoft.com/fwlink/?LinkId=232511&quot;&gt;http://go.microsoft.com/fwlink/?LinkId=232511&lt;/a&gt;</span>
 </span><span class='line'><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
@@ -1013,7 +1013,7 @@ Now it’s time to go get a few cool examples.  Let’s start with a little game
 <p>Next is the step where YUI and WinJS actually meet.  For me, this is like the “as you wish” moment from the Princess Bride where Princess Buttercup realized she truly loved Westley too.  It’s going to work so seamlessly.    At this point there is one BIG thing missing.  YUI.  We need to load YUI into our local context so we can reference it from our local pages.  First things first, you need to go to github and download a copy of the library.  Now in “file explorer window” select the “build” directory from the library, copy it and then head back to your solutions explorer and paste it into your app.  Okay, that wasn’t hard at all, but there is one more thing to plan for.  When you use the YUI CDN along with the loader, you get a magical file concoction that loads all the proper files for you based on your YUI requires statement.  Since we aren’t using the CDN, we don’t get that magic.  The good news is, YUI’s got an app for that.  It’s called the YUI configurator and it’s pretty snazzy too.  Let’s quickly review our use statement in our sample, and you will see that are using two library components:
 <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>win8.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">YUI</span><span class="p">().</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;transition&#39;</span><span class="p">,</span> <span class="s1">&#39;button&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="p">{</span><span class="err">…</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">YUI</span><span class="p">().</span><span class="nx">use</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">transition</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">button</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="p">{</span><span class="err">…</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>So let’s go over to the configurator and select those two components from the list of required components.  There are a few other settings we can update to make our life easier.  First, make sure you have the box unchecked to load separate files, not combined files.  Next, you can update your root path; in this case we will update it to “/js/build” since that is where the files will be in our app.  Once you have these settings in place, you should have a nice list of files that we need to load into our DOM in order to have our demo function:</p>
@@ -1263,7 +1263,7 @@ Now it’s time to go get a few cool examples.  Let’s start with a little game
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">WinJS</span><span class="p">.</span><span class="nx">Navigation</span><span class="p">.</span><span class="nx">navigate</span><span class="p">(</span><span class="s2">&quot;PathToFile&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">WinJS</span><span class="p">.</span><span class="nx">Navigation</span><span class="p">.</span><span class="nx">navigate</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">PathToFile</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;);</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>When this method is fired, your app will then navigate to the page referenced by the string passed into it.  Remember, our WinJS apps are all single page applications, so there is no page load- instead your new page content is loaded inside of your app container.  In this case, the container was defined inside the default.html file.  In addition to the HTML being injected into your DOM from your new page, it’s references are added to ( .js files or .css files).  It’s quite a smooth process.
@@ -1352,7 +1352,7 @@ Now I can go back to my “home.html” file and add a link in to my duck app:</
 
 <h2>Growing the App</h2>
 
-<p>Let’s keep going with this navigation app and add a new page.  Go to your solution explorer, create a new directory inside the “pages” directory and call it "dial".  Inside of it, right click and add a new page control called “dial.html”.  Again, watch the magic happen as it generates your .html file, your .js file and your .css file.
+<p>Let’s keep going with this navigation app and add a new page.  Go to your solution explorer, create a new directory inside the “pages” directory and call it &ldquo;dial&rdquo;.  Inside of it, right click and add a new page control called “dial.html”.  Again, watch the magic happen as it generates your .html file, your .js file and your .css file.
 Next, navigate to the super cool <a href="http://yuilibrary.com/yui/docs/dial/dial-interactive.html">YUI sample dial app</a>:</p>
 
 <p>  <img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/chapter-jeff/cap-3.png"></p>
@@ -1621,7 +1621,7 @@ Next, navigate to the super cool <a href="http://yuilibrary.com/yui/docs/dial/di
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">dataTransferManager</span> <span class="o">=</span> <span class="nx">Windows</span><span class="p">.</span><span class="nx">ApplicationModel</span><span class="p">.</span><span class="nx">DataTransfer</span><span class="p">.</span><span class="nx">DataTransferManager</span><span class="p">.</span><span class="nx">getForCurrentView</span><span class="p">();</span>
-</span><span class='line'><span class="nx">dataTransferManager</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;datarequested&quot;</span><span class="p">,</span> <span class="nx">shareTextHandler</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'><span class="nx">dataTransferManager</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="nx">datarequested</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;,</span> <span class="nx">shareTextHandler</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">function</span> <span class="nx">shareTextHandler</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
@@ -1692,7 +1692,7 @@ The Key is to use the skills you already have, and the investments you’ve alre
   <entry>
     <title type="html"><![CDATA[Build a Milestone Calendar with IndexedDB and FullCalendar.js]]></title>
     <link href="http://html5hacks.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/"/>
-    <updated>2013-01-17T08:47:00-05:00</updated>
+    <updated>2013-01-17T08:47:00-06:00</updated>
     <id>http://html5hacks.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js</id>
     <content type="html"><![CDATA[<h4>IndexedDB is a persistent object data store in the browser. Although it is not a full SQL implementation and it is more complex than the unstructured key–value pairs in localStorage, you can use it to define an API that provides the ability to read and write key–value objects as structured JavaScript objects, and an indexing system that facilitates filtering and lookup.</h4>
 
@@ -1863,7 +1863,7 @@ We’ll begin with the form. You may notice that the input fields for the dates 
 </span><span class='line'>&lt;pre>&lt;code>            window.mozIndexedDB;
 </span><span class='line'>&lt;/code>&lt;/pre>
 </span><span class='line'>
-</span><span class='line'>&lt;p>if ('webkitIndexedDB' in window) {
+</span><span class='line'>&lt;p>if (&lsquo;webkitIndexedDB&rsquo; in window) {
 </span><span class='line'>  window.IDBTransaction = window.webkitIDBTransaction;
 </span><span class='line'>  window.IDBKeyRange = window.webkitIDBKeyRange;
 </span><span class='line'>}
@@ -1916,7 +1916,7 @@ We’ll begin with the form. You may notice that the input fields for the dates 
 <span class='line-number'>34</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.open = function() {&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>  var request = indexedDB.open("milestones");&lt;/p>
+</span><span class='line'>&lt;p>  var request = indexedDB.open(&ldquo;milestones&rdquo;);&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>  request.onsuccess = function(e) {&lt;/p>
 </span><span class='line'>
@@ -2001,8 +2001,8 @@ We’ll begin with the form. You may notice that the input fields for the dates 
 </pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.init = function() {&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>  var db = html5hacks.indexedDB.db;
-</span><span class='line'>  var trans = db.transaction(["milestone"], IDBTransaction.READ_WRITE);
-</span><span class='line'>  var store = trans.objectStore("milestone");&lt;/p>
+</span><span class='line'>  var trans = db.transaction([&ldquo;milestone&rdquo;], IDBTransaction.READ_WRITE);
+</span><span class='line'>  var store = trans.objectStore(&ldquo;milestone&rdquo;);&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>  var keyRange = IDBKeyRange.lowerBound(0);
 </span><span class='line'>  var cursorRequest = store.openCursor(keyRange);&lt;/p>
@@ -2104,7 +2104,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$('form').submit(function() {&lt;/p>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$(&lsquo;form&rsquo;).submit(function() {&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;pre>&lt;code>var data = $(this).serializeArray();
 </span><span class='line'>
@@ -2157,8 +2157,8 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
 <span class='line-number'>32</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.addMilestone = function(d) {
 </span><span class='line'>  var db = html5hacks.indexedDB.db;
-</span><span class='line'>  var trans = db.transaction(["milestone"], IDBTransaction.READ_WRITE);
-</span><span class='line'>  var store = trans.objectStore("milestone");&lt;/p>
+</span><span class='line'>  var trans = db.transaction([&ldquo;milestone&rdquo;], IDBTransaction.READ_WRITE);
+</span><span class='line'>  var store = trans.objectStore(&ldquo;milestone&rdquo;);&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>  var data = {&lt;/p>
 </span><span class='line'>

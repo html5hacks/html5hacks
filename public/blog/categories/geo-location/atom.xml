@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Geo Location | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/geo-location/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-05-13T02:32:42-04:00</updated>
+  <updated>2013-06-04T10:50:09-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Win a free copy of HTML5 Hacks]]></title>
     <link href="http://html5hacks.com/blog/2013/03/26/oreilly-webcast-rethinking-the-possibilities-of-browser-based-apps-with-html5/"/>
-    <updated>2013-03-26T19:52:00-04:00</updated>
+    <updated>2013-03-26T19:52:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/03/26/oreilly-webcast-rethinking-the-possibilities-of-browser-based-apps-with-html5</id>
     <content type="html"><![CDATA[<p>Sign up on our mailing list and be put into a draw to win a free ebook:</p>
 
@@ -39,7 +39,7 @@
 <h2>O'Reilly Webcast: Rethinking the Possibilities of Browser-based Apps with HTML5</h2>
 
 <p>Wednesday, March 27, 2013
-10AM PT, San Francisco | 5pm - London | 1pm - New York | Thu, Mar 28th at 4am - Sydney | Thu, Mar 28th at 2am - Tokyo | Thu, Mar 28th at 1am - Beijing | 10:30pm - Mumbai</p>
+10AM PT, San Francisco | 5pm &ndash; London | 1pm &ndash; New York | Thu, Mar 28th at 4am &ndash; Sydney | Thu, Mar 28th at 2am &ndash; Tokyo | Thu, Mar 28th at 1am &ndash; Beijing | 10:30pm &ndash; Mumbai</p>
 
 <p>Here is a link to the archived presentation:
 <a href="http://event.on24.com/eventRegistration/EventLobbyServlet?target=lobby.jsp&amp;eventid=561480&amp;sessionid=1&amp;key=76D1FED238FE290C4AC3A7CDDB4E23E5&amp;eventuserid=78868897">Watch the webcast in its original format</a></p>
@@ -55,9 +55,9 @@
   <entry>
     <title type="html"><![CDATA[SXSWi 2013: 'Battle of the HTML5 Hackers' and 'HTML5 Hacks' Book Signing]]></title>
     <link href="http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/"/>
-    <updated>2013-03-12T23:55:00-04:00</updated>
+    <updated>2013-03-12T23:55:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers</id>
-    <content type="html"><![CDATA[<p>We had a great turnout for the 'Battle of the HTML5 Hackers' presentation at SXSWi on Tuesday.</p>
+    <content type="html"><![CDATA[<p>We had a great turnout for the &lsquo;Battle of the HTML5 Hackers&rsquo; presentation at SXSWi on Tuesday.</p>
 
 <p><img class="imgL300" alt="SXSWi 2013: Battle of the HTML5 Hackers - Jesse Cravens and Jeff Burtoft" src="http://html5hacks.com/images/sxsw13/sxsw13-crowd.jpg"></p>
 
@@ -73,7 +73,7 @@
 
 <p>Nerdclustr source code is available <a href="https://github.com/html5hacks/nerd-clustr">here</a>.</p>
 
-<p>During the book signing, the bookstore informed us there were only 3 copies left. I'm not keen to the selection process of books, but I was little surprised at the limited number of technical books. This is certainly a reflection of the SXSWi demographic, and we also tailored our content and presentation style to this audience.</p>
+<p>During the book signing, the bookstore informed us there were only 3 copies left. I&rsquo;m not keen to the selection process of books, but I was little surprised at the limited number of technical books. This is certainly a reflection of the SXSWi demographic, and we also tailored our content and presentation style to this audience.</p>
 
 <p>The slide deck is available here:</p>
 
@@ -85,14 +85,14 @@
 <hr>
 
 
-<p>Stay tuned for our next presentation happening online, through O'Reilly Webcasts. Join us for <a href="http://www.oreillynet.com/pub/e/2566">'Rethinking the Possibilities of Browser-based Apps with HTML5'</a> on Wednesday, March 27, 2013 10AM PT.</p>
+<p>Stay tuned for our next presentation happening online, through O'Reilly Webcasts. Join us for <a href="http://www.oreillynet.com/pub/e/2566">&lsquo;Rethinking the Possibilities of Browser-based Apps with HTML5&rsquo;</a> on Wednesday, March 27, 2013 10AM PT.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks]]></title>
     <link href="http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks/"/>
-    <updated>2012-10-15T23:19:00-04:00</updated>
+    <updated>2012-10-15T23:19:00-05:00</updated>
     <id>http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks</id>
     <content type="html"><![CDATA[<p>An exploration of the future of web technologies and browser capabilities would not be complete without covering the tools and techniques available to enable location awareness.</p>
 
@@ -128,14 +128,14 @@ In “Use the Geoloqi Real-Time Streaming Service to Broadcast a Remote User’s
 
 <p>The main drawback to this functionality is related to privacy and security, and for good reason. After all, as responsible application developers we should be doing what we can to protect the sensitive data of our users. In “Use the Geolocation APIs to Display Longitude and Latitude in a Mobile Web Application” we will take an in-depth look at how the browser employs cooperative detection, allowing the user to opt-in to only sharing location data with trusted web applications.</p>
 
-<p>Want to read more detail? ... <a href="http://shop.oreilly.com/product/0636920026273.do?sortby=bestSellers">buy the book</a>.</p>
+<p>Want to read more detail? &hellip; <a href="http://shop.oreilly.com/product/0636920026273.do?sortby=bestSellers">buy the book</a>.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Use the GeoLocation API to Display Long/Lat in a jQuery Mobile App]]></title>
     <link href="http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app/"/>
-    <updated>2012-10-15T23:15:00-04:00</updated>
+    <updated>2012-10-15T23:15:00-05:00</updated>
     <id>http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app</id>
     <content type="html"><![CDATA[<p>The Geolocation specification exposes an easy-to-use API. With only a couple of lines of code, you can obtain the user’s current position. What’s more, jQuery Mobile provides a simple framework for building a cross-browser mobile web application.</p>
 
@@ -350,7 +350,7 @@ Now we will create a separate page to link to. You many have noticed a link to l
 </span><span class='line'><span class="nt">&lt;p&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Now we will address our geolocation JavaScript. If you are familiar with jQuery the initial $ variable will look familiar in the code that follows. If not, you can learn more about jQuery at http://docs.jquery.com/Main_Page.</p>
+<p>Now we will address our geolocation JavaScript. If you are familiar with jQuery the initial $ variable will look familiar in the code that follows. If not, you can learn more about jQuery at <a href="http://docs.jquery.com/Main_Page.">http://docs.jquery.com/Main_Page.</a></p>
 
 <p>Simply put, the jQuery function wrapper ensures that our page is ready before we execute the following script. Then we will set up a global namespace object that we will use to store our data. This type of organization will be important as our script gets more complex moving forward.</p>
 
@@ -438,7 +438,7 @@ Then we will construct both a success and error object. Within our success objec
 
 <p>The ability for web application developers to collect location data about end users raises quite a bit of concern in regard to security and privacy. The W3C specification clearly indicates that client applications should notify users and provide an interface to authorize the use of location data, allowing them to determine which web applications they trust:</p>
 
-<p>User agents must not send location information to Web sites without the express permission of the user. User agents must acquire permission through a user interface, unless they have prearranged trust relationships with users, as described below. The user interface must include the host component of the document's URI [URI]. Those permissions that are acquired through the user interface and that are preserved beyond the current browsing session (i.e. beyond the time when the browsing context [BROWSINGCONTEXT] is navigated to another URL) must be revocable and user agents must respect revoked permissions.</p>
+<p>User agents must not send location information to Web sites without the express permission of the user. User agents must acquire permission through a user interface, unless they have prearranged trust relationships with users, as described below. The user interface must include the host component of the document&rsquo;s URI [URI]. Those permissions that are acquired through the user interface and that are preserved beyond the current browsing session (i.e. beyond the time when the browsing context [BROWSINGCONTEXT] is navigated to another URL) must be revocable and user agents must respect revoked permissions.</p>
 ]]></content>
   </entry>
   
