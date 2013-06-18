@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JavaScript | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-06-04T10:50:09-05:00</updated>
+  <updated>2013-06-17T20:59:34-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ember.js Views and Live Templates with Handlebars.js Part 1]]></title>
+    <link href="http://html5hacks.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/"/>
+    <updated>2013-06-04T11:05:00-05:00</updated>
+    <id>http://html5hacks.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1</id>
+    <content type="html"><![CDATA[<p><img class="imgL" alt="Tech-pro Ember.js Views" src="http://tpstatic.com/img/usermedia/cHI1WdevsEyBJ7dLfmVUdA/cropped-w220-h220.png"></p>
+
+<p>This is an exploration of Handlebars.js template library when used with Ember.js views. Many of the Handlebars.js tutorials on the web discuss the Handlebars API, but not in the specific context of using Handlebars with Ember.js. In addition to filling that void, I&rsquo;ll also give a brief background of JavaScript templating in general to provide perspective as to the problems it is solving.</p>
+
+<p>This tutorial will be divided into two parts. In Part 1, you should gain a clear understanding of JavaScript templates, the capabilities of Handlebars expressions and helpers, and how to write your own Handlebars helpers.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1308/emberjs-views-and-live-templates-with-handlebarsjs-part-1">http://tech.pro/tutorial/1308/emberjs-views-and-live-templates-with-handlebarsjs-part-1</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Push Notifications to the Browser with Server Sent Events]]></title>
