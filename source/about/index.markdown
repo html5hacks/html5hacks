@@ -53,3 +53,12 @@ Alex Sirota cofounded and was the CTO and Head of Product at FoxyTunes, an Inter
 ![Alt Alexander Schulze](/images/schulze.png "Alexander Schulze")
 
 Alexander Schulze is a software developer and IT Consultant for more than 20 years. His experience is based on the realization of plenty international and intersectoral software projects. He is a training supervisor for IT specialists and Certified Scrum Master. Alexander already published several books, professional and scientific articles on various IT topics and speaks on international conferences. He is the founder of the jWebSocket project and supervising a world leader in computer components in its intranet and extranet process automation, where he is responsible for decisions concerning the web, communication and database technologies.
+
+###Kevin Lamping
+
+![Alt Kevin Lamping](/images/klamping.jpg "Kevin Lamping")
+
+Kevin is a Front-end Web Developer born and raised in the Texas Hill Country. He's currently enjoying life in San Antonio with his wife and two-year old son.
+
+
+
