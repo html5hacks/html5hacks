@@ -8,7 +8,7 @@ footer: false
 ---
 ###Jesse Cravens
 
-![Alt Jesse Cravens](/images/jesse_frog2.jpeg "Jesse Cravens")
+![Alt Jesse Cravens](/images/jesse_fluent.png "Jesse Cravens")
 
 Jesse is a Principal Engineer at frog where he works with the world’s leading companies, helping them to design, engineer, and bring to market meaningful products and services. He possesses a deep background in web application development, and has recently been focusing on single page web application architecture, the mobile web, and HTML5. 
 
