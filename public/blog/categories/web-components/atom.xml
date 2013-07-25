@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Web Components | HTML5 Hacks]]></title>
+  <link href="http://html5hacks.com/blog/categories/web-components/atom.xml" rel="self"/>
+  <link href="http://html5hacks.com/"/>
+  <updated>2013-07-25T16:07:41-04:00</updated>
+  <id>http://html5hacks.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Building Next Generation Widgets with Web Components]]></title>
+    <link href="http://html5hacks.com/blog/2013/07/25/building-next-generation-widgets-with-web-components/"/>
+    <updated>2013-07-25T03:41:00-04:00</updated>
+    <id>http://html5hacks.com/blog/2013/07/25/building-next-generation-widgets-with-web-components</id>
+    <content type="html"><![CDATA[<p><img class="imgL400" alt="Nerdclustr" src="http://tpstatic.com/img/usermedia/9ylQdMSRLUiffrQPG4hHJw/original.png"></p>
+
+<p>For SXSWi and FluentConf this year, <a href="http://twitter.com/boyofgreen">@boyofgreen</a> and I created a demo application to showcase some of the hacks that we included in our book OReilly&rsquo;s HTML5 Hacks.</p>
+
+<p>The demo application, Nerdclustr, is an HTML5 mobile application that brings &lsquo;nerds&rsquo; of all types together conferences and provides a visual map that updates in real time. The application was written with Node.js and the Express web framework. It demonstrates the following specifications: HTML5 Web Forms, Geo Location API, WebSocket, Canvas, CSS3 transforms.</p>
+
+<p>Given, the attention that Web Components and <a href="http://www.polymer-project.org/polymer.html">Polymer.js</a> have been getting lately, I felt this was a good opportunity to demonstrate some of the exciting new specifications that are making their way to modern browsers. For the sake of this tutorial, I&rsquo;ll be using and providing screenshots of Google Chrome, but it should be worth your time to explore the status of each of the specifications in other modern browsers as well.</p>
+
+<p>In this tutorial, we will take a look at the HTML5 specs mentioned above in detail. Then, we will explore Polymer.js and build out an example application.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1421/building-next-generation-widgets-with-web-components">http://tech.pro/tutorial/1421/building-next-generation-widgets-with-web-components</a></p>
+]]></content>
+  </entry>
+  
+</feed>
