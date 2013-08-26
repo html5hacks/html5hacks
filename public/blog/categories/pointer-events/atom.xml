@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Pointer Events | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/pointer-events/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-07-25T16:07:41-04:00</updated>
+  <updated>2013-08-26T14:12:53-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Utilize Rich Input Data from W3C Pointer Events]]></title>
     <link href="http://html5hacks.com/blog/2013/05/13/rich-input-data-from-w3c-pointer-events/"/>
-    <updated>2013-05-13T01:42:00-04:00</updated>
+    <updated>2013-05-13T01:42:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/05/13/rich-input-data-from-w3c-pointer-events</id>
     <content type="html"><![CDATA[<p>The W3C Pointer Events specification allows you to develop for a single event model that supports various input types.  Instead of writing code for multiple event types, or having to use feature detection on page load that forces one event model over the other, Pointers allows you to write one event model that works everywhere.  To make the transition easy, Pointer Events builds upon the Event Model of Mouse Events.  This means that code that’s written for mouse events is going to be very easy to upgrade to Pointers.</p>
 

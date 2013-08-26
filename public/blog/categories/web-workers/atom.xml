@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Workers | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/web-workers/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-07-25T16:07:41-04:00</updated>
+  <updated>2013-08-26T14:12:53-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -14,9 +14,22 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Web Worker Patterns]]></title>
+    <link href="http://html5hacks.com/blog/2013/08/26/web-worker-patterns/"/>
+    <updated>2013-08-26T14:03:00-05:00</updated>
+    <id>http://html5hacks.com/blog/2013/08/26/web-worker-patterns</id>
+    <content type="html"><![CDATA[<p>JavaScript is executed in a single thread. If you&rsquo;re not familiar with threads, what this means is that JavaScript can only execute one block of code at a time. If code is already executing, any interaction by the user will instantiate an asynchronous event that is queued up for later execution. Other events like those from XMLHttpRequests and timers, are also added to the queue.</p>
+
+<p>So, as you might expect, a single-threaded architecture can be problematic to the user experience if a particular script takes a long time to complete.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1487/web-worker-patterns">http://tech.pro/tutorial/1487/web-worker-patterns</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Web Workers: Basics of the Web Browser's UI Thread]]></title>
     <link href="http://html5hacks.com/blog/2012/09/22/web-workers-basics-of-the-web-browsers-ui-thread/"/>
-    <updated>2012-09-22T23:44:00-04:00</updated>
+    <updated>2012-09-22T23:44:00-05:00</updated>
     <id>http://html5hacks.com/blog/2012/09/22/web-workers-basics-of-the-web-browsers-ui-thread</id>
     <content type="html"><![CDATA[<h2>Single Threadin'</h2>
 

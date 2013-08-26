@@ -4,7 +4,7 @@
   <title><![CDATA[Category: HTML5 Connectivity" | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/html5-connectivity/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-07-25T16:07:41-04:00</updated>
+  <updated>2013-08-26T14:12:53-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Push Notifications to the Browser with Server Sent Events]]></title>
     <link href="http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/"/>
-    <updated>2013-04-21T15:44:00-04:00</updated>
+    <updated>2013-04-21T15:44:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events</id>
     <content type="html"><![CDATA[<p>Created by Opera, Server Sent Events standardizes Comet technologies. The standard intends to enable native real time updates through a simple JavaScript API called EventSource, which connects to servers that asynchronously push data updates to clients via HTTP Streaming. Server Sent Events use a single, unidirectional, persistent connection between the browser and the server.</p>
 

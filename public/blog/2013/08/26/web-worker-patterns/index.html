@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Training - HTML5 Hacks</title>
+  <title>Web Worker Patterns - HTML5 Hacks</title>
   <meta name="author" content="Jesse Cravens and Jeff Burtoft">
 
   
-  <meta name="description" content="Training Jan 17th, 2013 Upcoming Workshops HTML5 Hacks 2013 Workshop Tuesday, March 12, 2013 from 5:00 PM to 8:00 PM (CDT) Austin, TX | frog studio &hellip;">
+  <meta name="description" content="JavaScript is executed in a single thread. If you&rsquo;re not familiar with threads, what this means is that JavaScript can only execute one block &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://html5hacks.com/training/">
+  <link rel="canonical" href="http://html5hacks.com/blog/2013/08/26/web-worker-patterns/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,41 +81,15 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Training</h1>
-    <p class="meta">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-17T13:35:00-06:00" pubdate data-updated="true">Jan 17<span>th</span>, 2013</time></p>
-  </header>
-  
-  <h3>Upcoming Workshops</h3>
-
-<h4>HTML5 Hacks 2013 Workshop</h4>
-
-<h5>Tuesday, March 12, 2013 from 5:00 PM to 8:00 PM (CDT)</h5>
-
-<h5>Austin, TX | frog studio &ndash; Austin</h5>
-
-<div style="width:100%; text-align:left;" ><iframe  src="http://www.eventbrite.com/tickets-external?eid=2736459825&ref=etckt&v=2" frameborder="0" height="292" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;" ><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/r/etckt">Event management</a><span style="color:#ddd;"> for </span><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://html5hacks2013.eventbrite.com?ref=etckt">HTML5 Hacks 2013 Workshop</a> <span style="color:#ddd;">powered by</span> <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=etckt">Eventbrite</a></div></div>
-
-
-  
-    <footer>
+    
+      <h1 class="entry-title">Web Worker Patterns</h1>
+    
+    
       <p class="meta">
         
-        
 
 
 
@@ -127,13 +101,57 @@
   
 
 
-<time datetime="2013-01-17T13:35:00-06:00" pubdate data-updated="true">Jan 17<span>th</span>, 2013</time>
+<time datetime="2013-08-26T14:03:00-05:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>JavaScript is executed in a single thread. If you&rsquo;re not familiar with threads, what this means is that JavaScript can only execute one block of code at a time. If code is already executing, any interaction by the user will instantiate an asynchronous event that is queued up for later execution. Other events like those from XMLHttpRequests and timers, are also added to the queue.</p>
+
+<p>So, as you might expect, a single-threaded architecture can be problematic to the user experience if a particular script takes a long time to complete.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1487/web-worker-patterns">http://tech.pro/tutorial/1487/web-worker-patterns</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
       
-        <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://html5hacks.com/training/index.html" data-via="html5hacks" data-counturl="http://html5hacks.com/training/index.html" >Tweet</a>
+
+<span class="byline author vcard">Posted by <span class="fn">Jesse Cravens (@jdcravens)</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-26T14:03:00-05:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/web-workers/'>Web Workers</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://html5hacks.com/blog/2013/08/26/web-worker-patterns/" data-via="html5hacks" data-counturl="http://html5hacks.com/blog/2013/08/26/web-worker-patterns/" >Tweet</a>
   
   
   
@@ -141,9 +159,14 @@
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/2013/07/25/building-next-generation-widgets-with-web-components/" title="Previous Post: Building Next Generation Widgets with Web Components">&laquo; Building Next Generation Widgets with Web Components</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
   <section>
@@ -273,8 +296,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://html5hacks.com/training/index.html';
-        var disqus_url = 'http://html5hacks.com/training/index.html';
+        var disqus_identifier = 'http://html5hacks.com/blog/2013/08/26/web-worker-patterns/';
+        var disqus_url = 'http://html5hacks.com/blog/2013/08/26/web-worker-patterns/';
         var disqus_script = 'embed.js';
       
     (function () {

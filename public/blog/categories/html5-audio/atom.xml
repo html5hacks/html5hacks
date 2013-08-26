@@ -4,7 +4,7 @@
   <title><![CDATA[Category: HTML5 Audio | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/html5-audio/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-07-25T16:07:41-04:00</updated>
+  <updated>2013-08-26T14:12:53-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Add Narration to your Slide Deck with HTML5 Audio]]></title>
     <link href="http://html5hacks.com/blog/2013/06/17/add-narration-to-your-slide-deck-with-html5-audio/"/>
-    <updated>2013-06-17T10:11:00-04:00</updated>
+    <updated>2013-06-17T10:11:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/06/17/add-narration-to-your-slide-deck-with-html5-audio</id>
     <content type="html"><![CDATA[<p><strong>Most presenter will share their slide deck on the web after their presentation. But many times the slides are only a shell of the real talk. Fortunately, with HTML5 audio, we can add our voice back to our slides and recreate the real presentation.</strong></p>
 

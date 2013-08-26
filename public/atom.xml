@@ -4,7 +4,7 @@
   <title><![CDATA[HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-07-25T16:07:41-04:00</updated>
+  <updated>2013-08-26T14:12:53-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -14,9 +14,22 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Web Worker Patterns]]></title>
+    <link href="http://html5hacks.com/blog/2013/08/26/web-worker-patterns/"/>
+    <updated>2013-08-26T14:03:00-05:00</updated>
+    <id>http://html5hacks.com/blog/2013/08/26/web-worker-patterns</id>
+    <content type="html"><![CDATA[<p>JavaScript is executed in a single thread. If you&rsquo;re not familiar with threads, what this means is that JavaScript can only execute one block of code at a time. If code is already executing, any interaction by the user will instantiate an asynchronous event that is queued up for later execution. Other events like those from XMLHttpRequests and timers, are also added to the queue.</p>
+
+<p>So, as you might expect, a single-threaded architecture can be problematic to the user experience if a particular script takes a long time to complete.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1487/web-worker-patterns">http://tech.pro/tutorial/1487/web-worker-patterns</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Building Next Generation Widgets with Web Components]]></title>
     <link href="http://html5hacks.com/blog/2013/07/25/building-next-generation-widgets-with-web-components/"/>
-    <updated>2013-07-25T03:41:00-04:00</updated>
+    <updated>2013-07-25T03:41:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/07/25/building-next-generation-widgets-with-web-components</id>
     <content type="html"><![CDATA[<p><img class="imgL400" alt="Nerdclustr" src="http://tpstatic.com/img/usermedia/9ylQdMSRLUiffrQPG4hHJw/original.png"></p>
 
@@ -35,7 +48,7 @@
   <entry>
     <title type="html"><![CDATA[Add Narration to your Slide Deck with HTML5 Audio]]></title>
     <link href="http://html5hacks.com/blog/2013/06/17/add-narration-to-your-slide-deck-with-html5-audio/"/>
-    <updated>2013-06-17T10:11:00-04:00</updated>
+    <updated>2013-06-17T10:11:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/06/17/add-narration-to-your-slide-deck-with-html5-audio</id>
     <content type="html"><![CDATA[<p><strong>Most presenter will share their slide deck on the web after their presentation. But many times the slides are only a shell of the real talk. Fortunately, with HTML5 audio, we can add our voice back to our slides and recreate the real presentation.</strong></p>
 
@@ -372,7 +385,7 @@
   <entry>
     <title type="html"><![CDATA[Ember.js Views and Live Templates with Handlebars.js Part 1]]></title>
     <link href="http://html5hacks.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/"/>
-    <updated>2013-06-04T11:05:00-04:00</updated>
+    <updated>2013-06-04T11:05:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1</id>
     <content type="html"><![CDATA[<p><img class="imgL" alt="Tech-pro Ember.js Views" src="http://tpstatic.com/img/usermedia/cHI1WdevsEyBJ7dLfmVUdA/cropped-w220-h220.png"></p>
 
@@ -387,7 +400,7 @@
   <entry>
     <title type="html"><![CDATA[Utilize Rich Input Data from W3C Pointer Events]]></title>
     <link href="http://html5hacks.com/blog/2013/05/13/rich-input-data-from-w3c-pointer-events/"/>
-    <updated>2013-05-13T01:42:00-04:00</updated>
+    <updated>2013-05-13T01:42:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/05/13/rich-input-data-from-w3c-pointer-events</id>
     <content type="html"><![CDATA[<p>The W3C Pointer Events specification allows you to develop for a single event model that supports various input types.  Instead of writing code for multiple event types, or having to use feature detection on page load that forces one event model over the other, Pointers allows you to write one event model that works everywhere.  To make the transition easy, Pointer Events builds upon the Event Model of Mouse Events.  This means that code that’s written for mouse events is going to be very easy to upgrade to Pointers.</p>
 
@@ -630,7 +643,7 @@
   <entry>
     <title type="html"><![CDATA[Push Notifications to the Browser with Server Sent Events]]></title>
     <link href="http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/"/>
-    <updated>2013-04-21T15:44:00-04:00</updated>
+    <updated>2013-04-21T15:44:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events</id>
     <content type="html"><![CDATA[<p>Created by Opera, Server Sent Events standardizes Comet technologies. The standard intends to enable native real time updates through a simple JavaScript API called EventSource, which connects to servers that asynchronously push data updates to clients via HTTP Streaming. Server Sent Events use a single, unidirectional, persistent connection between the browser and the server.</p>
 
@@ -1079,7 +1092,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
   <entry>
     <title type="html"><![CDATA[Turn Your Web App into a Windows 8 App]]></title>
     <link href="http://html5hacks.com/blog/2013/04/02/make-your-web-app-to-a-windows-8-app/"/>
-    <updated>2013-04-02T01:17:00-04:00</updated>
+    <updated>2013-04-02T01:17:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/04/02/make-your-web-app-to-a-windows-8-app</id>
     <content type="html"><![CDATA[<p>I talk a lot about just how similar the Windows 8 App environment is to developing for the Web.  Since windows 8 uses the same rendering engine as IE10, and the same JavaScript engine as IE10, building a Windows 8 App with JavaScript is in fact, building a web app.  We’ll talk about some of the keys to success but first, let’s take a step by step walk through converting one of my favorite web apps into a Windows 8 App.
 First thing first, you need to make sure your using <a href="http://www.microsoft.com/visualstudio/eng/products/visual-studio-express-products">Visual Studio 2012</a> (I’m using the Express version which is free).  Since Visual Studio 2012 has a requirement of Windows 8, you’ll need to be running Windows 8 as well.
@@ -1189,7 +1202,7 @@ code sample: <a href="http://touch.azurewebsites.net/yeti/game.html">http://touc
   <entry>
     <title type="html"><![CDATA[Win a free copy of HTML5 Hacks]]></title>
     <link href="http://html5hacks.com/blog/2013/03/26/oreilly-webcast-rethinking-the-possibilities-of-browser-based-apps-with-html5/"/>
-    <updated>2013-03-26T19:52:00-04:00</updated>
+    <updated>2013-03-26T19:52:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/03/26/oreilly-webcast-rethinking-the-possibilities-of-browser-based-apps-with-html5</id>
     <content type="html"><![CDATA[<p>Sign up on our mailing list and be put into a draw to win a free ebook:</p>
 
@@ -1228,7 +1241,7 @@ code sample: <a href="http://touch.azurewebsites.net/yeti/game.html">http://touc
   <entry>
     <title type="html"><![CDATA[SXSWi 2013: 'Battle of the HTML5 Hackers' and 'HTML5 Hacks' Book Signing]]></title>
     <link href="http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/"/>
-    <updated>2013-03-12T23:55:00-04:00</updated>
+    <updated>2013-03-12T23:55:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers</id>
     <content type="html"><![CDATA[<p>We had a great turnout for the &lsquo;Battle of the HTML5 Hackers&rsquo; presentation at SXSWi on Tuesday.</p>
 
@@ -1265,7 +1278,7 @@ code sample: <a href="http://touch.azurewebsites.net/yeti/game.html">http://touc
   <entry>
     <title type="html"><![CDATA[Build a Windows 8 App with YUI]]></title>
     <link href="http://html5hacks.com/blog/2013/03/10/build-a-windows-8-app-with-yui/"/>
-    <updated>2013-03-10T19:10:00-04:00</updated>
+    <updated>2013-03-10T19:10:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/03/10/build-a-windows-8-app-with-yui</id>
     <content type="html"><![CDATA[<p>I’ve always been a big fan of YUI.  YUI has taught me how to write good, scalable code.  If I ever wanted to know the “right” way to do something, I looked back at how the YUI devs did it, and I would do it the same way.  In the last few years, with the release of YUI3, that standard is even higher.  The encapsulation practices and the decentralization of the code base has made it pleasure to develop, and a rock solid foundation for my applications.</p>
 
@@ -1923,7 +1936,7 @@ The Key is to use the skills you already have, and the investments you’ve alre
   <entry>
     <title type="html"><![CDATA[Build a Milestone Calendar with IndexedDB and FullCalendar.js]]></title>
     <link href="http://html5hacks.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/"/>
-    <updated>2013-01-17T08:47:00-05:00</updated>
+    <updated>2013-01-17T08:47:00-06:00</updated>
     <id>http://html5hacks.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js</id>
     <content type="html"><![CDATA[<h4>IndexedDB is a persistent object data store in the browser. Although it is not a full SQL implementation and it is more complex than the unstructured key–value pairs in localStorage, you can use it to define an API that provides the ability to read and write key–value objects as structured JavaScript objects, and an indexing system that facilitates filtering and lookup.</h4>
 
@@ -2350,7 +2363,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
   <entry>
     <title type="html"><![CDATA[Make Your Web App Respond to Device Orientation Changes]]></title>
     <link href="http://html5hacks.com/blog/2013/01/04/make-your-web-app-respond-to-device-orientation-changes/"/>
-    <updated>2013-01-04T00:31:00-05:00</updated>
+    <updated>2013-01-04T00:31:00-06:00</updated>
     <id>http://html5hacks.com/blog/2013/01/04/make-your-web-app-respond-to-device-orientation-changes</id>
     <content type="html"><![CDATA[<h4>Your native apps are smart enough to know how you’re holding your device. Now your web apps can be, too. Use orientation-based media queries to make your site responsive.</h4>
 
@@ -2493,7 +2506,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
   <entry>
     <title type="html"><![CDATA[Elegantly Resize Your Page with the @-viewport CSS Declaration]]></title>
     <link href="http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration/"/>
-    <updated>2012-11-28T18:37:00-05:00</updated>
+    <updated>2012-11-28T18:37:00-06:00</updated>
     <id>http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration</id>
     <content type="html"><![CDATA[<h4>Gone are the days of viewport meta tags that with implementations different across browsers.  The new @-viewport is easy to use and puts the control in the right place.</h4>
 
@@ -2694,7 +2707,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
   <entry>
     <title type="html"><![CDATA[Make Your Page Consumable by Robots and Humans Alike with Microdata]]></title>
     <link href="http://html5hacks.com/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/"/>
-    <updated>2012-11-21T22:34:00-05:00</updated>
+    <updated>2012-11-21T22:34:00-06:00</updated>
     <id>http://html5hacks.com/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata</id>
     <content type="html"><![CDATA[<p>HTML5 microdata provides the mechanism for easily allowing machines to consume the data on your pages, while not affecting the experience for the user.</p>
 
@@ -2919,7 +2932,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
   <entry>
     <title type="html"><![CDATA[Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font]]></title>
     <link href="http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/"/>
-    <updated>2012-11-18T19:42:00-05:00</updated>
+    <updated>2012-11-18T19:42:00-06:00</updated>
     <id>http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font</id>
     <content type="html"><![CDATA[<p>Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
 make requests to other domains from within the browser. With CORS you have a secure
@@ -3196,7 +3209,7 @@ own CORS hacks.</p>
   <entry>
     <title type="html"><![CDATA[Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks]]></title>
     <link href="http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks/"/>
-    <updated>2012-10-15T23:19:00-04:00</updated>
+    <updated>2012-10-15T23:19:00-05:00</updated>
     <id>http://html5hacks.com/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks</id>
     <content type="html"><![CDATA[<p>An exploration of the future of web technologies and browser capabilities would not be complete without covering the tools and techniques available to enable location awareness.</p>
 
@@ -3239,7 +3252,7 @@ In “Use the Geoloqi Real-Time Streaming Service to Broadcast a Remote User’s
   <entry>
     <title type="html"><![CDATA[Use the GeoLocation API to Display Long/Lat in a jQuery Mobile App]]></title>
     <link href="http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app/"/>
-    <updated>2012-10-15T23:15:00-04:00</updated>
+    <updated>2012-10-15T23:15:00-05:00</updated>
     <id>http://html5hacks.com/blog/2012/10/15/use-the-geolocation-api-to-display-long-slash-lat-in-a-jquery-mobile-app</id>
     <content type="html"><![CDATA[<p>The Geolocation specification exposes an easy-to-use API. With only a couple of lines of code, you can obtain the user’s current position. What’s more, jQuery Mobile provides a simple framework for building a cross-browser mobile web application.</p>
 
@@ -3485,7 +3498,7 @@ Then we will construct both a success and error object. Within our success objec
   <entry>
     <title type="html"><![CDATA[Web Workers: Basics of the Web Browser's UI Thread]]></title>
     <link href="http://html5hacks.com/blog/2012/09/22/web-workers-basics-of-the-web-browsers-ui-thread/"/>
-    <updated>2012-09-22T23:44:00-04:00</updated>
+    <updated>2012-09-22T23:44:00-05:00</updated>
     <id>http://html5hacks.com/blog/2012/09/22/web-workers-basics-of-the-web-browsers-ui-thread</id>
     <content type="html"><![CDATA[<h2>Single Threadin&#8217;</h2>
 

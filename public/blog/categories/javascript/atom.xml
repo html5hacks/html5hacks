@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JavaScript | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-07-25T16:07:41-04:00</updated>
+  <updated>2013-08-26T14:12:53-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -14,9 +14,22 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Web Worker Patterns]]></title>
+    <link href="http://html5hacks.com/blog/2013/08/26/web-worker-patterns/"/>
+    <updated>2013-08-26T14:03:00-05:00</updated>
+    <id>http://html5hacks.com/blog/2013/08/26/web-worker-patterns</id>
+    <content type="html"><![CDATA[<p>JavaScript is executed in a single thread. If you&rsquo;re not familiar with threads, what this means is that JavaScript can only execute one block of code at a time. If code is already executing, any interaction by the user will instantiate an asynchronous event that is queued up for later execution. Other events like those from XMLHttpRequests and timers, are also added to the queue.</p>
+
+<p>So, as you might expect, a single-threaded architecture can be problematic to the user experience if a particular script takes a long time to complete.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1487/web-worker-patterns">http://tech.pro/tutorial/1487/web-worker-patterns</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Building Next Generation Widgets with Web Components]]></title>
     <link href="http://html5hacks.com/blog/2013/07/25/building-next-generation-widgets-with-web-components/"/>
-    <updated>2013-07-25T03:41:00-04:00</updated>
+    <updated>2013-07-25T03:41:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/07/25/building-next-generation-widgets-with-web-components</id>
     <content type="html"><![CDATA[<p><img class="imgL400" alt="Nerdclustr" src="http://tpstatic.com/img/usermedia/9ylQdMSRLUiffrQPG4hHJw/original.png"></p>
 
@@ -35,7 +48,7 @@
   <entry>
     <title type="html"><![CDATA[Add Narration to your Slide Deck with HTML5 Audio]]></title>
     <link href="http://html5hacks.com/blog/2013/06/17/add-narration-to-your-slide-deck-with-html5-audio/"/>
-    <updated>2013-06-17T10:11:00-04:00</updated>
+    <updated>2013-06-17T10:11:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/06/17/add-narration-to-your-slide-deck-with-html5-audio</id>
     <content type="html"><![CDATA[<p><strong>Most presenter will share their slide deck on the web after their presentation. But many times the slides are only a shell of the real talk. Fortunately, with HTML5 audio, we can add our voice back to our slides and recreate the real presentation.</strong></p>
 
@@ -420,7 +433,7 @@
   <entry>
     <title type="html"><![CDATA[Ember.js Views and Live Templates with Handlebars.js Part 1]]></title>
     <link href="http://html5hacks.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/"/>
-    <updated>2013-06-04T11:05:00-04:00</updated>
+    <updated>2013-06-04T11:05:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1</id>
     <content type="html"><![CDATA[<p><img class="imgL" alt="Tech-pro Ember.js Views" src="http://tpstatic.com/img/usermedia/cHI1WdevsEyBJ7dLfmVUdA/cropped-w220-h220.png"></p>
 
@@ -435,7 +448,7 @@
   <entry>
     <title type="html"><![CDATA[Push Notifications to the Browser with Server Sent Events]]></title>
     <link href="http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/"/>
-    <updated>2013-04-21T15:44:00-04:00</updated>
+    <updated>2013-04-21T15:44:00-05:00</updated>
     <id>http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events</id>
     <content type="html"><![CDATA[<p>Created by Opera, Server Sent Events standardizes Comet technologies. The standard intends to enable native real time updates through a simple JavaScript API called EventSource, which connects to servers that asynchronously push data updates to clients via HTTP Streaming. Server Sent Events use a single, unidirectional, persistent connection between the browser and the server.</p>
 
@@ -1092,117 +1105,6 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 <p>Figure 9.20 Pushing Notifications to the Connected Browsers</p>
 
 <p><img class="figure" alt="Figure 9-20" src="http://html5hacks.com/images/chapter9-images/9-20.png"></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Turn Your Web App into a Windows 8 App]]></title>
-    <link href="http://html5hacks.com/blog/2013/04/02/make-your-web-app-to-a-windows-8-app/"/>
-    <updated>2013-04-02T01:17:00-04:00</updated>
-    <id>http://html5hacks.com/blog/2013/04/02/make-your-web-app-to-a-windows-8-app</id>
-    <content type="html"><![CDATA[<p>I talk a lot about just how similar the Windows 8 App environment is to developing for the Web.  Since windows 8 uses the same rendering engine as IE10, and the same JavaScript engine as IE10, building a Windows 8 App with JavaScript is in fact, building a web app.  We’ll talk about some of the keys to success but first, let’s take a step by step walk through converting one of my favorite web apps into a Windows 8 App.
-First thing first, you need to make sure your using <a href="http://www.microsoft.com/visualstudio/eng/products/visual-studio-express-products">Visual Studio 2012</a> (I’m using the Express version which is free).  Since Visual Studio 2012 has a requirement of Windows 8, you’ll need to be running Windows 8 as well.
-We’re going to be taking the new fantastic game “YetiBowl” for our conversion.  You can play a web version of the game <a href="http://touch.azurewebsites.net/yeti/game.html">here</a>.</p>
-
-<p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/ieweb.png"></p>
-
-<p>Once your done playing go to codeplex and download the project:</p>
-
-<p><a href="http://yetibowl.codeplex.com">http://yetibowl.codeplex.com</a></p>
-
-<p>If you open up the content in the directory marked “web”  you’ll see all the code for the YetiBowl game.  Now let’s go to Visual Studio and open up a new &ldquo;Blank&rdquo; JavaScript App:</p>
-
-<p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS1.PNG"></p>
-
-<p>Next, go back to your recently downloaded code, and copy all the content from the &ldquo;web&rdquo; folder</p>
-
-<p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS2.png"></p>
-
-<p>Now go back to your new Visual Studio project, and find the solutions explorer on the right side of the screen, past your code into your project:</p>
-
-<p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS3.png"></p>
-
-<p>Before our code is going to work, we need to open up our package.appxmanifest and make one small change.  Find the field for &ldquo;start page&rdquo; and change it to the name of your html file(game.html):</p>
-
-<p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS4.PNG"></p>
-
-<p>Now, hit F5 and see what happens!  That’s all it takes, our YetiBowl game is now a Windows 8 Store App, and a pretty fine one at that.  Our web app code just works in Windows 8.</p>
-
-<p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS5.PNG"></p>
-
-<h2>Add a Little Delight for your users</h2>
-
-<p>Now that you have your app up and running, let’s use one of the favorite Windows 8 API to add some additional features to our app.  With a few lines of code we’ll be able to add the ability to “share” with the Windows 8 Share Charm.
-  To keep it easy, let’s go to the bottom of our game.html file and add a script tag.  We’ll then past a few lines of code into it:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>win8.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>    <span class="kd">var</span> <span class="nx">dataTransferManager</span> <span class="o">=</span> <span class="nx">Windows</span><span class="p">.</span><span class="nx">ApplicationModel</span><span class="p">.</span><span class="nx">DataTransfer</span><span class="p">.</span><span class="nx">DataTransferManager</span><span class="p">.</span><span class="nx">getForCurrentView</span><span class="p">();</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>    <span class="nx">dataTransferManager</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;datarequested&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="c1">// Code to handle event goes here.</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>        <span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">request</span><span class="p">;</span>
-</span><span class='line'>        <span class="nx">request</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m Rocking out with the Yeti&quot;</span><span class="p">;</span>
-</span><span class='line'>        <span class="nx">request</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">description</span> <span class="o">=</span> <span class="s2">&quot;HTML share from YetiBowl Game&quot;</span><span class="p">;</span>
-</span><span class='line'>        <span class="kd">var</span> <span class="nx">localImage</span> <span class="o">=</span> <span class="s1">&#39;ms-appx:///media/logos/yeti_logo.png&#39;</span><span class="p">;</span>
-</span><span class='line'>        <span class="kd">var</span> <span class="nx">htmlExample</span> <span class="o">=</span> <span class="s2">&quot;&amp;lt;p&amp;gt;Here&#39;s to some fun with the Yeti. If your not playing YetiBowl, then your not really having fun!&amp;lt;/p&amp;gt;&amp;lt;div&amp;gt;&amp;lt;img src=\&quot;&quot;</span> <span class="o">+</span> <span class="nx">localImage</span> <span class="o">+</span> <span class="s2">&quot;\&quot;&amp;gt;.&amp;lt;/div&amp;gt;&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="kd">var</span> <span class="nx">htmlFormat</span> <span class="o">=</span> <span class="nx">Windows</span><span class="p">.</span><span class="nx">ApplicationModel</span><span class="p">.</span><span class="nx">DataTransfer</span><span class="p">.</span><span class="nx">HtmlFormatHelper</span><span class="p">.</span><span class="nx">createHtmlFormat</span><span class="p">(</span><span class="nx">htmlExample</span><span class="p">);</span>
-</span><span class='line'>        <span class="nx">request</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">setHtmlFormat</span><span class="p">(</span><span class="nx">htmlFormat</span><span class="p">);</span>
-</span><span class='line'>        <span class="kd">var</span> <span class="nx">streamRef</span> <span class="o">=</span> <span class="nx">Windows</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Streams</span><span class="p">.</span><span class="nx">RandomAccessStreamReference</span><span class="p">.</span><span class="nx">createFromUri</span><span class="p">(</span><span class="k">new</span> <span class="nx">Windows</span><span class="p">.</span><span class="nx">Foundation</span><span class="p">.</span><span class="nx">Uri</span><span class="p">(</span><span class="nx">localImage</span><span class="p">));</span>
-</span><span class='line'>        <span class="nx">request</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">resourceMap</span><span class="p">[</span><span class="nx">localImage</span><span class="p">]</span> <span class="o">=</span> <span class="nx">streamRef</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="p">});</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS6.PNG"></p>
-
-<p>You can find out more about the <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh758314.aspx">share charm here</a>, but we are basically taking advantage of one of the <a href="http://msdn.microsoft.com/en-us/library/windows/apps/br211377.aspx">many Windows RT APIs</a> that you have access to via JavaScript inside your Windows 8 App.  Once you’ve added this above code, you’ll now be able to share info from your Yeti Bowl Game to other apps you have installed.</p>
-
-<p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS7.PNG"></p>
-
-<p><img class="figure" alt="Figure 7-1" src="http://html5hacks.com/images/win8app/VS8.PNG"></p>
-
-<h2>A Few Closing Notes</h2>
-
-<p>It is very easy to move your web apps to Windows 8 where you have access to a whole series of new APIs and functionality that isn’t safe to expose on the web.  That being the case, it’s important that you look into the <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx">security model</a> that is implemented in Windows 8 Apps.  Using a JavaScript library?  Many libraries like <a href="http://www.yuiblog.com/blog/2013/03/12/windows-8-loves-yui/">YUI</a> and <a href="http://blogs.msdn.com/b/interoperability/archive/2013/03/29/jquery-adds-support-for-windows-store-apps-creates-new-opportunities-for-javascript-open-source-developers.aspx">jQuery</a> already work within the Windows 8 App environment.
-It’s that easy, reuse your code, and your skills to build Windows 8 Store Apps.</p>
-
-<p>Author: Jeff Burtoft &ndash; <a href="http://www.twitter.com/boyofgreen">@boyofgreen</a>
-code sample: <a href="http://touch.azurewebsites.net/yeti/game.html">http://touch.azurewebsites.net/yeti/game.html</a></p>
 ]]></content>
   </entry>
   
