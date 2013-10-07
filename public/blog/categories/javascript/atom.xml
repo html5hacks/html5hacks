@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JavaScript | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-08-26T14:12:53-05:00</updated>
+  <updated>2013-10-06T19:20:28-05:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -12,6 +12,73 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript Makers: How JS is Helping Drive the Maker Movement]]></title>
+    <link href="http://html5hacks.com/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/"/>
+    <updated>2013-10-04T19:02:00-05:00</updated>
+    <id>http://html5hacks.com/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement</id>
+    <content type="html"><![CDATA[<p>This post is mirrored from: <a href="">jessecravens.com</a></p>
+
+<p><img class="imgR300" alt="ok200 Conference" src="http://html5hacks.com/images/200ok/200ok1.jpg"></p>
+
+<p>I spend my days writing a lot of JavaScript, and helping companies deliver ambitious UX focused applications to the web. I <a href="http://shop.oreilly.com/product/0636920026273.do?cmp=af-code-book-product_cj_9781449334994_7080585">author books</a> on the subject, blog, and <a href="http://lanyrd.com/profile/jdcravens/">speak at conferences</a> as often as I can.</p>
+
+<p>I work for <a href="http://frogdesign.com">frog</a>, a product design firm, that for the last forty years has been helping increase the profiles of brands like Sony and Apple through iconic design.</p>
+
+<p>I work within a culture that has deep roots into <a href="http://en.wikipedia.org/wiki/Maker_culture">the Maker Movement</a>; A culture that was making before the Maker Movement was cool, the &ldquo;original makers&rdquo; if you will. Written upon our walls and slide decks is the tag, <a href="https://vimeo.com/24940735">&lsquo;Love What You Make&rsquo;</a>, and as you might expect many of the frogs that sit around me are craftsfolk, DIYourselfers, and tinkerers. It is not uncommon to see a flying quadcopter, a mesh sensor network of Arduinos, 3D printed prototypes, explorations in next generation gesture with the Leap Motion and Kinect, video production, motion studies, 3D modeling, along with the standard artistic mood boards and web and native mobile application wireframes. Let&rsquo;s just say there is no shortage of creativity across every medium imaginable.</p>
+
+<h2>Sharing My Craft with my Children</h2>
+
+<p><img class="imgL300" alt="ok200 Conference - setting up" src="http://html5hacks.com/images/200ok/200ok2.jpg"></p>
+
+<p>All of that being said, I&rsquo;m a parent of two young children. My little ones constantly challenge me to find ways to share quality time with them. The parents reading this know the juggling act.</p>
+
+<p>What I try to do is architect bridges between my children&rsquo;s curiosity and the passions of others that have explored their crafts in a deep way. Myself, and my wife, being the most important of those craftsfolk.</p>
+
+<p>If I&rsquo;m doing it right, when I spend time with my children, they should share in my excitement and passion. If I&rsquo;m doing it wrong, I&rsquo;m overwhelmed and exhausted from work. In my vision, my children should be witnessing a model of how to wake up everyday with the goal of embracing opportunity to create a combination of function and beauty within the world around them.</p>
+
+<p><img class="imgR200" alt="Maker Faire" src="http://html5hacks.com/images/200ok/Maker_Faire.gif"></p>
+
+<p>So it is in this context, that I met up with Mozilla&rsquo;s Luke Crouch, and <a href="http://makerfairetulsa.com/">Tulsa Mini Maker Faire</a>&rsquo;s Scott Phillips to put together <a href="http://200ok.us/schedule/javascript-makers/">the closing keynote at the 200ok conference</a> .</p>
+
+<h2>JavaScript Makers: How JS is Helping Drive the Maker Movement</h2>
+
+<p>The <a href="http://200ok.us/schedule/javascript-makers/">200ok conference</a> is on track to become Oklaoma&rsquo;s premier web conference attracting a sold out crowd of web professionals from all over Oklahoma and the neighboring states. Going in, I felt as though I knew my audience well. In other words, if I spoke to them about languages they would understand, JavaScript and HTML5, my message would easily resonate. I also knew that given their location, Tulsa, OK, a presentation that touched upon work life balance and family values would immediate strike a chord as well.</p>
+
+<p>So in the spirit of authenticity, I pretended as if getting prepared for a closing keynote dependent on hacked together hardware and software demos wasn&rsquo;t challenging enough; I made the decision to include my 6 year old son, Carter with a flying drone and a custom configured Minecraft server accessible over conference wifi. I knew this would ensure that the presentation dangled on the brink of disaster, mirroring the chaotic reality of both open hacking and parenting.</p>
+
+<p>My thinking was that a presentation on this topic should be authentic, and reflect the reality of my proposition, not be an ivory tower, academic/authoritative talk about how to share your craft with your children. I also made sure to not prep Carter. With a loose structure in place, we took the stage and worked our way through a story that consisted of 12 open software and hardware demos that showcased JavaScript as a primary scripting language, and a table full of hardware that ranged from a drone, a dissected wifli helicopter and erector set, a leap motion, and numerous prototyping boards.</p>
+
+<script async class="speakerdeck-embed" data-slide="10" data-id="78b4c9300a8801313e8202078d31cabc" data-ratio="1.2994923857868" src="http://html5hacks.com//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>Here are some of the highlights:</p>
+
+<h2>JavaScript and Prototyping Boards</h2>
+
+<p>Earlier this year I did a presentation at HTML5.tx that focused on building an <a href="http://www.youtube.com/watch?v=H00_BGRkBRM">Internet of Things with JavaScript</a> and various open hardware prototyping boards such as Arduino, BeagleBone, and the Raspberry Pi. It was in that talk that I made a connection that eventually led to an introduction to Luke. So, given that the HTML5.tx content was of interest I started the presentation with a demo of the Arduino, <a href="https://github.com/rwaldron/johnny-five">Johnny Five</a>, the original Beaglebone and <a href="https://github.com/jadonk/bonescript">BoneScript</a>.</p>
+
+<h2>Nodecopter and the Leap Motion</h2>
+
+<p>One crowd favorite was mapping the gestures from the <a href="https://www.leapmotion.com/">Leap Motion</a> to the <a href="http://ardrone2.parrot.com/">Parrot AR drone</a>, so that a one finger clockwise gesture triggered a nodecopter takeoff. A counter clockwise gesture then landed it. I was able to put this together using the leapJS and node-ardrone node modules, based on some initial hacking by <a href="https://twitter.com/markuskobler">Markus Kobler</a>, where he pulled this off at a <a href="https://github.com/markuskobler/nodecopter-london">Nodecopter London event</a>.</p>
+
+<iframe src="http://html5hacks.com//player.vimeo.com/video/75616363" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<p> <p><a href="http://vimeo.com/75616363">Jesse Cravens blowing minds with a JS-driven copter.</a> from <a href="http://vimeo.com/user21333523">Michael Gorsuch</a> on <a href="https://vimeo.com">Vimeo</a>.</p></p>
+
+<h2>ScriptCraft: Running JavaScript from within Minecraft</h2>
+
+<p><img class="imgL300" alt="ok200 Conference" src="http://html5hacks.com/images/200ok/200ok3.jpg"></p>
+
+<p>Later, I showed how to script inside of the Minecraft virtual world, using <a href="https://twitter.com/walter">Walter Higgins'</a> great <a href="https://github.com/walterhiggins/ScriptCraft">ScriptCraft library</a>. I wasn&rsquo;t expecting the conference wifi, and single access point, to suffice in allowing Carter and I to interact within virtual world. I was also concerned about the dynamic IP, and having to change it on the fly, start/restart the server, etc. So I made the decision 10 minutes before to not have Carter log in, and I would just speak to the possibility instead. In true 6 year old fashion, he rebelled and logged onto my server, popping up in front of me wearing a Creeper mask, as I was mid stream explaining how to script wooden signs with his 1st grade sight words as a homework exercise. Needless to say, his innapropriate behavior was a crowd favorite. I have to admit, it was mine as well.</p>
+
+<p><img class="imgR300" alt="ok200 Conference" src="http://html5hacks.com/images/200ok/200ok4.png"></p>
+
+<p>Going into the talk, I knew I&rsquo;d either be trying this again in the future or abandoning it as &lsquo;one of those ideas&rsquo; that sounded good in theory, but was just not going to work. Where did I land? Well, let&rsquo;s just say that Carter and I are looking for our next opportunity to share our experiences with other parents/web professionals.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Web Worker Patterns]]></title>
@@ -442,669 +509,6 @@
 <p>This tutorial will be divided into two parts. In Part 1, you should gain a clear understanding of JavaScript templates, the capabilities of Handlebars expressions and helpers, and how to write your own Handlebars helpers.</p>
 
 <p>Read more at: <a href="http://tech.pro/tutorial/1308/emberjs-views-and-live-templates-with-handlebarsjs-part-1">http://tech.pro/tutorial/1308/emberjs-views-and-live-templates-with-handlebarsjs-part-1</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Push Notifications to the Browser with Server Sent Events]]></title>
-    <link href="http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/"/>
-    <updated>2013-04-21T15:44:00-05:00</updated>
-    <id>http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events</id>
-    <content type="html"><![CDATA[<p>Created by Opera, Server Sent Events standardizes Comet technologies. The standard intends to enable native real time updates through a simple JavaScript API called EventSource, which connects to servers that asynchronously push data updates to clients via HTTP Streaming. Server Sent Events use a single, unidirectional, persistent connection between the browser and the server.</p>
-
-<p>Unlike the Web Socket API, Server Sent Events and EventSource object use HTTP to enable real-time server push capabilities within your application. HTTP Streaming predates the WebSocket API, and it is often referred to as Comet or server push. The exciting part here is that the Server Sent Events API intends to standardize the Comet technique, making it trivial to implement in the browser.</p>
-
-<h2>What is HTTP Streaming?</h2>
-
-<p>In a standard HTTP request and response between a web browser and a web server, the server will close the connection once it has completed the processing of the request. HTTP streaming, or Comet, differs in that the server maintains a persistent, open connection with the browser.</p>
-
-<p>It is important to note that not all web servers are capable of streaming. Only evented servers such as Node.js, Tornado, or Thin are equipped incorporate an event loop that is optimal for supporting HTTP streaming. These, non-blocking servers handle persistent connections from a large number of concurrent requests very well.</p>
-
-<p>A complete discussion on evented vs. threaded servers is out of scope for this post, but that being said, in the upcoming hack we will provide a very simple evented server implementation example to get you started. We provide a simple browser based JavaScript to connect to the server, and a server side implementation using Ruby, Thin, and Sinatra.
-For the record, this is also very easy to do with Node.js.</p>
-
-<p>Here is a link to the companion github repository:
-<a href="https://github.com/html5hacks/chapter9">https://github.com/html5hacks/chapter9</a></p>
-
-<h2>Ruby’s Sinatra</h2>
-
-<p>The Sinatra documentation describes itself as a “DSL for quickly creating web applications in Ruby with minimal effort.”
-This text has focused primarily on Node.js (HTTP Server) and Express.js (web application framework) to quickly generate server side implementations for hacking out functionality.</p>
-
-<p>It would a disservice to not mention Ruby, Rails and Sinatra in the same or similar light as we have Node.js in this text. Although learning Ruby is another learning curve, in the larger scheme of programming languages it is a less daunting curve than most. And as most die-hard Rubyists will preach, it is arguably the most elegant and fun to write of all modern programming languages. Ruby on Rails, and its little brother Sinatra are also great web application frameworks to start with if you are new to web application development.</p>
-
-<p>Much like Node.js and Express, Sinatra makes building small server implementations nearly trivial. So for the context of HTML5 Hacks, that allows us to focus our efforts on programming in the browser.</p>
-
-<p>For now let’s build a simple HTTP Streaming server using Sinatra.</p>
-
-<p>To get started with Ruby On Rails or Sinatra, check out the great documentation available at <a href="http://guides.rubyonrails.org/getting_started.html">http://guides.rubyonrails.org/getting_started.html</a> and <a href="http://sinatrarb.com/intro">http://sinatrarb.com/intro</a>, respectively.</p>
-
-<h2>Building Push Notifications</h2>
-
-<p>Our goal in the next hack is to build a simple streaming server and use the EventSource object to open a persistent connection from the browser. We will then push notifcations from one ‘admin’ browser to all the connected receivers. Sounds simple, right? Let’s get started.</p>
-
-<h2>A Simple HTTP Streaming Server</h2>
-
-<p>Open up a file and name it stream.rb. Then add the following:
-Simple requiring of Sinatra and the JSON library:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  require &amp;lsquo;json&amp;rsquo;</span>
-</span><span class='line'><span class="sr">  require &amp;lsquo;sinatra&amp;rsquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Then, we set up a public folder, and set the server to use the evented ruby server, Thin.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  set :public_folder, Proc.new { File.join(root, &amp;ldquo;public&amp;rdquo;) }</span>
-</span><span class='line'><span class="sr">  set server: &amp;lsquo;thin&amp;rsquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Set up two routs for serving our 2 pages: index and admin. We will use Erb as our templating language. The details are out of scope, but our use is very minimal. More on Erb here: <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html">http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html</a></p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  get &amp;lsquo;/</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;erb :index</span>
-</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="n">get</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">/</span><span class="n">admin</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;erb :admin</span>
-</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>We’d like to timestamp each notification, so here is a very simple function definition.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  def timestamp&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>We also set up two empty arrays: one to hold the connections and the other to hold out notifications.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  connections = []</span>
-</span><span class='line'><span class="sr">  notifications = []&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Now, for the routes. When our browser loads it s page, we have JavaScript running which will use the EventSource object to connect to a url here: <a href="http://localhost:4567/connect.">http://localhost:4567/connect.</a></p>
-
-<p>More on EventSource later.</p>
-
-<p>But for now you can see the magic of the evented HTTP stream, the connection is held open until a callback is fired to close the stream.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  get &amp;lsquo;/</span><span class="n">connect</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="ss">provides</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">text</span><span class="o">/</span><span class="n">event</span><span class="o">-</span><span class="n">stream</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;stream :keep_open do |out|</span>
-</span><span class='line'><span class="sr">  connections &amp;lt;&amp;lt; out</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">  #out.callback on stream close evt. </span>
-</span><span class='line'><span class="sr">  out.callback { </span>
-</span><span class='line'><span class="sr">    #delete the connection </span>
-</span><span class='line'><span class="sr">    connections.delete(out) </span>
-</span><span class='line'><span class="sr">  } </span>
-</span><span class='line'><span class="sr">end</span>
-</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Finally, any data this posted to the /push route is pushed out to each connected device.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>stream.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  post &amp;lsquo;/</span><span class="n">push</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;puts params</span>
-</span><span class='line'><span class="sr">#Add the timestamp to the notification</span>
-</span><span class='line'><span class="sr">notification = params.merge( {&#39;timestamp&#39; =&amp;gt; timestamp}).to_json</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">notifications &amp;lt;&amp;lt; notification</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">notifications.shift if notifications.length &amp;gt; 10</span>
-</span><span class='line'><span class="sr">connections.each { |out| out &amp;lt;&amp;lt; &quot;data: </span><span class="si">#{</span><span class="n">notification</span><span class="si">}</span><span class="sr">\n\n&quot;}</span>
-</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>As we said before, you can just follow the instructions at our git repository to pull down and build this code. Or if you have been following along, launch a terminal, navigate to the directory where you code is, and run:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>cli </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>  $ ruby stream.rb&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Figure 9.15 Starting the Sinatra Server</p>
-
-<p><img class="figure" alt="Figure 7-2" src="http://html5hacks.com/images/chapter9-images/9-15.png"></p>
-
-<p>Alright, so now that we have out Sinatra app up and running with custom routes to handle incoming requests from our browser.</p>
-
-<p>If this doesn’t make complete sense yet, just hang loose. In the upcoming subsections, the rest of the items will start to fall into place.</p>
-
-<h2>Set Up the HTML pages</h2>
-
-<p>We will be building 2 pages: one for the admin to push out notifications, and the other will be for the connected receivers to receive the notification. Both of these ‘views’ will share the same layout, as such:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>index.html </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;html&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;head&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>HTML5 Hacks - Server Sent Events<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>meta charset=&quot;utf-8&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="ni">&amp;lt;</span>script src=”http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js”<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;/script&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>script src=&quot;http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.js&quot;<span class="ni">&amp;gt;</span> <span class="ni">&amp;lt;</span>/script<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>script src=&quot;jquery.notify.js&quot; type=&quot;text/javascript&quot;<span class="ni">&amp;gt;&amp;lt;</span>/script<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;ui.notify.css&quot;<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/head&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;body&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>!—- implementation specific here --<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/body&gt;</span>
-</span><span class='line'><span class="nt">&lt;/html&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>The admin page will contain an input tag and a simple button.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>admin.html </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;message&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Enter Notification Here&quot;</span> <span class="nt">/&gt;&lt;br&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">”button”</span> <span class="na">id=</span><span class="s">&quot;send&quot;</span> <span class="na">data-role=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>push<span class="nt">&lt;/input&gt;</span>
-</span><span class='line'><span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>And our receiver pages will display a simple piece of text:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>receiver.html </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;p&gt;</span>Don&#39;t Mind me ... Just Waiting for a Push Notification from HTML5 Hacks.<span class="nt">&lt;/p&gt;</span>
-</span><span class='line'><span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>By launching one browser window to <a href="http://localhost:4567/admin">http://localhost:4567/admin</a> you should now see our admin form.</p>
-
-<p>Figure 9.16 The initial admin page</p>
-
-<p><img class="figure" alt="Figure 9-16" src="http://html5hacks.com/images/chapter9-images/9-16.png"></p>
-
-<p>And, navigate to <a href="http://localhost:4567">http://localhost:4567</a> in your browser and you should see.</p>
-
-<p>Figure 9.17 The initial index page</p>
-
-<p><img class="figure" alt="Figure 9-17" src="http://html5hacks.com/images/chapter9-images/9-17.png"></p>
-
-<h2>Adding a bit of jQuery</h2>
-
-<p>We need to add a bit of JavaScript to attach an event listener to the “send” button. This snippet will prevent the default submission of the form and post the notifcation object to the server as JSON.
-Notice the url /push maps to the route we defined in our Sinatra app.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>push.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span> <span class="nx">$</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">#</span><span class="nx">send</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>   <span class="kd">var</span> <span class="nx">notifcation</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">notifcation</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">#</span><span class="nx">notification</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;).</span><span class="nx">val</span><span class="p">()};</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span> <span class="s1">&#39;/push&#39;</span><span class="p">,</span> <span class="nx">notifcation</span><span class="p">,</span><span class="s1">&#39;json&#39;</span><span class="p">);</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span> <span class="p">})</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Now, lets open up five browser windows: one admin at <a href="http://localhost:4567/admin">http://localhost:4567/admin</a> and four more receivers at <a href="http://localhost:4567">http://localhost:4567</a></p>
-
-<p>Figure 9.18 Opening 5 browser windows</p>
-
-<p><img class="figure" alt="Figure 9-18" src="http://html5hacks.com/images/chapter9-images/9-18.png"></p>
-
-<p>Looking good.</p>
-
-<p>But before we get started, lets set up our EventSource.</p>
-
-<h2>EventSource</h2>
-
-<p>Event Source is a super simple JavaScript API for opening a connection with an HTTP stream.
-Because our receiver pages are just ‘dumb’ terminals that receive data, we have an ideal scenario for Server Side Events.
-Earlier, when we discussed the Sinatra app, we showed exposing a route for the browser to connect to an HTTP stream. Well, this is where we connect!</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>es.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">/connect&amp;rsquo;);&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// … do something</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Now we can add a simple notification with the available data,</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>es.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">/connect&amp;rsquo;);&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// … Notify</span>
-</span><span class='line'>  <span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>And here is the final script for the admin:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>es.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#send&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">notification</span> <span class="o">=</span> <span class="p">{</span><span class="nx">message</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#notification&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()};</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span> <span class="s1">&#39;/push&#39;</span><span class="p">,</span> <span class="nx">notification</span><span class="p">,</span><span class="s1">&#39;json&#39;</span><span class="p">);</span>
-</span><span class='line'><span class="p">})</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">});</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<h2>Installing jQuery.notify</h2>
-
-<p>For our Push Notifcations we will make use of Eric Hynds great jQuery plugin jquery-notify, located here at github: [github.com/ehynds/jquery-notify] (<a href="https://github.com/ehynds/jquery-notify">https://github.com/ehynds/jquery-notify</a>)</p>
-
-<p>In order to display the notification, we will need to include some markup to the receiver page.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>receiver.html </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;container&quot;</span> <span class="na">style=</span><span class="s">&quot;display:none&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;basic-template&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;ui-notify-cross ui-notify-close&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>x<span class="nt">&lt;/a&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;h1&gt;</span>#{title}<span class="nt">&lt;/h1&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;p&gt;</span>#{text}<span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'><span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>This creates a hidden div tag in the bottom of the document. We are not showing the CSS that uses “display: none” to hide it, but you can see more by examining the source code in the companion git repo.</p>
-
-<p>Figure 9.19 Inspecting the DOM in Chrome Dev Tools</p>
-
-<p><img class="figure" alt="Figure 9-19" src="http://html5hacks.com/images/chapter9-images/9-19.png"></p>
-
-<p>In order for jQuery.notify to initialize, you must first call the following:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>es.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="err">#</span><span class="nx">container</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;).</span><span class="nx">notify</span><span class="p">({</span>
-</span><span class='line'>  <span class="nx">speed</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
-</span><span class='line'>  <span class="nx">expires</span><span class="o">:</span> <span class="kc">false</span>
-</span><span class='line'><span class="p">});</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>And here is the final script for the receiver:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>es.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">$</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ldquo</span><span class="p">;</span><span class="err">#</span><span class="nx">container</span><span class="o">&amp;</span><span class="nx">rdquo</span><span class="p">;).</span><span class="nx">notify</span><span class="p">({</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>  <span class="nx">speed</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
-</span><span class='line'>  <span class="nx">expires</span><span class="o">:</span> <span class="kc">false</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">});</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">/connect&amp;rsquo;);</span>
-</span><span class='line'>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">notify</span><span class="p">(</span><span class="s2">&quot;create&quot;</span><span class="p">,</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">title</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">timestamp</span><span class="p">,</span>
-</span><span class='line'>    <span class="nx">text</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">notification</span>
-</span><span class='line'><span class="p">});</span>
-</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">}</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
-</span><span class='line'><span class="p">})</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>It’s that simple. The EventSource API is minimal and plugging it into a web framework like Sinatra or Node.js is straightforward.</p>
-
-<p>Now, as we submit notifications from the admin page, our receiver pages are updated with time stamped notifications:</p>
-
-<p>Figure 9.20 Pushing Notifications to the Connected Browsers</p>
-
-<p><img class="figure" alt="Figure 9-20" src="http://html5hacks.com/images/chapter9-images/9-20.png"></p>
 ]]></content>
   </entry>
   
