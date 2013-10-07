@@ -45,10 +45,59 @@ Here are some of the highlights:
 ## JavaScript and Prototyping Boards
 
 Earlier this year I did a presentation at HTML5.tx that focused on building an [Internet of Things with JavaScript](http://www.youtube.com/watch?v=H00_BGRkBRM) and various open hardware prototyping boards such as Arduino, BeagleBone, and the Raspberry Pi. It was in that talk that I made a connection that eventually led to an introduction to Luke. So, given that the HTML5.tx content was of interest I started the presentation with a demo of the Arduino, [Johnny Five](https://github.com/rwaldron/johnny-five), the original Beaglebone and [BoneScript](https://github.com/jadonk/bonescript). 
+
+{% codeblock bonescript.js %}
+
+  ...
+
+  require('bonescript');
+
+  ledPin = bone.P8_3;
+  ledPin2 = bone.P8_4;
+
+  ...
+
+  app.post('/motion', function(req, res, next) {
+    
+    console.log(req.body['eventType']);
+
+    res.send('Motion data collected for '  + req.body['eventType'] + ' event');
+
+    if (req.body['eventType'] == "motionstart"){
+      digitalWrite(ledPin2, HIGH);
+    }
+    else if (req.body['eventType'] == "motionend") {
+      digitalWrite(ledPin, HIGH);
+    }
+
+  }); 
  
+{% endcodeblock %}
+
 ## Nodecopter and the Leap Motion
 
-One crowd favorite was mapping the gestures from the [Leap Motion](https://www.leapmotion.com/) to the [Parrot AR drone](http://ardrone2.parrot.com/), so that a one finger clockwise gesture triggered a nodecopter takeoff. A counter clockwise gesture then landed it. I was able to put this together using the leapJS and node-ardrone node modules, based on some initial hacking by [Markus Kobler](https://twitter.com/markuskobler), where he pulled this off at a [Nodecopter London event](https://github.com/markuskobler/nodecopter-london). 
+I started with the basics of the [node-ar-drone module](https://github.com/felixge/node-ar-drone): 
+
+{% codeblock ar-drone.js %}
+
+  var arDrone = require('ar-drone');
+  var client  = arDrone.createClient();
+
+  client.takeoff();
+
+  client
+    .after(7000, function() {
+      this.animate('flipRight', 1000);
+      this.animateLeds('blinkRed', 5, 2);
+    }) 
+    .after(3000, function() {
+      this.stop();
+      this.land();
+    });
+
+{% endcodeblock %}
+
+Later, a crowd favorite was mapping the gestures from the [Leap Motion](https://www.leapmotion.com/) to the [Parrot AR drone](http://ardrone2.parrot.com/), so that a one finger clockwise gesture triggered a nodecopter takeoff. A counter clockwise gesture then landed it. I was able to put this together using the leapJS and node-ardrone node modules, based on some initial hacking by [Markus Kobler](https://twitter.com/markuskobler), where he pulled this off at a [Nodecopter London event](https://github.com/markuskobler/nodecopter-london). 
 
 <iframe src="//player.vimeo.com/video/75616363" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/75616363">Jesse Cravens blowing minds with a JS-driven copter.</a> from <a href="http://vimeo.com/user21333523">Michael Gorsuch</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
@@ -56,9 +105,27 @@ One crowd favorite was mapping the gestures from the [Leap Motion](https://www.l
 
 <img class="imgL300" alt="ok200 Conference" src="/images/200ok/200ok3.jpg">
 
-Later, I showed how to script inside of the Minecraft virtual world, using [Walter Higgins'](https://twitter.com/walter) great [ScriptCraft library](https://github.com/walterhiggins/ScriptCraft). I wasn't expecting the conference wifi, and single access point, to suffice in allowing Carter and I to interact within virtual world. I was also concerned about the dynamic IP, and having to change it on the fly, start/restart the server, etc. So I made the decision 10 minutes before to not have Carter log in, and I would just speak to the possibility instead. In true 6 year old fashion, he rebelled and logged onto my server, popping up in front of me wearing a Creeper mask, as I was mid stream explaining how to script wooden signs with his 1st grade sight words as a homework exercise. Needless to say, his innapropriate behavior was a crowd favorite. I have to admit, it was mine as well. 
+Later, I showed how to script inside of the Minecraft virtual world, using [Walter Higgins'](https://twitter.com/walter) great [ScriptCraft library](https://github.com/walterhiggins/ScriptCraft). I wasn't expecting the conference wifi, and single access point, to suffice in allowing Carter and I to interact within virtual world. I was also concerned about the dynamic IP, and having to change it on the fly, start/restart the server, etc. So I made the decision 10 minutes before to not have Carter log in, and I would just speak to the possibility instead. In true 6 year old fashion, he rebelled and logged onto my server, popping up in front of me wearing a Creeper mask, as I was mid stream explaining how to script wooden signs with his 1st grade sight words as a homework exercise. 
+
+
+{% codeblock sightwords.js %}
+
+Drone.extend('sightwords',function (){
+
+    var wordsArr = ["have", "black", "three", "want", "get", "how", "two", "ten", "come", "went", "into", "know", "my", "do", "down", "who", "must", "let", "with", "red", "find", "will", "new", "live", "five", "you", "funny", "yes", "no", "may"]; 
+
+    for (i = 0;i < wordsArr.length; i++){
+        this.right(0+i).sign(wordsArr[i],68);
+    }
+
+    return this.move('sightwords');
+});
+
+{% endcodeblock %}
+
+
+Needless to say, his innapropriate behavior was a crowd favorite. I have to admit, it was mine as well. 
 
 <img class="imgR300" alt="ok200 Conference" src="/images/200ok/200ok4.png">
 
 Going into the talk, I knew I'd either be trying this again in the future or abandoning it as 'one of those ideas' that sounded good in theory, but was just not going to work. Where did I land? Well, let's just say that Carter and I are looking for our next opportunity to share our experiences with other parents/web professionals.
-

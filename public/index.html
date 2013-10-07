@@ -154,9 +154,95 @@
 
 <p>Earlier this year I did a presentation at HTML5.tx that focused on building an <a href="http://www.youtube.com/watch?v=H00_BGRkBRM">Internet of Things with JavaScript</a> and various open hardware prototyping boards such as Arduino, BeagleBone, and the Raspberry Pi. It was in that talk that I made a connection that eventually led to an introduction to Luke. So, given that the HTML5.tx content was of interest I started the presentation with a demo of the Arduino, <a href="https://github.com/rwaldron/johnny-five">Johnny Five</a>, the original Beaglebone and <a href="https://github.com/jadonk/bonescript">BoneScript</a>.</p>
 
+<figure class='code'><figcaption><span>bonescript.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>  <span class="p">...</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;bonescript&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">ledPin</span> <span class="o">=</span> <span class="nx">bone</span><span class="p">.</span><span class="nx">P8_3</span><span class="p">;</span>
+</span><span class='line'>  <span class="nx">ledPin2</span> <span class="o">=</span> <span class="nx">bone</span><span class="p">.</span><span class="nx">P8_4</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="p">...</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/motion&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">[</span><span class="s1">&#39;eventType&#39;</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Motion data collected for &#39;</span>  <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">[</span><span class="s1">&#39;eventType&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; event&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">[</span><span class="s1">&#39;eventType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;motionstart&quot;</span><span class="p">){</span>
+</span><span class='line'>      <span class="nx">digitalWrite</span><span class="p">(</span><span class="nx">ledPin2</span><span class="p">,</span> <span class="nx">HIGH</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">[</span><span class="s1">&#39;eventType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;motionend&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">digitalWrite</span><span class="p">(</span><span class="nx">ledPin</span><span class="p">,</span> <span class="nx">HIGH</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h2>Nodecopter and the Leap Motion</h2>
 
-<p>One crowd favorite was mapping the gestures from the <a href="https://www.leapmotion.com/">Leap Motion</a> to the <a href="http://ardrone2.parrot.com/">Parrot AR drone</a>, so that a one finger clockwise gesture triggered a nodecopter takeoff. A counter clockwise gesture then landed it. I was able to put this together using the leapJS and node-ardrone node modules, based on some initial hacking by <a href="https://twitter.com/markuskobler">Markus Kobler</a>, where he pulled this off at a <a href="https://github.com/markuskobler/nodecopter-london">Nodecopter London event</a>.</p>
+<p>I started with the basics of the <a href="https://github.com/felixge/node-ar-drone">node-ar-drone module</a>:</p>
+
+<figure class='code'><figcaption><span>ar-drone.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>  <span class="kd">var</span> <span class="nx">arDrone</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ar-drone&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">client</span>  <span class="o">=</span> <span class="nx">arDrone</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">takeoff</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">client</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="mi">7000</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">this</span><span class="p">.</span><span class="nx">animate</span><span class="p">(</span><span class="s1">&#39;flipRight&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+</span><span class='line'>      <span class="k">this</span><span class="p">.</span><span class="nx">animateLeds</span><span class="p">(</span><span class="s1">&#39;blinkRed&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">})</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">this</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+</span><span class='line'>      <span class="k">this</span><span class="p">.</span><span class="nx">land</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Later, a crowd favorite was mapping the gestures from the <a href="https://www.leapmotion.com/">Leap Motion</a> to the <a href="http://ardrone2.parrot.com/">Parrot AR drone</a>, so that a one finger clockwise gesture triggered a nodecopter takeoff. A counter clockwise gesture then landed it. I was able to put this together using the leapJS and node-ardrone node modules, based on some initial hacking by <a href="https://twitter.com/markuskobler">Markus Kobler</a>, where he pulled this off at a <a href="https://github.com/markuskobler/nodecopter-london">Nodecopter London event</a>.</p>
 
 <iframe src="//player.vimeo.com/video/75616363" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
@@ -167,11 +253,85 @@
 
 <p><img class="imgL300" alt="ok200 Conference" src="/images/200ok/200ok3.jpg"></p>
 
-<p>Later, I showed how to script inside of the Minecraft virtual world, using <a href="https://twitter.com/walter">Walter Higgins&#8217;</a> great <a href="https://github.com/walterhiggins/ScriptCraft">ScriptCraft library</a>. I wasn&rsquo;t expecting the conference wifi, and single access point, to suffice in allowing Carter and I to interact within virtual world. I was also concerned about the dynamic IP, and having to change it on the fly, start/restart the server, etc. So I made the decision 10 minutes before to not have Carter log in, and I would just speak to the possibility instead. In true 6 year old fashion, he rebelled and logged onto my server, popping up in front of me wearing a Creeper mask, as I was mid stream explaining how to script wooden signs with his 1st grade sight words as a homework exercise. Needless to say, his innapropriate behavior was a crowd favorite. I have to admit, it was mine as well.</p>
+<p>Later, I showed how to script inside of the Minecraft virtual world, using <a href="https://twitter.com/walter">Walter Higgins&#8217;</a> great <a href="https://github.com/walterhiggins/ScriptCraft">ScriptCraft library</a>. I wasn&rsquo;t expecting the conference wifi, and single access point, to suffice in allowing Carter and I to interact within virtual world. I was also concerned about the dynamic IP, and having to change it on the fly, start/restart the server, etc. So I made the decision 10 minutes before to not have Carter log in, and I would just speak to the possibility instead. In true 6 year old fashion, he rebelled and logged onto my server, popping up in front of me wearing a Creeper mask, as I was mid stream explaining how to script wooden signs with his 1st grade sight words as a homework exercise.</p>
+
+<figure class='code'><figcaption><span>sightwords.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">Drone</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="s1">&#39;sightwords&#39;</span><span class="p">,</span><span class="kd">function</span> <span class="p">(){</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">wordsArr</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;have&quot;</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">,</span> <span class="s2">&quot;want&quot;</span><span class="p">,</span> <span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="s2">&quot;how&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="s2">&quot;ten&quot;</span><span class="p">,</span> <span class="s2">&quot;come&quot;</span><span class="p">,</span> <span class="s2">&quot;went&quot;</span><span class="p">,</span> <span class="s2">&quot;into&quot;</span><span class="p">,</span> <span class="s2">&quot;know&quot;</span><span class="p">,</span> <span class="s2">&quot;my&quot;</span><span class="p">,</span> <span class="s2">&quot;do&quot;</span><span class="p">,</span> <span class="s2">&quot;down&quot;</span><span class="p">,</span> <span class="s2">&quot;who&quot;</span><span class="p">,</span> <span class="s2">&quot;must&quot;</span><span class="p">,</span> <span class="s2">&quot;let&quot;</span><span class="p">,</span> <span class="s2">&quot;with&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;find&quot;</span><span class="p">,</span> <span class="s2">&quot;will&quot;</span><span class="p">,</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span> <span class="s2">&quot;live&quot;</span><span class="p">,</span> <span class="s2">&quot;five&quot;</span><span class="p">,</span> <span class="s2">&quot;you&quot;</span><span class="p">,</span> <span class="s2">&quot;funny&quot;</span><span class="p">,</span> <span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">,</span> <span class="s2">&quot;may&quot;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">wordsArr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>        <span class="k">this</span><span class="p">.</span><span class="nx">right</span><span class="p">(</span><span class="mi">0</span><span class="o">+</span><span class="nx">i</span><span class="p">).</span><span class="nx">sign</span><span class="p">(</span><span class="nx">wordsArr</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="mi">68</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">move</span><span class="p">(</span><span class="s1">&#39;sightwords&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Needless to say, his innapropriate behavior was a crowd favorite. I have to admit, it was mine as well.</p>
 
 <p><img class="imgR300" alt="ok200 Conference" src="/images/200ok/200ok4.png"></p>
 
 <p>Going into the talk, I knew I&rsquo;d either be trying this again in the future or abandoning it as &lsquo;one of those ideas&rsquo; that sounded good in theory, but was just not going to work. Where did I land? Well, let&rsquo;s just say that Carter and I are looking for our next opportunity to share our experiences with other parents/web professionals.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/06/debugging-modern-web-applications-part-1/">Debugging Modern Web Applications Part 1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-06T19:43:00-05:00" pubdate data-updated="true">Sep 6<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/09/06/debugging-modern-web-applications-part-1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As JavaScript-centric web applications continue to become the standard, and the browser continues to evolve into a full-featured web application platform, developers need powerful debugging tools to help quickly troubleshoot issues and fix them efficiently. Issues can range from HTML/CSS browser inconsistencies, JavaScript exceptions, and a myriad of performance issues that range from DOM access to network latency.</p>
+
+<p>There a number of tools that web developers can use to help make debugging front end applications less painful.</p>
+
+<p><img class="imgR400" alt="Debugging Modern Web Applications" src="http://tpstatic.com/img/usermedia/KRuw_KM2X0GCCs9xf497KA/original.png"></p>
+
+<p>In this tutorial, we will walk through the top tools available and how to use these tools by addressing some of the most common issues faced in modern web application. This is a beginner to intermediate level tutorial for web developers getting started with debugging the web, or programmers coming from other languages who want to better understand how to troubleshoot client side JavaScript, the DOM, performance, and network calls.</p>
+
+<p>To demonstrate we will be debugging a simple web application. The source code is available here: <a href="https://github.com/jessecravens/techpro-debugging.">https://github.com/jessecravens/techpro-debugging.</a></p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1404/debugging-modern-web-applications-part-1">http://tech.pro/tutorial/1404/debugging-modern-web-applications-part-1</a></p>
 </div>
   
   
@@ -1636,72 +1796,6 @@ code sample: <a href="http://touch.azurewebsites.net/yeti/game.html">http://touc
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/">SXSWi 2013: &#8216;Battle of the HTML5 Hackers&#8217; and &#8216;HTML5 Hacks&#8217; Book Signing</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-12T23:55:00-05:00" pubdate data-updated="true">Mar 12<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>We had a great turnout for the &lsquo;Battle of the HTML5 Hackers&rsquo; presentation at SXSWi on Tuesday.</p>
-
-<p><img class="imgL300" alt="SXSWi 2013: Battle of the HTML5 Hackers - Jesse Cravens and Jeff Burtoft" src="/images/sxsw13/sxsw13-crowd.jpg"></p>
-
-<p>Using our best CDD (Conference Driven Devlopment) techniques, we walked the audience through the creation of <a href="http://nerdclustr.jit.su">Nerdclustr</a>: an HTML5 mobile Application that helps nerds find other like-minded nerds at conferences events.</p>
-
-<p>Using realtime and mapping technolgies, the app visualizes nerd behavior in map pin clusters.</p>
-
-<p><img class="imgR200" alt="Nerdclustr: SXSWi 2013 Ballroom G Austin Convention Center"  src="/images/sxsw13/sxsw13-app.png"></p>
-
-<p>Here is a shot of the app in action (Ballroom G in the Austin Convention Center); it performed well during the presentation. Thanks to <a href="https://www.nodejitsu.com/">Nodjitsu</a> for the quality node.js WebSocket service. After a 2-day hackathon to get the app launched, I ran through a number of deployment options, many of which I have used before for Rails applications. <a href="https://www.nodejitsu.com/">Nodjitsu</a> won out in that it actually supported the WebSokcet protocol and made deployment super simple using the jitsu CLI.</p>
-
-<p><img class="imgL200" alt="Jesse Cravens and Jeff Burtoft: SXSWi 2013 - HTML5 Hacks Book Signing"  src="/images/sxsw13/sxsw13-booksigning.png"></p>
-
-<p>Nerdclustr source code is available <a href="https://github.com/html5hacks/nerd-clustr">here</a>.</p>
-
-<p>During the book signing, the bookstore informed us there were only 3 copies left. I&rsquo;m not keen to the selection process of books, but I was little surprised at the limited number of technical books. This is certainly a reflection of the SXSWi demographic, and we also tailored our content and presentation style to this audience.</p>
-
-<p>The slide deck is available here:</p>
-
-<script async class="speakerdeck-embed" data-id="c69c92f06d880130bfaa22000a1f8363" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
-
-
-
-
-<hr>
-
-
-<p>Stay tuned for our next presentation happening online, through O&#8217;Reilly Webcasts. Join us for <a href="http://www.oreillynet.com/pub/e/2566">&lsquo;Rethinking the Possibilities of Browser-based Apps with HTML5&rsquo;</a> on Wednesday, March 27, 2013 10AM PT.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1742,6 +1836,10 @@ code sample: <a href="http://touch.azurewebsites.net/yeti/game.html">http://touc
       </li>
     
       <li class="post">
+        <a href="/blog/2013/09/06/debugging-modern-web-applications-part-1/">Debugging Modern Web Applications Part 1</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/26/web-worker-patterns/">Web Worker Patterns</a>
       </li>
     
@@ -1751,10 +1849,6 @@ code sample: <a href="http://touch.azurewebsites.net/yeti/game.html">http://touc
     
       <li class="post">
         <a href="/blog/2013/06/17/add-narration-to-your-slide-deck-with-html5-audio/">Add Narration to your Slide Deck with HTML5 Audio</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/">Ember.js Views and Live Templates with Handlebars.js Part 1</a>
       </li>
     
   </ul>
