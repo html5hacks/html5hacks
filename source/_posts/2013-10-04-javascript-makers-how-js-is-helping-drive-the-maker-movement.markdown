@@ -6,7 +6,7 @@ categories: ["Node.js", "Makers", "JavaScript"]
 author: "Jesse Cravens (@jdcravens)"
 ---
 
-This post is mirrored from: [jessecravens.com]()
+This post is mirrored from: [jessecravens.com](http://jessecravens.com/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/)
 
 <img class="imgR300" alt="ok200 Conference" src="/images/200ok/200ok1.jpg">
 
