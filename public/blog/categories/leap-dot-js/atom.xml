@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Leap.js" | HTML5 Hacks]]></title>
   <link href="http://html5hacks.com/blog/categories/leap-dot-js/atom.xml" rel="self"/>
   <link href="http://html5hacks.com/"/>
-  <updated>2013-12-16T09:49:03-06:00</updated>
+  <updated>2013-12-16T11:38:27-06:00</updated>
   <id>http://html5hacks.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
@@ -24,6 +24,19 @@
 
 <p>The city of <a href="http://en.wikipedia.org/wiki/Malm%C3%B6">Malmö</a> was also a pleasure to experience, and as you might imagine, the people of Sweden were very welcoming. One of the highlights for me was the speaker dinner at the <a href="http://en.wikipedia.org/wiki/File:Jorchr-Malm%C3%B6_r%C3%A5dhus.jpg">Malmö City Hall</a>, originally constructed in the Middle Ages. On a side note, I finally had a chance to meet and have dinner with <a href="http://www.crockford.com/">Douglass Crockford</a>, a long time inspiration and virtual mentor, who was in town to give the keynote on <a href="http://oredev.org/2013/wed-fri-conference/managing-asynchronicity-with-rq">Managing Async with RQ</a>.</p>
 
+<iframe src="http://html5hacks.com//player.vimeo.com/video/78847391" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<p>
+  <a href="http://vimeo.com/78847391">Building Web Applications with Ember.js and Ruby On Rails</a>
+  from
+  <a href="http://vimeo.com/user4280938">&Oslash;redev Conference</a>
+  on
+  <a href="https://vimeo.com">Vimeo</a>
+  .
+</p>
+
+
 <p>My first talk was a preview of my new book <a href="https://github.com/emberjsbook">O'Reilly&rsquo;s Building Web Apps with Ember.js</a>. I shared the stage with co-author and fellow frog, <a href="http://bashmodernquantity.com/about/">Thomas Q. Brady</a>. We took the audience through the creation of <a href="https://github.com/emberjsbook/rocknrollcall">RocknRollCall</a>, an intermediate level <a href="http://emberjs.com/">Ember.js</a> application that fills in many of the blanks that most of the &lsquo;Getting Started&rsquo; applications don&rsquo;t.</p>
 
 <p><img class="imgL400" alt="O'Reilly's Building Web Apps with Ember.js" src="http://html5hacks.com/images/oredev/ember_cover_600.png"></p>
@@ -31,6 +44,19 @@
 <p>Some of the highlights of the book, and the talk, cover topics such as: a survey of Ember tooling, debugging with the <a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi?hl=en">Ember Inspector</a>, Ember boilerplates, app initializers, promises in Ember, the needs API, Ember components, 3rd Party JavaScript Integration (<a href="http://jquery.com/">jQuery</a>, <a href="http://d3js.org/">D3</a>), Ember testing, SPA authentication, <a href="https://github.com/emberjs/data">Ember-data</a> and other client-side persistence solutions, and remote data persistence with Ruby On Rails and Node.js.</p>
 
 <p>My second talk was <a href="http://html5hacks.com/">HTML5 Hacks</a> Evolved, where I continue to share more hacks from by first book <a href="http://html5hacks.com">HTML5 Hacks</a>, and <a href="http://html5hacks.com/">html5hacks.com</a>. This talk is culmination of HTML5 specifications that will have you rethinking browser-based applications. Some of the highlights of this talk included: Web Workers, WebSocket w/ GeoLocation, Device Orientation, and LeapJS, Web Components / Polymer / Ember Components (Custom Elements, Shadow DOM, HTML Imports, Model Driven Views, and Local Storage.</p>
+
+<iframe src="http://html5hacks.com//player.vimeo.com/video/78912115" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<p>
+  <a href="http://vimeo.com/78912115">HTML5 Hacks</a>
+  from
+  <a href="http://vimeo.com/user4280938">&Oslash;redev Conference</a>
+  on
+  <a href="https://vimeo.com">Vimeo</a>
+  .
+</p>
+
 
 <p>In 2014, I&rsquo;m retiring the HTML5 Hacks talks, to begin focusing solely on Single Page Application development in 2014. My hope is to kick out an early release of <a href="https://github.com/emberjsbook">Building Web Apps with Ember.js</a> very soon, and finish the book in early 2014. After that I&rsquo;ll be in Louisville, KY at <a href="http://www.codepalousa.com/">Code PaLOUsa</a> to continue the Ember.js roadtrip.</p>
 ]]></content>
