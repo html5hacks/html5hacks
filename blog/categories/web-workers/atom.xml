@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Web Workers | HTML5 Hacks]]></title>
+  <link href="http://html5hacks.com/blog/categories/web-workers/atom.xml" rel="self"/>
+  <link href="http://html5hacks.com/"/>
+  <updated>2014-12-30T19:50:36-06:00</updated>
+  <id>http://html5hacks.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HTML5 and Ember.js at Øredev 2013:The Arts in Malmö, Sweden]]></title>
+    <link href="http://html5hacks.com/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-in-malmo/"/>
+    <updated>2013-12-07T23:25:00-06:00</updated>
+    <id>http://html5hacks.com/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-in-malmo</id>
+    <content type="html"><![CDATA[<p>At the beginning of November, I was given an opportunity to give two talks in Malmö, Sweden at the Øredev conference. First of all, I have to say I was extremely impressed with the conference. Although the theme was the Arts, I found it to be a developer&rsquo;s conference with an artsy edge. The speakers I had a chance to see were developer&rsquo;s developers, one of my favorites being a talk on Meteor by Chris Mather (@eventedmind) of <a href="http://eventedmind.com">eventedmind.com</a>. I&rsquo;ve maintained a peripheral view of Meteor, so it was good to get a beginner to intermediate overview of its capabilities. Given that I have been doing <a href="http://www.mongodb.com/">MongoDB</a> / <a href="https://github.com/emberjs/data">Ember-data</a> client work as of lately, I am particularly interested in exploring <a href="https://github.com/slacy/minimongo">minimongo</a>.</p>
+
+<p><img class="imgR400" alt="Øredev 2013 HTML5 Hacks" src="http://html5hacks.com/images/oredev/html5hacks-oredev.jpg"></p>
+
+<p>The city of <a href="http://en.wikipedia.org/wiki/Malm%C3%B6">Malmö</a> was also a pleasure to experience, and as you might imagine, the people of Sweden were very welcoming. One of the highlights for me was the speaker dinner at the <a href="http://en.wikipedia.org/wiki/File:Jorchr-Malm%C3%B6_r%C3%A5dhus.jpg">Malmö City Hall</a>, originally constructed in the Middle Ages. On a side note, I finally had a chance to meet and have dinner with <a href="http://www.crockford.com/">Douglass Crockford</a>, a long time inspiration and virtual mentor, who was in town to give the keynote on <a href="http://oredev.org/2013/wed-fri-conference/managing-asynchronicity-with-rq">Managing Async with RQ</a>.</p>
+
+<iframe src="http://html5hacks.com//player.vimeo.com/video/78847391" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<p>
+  <a href="http://vimeo.com/78847391">Building Web Applications with Ember.js and Ruby On Rails</a>
+  from
+  <a href="http://vimeo.com/user4280938">&Oslash;redev Conference</a>
+  on
+  <a href="https://vimeo.com">Vimeo</a>
+  .
+</p>
+
+
+<p>My first talk was a preview of my new book <a href="https://github.com/emberjsbook">O'Reilly&rsquo;s Building Web Apps with Ember.js</a>. I shared the stage with co-author and fellow frog, <a href="http://bashmodernquantity.com/about/">Thomas Q. Brady</a>. We took the audience through the creation of <a href="https://github.com/emberjsbook/rocknrollcall">RocknRollCall</a>, an intermediate level <a href="http://emberjs.com/">Ember.js</a> application that fills in many of the blanks that most of the &lsquo;Getting Started&rsquo; applications don&rsquo;t.</p>
+
+<p><img class="imgL400" alt="O'Reilly's Building Web Apps with Ember.js" src="http://html5hacks.com/images/oredev/ember_cover_600.png"></p>
+
+<p>Some of the highlights of the book, and the talk, cover topics such as: a survey of Ember tooling, debugging with the <a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi?hl=en">Ember Inspector</a>, Ember boilerplates, app initializers, promises in Ember, the needs API, Ember components, 3rd Party JavaScript Integration (<a href="http://jquery.com/">jQuery</a>, <a href="http://d3js.org/">D3</a>), Ember testing, SPA authentication, <a href="https://github.com/emberjs/data">Ember-data</a> and other client-side persistence solutions, and remote data persistence with Ruby On Rails and Node.js.</p>
+
+<p>My second talk was <a href="http://html5hacks.com/">HTML5 Hacks</a> Evolved, where I continue to share more hacks from by first book <a href="http://html5hacks.com">HTML5 Hacks</a>, and <a href="http://html5hacks.com/">html5hacks.com</a>. This talk is culmination of HTML5 specifications that will have you rethinking browser-based applications. Some of the highlights of this talk included: Web Workers, WebSocket w/ GeoLocation, Device Orientation, and LeapJS, Web Components / Polymer / Ember Components (Custom Elements, Shadow DOM, HTML Imports, Model Driven Views, and Local Storage.</p>
+
+<iframe src="http://html5hacks.com//player.vimeo.com/video/78912115" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<p>
+  <a href="http://vimeo.com/78912115">HTML5 Hacks</a>
+  from
+  <a href="http://vimeo.com/user4280938">&Oslash;redev Conference</a>
+  on
+  <a href="https://vimeo.com">Vimeo</a>
+  .
+</p>
+
+
+<p>In 2014, I&rsquo;m retiring the HTML5 Hacks talks, to begin focusing solely on Single Page Application development in 2014. My hope is to kick out an early release of <a href="https://github.com/emberjsbook">Building Web Apps with Ember.js</a> very soon, and finish the book in early 2014. After that I&rsquo;ll be in Louisville, KY at <a href="http://www.codepalousa.com/">Code PaLOUsa</a> to continue the Ember.js roadtrip.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Web Worker Patterns]]></title>
+    <link href="http://html5hacks.com/blog/2013/08/26/web-worker-patterns/"/>
+    <updated>2013-08-26T14:03:00-05:00</updated>
+    <id>http://html5hacks.com/blog/2013/08/26/web-worker-patterns</id>
+    <content type="html"><![CDATA[<p>JavaScript is executed in a single thread. If you&rsquo;re not familiar with threads, what this means is that JavaScript can only execute one block of code at a time. If code is already executing, any interaction by the user will instantiate an asynchronous event that is queued up for later execution. Other events like those from XMLHttpRequests and timers, are also added to the queue.</p>
+
+<p>So, as you might expect, a single-threaded architecture can be problematic to the user experience if a particular script takes a long time to complete.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1487/web-worker-patterns">http://tech.pro/tutorial/1487/web-worker-patterns</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Web Workers: Basics of the Web Browser's UI Thread]]></title>
+    <link href="http://html5hacks.com/blog/2012/09/22/web-workers-basics-of-the-web-browsers-ui-thread/"/>
+    <updated>2012-09-22T23:44:00-05:00</updated>
+    <id>http://html5hacks.com/blog/2012/09/22/web-workers-basics-of-the-web-browsers-ui-thread</id>
+    <content type="html"><![CDATA[<h2>Single Threadin'</h2>
+
+<p>As we set out to build a highly responsive UI for our demo web application, we must fully understand how browsers manage processes. Perhaps the biggest challenge we will face has to do with browsers using a single thread for both JavaScript execution and user interface updates. While the browser&rsquo;s JavaScript interpreter is executing code, the UI is unable to respond to the user&rsquo;s input. If a script is taking a long time to complete, after a specified amount of time the browser will provide the user an option to terminate the script. To accommodate for the &lsquo;freeze&rsquo; associated with scripts that exceed the browser execution time limit, web developers have traditionally created smaller units of work and used JavaScript timers to return execution to the next event in the queue. As you will see, web workers solve the locking of the UI thread by opening an additional thread, or even multiple threads, for execution of these long running, processor intensive tasks.</p>
+
+<p>When designing your application, especially if you come from more of a &lsquo;server-side&rsquo; or Java background, it is important to understand that non-blocking execution is not the same as concurrent threading. While not extremely complex, JavaScript&rsquo;s event driven style does take some getting used to for developers coming from other languages such as Java and C. Later, we will touch on a few examples where we pass a callback continuation function to take full advantage of JavaScript&rsquo;s non blocking design.</p>
+
+<h2>Thread Safety</h2>
+
+<p>Mozilla, in particular, provides a Worker interface which web workers implement. While the Worker interface spawns OS-level threads, web workers use the postMessage mechanism to send messages (with serializable objects) between the two execution contexts. To ensure thread safety the worker is only given access to thread safe components to include the following:</p>
+
+<ul>
+<li>timers: setTimeout() and setInterval() methods</li>
+<li>XMLHttpRequest</li>
+<li>importScripts() method</li>
+</ul>
+
+
+<p>The worker script can also make use of:</p>
+
+<ul>
+<li>navigator and location objects</li>
+<li>native JavaScript objects such as Object, String, Date</li>
+</ul>
+
+
+<p>At the same time, the worker restricts access to DOM APIs, global variables, and the parent page. In Hack #84 Building the DOM with web workers and Handlebars.js, we will explore the restricted access to DOM APIs, and introduce JavaScript templating, importScripts, and the use of timers to poll for postMessage.</p>
+
+<h2>HTML5 Web Workers</h2>
+
+<p>As mentioned earlier, the Web worker spec defines an API for executing scripts in the background by spawning an independent execution context.</p>
+
+<p>It is important to note that web workers are costly, having an impact on startup and overall memory consumption. So, they are intended to be used lightly and in conjunction with the some of the asynchronous techniques mentioned earlier. A well built client-side application would typically make use of one or two cases where tasks are expensive. Here are a few common uses cases:</p>
+
+<ul>
+<li>Single Page Application bootstrapping large amounts of data during initial load</li>
+<li>Performing long running mathematical calculations in the browser</li>
+<li>Processing large JSON datasets</li>
+<li>Text formatting, spell checking, and syntax highlighting</li>
+<li>Processing multimedia data (Audio/Video)</li>
+<li>Long polling webservices</li>
+<li>Filtering images in canvas</li>
+<li>Calculating points for a 3D image</li>
+<li>Reading/Writing of local storage database</li>
+</ul>
+
+
+<h2>Long Running Scripts</h2>
+
+<p>Our first web worker hack will be a long running script with heavy computation. It will execute 2 loops that output a two-dimensional array. First, we will use this computation to lock up the browser&rsquo;s UI thread, and later we will move the task to a worker.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>init.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">r</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">c</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;[&quot;</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nx">j</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="nx">init</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Spawning a Worker</h2>
+
+<p>Now let&rsquo;s move our heavy computational task to a dedicated web worker, so that the user doesn&rsquo;t have to wait for the script to complete execution in order to interact with user interface. First, lets spawn a new worker:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>spawn.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">worker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Worker</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">highComp</span><span class="p">.</span><span class="nx">js</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">worker</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">message</span><span class="p">));</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">worker</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">message</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){},</span> <span class="kc">false</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Here, we define an external file that will contain the logic of our heavy computational task. The file, highComp.js will listen for a message that will receive the serialized JSON payload, and then we will set up an additional listener to receive a message back from highComp.js.</p>
+
+<p>Now, we can move this cpu-intensive task to a separate file: highComp.js</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>highComp.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="o">&amp;</span><span class="nx">reg</span><span class="p">;;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">r</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="o">&amp;</span><span class="nx">copy</span><span class="p">;;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">c</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;[&quot;</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nx">j</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">};</span>
+</span><span class='line'><span class="nx">postMessage</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>In highComp.js, our two dimensional array is built and set to variable a. It is then passed back to our main script via the postMessage call.</p>
+
+<p>In the next hack, we will mix our use of timers with the power of a dedicated worker. As we send messages (passing serializable objects as a parameter to postMessage) back and forth to code running in the shared UI thread, our timer will periodically send and check for new messages and use their contents to modify the DOM.</p>
+]]></content>
+  </entry>
+  
+</feed>

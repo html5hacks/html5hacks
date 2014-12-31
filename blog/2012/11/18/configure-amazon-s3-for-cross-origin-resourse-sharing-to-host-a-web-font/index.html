@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font - HTML5 Hacks</title>
+  <meta name="author" content="Jesse Cravens and Jeff Burtoft">
+
+  
+  <meta name="description" content="Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
+make requests to other domains from within the browser. With CORS &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="HTML5 Hacks" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic
+" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-28132474-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">HTML5 Hacks</a></h1>
+  
+    <h2>Hacking Next Generation Web Technologies</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:html5hacks.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About the Hackers</a></li>
+  <li><a href="/training">Training</a></li>
+  <li><a href="/join">Join Us</a></li>  
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-18T19:42:00-06:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
+make requests to other domains from within the browser. With CORS you have a secure
+and easy-to-implement approach for circumventing the browser’s same origin
+policy.</p>
+
+<p>In this hack we will explore hosting a web font on a cloud drive. In order to do so, we
+will learn how to configure an Amazon S3 bucket to accept requests from other domains.</p>
+
+<p>If you are not already familiar with web fonts and @font-face, refer to Hack #12.</p>
+
+<p>In the next section I provide a bit more background on Amazon S3 and the same origin
+policy, before we get into the details of CORS.</p>
+
+<h3>What Is an Amazon S3 Bucket?</h3>
+
+<p>Amazon S3 (Simple Storage Service) is simply a cloud drive. Files of all kinds can be
+stored using this service, but web application developers often use it to store static
+assets such as images, JavaScript files, and stylesheets.</p>
+
+<p>For performance improvements, web developers like to employ Content Delivery Networks
+(CDNs) to serve their static files. While Amazon S3 is not a CDN in and of itself,
+it’s easy to activate it as one by using CloudFront.</p>
+
+<p>A bucket refers to the directory name that you choose to store your static files.
+To get started let’s set up an account at Amazon and navigate to the Amazon Management
+Console; see Figure 9-21.</p>
+
+<p>Figure 9-21. S3 Management Console</p>
+
+<p><img class="figure" alt="Figure 9-21" src="/images/chapter9-images/9-21.png"></p>
+
+<p>If we click on Create a Bucket we should see the prompt shown in Figure 9-22.</p>
+
+<p>Figure 9-22. Creating an S3 bucket in the S3 Management Console</p>
+
+<p><img class="figure" alt="Figure 9-22" src="/images/chapter9-images/9-22.png"></p>
+
+<p>Let’s name the bucket and choose a region (see Figure 9-23). As I stated earlier, you
+can choose a region to optimize for latency, minimize costs, or address regulatory
+requirements.</p>
+
+<p>Figure 9-23. Naming an S3 bucket in the S3 Management Console</p>
+
+<p><img class="figure" alt="Figure 9-23" src="/images/chapter9-images/9-23.png"></p>
+
+<p>We will go ahead and name our bucket none other than “html5hacks.” You should now
+see an admin screen that shows an empty filesystem (see Figure 9-24).</p>
+
+<p>Figure 9-24. The html5hacks S3 bucket</p>
+
+<p><img class="figure" alt="Figure 9-24" src="/images/chapter9-images/9-24.png"></p>
+
+<p>Well, that was simple. So why are we doing this? Let’s start with some simple browser
+security—something called the same origin policy.</p>
+
+<h3>Same Origin Policy</h3>
+
+<p>As the browser becomes more and more of an application platform, application developers
+have compelling reasons to write code that makes requests to other domains
+in order to interact directly with the content. Wikipedia defines same origin policy as
+follows:</p>
+
+<p>In computing, the same origin policy is an important security concept for a
+number of browser-side programming languages, such as JavaScript. The
+policy permits scripts running on pages originating from the same site to
+access each other’s methods and properties with no specific restrictions,
+but prevents access to most methods and properties across pages on different
+sites.1</p>
+
+<p>1 <a href="http://en.wikipedia.org/wiki/Same_origin_policy">http://en.wikipedia.org/wiki/Same_origin_policy</a></p>
+
+<p>As stated in Wikipedia’s definition, the same origin policy is a good thing; it protects
+the end user from security attacks. But it does cause some challenges for web developers.</p>
+
+<p>This is where CORS comes into the picture. CORS allows developers of remote data
+and content to designate which domains (through a whitelist) can interact with their
+content.</p>
+
+<h3>Using Web Fonts in Your Application</h3>
+
+<p>There are a number of ways to use a web font within your web pages, such as calling
+the @font-face service, bundling the font within your application, hosting the web font
+in your own Amazon S3 bucket (more on this later), or converting the file to Base64
+and embedding the data inline in a data-uri. By the way, the last technique is similar
+to the one outlined in Hack #13.</p>
+
+<p>Each of these techniques has limitations.</p>
+
+<ul>
+<li>When calling the @font-face service you are limited to the fonts within the particular
+service’s database.</li>
+<li>Bundling the font within your application does not make use of HTTP caching, so
+your application will continue to download the font file on every page request.
+Furthermore, you cannot reuse the font within other applications.</li>
+<li>Hosting the font in an Amazon S3 bucket works great, except with Firefox, which
+enforces the same origin policy on all resources. So the response from the remote
+server will be denied.</li>
+<li>Converting the font to Base64 adds additional weight to the stylesheet, and does
+not take advantage of caching.</li>
+</ul>
+
+
+<p>An exploration into the different types of web fonts is beyond the scope of this hack,
+so I will assume that you have already selected the web font BebasNeue.otf.
+You can download free and open fonts from sites such as <a href="http://www.dafont.com.">http://www.dafont.com.</a></p>
+
+<h3>Uploading Your Font to Your Amazon S3 Bucket</h3>
+
+<p>Now, all we have to do is to upload the font onto our filesystem in the cloud (see
+Figure 9-25).</p>
+
+<p>Figure 9-25. An uploaded BebasNeue font</p>
+
+<p><img class="figure" alt="Figure 9-25" src="/images/chapter9-images/9-25.png"></p>
+
+<h3>Adding the Web Font to Your Web Page</h3>
+
+<p>In order to add a web font to our page, we need to add a single stylesheet to an HTML
+page.</p>
+
+<p>Here is our page. Let’s call it index.html, and add a <link> tag pointing to our base
+stylesheet, styles.css.</p>
+
+<figure class='code'><figcaption><span>geo.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;head&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;title&gt;</span>S3 - font<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;styles.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;body&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;test&quot;</span><span class="nt">&gt;</span>HTML5 Hacks<span class="err">&lt;</span>/&gt;
+</span><span class='line'>  <span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In our styles.css let’s add the following and point to our uploaded file. Also, let’s assign
+the font to our H1 header via the test class name.</p>
+
+<figure class='code'><figcaption><span>style.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@font-face</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">font-family</span><span class="o">:</span> <span class="nt">BebasNeue</span><span class="o">;</span>
+</span><span class='line'>  <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://s3.amazonaws.com/html5hacks/BebasNeue.otf&#39;</span><span class="o">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nc">.test</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;BebasNeue&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now we’ll open a browser and point to our newly created HTML page. In Opera (see
+Figure 9-26), Safari, and Chrome our header tag is being styled correctly.</p>
+
+<p>Figure 9-26. Opera browser showing the BebasNeue font</p>
+
+<p><img class="figure" alt="Figure 9-26" src="/images/chapter9-images/9-26.png"></p>
+
+<p>But if we view it in Firefox, we are having issues (see Figure 9-27).</p>
+
+<p>Figure 9-27. Firefox browser failing to show the BebasNeue font</p>
+
+<p><img class="figure" alt="Figure 9-27" src="/images/chapter9-images/9-27.png"></p>
+
+<p>If we examine the request for our font in the Chrome Dev Tools Network tab, we will
+see that the response from the server is empty (see Figure 9-28).</p>
+
+<p>Figure 9-28. Firefox browser showing an empty response</p>
+
+<p><img class="figure" alt="Figure 9-28" src="/images/chapter9-images/9-28.png"></p>
+
+<p>What gives? Well, by default, Firefox will only accept links from the same domain as
+the host page. If we want to include fonts from different domains, we need to add an
+Access-Control-Allow-Origin header to the font.</p>
+
+<p>So, if you try to serve fonts from any CDN, Firefox will not load them.</p>
+
+<h3>What Is CORS?</h3>
+
+<p>The CORS specification uses the XMLHttpRequest object to send and receive headers
+from the originating web page to a server that is properly configured in order to
+enable cross-site requests.</p>
+
+<p>The server accepting the request must respond with the
+Access-Control-Allow-Origin header with either a wildcard (*) or the correct
+origin domain sent by the originating web page as the value. If the value is not included,
+the request will fail.</p>
+
+<p>Furthermore, for HTTP methods other than GET or POST, such as PUT, a preflight request
+is necessary, in which the browser sends an HTTP OPTIONS request to establish
+a handshake with the server before accepting the PUT request.</p>
+
+<p>Fortunately, after enough backlash from the development community, Amazon made
+CORS configuration available on Amazon S3 via a very simple XML configuration.</p>
+
+<p>Let’s get started.</p>
+
+<h3>Configuring CORS at Amazon S3</h3>
+
+<p>You should already be at your Amazon Management Console at <a href="http://">http://</a>
+console.aws.amazon.com. Click on Properties→Permissions→Edit CORS configuration,
+and you should receive a modal prompt.</p>
+
+<p>The configuration can accept up to 100 rule definitions, but for our web font we will
+only need a few. For this example we will use the wildcard, but if you are doing this in
+production, you should whitelist the domains to prevent others from serving your font
+from your S3 account on their own web pages. It wouldn’t be the end of the world, but
+it might get costly.</p>
+
+<p>The first rule allows cross-origin GET requests from any origin. The rule also allows all
+headers in a preflight OPTIONS request through the
+Access-Control-Request-Headers header. In response to any preflight OPTIONS
+request, Amazon S3 will return any requested headers.</p>
+
+<p>The second rule allows cross-origin GET requests from all origins. The * wildcard
+character refers to all origins.</p>
+
+<figure class='code'><figcaption><span>config.xml </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;CORSConfiguration&gt;</span>
+</span><span class='line'><span class="nt">&lt;CORSRule&gt;</span>
+</span><span class='line'><span class="nt">&lt;AllowedOrigin&gt;</span>*/AllowedOrigin&gt;
+</span><span class='line'><span class="nt">&lt;AllowedMethod&gt;</span>GET<span class="nt">&lt;/AllowedMethod&gt;</span>
+</span><span class='line'><span class="nt">&lt;/CORSRule&gt;</span>
+</span><span class='line'><span class="nt">&lt;/CORSConfiguration&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So, let’s add our new configuration to our Editor and save (see Figure 9-29).</p>
+
+<p>Figure 9-29. Configuring CORS in the S3 Management Console</p>
+
+<p><img class="figure" alt="Figure 9-29" src="/images/chapter9-images/9-29.png"></p>
+
+<p>Now, let’s return to Firefox and reload the page. We should now see the header font
+styled with our BebasNeue web font, as shown in Figure 9-30.</p>
+
+<p>Figure 9-30. Firefox browser successfully showing the BebasNeue font</p>
+
+<p><img class="figure" alt="Figure 9-30" src="/images/chapter9-images/9-30.png"></p>
+
+<p>There is much more to learn about CORS, most notably, HTTP POST usage with certain
+MIME types, and sending cookies and HTTP authentication data with requests if so
+requested by the CORS-enabled server. So get out there and starting creating your
+own CORS hacks.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jesse Cravens</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-18T19:42:00-06:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cors/'>CORS</a>, <a class='category' href='/blog/categories/html5-connectivity/'>HTML5 Connectivity</a>, <a class='category' href='/blog/categories/web-fonts/'>Web Fonts</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/" data-via="html5hacks" data-counturl="http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/10/15/overview-of-the-geolocation-chapter-in-oreilly-html5-hacks/" title="Previous Post: Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks">&laquo; Overview of the GeoLocation Chapter in O'Reilly HTML5 Hacks</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/" title="Next Post: Make Your Page Consumable by Robots and Humans Alike with Microdata">Make Your Page Consumable by Robots and Humans Alike with Microdata &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+
+<!-- Begin MailChimp Signup Form -->
+<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+
+<div id="mc_embed_signup">
+<form action="http://jessecravens.us2.list-manage1.com/subscribe/post?u=e00a501b9d5ba6aa43acd55a7&amp;id=95bec8136d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	<label for="mce-EMAIL">Subscribe to our mailing list</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup -->
+
+<a href="http://www.anrdoezrs.net/click-7080585-11260198?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920026273.do%3Fcmp%3Daf-code-book-product_cj_9781449334994_%25zp&cjsku=0636920026273" target="_top">
+  <img src="http://akamaicovers.oreilly.com/images/0636920026273/cat.gif" border="0" alt="HTML5 Hacks"/>
+</a>
+
+<h2>O'Reilly Media's HTML5 Hacks</h2>
+
+<p>HTML5 Hacks shows you how to use the latest tools to make your sites and applications more interactive, more functional, and more capable of competing with desktop applications. Each hack shows you how to make a concrete improvement, applying the latest in JavaScript, HTML, and CSS power to common web development issues.</p>
+
+<a href="http://www.oreilly.com.cn/index.php?func=book&isbn=978-7-121-21702-9">
+  <img src="../../images/html5-china-180.png" border="0" alt="HTML5 Hacks Chinese Translation"/>
+</a>
+
+<a href="http://www.oreilly.co.jp/books/9784873116471/">
+  <img src="../../images/html5-japan-180.png" border="0" alt="HTML5 Hacks Japanese Translation"/>
+</a>
+
+<a href="http://shop.oreilly.com/product/0636920030782.do">
+  <img src="../../images/ember-180.png" border="0" alt="Building Web Apps with Ember.js"/>
+</a>
+
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-in-malmo/">HTML5 and Ember.js at Øredev 2013:The Arts in Malmö, Sweden</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/">JavaScript Makers: How JS is Helping Drive the Maker Movement</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/06/debugging-modern-web-applications-part-1/">Debugging Modern Web Applications Part 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/26/web-worker-patterns/">Web Worker Patterns</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/25/building-next-generation-widgets-with-web-components/">Building Next Generation Widgets with Web Components</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/html5hacks">@html5hacks</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'html5hacks',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("html5hacks", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/html5hacks" class="twitter-follow-button" data-show-count="false">Follow @html5hacks</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jesse Cravens and Jeff Burtoft -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'html5hacks';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/';
+        var disqus_url = 'http://html5hacks.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

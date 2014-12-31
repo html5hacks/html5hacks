@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Makers | HTML5 Hacks]]></title>
+  <link href="http://html5hacks.com/blog/categories/makers/atom.xml" rel="self"/>
+  <link href="http://html5hacks.com/"/>
+  <updated>2014-12-30T19:50:36-06:00</updated>
+  <id>http://html5hacks.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HTML5 and Ember.js at Øredev 2013:The Arts in Malmö, Sweden]]></title>
+    <link href="http://html5hacks.com/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-in-malmo/"/>
+    <updated>2013-12-07T23:25:00-06:00</updated>
+    <id>http://html5hacks.com/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-in-malmo</id>
+    <content type="html"><![CDATA[<p>At the beginning of November, I was given an opportunity to give two talks in Malmö, Sweden at the Øredev conference. First of all, I have to say I was extremely impressed with the conference. Although the theme was the Arts, I found it to be a developer&rsquo;s conference with an artsy edge. The speakers I had a chance to see were developer&rsquo;s developers, one of my favorites being a talk on Meteor by Chris Mather (@eventedmind) of <a href="http://eventedmind.com">eventedmind.com</a>. I&rsquo;ve maintained a peripheral view of Meteor, so it was good to get a beginner to intermediate overview of its capabilities. Given that I have been doing <a href="http://www.mongodb.com/">MongoDB</a> / <a href="https://github.com/emberjs/data">Ember-data</a> client work as of lately, I am particularly interested in exploring <a href="https://github.com/slacy/minimongo">minimongo</a>.</p>
+
+<p><img class="imgR400" alt="Øredev 2013 HTML5 Hacks" src="http://html5hacks.com/images/oredev/html5hacks-oredev.jpg"></p>
+
+<p>The city of <a href="http://en.wikipedia.org/wiki/Malm%C3%B6">Malmö</a> was also a pleasure to experience, and as you might imagine, the people of Sweden were very welcoming. One of the highlights for me was the speaker dinner at the <a href="http://en.wikipedia.org/wiki/File:Jorchr-Malm%C3%B6_r%C3%A5dhus.jpg">Malmö City Hall</a>, originally constructed in the Middle Ages. On a side note, I finally had a chance to meet and have dinner with <a href="http://www.crockford.com/">Douglass Crockford</a>, a long time inspiration and virtual mentor, who was in town to give the keynote on <a href="http://oredev.org/2013/wed-fri-conference/managing-asynchronicity-with-rq">Managing Async with RQ</a>.</p>
+
+<iframe src="http://html5hacks.com//player.vimeo.com/video/78847391" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<p>
+  <a href="http://vimeo.com/78847391">Building Web Applications with Ember.js and Ruby On Rails</a>
+  from
+  <a href="http://vimeo.com/user4280938">&Oslash;redev Conference</a>
+  on
+  <a href="https://vimeo.com">Vimeo</a>
+  .
+</p>
+
+
+<p>My first talk was a preview of my new book <a href="https://github.com/emberjsbook">O'Reilly&rsquo;s Building Web Apps with Ember.js</a>. I shared the stage with co-author and fellow frog, <a href="http://bashmodernquantity.com/about/">Thomas Q. Brady</a>. We took the audience through the creation of <a href="https://github.com/emberjsbook/rocknrollcall">RocknRollCall</a>, an intermediate level <a href="http://emberjs.com/">Ember.js</a> application that fills in many of the blanks that most of the &lsquo;Getting Started&rsquo; applications don&rsquo;t.</p>
+
+<p><img class="imgL400" alt="O'Reilly's Building Web Apps with Ember.js" src="http://html5hacks.com/images/oredev/ember_cover_600.png"></p>
+
+<p>Some of the highlights of the book, and the talk, cover topics such as: a survey of Ember tooling, debugging with the <a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi?hl=en">Ember Inspector</a>, Ember boilerplates, app initializers, promises in Ember, the needs API, Ember components, 3rd Party JavaScript Integration (<a href="http://jquery.com/">jQuery</a>, <a href="http://d3js.org/">D3</a>), Ember testing, SPA authentication, <a href="https://github.com/emberjs/data">Ember-data</a> and other client-side persistence solutions, and remote data persistence with Ruby On Rails and Node.js.</p>
+
+<p>My second talk was <a href="http://html5hacks.com/">HTML5 Hacks</a> Evolved, where I continue to share more hacks from by first book <a href="http://html5hacks.com">HTML5 Hacks</a>, and <a href="http://html5hacks.com/">html5hacks.com</a>. This talk is culmination of HTML5 specifications that will have you rethinking browser-based applications. Some of the highlights of this talk included: Web Workers, WebSocket w/ GeoLocation, Device Orientation, and LeapJS, Web Components / Polymer / Ember Components (Custom Elements, Shadow DOM, HTML Imports, Model Driven Views, and Local Storage.</p>
+
+<iframe src="http://html5hacks.com//player.vimeo.com/video/78912115" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<p>
+  <a href="http://vimeo.com/78912115">HTML5 Hacks</a>
+  from
+  <a href="http://vimeo.com/user4280938">&Oslash;redev Conference</a>
+  on
+  <a href="https://vimeo.com">Vimeo</a>
+  .
+</p>
+
+
+<p>In 2014, I&rsquo;m retiring the HTML5 Hacks talks, to begin focusing solely on Single Page Application development in 2014. My hope is to kick out an early release of <a href="https://github.com/emberjsbook">Building Web Apps with Ember.js</a> very soon, and finish the book in early 2014. After that I&rsquo;ll be in Louisville, KY at <a href="http://www.codepalousa.com/">Code PaLOUsa</a> to continue the Ember.js roadtrip.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript Makers: How JS is Helping Drive the Maker Movement]]></title>
+    <link href="http://html5hacks.com/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/"/>
+    <updated>2013-10-04T19:02:00-05:00</updated>
+    <id>http://html5hacks.com/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement</id>
+    <content type="html"><![CDATA[<p>This post is mirrored from: <a href="http://jessecravens.com/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/">jessecravens.com</a></p>
+
+<p><img class="imgR300" alt="ok200 Conference" src="http://html5hacks.com/images/200ok/200ok1.jpg"></p>
+
+<p>I spend my days writing a lot of JavaScript, and helping companies deliver ambitious UX focused applications to the web. I <a href="http://shop.oreilly.com/product/0636920026273.do?cmp=af-code-book-product_cj_9781449334994_7080585">author books</a> on the subject, blog, and <a href="http://lanyrd.com/profile/jdcravens/">speak at conferences</a> as often as I can.</p>
+
+<p>I work for <a href="http://frogdesign.com">frog</a>, a product design firm, that for the last forty years has been helping increase the profiles of brands like Sony and Apple through iconic design.</p>
+
+<p>I work within a culture that has deep roots into <a href="http://en.wikipedia.org/wiki/Maker_culture">the Maker Movement</a>; A culture that was making before the Maker Movement was cool, the &ldquo;original makers&rdquo; if you will. Written upon our walls and slide decks is the tag, <a href="https://vimeo.com/24940735">&lsquo;Love What You Make&rsquo;</a>, and as you might expect many of the frogs that sit around me are craftsfolk, DIYourselfers, and tinkerers. It is not uncommon to see a flying quadcopter, a mesh sensor network of Arduinos, 3D printed prototypes, explorations in next generation gesture with the Leap Motion and Kinect, video production, motion studies, 3D modeling, along with the standard artistic mood boards and web and native mobile application wireframes. Let&rsquo;s just say there is no shortage of creativity across every medium imaginable.</p>
+
+<h2>Sharing My Craft with my Children</h2>
+
+<p><img class="imgL300" alt="ok200 Conference - setting up" src="http://html5hacks.com/images/200ok/200ok2.jpg"></p>
+
+<p>All of that being said, I&rsquo;m a parent of two young children. My little ones constantly challenge me to find ways to share quality time with them. The parents reading this know the juggling act.</p>
+
+<p>What I try to do is architect bridges between my children&rsquo;s curiosity and the passions of others that have explored their crafts in a deep way. Myself, and my wife, being the most important of those craftsfolk.</p>
+
+<p>If I&rsquo;m doing it right, when I spend time with my children, they should share in my excitement and passion. If I&rsquo;m doing it wrong, I&rsquo;m overwhelmed and exhausted from work. In my vision, my children should be witnessing a model of how to wake up everyday with the goal of embracing opportunity to create a combination of function and beauty within the world around them.</p>
+
+<p><img class="imgR200" alt="Maker Faire" src="http://html5hacks.com/images/200ok/Maker_Faire.gif"></p>
+
+<p>So it is in this context, that I met up with Mozilla&rsquo;s Luke Crouch, and <a href="http://makerfairetulsa.com/">Tulsa Mini Maker Faire</a>&rsquo;s Scott Phillips to put together <a href="http://200ok.us/schedule/javascript-makers/">the closing keynote at the 200ok conference</a> .</p>
+
+<h2>JavaScript Makers: How JS is Helping Drive the Maker Movement</h2>
+
+<p>The <a href="http://200ok.us/schedule/javascript-makers/">200ok conference</a> is on track to become Oklaoma&rsquo;s premier web conference attracting a sold out crowd of web professionals from all over Oklahoma and the neighboring states. Going in, I felt as though I knew my audience well. In other words, if I spoke to them about languages they would understand, JavaScript and HTML5, my message would easily resonate. I also knew that given their location, Tulsa, OK, a presentation that touched upon work life balance and family values would immediate strike a chord as well.</p>
+
+<p>So in the spirit of authenticity, I pretended as if getting prepared for a closing keynote dependent on hacked together hardware and software demos wasn&rsquo;t challenging enough; I made the decision to include my 6 year old son, Carter with a flying drone and a custom configured Minecraft server accessible over conference wifi. I knew this would ensure that the presentation dangled on the brink of disaster, mirroring the chaotic reality of both open hacking and parenting.</p>
+
+<p>My thinking was that a presentation on this topic should be authentic, and reflect the reality of my proposition, not be an ivory tower, academic/authoritative talk about how to share your craft with your children. I also made sure to not prep Carter. With a loose structure in place, we took the stage and worked our way through a story that consisted of 12 open software and hardware demos that showcased JavaScript as a primary scripting language, and a table full of hardware that ranged from a drone, a dissected wifli helicopter and erector set, a leap motion, and numerous prototyping boards.</p>
+
+<script async class="speakerdeck-embed" data-slide="10" data-id="78b4c9300a8801313e8202078d31cabc" data-ratio="1.2994923857868" src="http://html5hacks.com//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>Here are some of the highlights:</p>
+
+<h2>JavaScript and Prototyping Boards</h2>
+
+<p>Earlier this year I did a presentation at HTML5.tx that focused on building an <a href="http://www.youtube.com/watch?v=H00_BGRkBRM">Internet of Things with JavaScript</a> and various open hardware prototyping boards such as Arduino, BeagleBone, and the Raspberry Pi. It was in that talk that I made a connection that eventually led to an introduction to Luke. So, given that the HTML5.tx content was of interest I started the presentation with a demo of the Arduino, <a href="https://github.com/rwaldron/johnny-five">Johnny Five</a>, the original Beaglebone and <a href="https://github.com/jadonk/bonescript">BoneScript</a>.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>bonescript.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="o">&amp;</span><span class="nx">hellip</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">bonescript</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">ledPin</span> <span class="o">=</span> <span class="nx">bone</span><span class="p">.</span><span class="nx">P8_3</span><span class="p">;</span>
+</span><span class='line'>  <span class="nx">ledPin2</span> <span class="o">=</span> <span class="nx">bone</span><span class="p">.</span><span class="nx">P8_4</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="o">&amp;</span><span class="nx">hellip</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="err">/motion&amp;rsquo;, function(req, res, next) {&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">[</span><span class="s1">&#39;eventType&#39;</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Motion data collected for &#39;</span>  <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">[</span><span class="s1">&#39;eventType&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; event&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">[</span><span class="s1">&#39;eventType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;motionstart&quot;</span><span class="p">){</span>
+</span><span class='line'>  <span class="nx">digitalWrite</span><span class="p">(</span><span class="nx">ledPin2</span><span class="p">,</span> <span class="nx">HIGH</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">[</span><span class="s1">&#39;eventType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;motionend&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">digitalWrite</span><span class="p">(</span><span class="nx">ledPin</span><span class="p">,</span> <span class="nx">HIGH</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">});</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Nodecopter and the Leap Motion</h2>
+
+<p>I started with the basics of the <a href="https://github.com/felixge/node-ar-drone">node-ar-drone module</a>:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>ar-drone.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="kd">var</span> <span class="nx">arDrone</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">ar</span><span class="o">-</span><span class="nx">drone</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">client</span>  <span class="o">=</span> <span class="nx">arDrone</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">client</span><span class="p">.</span><span class="nx">takeoff</span><span class="p">();</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="nx">client</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="mi">7000</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">this</span><span class="p">.</span><span class="nx">animate</span><span class="p">(</span><span class="s1">&#39;flipRight&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">this</span><span class="p">.</span><span class="nx">animateLeds</span><span class="p">(</span><span class="s1">&#39;blinkRed&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span><span class='line'><span class="p">})</span>
+</span><span class='line'><span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">this</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+</span><span class='line'>  <span class="k">this</span><span class="p">.</span><span class="nx">land</span><span class="p">();</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Later, a crowd favorite was mapping the gestures from the <a href="https://www.leapmotion.com/">Leap Motion</a> to the <a href="http://ardrone2.parrot.com/">Parrot AR drone</a>, so that a one finger clockwise gesture triggered a nodecopter takeoff. A counter clockwise gesture then landed it. I was able to put this together using the leapJS and node-ardrone node modules, based on some initial hacking by <a href="https://twitter.com/markuskobler">Markus Kobler</a>, where he pulled this off at a <a href="https://github.com/markuskobler/nodecopter-london">Nodecopter London event</a>.</p>
+
+<iframe src="http://html5hacks.com//player.vimeo.com/video/75616363" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<p> <p><a href="http://vimeo.com/75616363">Jesse Cravens blowing minds with a JS-driven copter.</a> from <a href="http://vimeo.com/user21333523">Michael Gorsuch</a> on <a href="https://vimeo.com">Vimeo</a>.</p></p>
+
+<h2>ScriptCraft: Running JavaScript from within Minecraft</h2>
+
+<p><img class="imgL300" alt="ok200 Conference" src="http://html5hacks.com/images/200ok/200ok3.jpg"></p>
+
+<p>Later, I showed how to script inside of the Minecraft virtual world, using <a href="https://twitter.com/walter">Walter Higgins'</a> great <a href="https://github.com/walterhiggins/ScriptCraft">ScriptCraft library</a>. I wasn&rsquo;t expecting the conference wifi, and single access point, to suffice in allowing Carter and I to interact within virtual world. I was also concerned about the dynamic IP, and having to change it on the fly, start/restart the server, etc. So I made the decision 10 minutes before to not have Carter log in, and I would just speak to the possibility instead. In true 6 year old fashion, he rebelled and logged onto my server, popping up in front of me wearing a Creeper mask, as I was mid stream explaining how to script wooden signs with his 1st grade sight words as a homework exercise.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>sightwords.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Drone</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">sightwords</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span><span class="kd">function</span> <span class="p">(){</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">wordsArr</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;have&quot;</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">,</span> <span class="s2">&quot;want&quot;</span><span class="p">,</span> <span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="s2">&quot;how&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="s2">&quot;ten&quot;</span><span class="p">,</span> <span class="s2">&quot;come&quot;</span><span class="p">,</span> <span class="s2">&quot;went&quot;</span><span class="p">,</span> <span class="s2">&quot;into&quot;</span><span class="p">,</span> <span class="s2">&quot;know&quot;</span><span class="p">,</span> <span class="s2">&quot;my&quot;</span><span class="p">,</span> <span class="s2">&quot;do&quot;</span><span class="p">,</span> <span class="s2">&quot;down&quot;</span><span class="p">,</span> <span class="s2">&quot;who&quot;</span><span class="p">,</span> <span class="s2">&quot;must&quot;</span><span class="p">,</span> <span class="s2">&quot;let&quot;</span><span class="p">,</span> <span class="s2">&quot;with&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;find&quot;</span><span class="p">,</span> <span class="s2">&quot;will&quot;</span><span class="p">,</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span> <span class="s2">&quot;live&quot;</span><span class="p">,</span> <span class="s2">&quot;five&quot;</span><span class="p">,</span> <span class="s2">&quot;you&quot;</span><span class="p">,</span> <span class="s2">&quot;funny&quot;</span><span class="p">,</span> <span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">,</span> <span class="s2">&quot;may&quot;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">wordsArr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>    <span class="k">this</span><span class="p">.</span><span class="nx">right</span><span class="p">(</span><span class="mi">0</span><span class="o">+</span><span class="nx">i</span><span class="p">).</span><span class="nx">sign</span><span class="p">(</span><span class="nx">wordsArr</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="mi">68</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">move</span><span class="p">(</span><span class="s1">&#39;sightwords&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">});</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Needless to say, his innapropriate behavior was a crowd favorite. I have to admit, it was mine as well.</p>
+
+<p><img class="imgR300" alt="ok200 Conference" src="http://html5hacks.com/images/200ok/200ok4.png"></p>
+
+<p>Going into the talk, I knew I&rsquo;d either be trying this again in the future or abandoning it as &lsquo;one of those ideas&rsquo; that sounded good in theory, but was just not going to work. Where did I land? Well, let&rsquo;s just say that Carter and I are looking for our next opportunity to share our experiences with other parents/web professionals.</p>
+]]></content>
+  </entry>
+  
+</feed>

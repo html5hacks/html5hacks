@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Multimedia | HTML5 Hacks]]></title>
+  <link href="http://html5hacks.com/blog/categories/multimedia/atom.xml" rel="self"/>
+  <link href="http://html5hacks.com/"/>
+  <updated>2014-12-30T19:50:36-06:00</updated>
+  <id>http://html5hacks.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Add Narration to your Slide Deck with HTML5 Audio]]></title>
+    <link href="http://html5hacks.com/blog/2013/06/17/add-narration-to-your-slide-deck-with-html5-audio/"/>
+    <updated>2013-06-17T10:11:00-05:00</updated>
+    <id>http://html5hacks.com/blog/2013/06/17/add-narration-to-your-slide-deck-with-html5-audio</id>
+    <content type="html"><![CDATA[<p><strong>Most presenter will share their slide deck on the web after their presentation. But many times the slides are only a shell of the real talk. Fortunately, with HTML5 audio, we can add our voice back to our slides and recreate the real presentation.</strong></p>
+
+<h2>Sample Example</h2>
+
+<p>To show what we&rsquo;re trying to accomplish, I&rsquo;ve created <a href="http://kevinlamping.com/deck.narrator.js/sample/sample.html">a very basic slide deck with audio narration</a> which briefly describes the issue at hand.</p>
+
+<h2>Audio on the Web</h2>
+
+<p>Back when the web was just taking off, it was common (bad) practice to include audio on your page. I&rsquo;m not talking about a Flash-based music player, but rather the more primitive audio solution: <code>&lt;bgsound&gt;</code>. Those who were programming back when HTML 3.2 came out will be familiar with this oft-forgotten tag.</p>
+
+<p>Luckily for us, <code>&lt;bgsound&gt;</code> isn&rsquo;t the end of the story. According to <a href="http://www.w3.org/wiki/HTML/Elements/bgsound">the latest W3C spec</a>, <code>&lt;bgsound&gt;</code> has a much friendlier HTML5 alternative that you&rsquo;ve likely heard of: the <code>&lt;audio&gt;</code> tag.</p>
+
+<p>So what benefits does <code>&lt;audio&gt;</code> bring us? Well, <code>&lt;bgsound&gt;</code> was an IE only property. <code>&lt;audio&gt;</code> on the other hand has wide support, with only IE 7 &amp; 8 lacking functionality. <code>&lt;audio&gt;</code> also allows API access so that we can control playback, seek through the audio, and even manipulate the data with the <a href="https://developer.mozilla.org/en-US/docs/WebRTC/MediaStream_API">MediaStream API</a>. Plus, the <code>&lt;audio&gt;</code> tag allows you to use native controls and/or provide your own customized controls.</p>
+
+<h2>File formats</h2>
+
+<p>Before getting in to the details on how we&rsquo;re going to use the <code>&lt;audio&gt;</code> tag, we need to talk a little about file formats. The MP3 format has gained tremendous popularity over the last decade and a half, but unfortunately due to licensing requirements, relying on MP3&rsquo;s for our audio is a messy situation.</p>
+
+<p>Luckily for us, the <code>&lt;audio&gt;</code> tag supports multiple formats gracefully. This means we can create a patchwork of audio file formats to gain full browser support. And we&rsquo;ll need a patch work because no one format is currently supported across all browsers.</p>
+
+<p>For our needs, we&rsquo;ve created two files: an MP4/AAC file and an OggVorbis file.</p>
+
+<p>If you&rsquo;d like to read more on the subject, I highly recommend <a href="https://www.scirra.com/blog/44/on-html5-audio-formats-aac-and-ogg">Ashley Gullen&rsquo;s post &lsquo;On HTML5 audio formats &ndash; AAC and Ogg&rsquo;</a>.</p>
+
+<h2>How to Use It?</h2>
+
+<p>We can load our audio files by adding in two <code>&lt;source&gt;</code> tags with information about our two audio files inside of the <code>&lt;audio&gt;</code> tag:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>index.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;audio</span> <span class="na">controls</span> <span class="na">id=</span><span class="s">&quot;myPlayer&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">&quot;myAudio.m4a&quot;</span> <span class="na">type=</span><span class="s">&quot;audio/mp4&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">&quot;myAudio.ogg&quot;</span> <span class="na">type=</span><span class="s">&quot;audio/ogg&quot;</span>  <span class="nt">/&gt;</span>
+</span><span class='line'>  Your browser does not support HTML5 audio.
+</span><span class='line'><span class="nt">&lt;/audio&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>There are two attributes for each <code>&lt;source&gt;</code> tag. The &lsquo;src&rsquo; attribute, whose value is the path to the audio file, and the &lsquo;type&rsquo; attribute, whose value is the MIME type of the file.</p>
+
+<p>Again, the browser will choose whichever file it supports without you having to do any detective work. Very nice.</p>
+
+<h2>Starting/Stopping</h2>
+
+<p>Okay, so now if we load this into a webpage we&rsquo;ll get a simple audio player that we can manually control. What&rsquo;s nice is that since we used the &lsquo;controls&rsquo; attribute, the audio player controls are built for us by the browser. This makes allowing manual control of our audio very simple.</p>
+
+<p>For our needs, we want to control the playback of the audio programmatically. To do this, let&rsquo;s take a look at the API for starting and stopping playback. The element has two built-in methods for this, &lsquo;play&rsquo; and &lsquo;pause&rsquo;. Calling those methods is straightforward:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>audio.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">var</span> <span class="nx">audioPlayer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">myPlayer</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
+</span><span class='line'><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
+</span><span class='line'><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">pause</span><span class="p">();</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>These methods will come in handy in a moment when we want to start playing our audio after we change slides.</p>
+
+<h2>Seeking</h2>
+
+<p>The other part of the equation is the ability to seek to different locations in our audio. Again, this is very simple. Our element has a &lsquo;currentTime&rsquo; property that can be both get and set (in seconds).</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>audio.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">currentTime</span><span class="p">);</span> <span class="c1">// returns 0 since we haven&amp;rsquo;t started playing the audio yet</span>
+</span><span class='line'><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// move to 10 seconds into the audio</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">currentTime</span><span class="p">);</span> <span class="c1">// returns 10&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">currentTime</span><span class="p">);</span> <span class="c1">// returns 11</span>
+</span><span class='line'><span class="p">},</span> <span class="mi">1000</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>As you can see, getting and setting the current time is a trivial process. In the Part 2, we&rsquo;ll put this functionality to use by adding narration to slides.</p>
+
+<h2>Implementing Slide Narration</h2>
+
+<p>So now we&rsquo;ve got the building blocks for implementing a slide narrator. To make things easier, we&rsquo;re going to use the fantastic <a href="http://imakewebthings.com/deck.js/">&lsquo;Deck.js&rsquo; project</a> as our HTML slide framework. Deck.js supports extensions, which allows you to add functionality to your slides beyond what&rsquo;s already provided.</p>
+
+<p>We&rsquo;ll be creating a new extension called Narrator. For brevity&rsquo;s sake, I won&rsquo;t get into the details of Deck.js or creating extensions, but you can check out the code in <a href="https://github.com/klamping/deck.narrator.js">the deck.narrator.js GitHub repo</a>.</p>
+
+<p>Our extension boils down to one requirement: It should automatically play a defined section of audio on each slide.</p>
+
+<p>That might sound simple, but we need to figure out a couple of things first:</p>
+
+<ul>
+<li>How will we define what audio to play for each slide?</li>
+<li>How will we stop the audio after it gets to the end of the section</li>
+</ul>
+
+
+<h2>Defining Audio Stops</h2>
+
+<p>There are a couple of ways to define what segment of the audio each slide plays. You could define a start time and a stop time for each slide, but that seems like too much work. Instead we&rsquo;ll just define how long each slide should play for, and then calculate the implied start and stop timestamps for each slide.</p>
+
+<p>To store our audio duration, we&rsquo;ll take advantage of <a href="http://ejohn.org/blog/html-5-data-attributes/">HTML5 data-* attributes</a> by creating a custom &lsquo;data-narrator-duration&rsquo; attribute. The value of this will be the number of seconds to play the audio for. Here&rsquo;s a sample slide element for a Deck.js HTML file.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>index.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;section</span> <span class="na">class=</span><span class="s">&quot;slide&quot;</span> <span class="na">data-narrator-duration=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="ni">&amp;hellip;</span>
+</span><span class='line'><span class="nt">&lt;/section&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Then, upon page initialization, we&rsquo;ll loop through each slide element and calculate the proper start/stop timestamps for each slide. This is important in case our viewer wants to move through the slides in a non-linear fashion. Here&rsquo;s the basic code:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>deck.narrator.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// create an array for our segment timestamps</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">segments</span> <span class="o">=</span> <span class="p">[];</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// create a placeholder for our audio element reference</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">audio</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="c1">// we&amp;rsquo;ll get to this variable later</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">segmentEnd</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">function</span> <span class="nx">init</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// get the audio element we added to our page</span>
+</span><span class='line'>  <span class="nx">audio</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">audioNarration</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="c1">// use deck.js built-in functionality to get all slides and current slide</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">$slides</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">deck</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">getSlides</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">$currentSlide</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">deck</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">getSlide</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="c1">// set initial values for time position and index</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">position</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">currentIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="c1">// now loop through each slide</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">$slides</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">$el</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="c1">// get the duration specified from the HTML element</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">duration</span> <span class="o">=</span> <span class="nx">$el</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;narrator-duration&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// this determines which slide the viewer loaded the page on</span>
+</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nx">$currentSlide</span> <span class="o">==</span> <span class="nx">$el</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// push the start time (previous position) and end time (position + duration) to an array of slides</span>
+</span><span class='line'><span class="nx">segments</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">position</span><span class="p">,</span> <span class="nx">position</span> <span class="o">+</span> <span class="nx">duration</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// increment the position to the start of the next slide</span>
+</span><span class='line'><span class="nx">position</span> <span class="o">+=</span> <span class="nx">duration</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">});</span>
+</span><span class='line'><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Adding Playback Automatically on Slide Change</h2>
+
+<p>Now that we&rsquo;ve got our segment timestamps defined, let&rsquo;s look at playing that audio on each slide transition. Deck.js fires a &lsquo;deck.change&rsquo; event when the slide is changed, so we can hook into that and have it call our changeSlides function, which looks like this:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>deck.narrator.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">changeSlides</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">from</span><span class="p">,</span> <span class="nx">to</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// check to make sure audio element has been found</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="nx">audio</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="c1">// move the playback to our slides start</span>
+</span><span class='line'><span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">=</span> <span class="nx">segments</span><span class="p">[</span><span class="nx">to</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// define the end of our section</span>
+</span><span class='line'><span class="nx">segmentEnd</span> <span class="o">=</span> <span class="nx">segments</span><span class="p">[</span><span class="nx">to</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Most of the code makes sense, but I do want to talk about the &lsquo;segmentEnd&rsquo; line and what it&rsquo;s doing.</p>
+
+<h2>Playing Segments of Audio</h2>
+
+<p>Unfortunately, you can&rsquo;t give the <code>play()</code> function an amount of time to play for. Once you start playing, it will keep going until it runs out of audio or you tell it to pause. Thankfully, the audio element emits a &lsquo;timeupdate&rsquo; event which we can listen to in order to pause playback once our segment timestamp has been reached. We can add that listener just like any other event listener:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>deck.narrator.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">audio</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">timeupdate</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="nx">checkTime</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Our &lsquo;checkTime&rsquo; function is very small. All it does is check to see if currentTime in the audio is greater than the segmentEnd time. If so, it pauses our audio:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>deck.narrator.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">checkTime</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">&gt;=</span> <span class="nx">segmentEnd</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nx">audio</span><span class="p">.</span><span class="nx">pause</span><span class="p">();</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Automatically Moving Through Slides</h2>
+
+<p>Now that we&rsquo;ve got our audio hooked up to our slides, we can take advantage of the other extensions already written for Deck.js. <a href="deck.automatic.js">https://github.com/rchampourlier/deck.automatic.js/‎</a> is an extension that makes your slides run automatically. By including this extension with our presentation, we can recreate that &lsquo;presentation&rsquo; feel to our slides.</p>
+
+<p>Aside from the going through the steps of adding the automatic extension, we also need to make sure that if a user starts/stops the audio, we start/stop the slideshow playback. To do this, we&rsquo;ll sync up <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/DOM/Events/Media_events">the &lsquo;play&rsquo; and &lsquo;pause&rsquo; events of our audio element</a> with the automatic extension. For simplicity, we&rsquo;re going to control all slide playback using our audio controls and leave off the deck.automatic.js playback control.</p>
+
+<p>Deck.automatic.js adds some events to the mix, including &lsquo;play&rsquo; and &lsquo;pause&rsquo; events. By triggering these events when our similarly named audio events fire, we can make sure our slides are in sync with our content.</p>
+
+<p>We add two simple functions to our extension:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>deck.narrator.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">startSlides</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">.</span><span class="nx">deck</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">play</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
+</span><span class='line'><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="kd">function</span> <span class="nx">stopSlides</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">.</span><span class="nx">deck</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">pause</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>And then add our event listeners in the deck.init callback:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>deck.narrator.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$d</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">deck</span><span class="p">.</span><span class="nx">init</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="c1">// &amp;hellip; other code here &amp;hellip;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="c1">// Sync audio with slides</span>
+</span><span class='line'>  <span class="nx">audio</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">play</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="nx">startSlides</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">audio</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">pause</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="nx">stopSlides</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Also, since our slides automatically advance, we need to comment out the &lsquo;timeupdate&rsquo; event listener which would pause our audio at the end of a slide.</p>
+
+<p>With those things taken care of, our slides and audio automatically transition to create a seamless experience.</p>
+
+<h2>Next Steps</h2>
+
+<p>One thing the code doesn&rsquo;t take into consideration is if the user navigation the audio themselves. We could add this by listening to the &lsquo;seeked&rsquo; event from the audio element and calculating where in the slide deck we should move to.</p>
+
+<p>There is also some duplication around defining the duration of the as a result of adding in the automatic slide advancement extension. The other extension is looking for a data-duration attribute on each slide. This can be easily fixed by updating our code to look for that attribute instead.</p>
+
+<p>Finally, we need to add in some captioning for folks who either cannot hear the audio or are in a public place and simply forgot their headphones. There is <a href="http://www.w3.org/wiki/HTML/Elements/track">a new <code>track</code> tag</a> that can handle this for us, so that&rsquo;s a likely route we can go down.</p>
+
+<h2>Summing Up</h2>
+
+<p>That&rsquo;s the majority of the code. I left out a few details in relation to some deck.js configurations, so again check out <a href="https://github.com/klamping/deck.narrator.js">the GitHub repo for the full example</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CSS3 | HTML5 Hacks]]></title>
+  <link href="http://html5hacks.com/blog/categories/css3/atom.xml" rel="self"/>
+  <link href="http://html5hacks.com/"/>
+  <updated>2014-12-30T19:50:36-06:00</updated>
+  <id>http://html5hacks.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens and Jeff Burtoft]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Debugging Modern Web Applications Part 1]]></title>
+    <link href="http://html5hacks.com/blog/2013/09/06/debugging-modern-web-applications-part-1/"/>
+    <updated>2013-09-06T19:43:00-05:00</updated>
+    <id>http://html5hacks.com/blog/2013/09/06/debugging-modern-web-applications-part-1</id>
+    <content type="html"><![CDATA[<p>As JavaScript-centric web applications continue to become the standard, and the browser continues to evolve into a full-featured web application platform, developers need powerful debugging tools to help quickly troubleshoot issues and fix them efficiently. Issues can range from HTML/CSS browser inconsistencies, JavaScript exceptions, and a myriad of performance issues that range from DOM access to network latency.</p>
+
+<p>There a number of tools that web developers can use to help make debugging front end applications less painful.</p>
+
+<p><img class="imgR400" alt="Debugging Modern Web Applications" src="http://tpstatic.com/img/usermedia/KRuw_KM2X0GCCs9xf497KA/original.png"></p>
+
+<p>In this tutorial, we will walk through the top tools available and how to use these tools by addressing some of the most common issues faced in modern web application. This is a beginner to intermediate level tutorial for web developers getting started with debugging the web, or programmers coming from other languages who want to better understand how to troubleshoot client side JavaScript, the DOM, performance, and network calls.</p>
+
+<p>To demonstrate we will be debugging a simple web application. The source code is available here: <a href="https://github.com/jessecravens/techpro-debugging.">https://github.com/jessecravens/techpro-debugging.</a></p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1404/debugging-modern-web-applications-part-1">http://tech.pro/tutorial/1404/debugging-modern-web-applications-part-1</a></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,1 +1,1987 @@
-My Octopress Page is coming soon &hellip;
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>HTML5 Hacks</title>
+  <meta name="author" content="Jesse Cravens and Jeff Burtoft">
+
+  
+  <meta name="description" content="At the beginning of November, I was given an opportunity to give two talks in Malmö, Sweden at the Øredev conference. First of all, I have to say I &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://html5hacks.com/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="HTML5 Hacks" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic
+" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-28132474-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">HTML5 Hacks</a></h1>
+  
+    <h2>Hacking Next Generation Web Technologies</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:html5hacks.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About the Hackers</a></li>
+  <li><a href="/training">Training</a></li>
+  <li><a href="/join">Join Us</a></li>  
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-in-malmo/">HTML5 and Ember.js at Øredev 2013:The Arts in Malmö, Sweden</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-07T23:25:00-06:00" pubdate data-updated="true">Dec 7<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-in-malmo/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>At the beginning of November, I was given an opportunity to give two talks in Malmö, Sweden at the Øredev conference. First of all, I have to say I was extremely impressed with the conference. Although the theme was the Arts, I found it to be a developer&rsquo;s conference with an artsy edge. The speakers I had a chance to see were developer&rsquo;s developers, one of my favorites being a talk on Meteor by Chris Mather (@eventedmind) of <a href="http://eventedmind.com">eventedmind.com</a>. I&rsquo;ve maintained a peripheral view of Meteor, so it was good to get a beginner to intermediate overview of its capabilities. Given that I have been doing <a href="http://www.mongodb.com/">MongoDB</a> / <a href="https://github.com/emberjs/data">Ember-data</a> client work as of lately, I am particularly interested in exploring <a href="https://github.com/slacy/minimongo">minimongo</a>.</p>
+
+<p><img class="imgR400" alt="Øredev 2013 HTML5 Hacks" src="/images/oredev/html5hacks-oredev.jpg"></p>
+
+<p>The city of <a href="http://en.wikipedia.org/wiki/Malm%C3%B6">Malmö</a> was also a pleasure to experience, and as you might imagine, the people of Sweden were very welcoming. One of the highlights for me was the speaker dinner at the <a href="http://en.wikipedia.org/wiki/File:Jorchr-Malm%C3%B6_r%C3%A5dhus.jpg">Malmö City Hall</a>, originally constructed in the Middle Ages. On a side note, I finally had a chance to meet and have dinner with <a href="http://www.crockford.com/">Douglass Crockford</a>, a long time inspiration and virtual mentor, who was in town to give the keynote on <a href="http://oredev.org/2013/wed-fri-conference/managing-asynchronicity-with-rq">Managing Async with RQ</a>.</p>
+
+<iframe src="//player.vimeo.com/video/78847391" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<p>
+  <a href="http://vimeo.com/78847391">Building Web Applications with Ember.js and Ruby On Rails</a>
+  from
+  <a href="http://vimeo.com/user4280938">&Oslash;redev Conference</a>
+  on
+  <a href="https://vimeo.com">Vimeo</a>
+  .
+</p>
+
+
+<p>My first talk was a preview of my new book <a href="https://github.com/emberjsbook">O&#8217;Reilly&rsquo;s Building Web Apps with Ember.js</a>. I shared the stage with co-author and fellow frog, <a href="http://bashmodernquantity.com/about/">Thomas Q. Brady</a>. We took the audience through the creation of <a href="https://github.com/emberjsbook/rocknrollcall">RocknRollCall</a>, an intermediate level <a href="http://emberjs.com/">Ember.js</a> application that fills in many of the blanks that most of the &lsquo;Getting Started&rsquo; applications don&rsquo;t.</p>
+
+<p><img class="imgL400" alt="O'Reilly's Building Web Apps with Ember.js" src="/images/oredev/ember_cover_600.png"></p>
+
+<p>Some of the highlights of the book, and the talk, cover topics such as: a survey of Ember tooling, debugging with the <a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi?hl=en">Ember Inspector</a>, Ember boilerplates, app initializers, promises in Ember, the needs API, Ember components, 3rd Party JavaScript Integration (<a href="http://jquery.com/">jQuery</a>, <a href="http://d3js.org/">D3</a>), Ember testing, SPA authentication, <a href="https://github.com/emberjs/data">Ember-data</a> and other client-side persistence solutions, and remote data persistence with Ruby On Rails and Node.js.</p>
+
+<p>My second talk was <a href="http://html5hacks.com/">HTML5 Hacks</a> Evolved, where I continue to share more hacks from by first book <a href="http://html5hacks.com">HTML5 Hacks</a>, and <a href="http://html5hacks.com/">html5hacks.com</a>. This talk is culmination of HTML5 specifications that will have you rethinking browser-based applications. Some of the highlights of this talk included: Web Workers, WebSocket w/ GeoLocation, Device Orientation, and LeapJS, Web Components / Polymer / Ember Components (Custom Elements, Shadow DOM, HTML Imports, Model Driven Views, and Local Storage.</p>
+
+<iframe src="//player.vimeo.com/video/78912115" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<p>
+  <a href="http://vimeo.com/78912115">HTML5 Hacks</a>
+  from
+  <a href="http://vimeo.com/user4280938">&Oslash;redev Conference</a>
+  on
+  <a href="https://vimeo.com">Vimeo</a>
+  .
+</p>
+
+
+<p>In 2014, I&rsquo;m retiring the HTML5 Hacks talks, to begin focusing solely on Single Page Application development in 2014. My hope is to kick out an early release of <a href="https://github.com/emberjsbook">Building Web Apps with Ember.js</a> very soon, and finish the book in early 2014. After that I&rsquo;ll be in Louisville, KY at <a href="http://www.codepalousa.com/">Code PaLOUsa</a> to continue the Ember.js roadtrip.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/">JavaScript Makers: How JS Is Helping Drive the Maker Movement</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-04T19:02:00-05:00" pubdate data-updated="true">Oct 4<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This post is mirrored from: <a href="http://jessecravens.com/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/">jessecravens.com</a></p>
+
+<p><img class="imgR300" alt="ok200 Conference" src="/images/200ok/200ok1.jpg"></p>
+
+<p>I spend my days writing a lot of JavaScript, and helping companies deliver ambitious UX focused applications to the web. I <a href="http://shop.oreilly.com/product/0636920026273.do?cmp=af-code-book-product_cj_9781449334994_7080585">author books</a> on the subject, blog, and <a href="http://lanyrd.com/profile/jdcravens/">speak at conferences</a> as often as I can.</p>
+
+<p>I work for <a href="http://frogdesign.com">frog</a>, a product design firm, that for the last forty years has been helping increase the profiles of brands like Sony and Apple through iconic design.</p>
+
+<p>I work within a culture that has deep roots into <a href="http://en.wikipedia.org/wiki/Maker_culture">the Maker Movement</a>; A culture that was making before the Maker Movement was cool, the &ldquo;original makers&rdquo; if you will. Written upon our walls and slide decks is the tag, <a href="https://vimeo.com/24940735">&lsquo;Love What You Make&rsquo;</a>, and as you might expect many of the frogs that sit around me are craftsfolk, DIYourselfers, and tinkerers. It is not uncommon to see a flying quadcopter, a mesh sensor network of Arduinos, 3D printed prototypes, explorations in next generation gesture with the Leap Motion and Kinect, video production, motion studies, 3D modeling, along with the standard artistic mood boards and web and native mobile application wireframes. Let&rsquo;s just say there is no shortage of creativity across every medium imaginable.</p>
+
+<h2>Sharing My Craft with my Children</h2>
+
+<p><img class="imgL300" alt="ok200 Conference - setting up" src="/images/200ok/200ok2.jpg"></p>
+
+<p>All of that being said, I&rsquo;m a parent of two young children. My little ones constantly challenge me to find ways to share quality time with them. The parents reading this know the juggling act.</p>
+
+<p>What I try to do is architect bridges between my children&rsquo;s curiosity and the passions of others that have explored their crafts in a deep way. Myself, and my wife, being the most important of those craftsfolk.</p>
+
+<p>If I&rsquo;m doing it right, when I spend time with my children, they should share in my excitement and passion. If I&rsquo;m doing it wrong, I&rsquo;m overwhelmed and exhausted from work. In my vision, my children should be witnessing a model of how to wake up everyday with the goal of embracing opportunity to create a combination of function and beauty within the world around them.</p>
+
+<p><img class="imgR200" alt="Maker Faire" src="/images/200ok/Maker_Faire.gif"></p>
+
+<p>So it is in this context, that I met up with Mozilla&rsquo;s Luke Crouch, and <a href="http://makerfairetulsa.com/">Tulsa Mini Maker Faire</a>&rsquo;s Scott Phillips to put together <a href="http://200ok.us/schedule/javascript-makers/">the closing keynote at the 200ok conference</a> .</p>
+
+<h2>JavaScript Makers: How JS is Helping Drive the Maker Movement</h2>
+
+<p>The <a href="http://200ok.us/schedule/javascript-makers/">200ok conference</a> is on track to become Oklaoma&rsquo;s premier web conference attracting a sold out crowd of web professionals from all over Oklahoma and the neighboring states. Going in, I felt as though I knew my audience well. In other words, if I spoke to them about languages they would understand, JavaScript and HTML5, my message would easily resonate. I also knew that given their location, Tulsa, OK, a presentation that touched upon work life balance and family values would immediate strike a chord as well.</p>
+
+<p>So in the spirit of authenticity, I pretended as if getting prepared for a closing keynote dependent on hacked together hardware and software demos wasn&rsquo;t challenging enough; I made the decision to include my 6 year old son, Carter with a flying drone and a custom configured Minecraft server accessible over conference wifi. I knew this would ensure that the presentation dangled on the brink of disaster, mirroring the chaotic reality of both open hacking and parenting.</p>
+
+<p>My thinking was that a presentation on this topic should be authentic, and reflect the reality of my proposition, not be an ivory tower, academic/authoritative talk about how to share your craft with your children. I also made sure to not prep Carter. With a loose structure in place, we took the stage and worked our way through a story that consisted of 12 open software and hardware demos that showcased JavaScript as a primary scripting language, and a table full of hardware that ranged from a drone, a dissected wifli helicopter and erector set, a leap motion, and numerous prototyping boards.</p>
+
+<script async class="speakerdeck-embed" data-slide="10" data-id="78b4c9300a8801313e8202078d31cabc" data-ratio="1.2994923857868" src="//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>Here are some of the highlights:</p>
+
+<h2>JavaScript and Prototyping Boards</h2>
+
+<p>Earlier this year I did a presentation at HTML5.tx that focused on building an <a href="http://www.youtube.com/watch?v=H00_BGRkBRM">Internet of Things with JavaScript</a> and various open hardware prototyping boards such as Arduino, BeagleBone, and the Raspberry Pi. It was in that talk that I made a connection that eventually led to an introduction to Luke. So, given that the HTML5.tx content was of interest I started the presentation with a demo of the Arduino, <a href="https://github.com/rwaldron/johnny-five">Johnny Five</a>, the original Beaglebone and <a href="https://github.com/jadonk/bonescript">BoneScript</a>.</p>
+
+<figure class='code'><figcaption><span>bonescript.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>  <span class="p">...</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;bonescript&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">ledPin</span> <span class="o">=</span> <span class="nx">bone</span><span class="p">.</span><span class="nx">P8_3</span><span class="p">;</span>
+</span><span class='line'>  <span class="nx">ledPin2</span> <span class="o">=</span> <span class="nx">bone</span><span class="p">.</span><span class="nx">P8_4</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="p">...</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/motion&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">[</span><span class="s1">&#39;eventType&#39;</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Motion data collected for &#39;</span>  <span class="o">+</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">[</span><span class="s1">&#39;eventType&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; event&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">[</span><span class="s1">&#39;eventType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;motionstart&quot;</span><span class="p">){</span>
+</span><span class='line'>      <span class="nx">digitalWrite</span><span class="p">(</span><span class="nx">ledPin2</span><span class="p">,</span> <span class="nx">HIGH</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">[</span><span class="s1">&#39;eventType&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;motionend&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">digitalWrite</span><span class="p">(</span><span class="nx">ledPin</span><span class="p">,</span> <span class="nx">HIGH</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Nodecopter and the Leap Motion</h2>
+
+<p>I started with the basics of the <a href="https://github.com/felixge/node-ar-drone">node-ar-drone module</a>:</p>
+
+<figure class='code'><figcaption><span>ar-drone.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>  <span class="kd">var</span> <span class="nx">arDrone</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;ar-drone&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">client</span>  <span class="o">=</span> <span class="nx">arDrone</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">client</span><span class="p">.</span><span class="nx">takeoff</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">client</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="mi">7000</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">this</span><span class="p">.</span><span class="nx">animate</span><span class="p">(</span><span class="s1">&#39;flipRight&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+</span><span class='line'>      <span class="k">this</span><span class="p">.</span><span class="nx">animateLeds</span><span class="p">(</span><span class="s1">&#39;blinkRed&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">})</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">after</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">this</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+</span><span class='line'>      <span class="k">this</span><span class="p">.</span><span class="nx">land</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Later, a crowd favorite was mapping the gestures from the <a href="https://www.leapmotion.com/">Leap Motion</a> to the <a href="http://ardrone2.parrot.com/">Parrot AR drone</a>, so that a one finger clockwise gesture triggered a nodecopter takeoff. A counter clockwise gesture then landed it. I was able to put this together using the leapJS and node-ardrone node modules, based on some initial hacking by <a href="https://twitter.com/markuskobler">Markus Kobler</a>, where he pulled this off at a <a href="https://github.com/markuskobler/nodecopter-london">Nodecopter London event</a>.</p>
+
+<iframe src="//player.vimeo.com/video/75616363" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<p> <p><a href="http://vimeo.com/75616363">Jesse Cravens blowing minds with a JS-driven copter.</a> from <a href="http://vimeo.com/user21333523">Michael Gorsuch</a> on <a href="https://vimeo.com">Vimeo</a>.</p></p>
+
+<h2>ScriptCraft: Running JavaScript from within Minecraft</h2>
+
+<p><img class="imgL300" alt="ok200 Conference" src="/images/200ok/200ok3.jpg"></p>
+
+<p>Later, I showed how to script inside of the Minecraft virtual world, using <a href="https://twitter.com/walter">Walter Higgins&#8217;</a> great <a href="https://github.com/walterhiggins/ScriptCraft">ScriptCraft library</a>. I wasn&rsquo;t expecting the conference wifi, and single access point, to suffice in allowing Carter and I to interact within virtual world. I was also concerned about the dynamic IP, and having to change it on the fly, start/restart the server, etc. So I made the decision 10 minutes before to not have Carter log in, and I would just speak to the possibility instead. In true 6 year old fashion, he rebelled and logged onto my server, popping up in front of me wearing a Creeper mask, as I was mid stream explaining how to script wooden signs with his 1st grade sight words as a homework exercise.</p>
+
+<figure class='code'><figcaption><span>sightwords.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">Drone</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="s1">&#39;sightwords&#39;</span><span class="p">,</span><span class="kd">function</span> <span class="p">(){</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">wordsArr</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;have&quot;</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">,</span> <span class="s2">&quot;want&quot;</span><span class="p">,</span> <span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="s2">&quot;how&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="s2">&quot;ten&quot;</span><span class="p">,</span> <span class="s2">&quot;come&quot;</span><span class="p">,</span> <span class="s2">&quot;went&quot;</span><span class="p">,</span> <span class="s2">&quot;into&quot;</span><span class="p">,</span> <span class="s2">&quot;know&quot;</span><span class="p">,</span> <span class="s2">&quot;my&quot;</span><span class="p">,</span> <span class="s2">&quot;do&quot;</span><span class="p">,</span> <span class="s2">&quot;down&quot;</span><span class="p">,</span> <span class="s2">&quot;who&quot;</span><span class="p">,</span> <span class="s2">&quot;must&quot;</span><span class="p">,</span> <span class="s2">&quot;let&quot;</span><span class="p">,</span> <span class="s2">&quot;with&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;find&quot;</span><span class="p">,</span> <span class="s2">&quot;will&quot;</span><span class="p">,</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span> <span class="s2">&quot;live&quot;</span><span class="p">,</span> <span class="s2">&quot;five&quot;</span><span class="p">,</span> <span class="s2">&quot;you&quot;</span><span class="p">,</span> <span class="s2">&quot;funny&quot;</span><span class="p">,</span> <span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">,</span> <span class="s2">&quot;may&quot;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">wordsArr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>        <span class="k">this</span><span class="p">.</span><span class="nx">right</span><span class="p">(</span><span class="mi">0</span><span class="o">+</span><span class="nx">i</span><span class="p">).</span><span class="nx">sign</span><span class="p">(</span><span class="nx">wordsArr</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span><span class="mi">68</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">move</span><span class="p">(</span><span class="s1">&#39;sightwords&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Needless to say, his innapropriate behavior was a crowd favorite. I have to admit, it was mine as well.</p>
+
+<p><img class="imgR300" alt="ok200 Conference" src="/images/200ok/200ok4.png"></p>
+
+<p>Going into the talk, I knew I&rsquo;d either be trying this again in the future or abandoning it as &lsquo;one of those ideas&rsquo; that sounded good in theory, but was just not going to work. Where did I land? Well, let&rsquo;s just say that Carter and I are looking for our next opportunity to share our experiences with other parents/web professionals.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/06/debugging-modern-web-applications-part-1/">Debugging Modern Web Applications Part 1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-06T19:43:00-05:00" pubdate data-updated="true">Sep 6<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/09/06/debugging-modern-web-applications-part-1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As JavaScript-centric web applications continue to become the standard, and the browser continues to evolve into a full-featured web application platform, developers need powerful debugging tools to help quickly troubleshoot issues and fix them efficiently. Issues can range from HTML/CSS browser inconsistencies, JavaScript exceptions, and a myriad of performance issues that range from DOM access to network latency.</p>
+
+<p>There a number of tools that web developers can use to help make debugging front end applications less painful.</p>
+
+<p><img class="imgR400" alt="Debugging Modern Web Applications" src="http://tpstatic.com/img/usermedia/KRuw_KM2X0GCCs9xf497KA/original.png"></p>
+
+<p>In this tutorial, we will walk through the top tools available and how to use these tools by addressing some of the most common issues faced in modern web application. This is a beginner to intermediate level tutorial for web developers getting started with debugging the web, or programmers coming from other languages who want to better understand how to troubleshoot client side JavaScript, the DOM, performance, and network calls.</p>
+
+<p>To demonstrate we will be debugging a simple web application. The source code is available here: <a href="https://github.com/jessecravens/techpro-debugging.">https://github.com/jessecravens/techpro-debugging.</a></p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1404/debugging-modern-web-applications-part-1">http://tech.pro/tutorial/1404/debugging-modern-web-applications-part-1</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/26/web-worker-patterns/">Web Worker Patterns</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-26T14:03:00-05:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/08/26/web-worker-patterns/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>JavaScript is executed in a single thread. If you&rsquo;re not familiar with threads, what this means is that JavaScript can only execute one block of code at a time. If code is already executing, any interaction by the user will instantiate an asynchronous event that is queued up for later execution. Other events like those from XMLHttpRequests and timers, are also added to the queue.</p>
+
+<p>So, as you might expect, a single-threaded architecture can be problematic to the user experience if a particular script takes a long time to complete.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1487/web-worker-patterns">http://tech.pro/tutorial/1487/web-worker-patterns</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/25/building-next-generation-widgets-with-web-components/">Building Next Generation Widgets With Web Components</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-25T03:41:00-05:00" pubdate data-updated="true">Jul 25<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/07/25/building-next-generation-widgets-with-web-components/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="imgL400" alt="Nerdclustr" src="http://tpstatic.com/img/usermedia/9ylQdMSRLUiffrQPG4hHJw/original.png"></p>
+
+<p>For SXSWi and FluentConf this year, <a href="http://twitter.com/boyofgreen">@boyofgreen</a> and I created a demo application to showcase some of the hacks that we included in our book OReilly&rsquo;s HTML5 Hacks.</p>
+
+<p>The demo application, Nerdclustr, is an HTML5 mobile application that brings &lsquo;nerds&rsquo; of all types together conferences and provides a visual map that updates in real time. The application was written with Node.js and the Express web framework. It demonstrates the following specifications: HTML5 Web Forms, Geo Location API, WebSocket, Canvas, CSS3 transforms.</p>
+
+<p>Given, the attention that Web Components and <a href="http://www.polymer-project.org/polymer.html">Polymer.js</a> have been getting lately, I felt this was a good opportunity to demonstrate some of the exciting new specifications that are making their way to modern browsers. For the sake of this tutorial, I&rsquo;ll be using and providing screenshots of Google Chrome, but it should be worth your time to explore the status of each of the specifications in other modern browsers as well.</p>
+
+<p>In this tutorial, we will take a look at the HTML5 specs mentioned above in detail. Then, we will explore Polymer.js and build out an example application.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1421/building-next-generation-widgets-with-web-components">http://tech.pro/tutorial/1421/building-next-generation-widgets-with-web-components</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/17/add-narration-to-your-slide-deck-with-html5-audio/">Add Narration to Your Slide Deck With HTML5 Audio</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-17T10:11:00-05:00" pubdate data-updated="true">Jun 17<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/06/17/add-narration-to-your-slide-deck-with-html5-audio/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>Most presenter will share their slide deck on the web after their presentation. But many times the slides are only a shell of the real talk. Fortunately, with HTML5 audio, we can add our voice back to our slides and recreate the real presentation.</strong></p>
+
+<h2>Sample Example</h2>
+
+<p>To show what we&rsquo;re trying to accomplish, I&rsquo;ve created <a href="http://kevinlamping.com/deck.narrator.js/sample/sample.html">a very basic slide deck with audio narration</a> which briefly describes the issue at hand.</p>
+
+<h2>Audio on the Web</h2>
+
+<p>Back when the web was just taking off, it was common (bad) practice to include audio on your page. I&rsquo;m not talking about a Flash-based music player, but rather the more primitive audio solution: <code>&lt;bgsound&gt;</code>. Those who were programming back when HTML 3.2 came out will be familiar with this oft-forgotten tag.</p>
+
+<p>Luckily for us, <code>&lt;bgsound&gt;</code> isn&rsquo;t the end of the story. According to <a href="http://www.w3.org/wiki/HTML/Elements/bgsound">the latest W3C spec</a>, <code>&lt;bgsound&gt;</code> has a much friendlier HTML5 alternative that you&rsquo;ve likely heard of: the <code>&lt;audio&gt;</code> tag.</p>
+
+<p>So what benefits does <code>&lt;audio&gt;</code> bring us? Well, <code>&lt;bgsound&gt;</code> was an IE only property. <code>&lt;audio&gt;</code> on the other hand has wide support, with only IE 7 &amp; 8 lacking functionality. <code>&lt;audio&gt;</code> also allows API access so that we can control playback, seek through the audio, and even manipulate the data with the <a href="https://developer.mozilla.org/en-US/docs/WebRTC/MediaStream_API">MediaStream API</a>. Plus, the <code>&lt;audio&gt;</code> tag allows you to use native controls and/or provide your own customized controls.</p>
+
+<h2>File formats</h2>
+
+<p>Before getting in to the details on how we&rsquo;re going to use the <code>&lt;audio&gt;</code> tag, we need to talk a little about file formats. The MP3 format has gained tremendous popularity over the last decade and a half, but unfortunately due to licensing requirements, relying on MP3&rsquo;s for our audio is a messy situation.</p>
+
+<p>Luckily for us, the <code>&lt;audio&gt;</code> tag supports multiple formats gracefully. This means we can create a patchwork of audio file formats to gain full browser support. And we&rsquo;ll need a patch work because no one format is currently supported across all browsers.</p>
+
+<p>For our needs, we&rsquo;ve created two files: an MP4/AAC file and an OggVorbis file.</p>
+
+<p>If you&rsquo;d like to read more on the subject, I highly recommend <a href="https://www.scirra.com/blog/44/on-html5-audio-formats-aac-and-ogg">Ashley Gullen&rsquo;s post &lsquo;On HTML5 audio formats &ndash; AAC and Ogg&rsquo;</a>.</p>
+
+<h2>How to Use It?</h2>
+
+<p>We can load our audio files by adding in two <code>&lt;source&gt;</code> tags with information about our two audio files inside of the <code>&lt;audio&gt;</code> tag:</p>
+
+<figure class='code'><figcaption><span>index.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;audio</span> <span class="na">controls</span> <span class="na">id=</span><span class="s">&quot;myPlayer&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">&quot;myAudio.m4a&quot;</span> <span class="na">type=</span><span class="s">&quot;audio/mp4&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">&quot;myAudio.ogg&quot;</span> <span class="na">type=</span><span class="s">&quot;audio/ogg&quot;</span>  <span class="nt">/&gt;</span>
+</span><span class='line'>  Your browser does not support HTML5 audio.
+</span><span class='line'><span class="nt">&lt;/audio&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There are two attributes for each <code>&lt;source&gt;</code> tag. The &lsquo;src&rsquo; attribute, whose value is the path to the audio file, and the &lsquo;type&rsquo; attribute, whose value is the MIME type of the file.</p>
+
+<p>Again, the browser will choose whichever file it supports without you having to do any detective work. Very nice.</p>
+
+<h2>Starting/Stopping</h2>
+
+<p>Okay, so now if we load this into a webpage we&rsquo;ll get a simple audio player that we can manually control. What&rsquo;s nice is that since we used the &lsquo;controls&rsquo; attribute, the audio player controls are built for us by the browser. This makes allowing manual control of our audio very simple.</p>
+
+<p>For our needs, we want to control the playback of the audio programmatically. To do this, let&rsquo;s take a look at the API for starting and stopping playback. The element has two built-in methods for this, &lsquo;play&rsquo; and &lsquo;pause&rsquo;. Calling those methods is straightforward:</p>
+
+<figure class='code'><figcaption><span>audio.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">audioPlayer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myPlayer&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
+</span><span class='line'><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">pause</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>These methods will come in handy in a moment when we want to start playing our audio after we change slides.</p>
+
+<h2>Seeking</h2>
+
+<p>The other part of the equation is the ability to seek to different locations in our audio. Again, this is very simple. Our element has a &lsquo;currentTime&rsquo; property that can be both get and set (in seconds).</p>
+
+<figure class='code'><figcaption><span>audio.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">currentTime</span><span class="p">);</span> <span class="c1">// returns 0 since we haven&#39;t started playing the audio yet</span>
+</span><span class='line'><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// move to 10 seconds into the audio</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">currentTime</span><span class="p">);</span> <span class="c1">// returns 10</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">audioPlayer</span><span class="p">.</span><span class="nx">currentTime</span><span class="p">);</span> <span class="c1">// returns 11</span>
+</span><span class='line'><span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you can see, getting and setting the current time is a trivial process. In the Part 2, we&rsquo;ll put this functionality to use by adding narration to slides.</p>
+
+<h2>Implementing Slide Narration</h2>
+
+<p>So now we&rsquo;ve got the building blocks for implementing a slide narrator. To make things easier, we&rsquo;re going to use the fantastic <a href="http://imakewebthings.com/deck.js/">&lsquo;Deck.js&rsquo; project</a> as our HTML slide framework. Deck.js supports extensions, which allows you to add functionality to your slides beyond what&rsquo;s already provided.</p>
+
+<p>We&rsquo;ll be creating a new extension called Narrator. For brevity&rsquo;s sake, I won&rsquo;t get into the details of Deck.js or creating extensions, but you can check out the code in <a href="https://github.com/klamping/deck.narrator.js">the deck.narrator.js GitHub repo</a>.</p>
+
+<p>Our extension boils down to one requirement: It should automatically play a defined section of audio on each slide.</p>
+
+<p>That might sound simple, but we need to figure out a couple of things first:</p>
+
+<ul>
+<li>How will we define what audio to play for each slide?</li>
+<li>How will we stop the audio after it gets to the end of the section</li>
+</ul>
+
+
+<h2>Defining Audio Stops</h2>
+
+<p>There are a couple of ways to define what segment of the audio each slide plays. You could define a start time and a stop time for each slide, but that seems like too much work. Instead we&rsquo;ll just define how long each slide should play for, and then calculate the implied start and stop timestamps for each slide.</p>
+
+<p>To store our audio duration, we&rsquo;ll take advantage of <a href="http://ejohn.org/blog/html-5-data-attributes/">HTML5 data-* attributes</a> by creating a custom &lsquo;data-narrator-duration&rsquo; attribute. The value of this will be the number of seconds to play the audio for. Here&rsquo;s a sample slide element for a Deck.js HTML file.</p>
+
+<figure class='code'><figcaption><span>index.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;slide&quot;</span> <span class="na">data-narrator-duration=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  ...
+</span><span class='line'><span class="nt">&lt;/section&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then, upon page initialization, we&rsquo;ll loop through each slide element and calculate the proper start/stop timestamps for each slide. This is important in case our viewer wants to move through the slides in a non-linear fashion. Here&rsquo;s the basic code:</p>
+
+<figure class='code'><figcaption><span>deck.narrator.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="c1">// create an array for our segment timestamps </span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">segments</span> <span class="o">=</span> <span class="p">[];</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// create a placeholder for our audio element reference </span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">audio</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// we&#39;ll get to this variable later</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">segmentEnd</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">init</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// get the audio element we added to our page</span>
+</span><span class='line'>  <span class="nx">audio</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;audioNarration&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// use deck.js built-in functionality to get all slides and current slide</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">$slides</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">deck</span><span class="p">(</span><span class="s1">&#39;getSlides&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">$currentSlide</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">deck</span><span class="p">(</span><span class="s1">&#39;getSlide&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// set initial values for time position and index</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">position</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">currentIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// now loop through each slide</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">$slides</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">$el</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// get the duration specified from the HTML element</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">duration</span> <span class="o">=</span> <span class="nx">$el</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;narrator-duration&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// this determines which slide the viewer loaded the page on</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">$currentSlide</span> <span class="o">==</span> <span class="nx">$el</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// push the start time (previous position) and end time (position + duration) to an array of slides</span>
+</span><span class='line'>    <span class="nx">segments</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="nx">position</span><span class="p">,</span> <span class="nx">position</span> <span class="o">+</span> <span class="nx">duration</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// increment the position to the start of the next slide</span>
+</span><span class='line'>    <span class="nx">position</span> <span class="o">+=</span> <span class="nx">duration</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Adding Playback Automatically on Slide Change</h2>
+
+<p>Now that we&rsquo;ve got our segment timestamps defined, let&rsquo;s look at playing that audio on each slide transition. Deck.js fires a &lsquo;deck.change&rsquo; event when the slide is changed, so we can hook into that and have it call our changeSlides function, which looks like this:</p>
+
+<figure class='code'><figcaption><span>deck.narrator.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">changeSlides</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">from</span><span class="p">,</span> <span class="nx">to</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// check to make sure audio element has been found</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="nx">audio</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// move the playback to our slides start</span>
+</span><span class='line'>    <span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">=</span> <span class="nx">segments</span><span class="p">[</span><span class="nx">to</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// define the end of our section</span>
+</span><span class='line'>    <span class="nx">segmentEnd</span> <span class="o">=</span> <span class="nx">segments</span><span class="p">[</span><span class="nx">to</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Most of the code makes sense, but I do want to talk about the &lsquo;segmentEnd&rsquo; line and what it&rsquo;s doing.</p>
+
+<h2>Playing Segments of Audio</h2>
+
+<p>Unfortunately, you can&rsquo;t give the <code>play()</code> function an amount of time to play for. Once you start playing, it will keep going until it runs out of audio or you tell it to pause. Thankfully, the audio element emits a &lsquo;timeupdate&rsquo; event which we can listen to in order to pause playback once our segment timestamp has been reached. We can add that listener just like any other event listener:</p>
+
+<figure class='code'><figcaption><span>deck.narrator.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">audio</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;timeupdate&#39;</span><span class="p">,</span> <span class="nx">checkTime</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Our &lsquo;checkTime&rsquo; function is very small. All it does is check to see if currentTime in the audio is greater than the segmentEnd time. If so, it pauses our audio:</p>
+
+<figure class='code'><figcaption><span>deck.narrator.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">checkTime</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">audio</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">&gt;=</span> <span class="nx">segmentEnd</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">audio</span><span class="p">.</span><span class="nx">pause</span><span class="p">();</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Automatically Moving Through Slides</h2>
+
+<p>Now that we&rsquo;ve got our audio hooked up to our slides, we can take advantage of the other extensions already written for Deck.js. <a href="deck.automatic.js">https://github.com/rchampourlier/deck.automatic.js/‎</a> is an extension that makes your slides run automatically. By including this extension with our presentation, we can recreate that &lsquo;presentation&rsquo; feel to our slides.</p>
+
+<p>Aside from the going through the steps of adding the automatic extension, we also need to make sure that if a user starts/stops the audio, we start/stop the slideshow playback. To do this, we&rsquo;ll sync up <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/DOM/Events/Media_events">the &lsquo;play&rsquo; and &lsquo;pause&rsquo; events of our audio element</a> with the automatic extension. For simplicity, we&rsquo;re going to control all slide playback using our audio controls and leave off the deck.automatic.js playback control.</p>
+
+<p>Deck.automatic.js adds some events to the mix, including &lsquo;play&rsquo; and &lsquo;pause&rsquo; events. By triggering these events when our similarly named audio events fire, we can make sure our slides are in sync with our content.</p>
+
+<p>We add two simple functions to our extension:</p>
+
+<figure class='code'><figcaption><span>deck.narrator.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">startSlides</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">.</span><span class="nx">deck</span><span class="p">(</span><span class="s1">&#39;play&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">stopSlides</span> <span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">.</span><span class="nx">deck</span><span class="p">(</span><span class="s1">&#39;pause&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And then add our event listeners in the deck.init callback:</p>
+
+<figure class='code'><figcaption><span>deck.narrator.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$d</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">&#39;deck.init&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// ... other code here ...</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// Sync audio with slides</span>
+</span><span class='line'>  <span class="nx">audio</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;play&#39;</span><span class="p">,</span> <span class="nx">startSlides</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">audio</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pause&#39;</span><span class="p">,</span> <span class="nx">stopSlides</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Also, since our slides automatically advance, we need to comment out the &lsquo;timeupdate&rsquo; event listener which would pause our audio at the end of a slide.</p>
+
+<p>With those things taken care of, our slides and audio automatically transition to create a seamless experience.</p>
+
+<h2>Next Steps</h2>
+
+<p>One thing the code doesn&rsquo;t take into consideration is if the user navigation the audio themselves. We could add this by listening to the &lsquo;seeked&rsquo; event from the audio element and calculating where in the slide deck we should move to.</p>
+
+<p>There is also some duplication around defining the duration of the as a result of adding in the automatic slide advancement extension. The other extension is looking for a data-duration attribute on each slide. This can be easily fixed by updating our code to look for that attribute instead.</p>
+
+<p>Finally, we need to add in some captioning for folks who either cannot hear the audio or are in a public place and simply forgot their headphones. There is <a href="http://www.w3.org/wiki/HTML/Elements/track">a new <code>track</code> tag</a> that can handle this for us, so that&rsquo;s a likely route we can go down.</p>
+
+<h2>Summing Up</h2>
+
+<p>That&rsquo;s the majority of the code. I left out a few details in relation to some deck.js configurations, so again check out <a href="https://github.com/klamping/deck.narrator.js">the GitHub repo for the full example</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/">Ember.js Views and Live Templates With Handlebars.js Part 1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-04T11:05:00-05:00" pubdate data-updated="true">Jun 4<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="imgL" alt="Tech-pro Ember.js Views" src="http://tpstatic.com/img/usermedia/cHI1WdevsEyBJ7dLfmVUdA/cropped-w220-h220.png"></p>
+
+<p>This is an exploration of Handlebars.js template library when used with Ember.js views. Many of the Handlebars.js tutorials on the web discuss the Handlebars API, but not in the specific context of using Handlebars with Ember.js. In addition to filling that void, I&rsquo;ll also give a brief background of JavaScript templating in general to provide perspective as to the problems it is solving.</p>
+
+<p>This tutorial will be divided into two parts. In Part 1, you should gain a clear understanding of JavaScript templates, the capabilities of Handlebars expressions and helpers, and how to write your own Handlebars helpers.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1308/emberjs-views-and-live-templates-with-handlebarsjs-part-1">http://tech.pro/tutorial/1308/emberjs-views-and-live-templates-with-handlebarsjs-part-1</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/13/rich-input-data-from-w3c-pointer-events/">Utilize Rich Input Data From W3C Pointer Events</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-13T01:42:00-05:00" pubdate data-updated="true">May 13<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/05/13/rich-input-data-from-w3c-pointer-events/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The W3C Pointer Events specification allows you to develop for a single event model that supports various input types.  Instead of writing code for multiple event types, or having to use feature detection on page load that forces one event model over the other, Pointers allows you to write one event model that works everywhere.  To make the transition easy, Pointer Events builds upon the Event Model of Mouse Events.  This means that code that’s written for mouse events is going to be very easy to upgrade to Pointers.</p>
+
+<p>There’s a lot of great content out there on how to implement pointers.  Microsoft’s original post on pointer event implementation in IE10 and Windows 8 Apps is a great place to start learning about Pointers.  To see an example of how to convert a current mouse based app into a pointers based app, I suggest you check out my channel 9 video on pointers. In this post I want to focus on a different aspect of pointers.  Along with the multiple input support, and ease of implementation, Pointer Events also provide a wealth of new data values that can be quite useful in your applications.  This post will look in depth at that data.</p>
+
+<p>The code samples will all use the W3C spec pointer names such as “pointermove” and “pointerup”, however in practice this spec is not finalized, so the working code samples will be using the prefixed version such as “MSPointerMove” and “MSPointerUp”.</p>
+
+<h2>The Pointer Event Object</h2>
+
+<p>The Pointer Event object is modeled directly off the Mouse Event object, meaning all the values, and all the methods available in a mouse event model, will be present inside a Pointer Event Model.  Let’s look at an example you might implement for the Mouse Event Model:</p>
+
+<figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>        <span class="kd">var</span> <span class="nx">myY</span><span class="p">,</span> <span class="nx">myX</span><span class="p">;</span>
+</span><span class='line'>        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mouseup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="nx">myY</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">offsetY</span><span class="p">;</span>
+</span><span class='line'>            <span class="nx">myX</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">offsetX</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This same code will also run with Pointer Events:</p>
+
+<figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="nx">myY</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">offsetY</span><span class="p">;</span>
+</span><span class='line'>            <span class="nx">myX</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">offsetX</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Every value and method will run the same.  The main difference is that Pointers aren’t single threaded as Mouse Events are (you can only have one mouse pointer on the screen at a time).  So if you have two Pointers on the screen, say two fingers on your touch screen, or one finger and one mouse, this event will be fired twice.</p>
+
+<p>The “upgrade” comes in all the additional data that is available when you use Pointer Events.</p>
+
+<h2>The Event Type</h2>
+
+<p>Since a Pointer Event will be fired no matter what type of input you are using, it’s sometimes important to know what type of input is firing the Event. While accessing the event object, you can retrieve the pointer type like so:</p>
+
+<figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">pointerType</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pointerType</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The type will return one of three value types:</p>
+
+<p>-mouse: movement with a mouse
+-pen: movement with a pressure sensitive pen (not a capacitive stylus)
+-touch: any input from the touch screen</p>
+
+<p>Note that the original spec, and what is implemented In IE10, provides number values that correspond with the input types.  The value will return either a 2(touch), 3(pen) or 4(mouse).</p>
+
+<p>For implementing pointers today, I actually check for both the string value or the number to be sure I support both the current implementation and the final spec:</p>
+
+<figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">pointerType</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pointerType</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="nx">pointerType</span> <span class="o">==</span> <span class="s1">&#39;touch&#39;</span><span class="o">||</span><span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>                <span class="c1">//this is a touch type pointer</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>New Values for All Pointer Types</h2>
+
+<p>There is a range of new values packed into the Pointer Event Object that is common across all pointer types.  Each of these expose new values that provide valuable data for interaction development</p>
+
+<p><em>PointerID:</em> each pointer interaction is given a unique ID within your page and session.  This number will be consistent across events for each interaction.  For Example, a “pointerdown” event may be given a PointerID of 127, the subsequent “pointermove” and “pointerend” events will all have the same PointerID.  This could be helpful for tracking which finger is doing what when there are multiple touch screen pointers on the screen at once.  You can access the value as below:</p>
+
+<figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerdown&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">pointerId</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pointerId</span>
+</span><span class='line'>            <span class="p">;</span>
+</span><span class='line'>        <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>isPrimary:</em> When multiple Pointer Events are on the screen at once, one of them will be assigned as the primary pointer.  If one of them is of the Pointer type of mouse, it will be the primary, otherwise the first pointer to fire an event will be designated as the primary.  This could be helpful for a developer who is building an application that is intended for a single pointer input.  There is one catch, when you are using multiple pointer types on the screen at the same time, the first pointer of each type will be a primary pointer, and thus will allow you to have multiple primary pointers on the screen at the same time.  The value can be accessed as such:</p>
+
+<figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">isPrimary</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">isPrimary</span><span class="p">;</span> <span class="c1">// will return true or false</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>button/buttons:</em> This isn’t a new value for pointers, but in pointers you get new information.  With both a mouse and a pen, the user has buttons that can be pressed. Weather those buttons are being pressed, and which button is pressed can be determined in these two values.</p>
+
+<p><img class="figure" alt="Figure 12-1" src="/images/chapter-jeff/buttonChart.png"></p>
+
+<p>The entire list of values can be found in the most recent version of the spec, and keep in mind, not all values are implemented in IE10 (or any other browser) at this point.</p>
+
+<h2>Pen Specific Values</h2>
+
+<p>There are some values that are only applicable to the pointer type of Pen.  Keep in mind the pen type refers to a mechanical stylus that works with supported screen types.  Capacitive styus like the types used with iPads or Surface RT register as pointer types of touch, which will be discussed next.</p>
+
+<p>The following values provide data in the Pointer Event Object for pens:</p>
+
+<p><em>tiltX/tiltY:</em> When you hold a pen there is generally an angle associated with it.  If you were to hold the pen by the end and lower it perfectly straight on the screen, the tilt would be 0, but if you were to hold it in writing position, it would have a tilt value like 90.  The tilt values are returned in degrees and be accessed as such:</p>
+
+<figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">tiltX</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">tiltX</span><span class="p">;</span>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">tiltY</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span> <span class="nx">tiltY</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Pressure:</em>  Much of the data provided from a pen type pointer event is actually data provided from the pen to the screen.  Another one of those is pressure.  This is a value that reports how hard a pen is being pressed against the screen.  The value is reported as a number between x and x.  The value is accessed as below:</p>
+
+<figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">pressure</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">pressure</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>New Data for Touch</h2>
+
+<p>The Pointer Spec provides for detail touch data that just doesn’t exist in any other touch model on the web.  Most significantly the actual width and height of a the touch area.  Being so new, my testing showed that this value is often returned as 0 depending on the touch screen and driver installed on the device.  Accessing this data follows the same patteren as the other new data:</p>
+
+<figure class='code'><figcaption><span>More poiner.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myElement&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">height</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Keep in mind this is related to touch pointers only, so a mouse or pen will always return 0 for these values.</p>
+
+<h2>Mobile Implementations</h2>
+
+<p>The only mobile browser that has implemented Pointers is IE10 for Windows Phone 8.  Since the phone OS doesn’t support a mouse or mechanical stylus, the only pointer type that returns is touch.  The user agent does accurately report the pointer type, but many of the other new pointer values (such as width and height) are currently reported as 0s.</p>
+
+<h2>The Sample App</h2>
+
+<p>I’ve been working on a sample app that helps illustrate the rich data reported through pointers.  It’s a simple canvas resized to your page that shows a report from each touch point of the key data values, additionally, the new data is used to effect the drawing on the screen to make a more accurate drawing surface.</p>
+
+<p>Test the app here in IE 10 or any future browser that supports pointer events, or view this video of the app in action.</p>
+
+<h2>Next Steps</h2>
+
+<p>The Pointer Event Specification is not yet finalized so changes could occur at any time (and it has changed since the version implemented in ie10). If you interested in the work that is going on around Pointers, join the working group mailing list, and encourage others in the browser maker community to implement the Pointer Even Specification in every browser.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/">Push Notifications to the Browser With Server Sent Events</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-21T15:44:00-05:00" pubdate data-updated="true">Apr 21<span>st</span>, 2013</time>
+        
+         | <a href="/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Created by Opera, Server Sent Events standardizes Comet technologies. The standard intends to enable native real time updates through a simple JavaScript API called EventSource, which connects to servers that asynchronously push data updates to clients via HTTP Streaming. Server Sent Events use a single, unidirectional, persistent connection between the browser and the server.</p>
+
+<p>Unlike the Web Socket API, Server Sent Events and EventSource object use HTTP to enable real-time server push capabilities within your application. HTTP Streaming predates the WebSocket API, and it is often referred to as Comet or server push. The exciting part here is that the Server Sent Events API intends to standardize the Comet technique, making it trivial to implement in the browser.</p>
+
+<h2>What is HTTP Streaming?</h2>
+
+<p>In a standard HTTP request and response between a web browser and a web server, the server will close the connection once it has completed the processing of the request. HTTP streaming, or Comet, differs in that the server maintains a persistent, open connection with the browser.</p>
+
+<p>It is important to note that not all web servers are capable of streaming. Only evented servers such as Node.js, Tornado, or Thin are equipped incorporate an event loop that is optimal for supporting HTTP streaming. These, non-blocking servers handle persistent connections from a large number of concurrent requests very well.</p>
+
+<p>A complete discussion on evented vs. threaded servers is out of scope for this post, but that being said, in the upcoming hack we will provide a very simple evented server implementation example to get you started. We provide a simple browser based JavaScript to connect to the server, and a server side implementation using Ruby, Thin, and Sinatra.
+For the record, this is also very easy to do with Node.js.</p>
+
+<p>Here is a link to the companion github repository:
+<a href="https://github.com/html5hacks/chapter9">https://github.com/html5hacks/chapter9</a></p>
+
+<h2>Ruby’s Sinatra</h2>
+
+<p>The Sinatra documentation describes itself as a “DSL for quickly creating web applications in Ruby with minimal effort.”
+This text has focused primarily on Node.js (HTTP Server) and Express.js (web application framework) to quickly generate server side implementations for hacking out functionality.</p>
+
+<p>It would a disservice to not mention Ruby, Rails and Sinatra in the same or similar light as we have Node.js in this text. Although learning Ruby is another learning curve, in the larger scheme of programming languages it is a less daunting curve than most. And as most die-hard Rubyists will preach, it is arguably the most elegant and fun to write of all modern programming languages. Ruby on Rails, and its little brother Sinatra are also great web application frameworks to start with if you are new to web application development.</p>
+
+<p>Much like Node.js and Express, Sinatra makes building small server implementations nearly trivial. So for the context of HTML5 Hacks, that allows us to focus our efforts on programming in the browser.</p>
+
+<p>For now let’s build a simple HTTP Streaming server using Sinatra.</p>
+
+<p>To get started with Ruby On Rails or Sinatra, check out the great documentation available at <a href="http://guides.rubyonrails.org/getting_started.html">http://guides.rubyonrails.org/getting_started.html</a> and <a href="http://sinatrarb.com/intro">http://sinatrarb.com/intro</a>, respectively.</p>
+
+<h2>Building Push Notifications</h2>
+
+<p>Our goal in the next hack is to build a simple streaming server and use the EventSource object to open a persistent connection from the browser. We will then push notifcations from one ‘admin’ browser to all the connected receivers. Sounds simple, right? Let’s get started.</p>
+
+<h2>A Simple HTTP Streaming Server</h2>
+
+<p>Open up a file and name it stream.rb. Then add the following:
+Simple requiring of Sinatra and the JSON library:</p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="nb">require</span> <span class="s1">&#39;json&#39;</span>
+</span><span class='line'>  <span class="nb">require</span> <span class="s1">&#39;sinatra&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then, we set up a public folder, and set the server to use the evented ruby server, Thin.</p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="n">set</span> <span class="ss">:public_folder</span><span class="p">,</span> <span class="no">Proc</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">&quot;public&quot;</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>  <span class="n">set</span> <span class="ss">server</span><span class="p">:</span> <span class="s1">&#39;thin&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Set up two routs for serving our 2 pages: index and admin. We will use Erb as our templating language. The details are out of scope, but our use is very minimal. More on Erb here: <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html">http://ruby-doc.org/stdlib-1.9.3/libdoc/erb/rdoc/ERB.html</a></p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="n">get</span> <span class="s1">&#39;/&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">erb</span> <span class="ss">:index</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">get</span> <span class="s1">&#39;/admin&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">erb</span> <span class="ss">:admin</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We’d like to timestamp each notification, so here is a very simple function definition.</p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="k">def</span> <span class="nf">timestamp</span>
+</span><span class='line'>    <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We also set up two empty arrays: one to hold the connections and the other to hold out notifications.</p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="n">connections</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>  <span class="n">notifications</span> <span class="o">=</span> <span class="o">[]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, for the routes. When our browser loads it s page, we have JavaScript running which will use the EventSource object to connect to a url here: <a href="http://localhost:4567/connect.">http://localhost:4567/connect.</a></p>
+
+<p>More on EventSource later.</p>
+
+<p>But for now you can see the magic of the evented HTTP stream, the connection is held open until a callback is fired to close the stream.</p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="n">get</span> <span class="s1">&#39;/connect&#39;</span><span class="p">,</span> <span class="ss">provides</span><span class="p">:</span> <span class="s1">&#39;text/event-stream&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">stream</span> <span class="ss">:keep_open</span> <span class="k">do</span> <span class="o">|</span><span class="n">out</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">connections</span> <span class="o">&lt;&lt;</span> <span class="n">out</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1">#out.callback on stream close evt. </span>
+</span><span class='line'>      <span class="n">out</span><span class="o">.</span><span class="n">callback</span> <span class="p">{</span>
+</span><span class='line'>        <span class="c1">#delete the connection </span>
+</span><span class='line'>        <span class="n">connections</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Finally, any data this posted to the /push route is pushed out to each connected device.</p>
+
+<figure class='code'><figcaption><span>stream.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'>  <span class="n">post</span> <span class="s1">&#39;/push&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="n">params</span>
+</span><span class='line'>    <span class="c1">#Add the timestamp to the notification</span>
+</span><span class='line'>    <span class="n">notification</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span> <span class="p">{</span><span class="s1">&#39;timestamp&#39;</span> <span class="o">=&gt;</span> <span class="n">timestamp</span><span class="p">})</span><span class="o">.</span><span class="n">to_json</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">notifications</span> <span class="o">&lt;&lt;</span> <span class="n">notification</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">notifications</span><span class="o">.</span><span class="n">shift</span> <span class="k">if</span> <span class="n">notifications</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">10</span>
+</span><span class='line'>    <span class="n">connections</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">out</span><span class="o">|</span> <span class="n">out</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;data: </span><span class="si">#{</span><span class="n">notification</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">}</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As we said before, you can just follow the instructions at our git repository to pull down and build this code. Or if you have been following along, launch a terminal, navigate to the directory where you code is, and run:</p>
+
+<figure class='code'><figcaption><span>cli </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ruby stream.rb</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Figure 9.15 Starting the Sinatra Server</p>
+
+<p><img class="figure" alt="Figure 7-2" src="/images/chapter9-images/9-15.png"></p>
+
+<p>Alright, so now that we have out Sinatra app up and running with custom routes to handle incoming requests from our browser.</p>
+
+<p>If this doesn’t make complete sense yet, just hang loose. In the upcoming subsections, the rest of the items will start to fall into place.</p>
+
+<h2>Set Up the HTML pages</h2>
+
+<p>We will be building 2 pages: one for the admin to push out notifications, and the other will be for the connected receivers to receive the notification. Both of these ‘views’ will share the same layout, as such:</p>
+
+<figure class='code'><figcaption><span>index.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;head&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;title&gt;</span>HTML5 Hacks - Server Sent Events<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">”http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js”</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.js&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;/script&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;jquery.notify.js&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;style.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;ui.notify.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;body&gt;</span>
+</span><span class='line'>    <span class="cp">&lt;!—- implementation specific here --&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The admin page will contain an input tag and a simple button.</p>
+
+<figure class='code'><figcaption><span>admin.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;message&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Enter Notification Here&quot;</span> <span class="nt">/&gt;&lt;br&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">”button”</span> <span class="na">id=</span><span class="s">&quot;send&quot;</span> <span class="na">data-role=</span><span class="s">&quot;button&quot;</span><span class="nt">&gt;</span>push<span class="nt">&lt;/input&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And our receiver pages will display a simple piece of text:</p>
+
+<figure class='code'><figcaption><span>receiver.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;p&gt;</span>Don&#39;t Mind me ... Just Waiting for a Push Notification from HTML5 Hacks.<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>By launching one browser window to <a href="http://localhost:4567/admin">http://localhost:4567/admin</a> you should now see our admin form.</p>
+
+<p>Figure 9.16 The initial admin page</p>
+
+<p><img class="figure" alt="Figure 9-16" src="/images/chapter9-images/9-16.png"></p>
+
+<p>And, navigate to <a href="http://localhost:4567">http://localhost:4567</a> in your browser and you should see.</p>
+
+<p>Figure 9.17 The initial index page</p>
+
+<p><img class="figure" alt="Figure 9-17" src="/images/chapter9-images/9-17.png"></p>
+
+<h2>Adding a bit of jQuery</h2>
+
+<p>We need to add a bit of JavaScript to attach an event listener to the “send” button. This snippet will prevent the default submission of the form and post the notifcation object to the server as JSON.
+Notice the url /push maps to the route we defined in our Sinatra app.</p>
+
+<figure class='code'><figcaption><span>push.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#send&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="kd">var</span> <span class="nx">notifcation</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">notifcation</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#notification&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span> <span class="s1">&#39;/push&#39;</span><span class="p">,</span> <span class="nx">notifcation</span><span class="p">,</span><span class="s1">&#39;json&#39;</span><span class="p">);</span>
+</span><span class='line'> <span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, lets open up five browser windows: one admin at <a href="http://localhost:4567/admin">http://localhost:4567/admin</a> and four more receivers at <a href="http://localhost:4567">http://localhost:4567</a></p>
+
+<p>Figure 9.18 Opening 5 browser windows</p>
+
+<p><img class="figure" alt="Figure 9-18" src="/images/chapter9-images/9-18.png"></p>
+
+<p>Looking good.</p>
+
+<p>But before we get started, lets set up our EventSource.</p>
+
+<h2>EventSource</h2>
+
+<p>Event Source is a super simple JavaScript API for opening a connection with an HTTP stream.
+Because our receiver pages are just ‘dumb’ terminals that receive data, we have an ideal scenario for Server Side Events.
+Earlier, when we discussed the Sinatra app, we showed exposing a route for the browser to connect to an HTTP stream. Well, this is where we connect!</p>
+
+<figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/connect&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">// … do something</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now we can add a simple notification with the available data,</p>
+
+<figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/connect&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// … Notify</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And here is the final script for the admin:</p>
+
+<figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#send&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">notification</span> <span class="o">=</span> <span class="p">{</span><span class="nx">message</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#notification&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()};</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span> <span class="s1">&#39;/push&#39;</span><span class="p">,</span> <span class="nx">notification</span><span class="p">,</span><span class="s1">&#39;json&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">})</span>
+</span><span class='line'>  <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Installing jQuery.notify</h2>
+
+<p>For our Push Notifcations we will make use of Eric Hynds great jQuery plugin jquery-notify, located here at github: [github.com/ehynds/jquery-notify] (<a href="https://github.com/ehynds/jquery-notify">https://github.com/ehynds/jquery-notify</a>)</p>
+
+<p>In order to display the notification, we will need to include some markup to the receiver page.</p>
+
+<figure class='code'><figcaption><span>receiver.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;container&quot;</span> <span class="na">style=</span><span class="s">&quot;display:none&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;basic-template&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;ui-notify-cross ui-notify-close&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>x<span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;h1&gt;</span>#{title}<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;p&gt;</span>#{text}<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This creates a hidden div tag in the bottom of the document. We are not showing the CSS that uses “display: none” to hide it, but you can see more by examining the source code in the companion git repo.</p>
+
+<p>Figure 9.19 Inspecting the DOM in Chrome Dev Tools</p>
+
+<p><img class="figure" alt="Figure 9-19" src="/images/chapter9-images/9-19.png"></p>
+
+<p>In order for jQuery.notify to initialize, you must first call the following:</p>
+
+<figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">notify</span><span class="p">({</span>
+</span><span class='line'>  <span class="nx">speed</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">expires</span><span class="o">:</span> <span class="kc">false</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And here is the final script for the receiver:</p>
+
+<figure class='code'><figcaption><span>es.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">notify</span><span class="p">({</span>
+</span><span class='line'>      <span class="nx">speed</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">expires</span><span class="o">:</span> <span class="kc">false</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">es</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventSource</span><span class="p">(</span><span class="s1">&#39;/connect&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">es</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#container&quot;</span><span class="p">).</span><span class="nx">notify</span><span class="p">(</span><span class="s2">&quot;create&quot;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">title</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">timestamp</span><span class="p">,</span>
+</span><span class='line'>        <span class="nx">text</span><span class="o">:</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">notification</span>
+</span><span class='line'>    <span class="p">});</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It’s that simple. The EventSource API is minimal and plugging it into a web framework like Sinatra or Node.js is straightforward.</p>
+
+<p>Now, as we submit notifications from the admin page, our receiver pages are updated with time stamped notifications:</p>
+
+<p>Figure 9.20 Pushing Notifications to the Connected Browsers</p>
+
+<p><img class="figure" alt="Figure 9-20" src="/images/chapter9-images/9-20.png"></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/02/make-your-web-app-to-a-windows-8-app/">Turn Your Web App Into a Windows 8 App</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-02T01:17:00-05:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2013</time>
+        
+         | <a href="/blog/2013/04/02/make-your-web-app-to-a-windows-8-app/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I talk a lot about just how similar the Windows 8 App environment is to developing for the Web.  Since windows 8 uses the same rendering engine as IE10, and the same JavaScript engine as IE10, building a Windows 8 App with JavaScript is in fact, building a web app.  We’ll talk about some of the keys to success but first, let’s take a step by step walk through converting one of my favorite web apps into a Windows 8 App.
+First thing first, you need to make sure your using <a href="http://www.microsoft.com/visualstudio/eng/products/visual-studio-express-products">Visual Studio 2012</a> (I’m using the Express version which is free).  Since Visual Studio 2012 has a requirement of Windows 8, you’ll need to be running Windows 8 as well.
+We’re going to be taking the new fantastic game “YetiBowl” for our conversion.  You can play a web version of the game <a href="http://touch.azurewebsites.net/yeti/game.html">here</a>.</p>
+
+<p><img class="figure" alt="Figure 7-1" src="/images/win8app/ieweb.png"></p>
+
+<p>Once your done playing go to codeplex and download the project:</p>
+
+<p><a href="http://yetibowl.codeplex.com">http://yetibowl.codeplex.com</a></p>
+
+<p>If you open up the content in the directory marked “web”  you’ll see all the code for the YetiBowl game.  Now let’s go to Visual Studio and open up a new &ldquo;Blank&rdquo; JavaScript App:</p>
+
+<p><img class="figure" alt="Figure 7-1" src="/images/win8app/VS1.PNG"></p>
+
+<p>Next, go back to your recently downloaded code, and copy all the content from the &ldquo;web&rdquo; folder</p>
+
+<p><img class="figure" alt="Figure 7-1" src="/images/win8app/VS2.png"></p>
+
+<p>Now go back to your new Visual Studio project, and find the solutions explorer on the right side of the screen, past your code into your project:</p>
+
+<p><img class="figure" alt="Figure 7-1" src="/images/win8app/VS3.png"></p>
+
+<p>Before our code is going to work, we need to open up our package.appxmanifest and make one small change.  Find the field for &ldquo;start page&rdquo; and change it to the name of your html file(game.html):</p>
+
+<p><img class="figure" alt="Figure 7-1" src="/images/win8app/VS4.PNG"></p>
+
+<p>Now, hit F5 and see what happens!  That’s all it takes, our YetiBowl game is now a Windows 8 Store App, and a pretty fine one at that.  Our web app code just works in Windows 8.</p>
+
+<p><img class="figure" alt="Figure 7-1" src="/images/win8app/VS5.PNG"></p>
+
+<h2>Add a Little Delight for your users</h2>
+
+<p>Now that you have your app up and running, let’s use one of the favorite Windows 8 API to add some additional features to our app.  With a few lines of code we’ll be able to add the ability to “share” with the Windows 8 Share Charm.
+  To keep it easy, let’s go to the bottom of our game.html file and add a script tag.  We’ll then past a few lines of code into it:</p>
+
+<figure class='code'><figcaption><span>win8.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">dataTransferManager</span> <span class="o">=</span> <span class="nx">Windows</span><span class="p">.</span><span class="nx">ApplicationModel</span><span class="p">.</span><span class="nx">DataTransfer</span><span class="p">.</span><span class="nx">DataTransferManager</span><span class="p">.</span><span class="nx">getForCurrentView</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>        <span class="nx">dataTransferManager</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;datarequested&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="c1">// Code to handle event goes here.</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">request</span><span class="p">;</span>
+</span><span class='line'>            <span class="nx">request</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m Rocking out with the Yeti&quot;</span><span class="p">;</span>
+</span><span class='line'>            <span class="nx">request</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">description</span> <span class="o">=</span> <span class="s2">&quot;HTML share from YetiBowl Game&quot;</span><span class="p">;</span>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">localImage</span> <span class="o">=</span> <span class="s1">&#39;ms-appx:///media/logos/yeti_logo.png&#39;</span><span class="p">;</span>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">htmlExample</span> <span class="o">=</span> <span class="s2">&quot;&lt;p&gt;Here&#39;s to some fun with the Yeti. If your not playing YetiBowl, then your not really having fun!&lt;/p&gt;&lt;div&gt;&lt;img src=\&quot;&quot;</span> <span class="o">+</span> <span class="nx">localImage</span> <span class="o">+</span> <span class="s2">&quot;\&quot;&gt;.&lt;/div&gt;&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">htmlFormat</span> <span class="o">=</span> <span class="nx">Windows</span><span class="p">.</span><span class="nx">ApplicationModel</span><span class="p">.</span><span class="nx">DataTransfer</span><span class="p">.</span><span class="nx">HtmlFormatHelper</span><span class="p">.</span><span class="nx">createHtmlFormat</span><span class="p">(</span><span class="nx">htmlExample</span><span class="p">);</span>
+</span><span class='line'>            <span class="nx">request</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">setHtmlFormat</span><span class="p">(</span><span class="nx">htmlFormat</span><span class="p">);</span>
+</span><span class='line'>            <span class="kd">var</span> <span class="nx">streamRef</span> <span class="o">=</span> <span class="nx">Windows</span><span class="p">.</span><span class="nx">Storage</span><span class="p">.</span><span class="nx">Streams</span><span class="p">.</span><span class="nx">RandomAccessStreamReference</span><span class="p">.</span><span class="nx">createFromUri</span><span class="p">(</span><span class="k">new</span> <span class="nx">Windows</span><span class="p">.</span><span class="nx">Foundation</span><span class="p">.</span><span class="nx">Uri</span><span class="p">(</span><span class="nx">localImage</span><span class="p">));</span>
+</span><span class='line'>            <span class="nx">request</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">resourceMap</span><span class="p">[</span><span class="nx">localImage</span><span class="p">]</span> <span class="o">=</span> <span class="nx">streamRef</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img class="figure" alt="Figure 7-1" src="/images/win8app/VS6.PNG"></p>
+
+<p>You can find out more about the <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh758314.aspx">share charm here</a>, but we are basically taking advantage of one of the <a href="http://msdn.microsoft.com/en-us/library/windows/apps/br211377.aspx">many Windows RT APIs</a> that you have access to via JavaScript inside your Windows 8 App.  Once you’ve added this above code, you’ll now be able to share info from your Yeti Bowl Game to other apps you have installed.</p>
+
+<p><img class="figure" alt="Figure 7-1" src="/images/win8app/VS7.PNG"></p>
+
+<p><img class="figure" alt="Figure 7-1" src="/images/win8app/VS8.PNG"></p>
+
+<h2>A Few Closing Notes</h2>
+
+<p>It is very easy to move your web apps to Windows 8 where you have access to a whole series of new APIs and functionality that isn’t safe to expose on the web.  That being the case, it’s important that you look into the <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx">security model</a> that is implemented in Windows 8 Apps.  Using a JavaScript library?  Many libraries like <a href="http://www.yuiblog.com/blog/2013/03/12/windows-8-loves-yui/">YUI</a> and <a href="http://blogs.msdn.com/b/interoperability/archive/2013/03/29/jquery-adds-support-for-windows-store-apps-creates-new-opportunities-for-javascript-open-source-developers.aspx">jQuery</a> already work within the Windows 8 App environment.
+It’s that easy, reuse your code, and your skills to build Windows 8 Store Apps.</p>
+
+<p>Author: Jeff Burtoft &ndash; <a href="http://www.twitter.com/boyofgreen">@boyofgreen</a>
+code sample: <a href="http://touch.azurewebsites.net/yeti/game.html">http://touch.azurewebsites.net/yeti/game.html</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+
+<!-- Begin MailChimp Signup Form -->
+<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+
+<div id="mc_embed_signup">
+<form action="http://jessecravens.us2.list-manage1.com/subscribe/post?u=e00a501b9d5ba6aa43acd55a7&amp;id=95bec8136d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	<label for="mce-EMAIL">Subscribe to our mailing list</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup -->
+
+<a href="http://www.anrdoezrs.net/click-7080585-11260198?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920026273.do%3Fcmp%3Daf-code-book-product_cj_9781449334994_%25zp&cjsku=0636920026273" target="_top">
+  <img src="http://akamaicovers.oreilly.com/images/0636920026273/cat.gif" border="0" alt="HTML5 Hacks"/>
+</a>
+
+<h2>O&#8217;Reilly Media&#8217;s HTML5 Hacks</h2>
+
+<p>HTML5 Hacks shows you how to use the latest tools to make your sites and applications more interactive, more functional, and more capable of competing with desktop applications. Each hack shows you how to make a concrete improvement, applying the latest in JavaScript, HTML, and CSS power to common web development issues.</p>
+
+<a href="http://www.oreilly.com.cn/index.php?func=book&isbn=978-7-121-21702-9">
+  <img src="../../images/html5-china-180.png" border="0" alt="HTML5 Hacks Chinese Translation"/>
+</a>
+
+<a href="http://www.oreilly.co.jp/books/9784873116471/">
+  <img src="../../images/html5-japan-180.png" border="0" alt="HTML5 Hacks Japanese Translation"/>
+</a>
+
+<a href="http://shop.oreilly.com/product/0636920030782.do">
+  <img src="../../images/ember-180.png" border="0" alt="Building Web Apps with Ember.js"/>
+</a>
+
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-in-malmo/">HTML5 and Ember.js at Øredev 2013:The Arts in Malmö, Sweden</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/">JavaScript Makers: How JS is Helping Drive the Maker Movement</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/06/debugging-modern-web-applications-part-1/">Debugging Modern Web Applications Part 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/26/web-worker-patterns/">Web Worker Patterns</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/25/building-next-generation-widgets-with-web-components/">Building Next Generation Widgets with Web Components</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/html5hacks">@html5hacks</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'html5hacks',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("html5hacks", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/html5hacks" class="twitter-follow-button" data-show-count="false">Follow @html5hacks</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jesse Cravens and Jeff Burtoft -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'html5hacks';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

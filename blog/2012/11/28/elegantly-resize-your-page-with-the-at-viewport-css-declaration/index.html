@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Elegantly Resize Your Page with the @-viewport CSS Declaration - HTML5 Hacks</title>
+  <meta name="author" content="Jesse Cravens and Jeff Burtoft">
+
+  
+  <meta name="description" content="Gone are the days of viewport meta tags that with implementations different across browsers. The new @-viewport is easy to use and puts the control &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="HTML5 Hacks" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic
+" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-28132474-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">HTML5 Hacks</a></h1>
+  
+    <h2>Hacking Next Generation Web Technologies</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:html5hacks.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About the Hackers</a></li>
+  <li><a href="/training">Training</a></li>
+  <li><a href="/join">Join Us</a></li>  
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Elegantly Resize Your Page With the @-viewport CSS Declaration</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-28T18:37:00-06:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h4>Gone are the days of viewport meta tags that with implementations different across browsers.  The new @-viewport is easy to use and puts the control in the right place.</h4>
+
+<p>There is a minsconception that the meta “viewport” tag is a standard.  We have seen it implemeted in quite a few browsers, mostly mobile, and looks something like this:</p>
+
+<figure class='code'><figcaption><span>meta.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=320&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Developers use this meta tag to control the zoom factor of the browser when loading the page.  If the above example, the page will assume that the viewport is 320px, no matter how many pixels are really available for rendering.  Usually, it was used to squeeze a 900-1200px screen, into a 320px screen.</p>
+
+<p>The meta tag worked okay but it has limitations, and since it’s non-standard, it’s been implemented different ways across browsers.</p>
+
+<h2>CSS Pixels</h2>
+
+<p>To follow what&rsquo;s happening to your page with the viewport values, it’s important to understand the basic concept of viewport zooming.  I don’t think the explanation can be done any better than it was by PPK in <a href="http://www.quirksmode.org/mobile/viewports2.html">this post about viewports</a>.  Here’s the summary:</p>
+
+<blockquote><p>Both viewports are measured in CSS pixels, obviously. But while the visual viewport dimensions change with zooming (if you zoom in, less CSS pixels fit on the screen), the layout viewport dimensions remain the same. (If they didn’t your page would constantly reflow as percentual widths are recalculated.)</p></blockquote>
+
+<p>Let’s look at an example:</p>
+
+<p><img class="figure" alt="Figure 7-1" src="/images/news-images/viewport.png"></p>
+
+<p>Two screenshots, the left used rendered in ie10 on windows phone 8 with no view port setting.  The screenshot on the right has a viewport declaration set to  set the viewport width to 320px</p>
+
+<p>In the above figure, we see a smiley face on a page.   Both pages have a smiley face that has a width set to 300 pixels.  The difference is in css pixels.  Mobile browsers zoom out to see more content on a page by default.  In this case the page on the left is zoomed out so that the whole page can be seen.  This makes our smiley face much smaller that it actually is.  Although it may only take up 70 pixels of actual screen pixels, it’s  css pixel width will always be 300.</p>
+
+<p>The figure on the right also is 300 css pixels, but since the viewport is set to 320px, the device pixels of the smiley face is actually 450 or so pixels.</p>
+
+<h2>@-viewport CSS</h2>
+
+<p>Sound difficult?  It’s going to get a lot simpler with a new specification.  The W3C has a specification to address the non-standard viewport meta tag and more, and the control has now rightfully been moved to CSS.</p>
+
+<p>The specification can be found here:
+  <a href="http://dev.w3.org/csswg/css-device-adapt/">http://dev.w3.org/csswg/css-device-adapt/</a></p>
+
+<p>Although still in draft form, the specification has been implemented in Internet Explorer 10, and has developers quite excited about it.  Lets look at an example.  To set the screen to a CSS pixel width of 640 pixels, we would use the following css:</p>
+
+<figure class='code'><figcaption><span>viewport.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@-viewport</span> <span class="p">{</span>
+</span><span class='line'><span class="nt">width</span><span class="o">:</span> <span class="nt">640px</span><span class="o">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Doesn’t that make sense?  The great thing is that this property works both ways (scaling up and down).  If you screen width is smaller than 640px, your screen will be zoomed out to fix the entire 640px viewport on the screen.  If you screen is larger than 640px, you screen will be zoomed in to only show 640px viewport.  In either case the css width of the screen is 640px.</p>
+
+<p>Inside the viewport tag, you can set any value that is related to the viewport, specifically that means width, height, max-width, max-height, min-width, and min-height.  Widths and heights can be set to any of the these values:</p>
+
+<ul>
+<li>auto:  let the user agent determine the best</li>
+<li>device width/height: scales to the actual width or height of the device.</li>
+<li>percent/pixel value: specific settings to assume as the screen width or height.</li>
+</ul>
+
+
+<p>To maximize responsive design, you can use this @-viewport tag along with media queries, and may appear as something like the following:</p>
+
+<figure class='code'><figcaption><span>viewport.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">699px</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="o">:</span> <span class="nt">520px</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">@-viewport</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nt">width</span><span class="o">:</span> <span class="nt">640px</span><span class="o">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The above css will normalize any screen smaller than 699px and larger than 520px to be rendered at a viewport of 640px.  This will save a boatload of other css properties to do this same feature.</p>
+
+<p>In addition to the existing values, we have a few new values added as well, specifically the zoom value. Zoom allows us to set an initial zoom factor for the window or viewing area.  Zoom, along with min-zoom and max-zoom, can be set using any of the following values:</p>
+
+<ul>
+<li>auto: let the user agent determine the zoom factor</li>
+<li>numeric: a positive integer that is used to determine the zoom value  A value of 1.0 has no zoom.</li>
+<li>percentage: a positive percentage.  In the case of 100% there is no zoom.</li>
+</ul>
+
+
+<p>Zoom can be used by itself or in conjunction with a width or height value:</p>
+
+<figure class='code'><figcaption><span>viewport.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@-viewport</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nt">width</span><span class="o">:</span> <span class="nt">device-width</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">zoom</span><span class="o">:</span> <span class="nc">.5</span><span class="o">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The second new descriptor is that of “orientation”.  Any keen developer can tell that this is used to request that your device lock in a specific orientation.  Any of the following keywords can be used:</p>
+
+<ul>
+<li>auto: let the user agent determin</li>
+<li>landscape: lock the device in landscape orientation</li>
+<li>portrait: lock the device in portrait mode</li>
+</ul>
+
+
+<p>The implementation can be used along with width and zoom as in the following example:</p>
+
+<figure class='code'><figcaption><span>viewport.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@viewport</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nt">width</span><span class="o">:</span> <span class="nt">980px</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">min-zoom</span><span class="o">:</span> <span class="nt">0</span><span class="nc">.25</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">max-zoom</span><span class="o">:</span> <span class="nt">5</span><span class="o">;</span>
+</span><span class='line'>    <span class="nt">orientation</span><span class="o">:</span> <span class="nt">landscape</span><span class="o">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Internet Explorer Implementation</h2>
+
+<p>The implementation in Internet Explorer 10 is practically identical to the W3C standard (great job IE team), with the addition of a prefix to signify that it’s an experimental implementation (as all prefixed implementations are).  The ie viewport value appears as follows:</p>
+
+<figure class='code'><figcaption><span>viewport.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@-ms-viewport</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">width</span><span class="o">:</span> <span class="nt">device-width</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>IEs implementation currently only supports the width and height properties. Min and max height/width are not implemented and neither are zoom or orientation.  As with all early implementation of standards, if the specification changes, I have no doubt that the internet explorer team with update the implementation to match the standard.</p>
+
+<h2>Legacy Implementations</h2>
+
+<p>When most developers think about viewport, this is what they think of:</p>
+
+<figure class='code'><figcaption><span>meta.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=320&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This tag zooms in the page to a viewport of 320 pixels.  Although originally introduced by apple most mobile browsers went on to support this tag in one form or another.  The tag was often supported differently from browser to browser, and the syntax was never really clear in its documentation.  hence, the need for a standard.</p>
+
+<p>Different browses implemented the meta tag differently when using the meta tag to determine the width of the page (specifically by setting width to device-width)  Let’s look at the Windows Phone 7 Internet Explorer and iOS safari implementations.</p>
+
+<h3>Internet explorer</h3>
+
+<p>If you set the width in the meta tag to a specific size in internet explorer for windows phone 7, you get exactly what you ask for.  A meta tag like this:</p>
+
+<figure class='code'><figcaption><span>meta.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=480&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The above code will get you exactly what you ask for, which is a viewport zoomed to 480 pixels.  Now, when you set the width to be “device-width” such as the following:</p>
+
+<figure class='code'><figcaption><span>meta.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In this case, you get a page with a width of 320px in portrait mode, and 480px in landscape.  This is independent of how many pixels are actually available on the screen.</p>
+
+<h3>Safari</h3>
+
+<p>Safari on iOS works just like ie does for specific pixel settings, but differs when you set width to “device width”.  Let’s again look at our meta tag:</p>
+
+<figure class='code'><figcaption><span>meta.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width&quot;</span> <span class="nt">/&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In the case of iOS, the width of the screen will be set to the actual width of the screen.  If the screen has 640 pixels, than the viewport will be resized to 640 pixels.</p>
+
+<p>One of the worst parts about this meta tag is it really only helps on smaller screen, where content needs to scale down in size.  it’s outdated and was due to be replace with something better.</p>
+
+<p>The viewport standard is supported in ie10 on windows phone 8, but has legacy support for this meta tag as well.  Implementation of this meta tag in ie10 will give you the normalized values for page width (320px) when asking for screen size.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jesse Cravens and Jeff Burtoft</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-28T18:37:00-06:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>CSS</a>, <a class='category' href='/blog/categories/mobile/'>Mobile</a>, <a class='category' href='/blog/categories/w3c/'>W3C</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration/" data-via="html5hacks" data-counturl="http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/11/21/make-your-page-consumable-by-robots-and-humans-alike-with-microdata/" title="Previous Post: Make Your Page Consumable by Robots and Humans Alike with Microdata">&laquo; Make Your Page Consumable by Robots and Humans Alike with Microdata</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/01/04/make-your-web-app-respond-to-device-orientation-changes/" title="Next Post: Make Your Web App Respond to Device Orientation Changes">Make Your Web App Respond to Device Orientation Changes &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+
+<!-- Begin MailChimp Signup Form -->
+<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+
+<div id="mc_embed_signup">
+<form action="http://jessecravens.us2.list-manage1.com/subscribe/post?u=e00a501b9d5ba6aa43acd55a7&amp;id=95bec8136d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	<label for="mce-EMAIL">Subscribe to our mailing list</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup -->
+
+<a href="http://www.anrdoezrs.net/click-7080585-11260198?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920026273.do%3Fcmp%3Daf-code-book-product_cj_9781449334994_%25zp&cjsku=0636920026273" target="_top">
+  <img src="http://akamaicovers.oreilly.com/images/0636920026273/cat.gif" border="0" alt="HTML5 Hacks"/>
+</a>
+
+<h2>O'Reilly Media's HTML5 Hacks</h2>
+
+<p>HTML5 Hacks shows you how to use the latest tools to make your sites and applications more interactive, more functional, and more capable of competing with desktop applications. Each hack shows you how to make a concrete improvement, applying the latest in JavaScript, HTML, and CSS power to common web development issues.</p>
+
+<a href="http://www.oreilly.com.cn/index.php?func=book&isbn=978-7-121-21702-9">
+  <img src="../../images/html5-china-180.png" border="0" alt="HTML5 Hacks Chinese Translation"/>
+</a>
+
+<a href="http://www.oreilly.co.jp/books/9784873116471/">
+  <img src="../../images/html5-japan-180.png" border="0" alt="HTML5 Hacks Japanese Translation"/>
+</a>
+
+<a href="http://shop.oreilly.com/product/0636920030782.do">
+  <img src="../../images/ember-180.png" border="0" alt="Building Web Apps with Ember.js"/>
+</a>
+
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-in-malmo/">HTML5 and Ember.js at Øredev 2013:The Arts in Malmö, Sweden</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/">JavaScript Makers: How JS is Helping Drive the Maker Movement</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/06/debugging-modern-web-applications-part-1/">Debugging Modern Web Applications Part 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/26/web-worker-patterns/">Web Worker Patterns</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/07/25/building-next-generation-widgets-with-web-components/">Building Next Generation Widgets with Web Components</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/html5hacks">@html5hacks</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'html5hacks',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("html5hacks", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/html5hacks" class="twitter-follow-button" data-show-count="false">Follow @html5hacks</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Jesse Cravens and Jeff Burtoft -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'html5hacks';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration/';
+        var disqus_url = 'http://html5hacks.com/blog/2012/11/28/elegantly-resize-your-page-with-the-at-viewport-css-declaration/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
